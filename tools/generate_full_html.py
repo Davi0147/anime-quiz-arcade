@@ -2235,6 +2235,176 @@ html_template = """<!DOCTYPE html>
     .rank-2 { background: #94a3b8; color: #0f172a; }
     .rank-3 { background: #b45309; color: #fff; }
 
+    .cloud-status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 700;
+      border: 1px solid transparent;
+      user-select: none;
+      transition: all 0.2s ease;
+    }
+    .cloud-status-pill.online {
+      background: rgba(16, 185, 129, 0.12);
+      border-color: rgba(16, 185, 129, 0.4);
+      color: #34d399;
+    }
+    .cloud-status-pill.local {
+      background: rgba(245, 158, 11, 0.12);
+      border-color: rgba(245, 158, 11, 0.4);
+      color: #fbbf24;
+    }
+    .cloud-status-pill.syncing {
+      background: rgba(6, 182, 212, 0.12);
+      border-color: rgba(6, 182, 212, 0.4);
+      color: #38bdf8;
+    }
+    .cloud-status-pill.error {
+      background: rgba(239, 68, 68, 0.12);
+      border-color: rgba(239, 68, 68, 0.4);
+      color: #f87171;
+    }
+    .status-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: currentColor;
+      display: inline-block;
+    }
+    .status-dot.pulse-green {
+      box-shadow: 0 0 6px #10b981;
+      animation: statusGlow 2s infinite ease-in-out;
+    }
+    .status-dot.pulse-amber {
+      box-shadow: 0 0 6px #f59e0b;
+      animation: statusGlow 2s infinite ease-in-out;
+    }
+    @keyframes statusGlow {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.85); }
+    }
+    .status-dot.spin {
+      animation: dotSpin 1s infinite linear;
+    }
+    @keyframes dotSpin {
+      100% { transform: rotate(360deg); }
+    }
+
+    .player-cell {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      flex-wrap: wrap;
+    }
+    .player-name {
+      font-weight: 700;
+      color: #f8fafc;
+      font-size: 13px;
+    }
+
+    .prestige-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 2px 7px;
+      border-radius: 6px;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.4px;
+      text-transform: uppercase;
+      cursor: help;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .prestige-badge:hover {
+      transform: translateY(-1px) scale(1.04);
+    }
+    .badge-master {
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.22), rgba(217, 119, 6, 0.35));
+      border: 1px solid #f59e0b;
+      color: #fbbf24;
+      box-shadow: 0 0 8px rgba(245, 158, 11, 0.35);
+    }
+    .badge-fire {
+      background: linear-gradient(135deg, rgba(239, 68, 68, 0.2), rgba(220, 38, 38, 0.3));
+      border: 1px solid #ef4444;
+      color: #f87171;
+      box-shadow: 0 0 8px rgba(239, 68, 68, 0.3);
+    }
+    .badge-speed {
+      background: linear-gradient(135deg, rgba(6, 182, 212, 0.2), rgba(14, 165, 233, 0.3));
+      border: 1px solid #06b6d4;
+      color: #38bdf8;
+      box-shadow: 0 0 8px rgba(6, 182, 212, 0.3);
+    }
+    .badge-perfect {
+      background: linear-gradient(135deg, rgba(168, 85, 247, 0.2), rgba(147, 51, 234, 0.3));
+      border: 1px solid #a855f7;
+      color: #c084fc;
+      box-shadow: 0 0 8px rgba(168, 85, 247, 0.3);
+    }
+    .badge-ear {
+      background: rgba(99, 102, 241, 0.18);
+      border: 1px solid #6366f1;
+      color: #a5b4fc;
+    }
+    .badge-dj {
+      background: rgba(236, 72, 153, 0.18);
+      border: 1px solid #ec4899;
+      color: #f472b6;
+    }
+    .badge-eye {
+      background: rgba(20, 184, 166, 0.18);
+      border: 1px solid #14b8a6;
+      color: #5eead4;
+    }
+    .badge-veteran {
+      background: rgba(16, 185, 129, 0.18);
+      border: 1px solid #10b981;
+      color: #6ee7b7;
+    }
+    .badge-rookie {
+      background: rgba(148, 163, 184, 0.12);
+      border: 1px solid #475569;
+      color: #cbd5e1;
+    }
+    .source-chip {
+      font-size: 9px;
+      padding: 1px 5px;
+      border-radius: 4px;
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-muted);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+    }
+
+    .cloud-step-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      padding: 10px 12px;
+      border-radius: 10px;
+    }
+    .cloud-step-card .step-num {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+
     .save-score-box {
       background: #0d1222;
       border: 1px solid var(--card-border);
@@ -3953,24 +4123,40 @@ img[src^="icons/"] {
   <!-- VIEW 5: PLACAR DE LÍDERES & HALL DA FAMA (TOP 50 ROLÁVEL) -->
   <div class="quiz-card" id="mode5-view" style="display: none;">
     <div id="mp-leaderboard-panel" style="display: block;">
-      <div class="quiz-header" style="margin-bottom: 14px;">
-        <div class="round-indicator">🏆 RECORDES LOCAIS & HALL DA FAMA (TOP 50)</div>
-        <button class="btn btn-outline" style="padding: 5px 10px; font-size: 11px;" onclick="clearLeaderboard()">
-          <img src="icons/trash-can.png" class="app-icon icon-red" /> Limpar Placar
-        </button>
+      <div class="quiz-header" style="margin-bottom: 14px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+        <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+          <div class="round-indicator">🏆 HALL DA FAMA MUNDIAL • TOP 50</div>
+          <div id="cloud-status-badge" class="cloud-status-pill local" onclick="openCloudConfigModal()" style="cursor: pointer;" title="Clique para configurar o Banco na Nuvem">
+            <span class="status-dot pulse-amber"></span> 💾 Placar Local (Dispositivo)
+          </div>
+        </div>
+        <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+          <button class="btn btn-outline" id="btn-sync-leaderboard" style="padding: 5px 12px; font-size: 11px;" onclick="syncLeaderboardNow()" title="Sincronizar com a nuvem">
+            <span id="sync-icon">🔄</span> Sincronizar
+          </button>
+          <button class="btn btn-outline" style="padding: 5px 12px; font-size: 11px;" onclick="openCloudConfigModal()" title="Configurar banco de dados na nuvem">
+            🌐 Conectar Nuvem
+          </button>
+          <button class="btn btn-outline" style="padding: 5px 10px; font-size: 11px;" onclick="clearLeaderboard()" title="Limpar histórico local">
+            <img src="icons/trash-can.png" class="app-icon icon-red" /> Limpar
+          </button>
+        </div>
       </div>
 
       <div class="leaderboard-container">
         <!-- Salvar pontuação atual -->
         <div class="save-score-box">
           <div>
-            <div style="font-size: 13px; font-weight: 800; color: #fff;">💾 Salvar Pontuação Atual no Hall da Fama</div>
-            <div style="font-size: 11px; color: var(--text-muted);">
-              Sua pontuação: <strong id="save-score-val" style="color: var(--accent);">0 pts</strong> • Acertos: <strong id="save-correct-val">0</strong>
+            <div style="font-size: 13px; font-weight: 800; color: #fff; display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+              <span>💾 Salvar Recorde Atual no Hall da Fama</span>
+              <span id="save-badge-preview"></span>
+            </div>
+            <div style="font-size: 11px; color: var(--text-muted); margin-top: 2px;">
+              Sua pontuação: <strong id="save-score-val" style="color: var(--accent);">0 pts</strong> • Acertos: <strong id="save-correct-val">0</strong> • Combo: <strong id="save-streak-val">0x</strong>
             </div>
           </div>
-          <div style="display: flex; gap: 8px;">
-            <input type="text" class="save-score-input" id="player-nickname" placeholder="Seu Apelido..." maxlength="15" />
+          <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+            <input type="text" class="save-score-input" id="player-nickname" placeholder="Seu Apelido Otaku..." maxlength="15" autocomplete="off" />
             <button class="btn btn-green" onclick="saveCurrentScoreToLeaderboard()">Salvar Recorde</button>
           </div>
         </div>
@@ -4084,6 +4270,49 @@ img[src^="icons/"] {
       <button class="btn btn-danger" onclick="leaveRoomFromAlert()" style="padding: 10px 18px; font-weight: 700; border-radius: 10px; background: rgba(239, 68, 68, 0.15); border: 1px solid #ef4444; color: #fca5a5;">
         Sair da Sala
       </button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL DE CONFIGURAÇÃO DO BANCO EM NUVEM (FIREBASE REALTIME DB) -->
+<div class="settings-modal-overlay" id="cloud-config-modal" style="display: none;" onclick="if(event.target===this)closeCloudConfigModal()">
+  <div class="settings-modal-card" style="max-width: 540px;">
+    <div class="settings-modal-header">
+      <div class="settings-modal-title">
+        🌐 Conectar Banco Global (Firebase Realtime)
+      </div>
+      <button class="settings-close-btn" onclick="closeCloudConfigModal()">&times;</button>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 14px; font-size: 13px; color: #cbd5e1; line-height: 1.5; padding: 4px 0;">
+      <p style="font-size: 12px; color: #94a3b8;">
+        Conecte um banco de dados gratuito na nuvem para que qualquer pessoa do mundo que jogar veja e dispute o mesmo <strong>Hall da Fama Global</strong>!
+      </p>
+
+      <div class="cloud-steps-list" style="display: flex; flex-direction: column; gap: 8px;">
+        <div class="cloud-step-card">
+          <div class="step-num">1</div>
+          <div>Acesse <strong>console.firebase.google.com</strong> com sua conta Google (100% gratuito).</div>
+        </div>
+        <div class="cloud-step-card">
+          <div class="step-num">2</div>
+          <div>Clique em <strong>Criar projeto</strong> &rarr; no menu vá em <strong>Criação &gt; Realtime Database &gt; Criar banco</strong> (modo de teste).</div>
+        </div>
+        <div class="cloud-step-card">
+          <div class="step-num">3</div>
+          <div>Copie a URL gerada (ex: <code>https://seu-quiz-default-rtdb.firebaseio.com</code>) e cole abaixo:</div>
+        </div>
+      </div>
+
+      <div style="margin-top: 4px;">
+        <label style="font-size: 11px; font-weight: 700; text-transform: uppercase; color: var(--accent); letter-spacing: 0.5px; display: block; margin-bottom: 6px;">URL da Realtime Database (.json)</label>
+        <input type="text" id="firebase-url-input" class="save-score-input" style="width: 100%; box-sizing: border-box;" placeholder="https://seu-projeto-default-rtdb.firebaseio.com/leaderboard.json" />
+      </div>
+
+      <div style="display: flex; gap: 8px; justify-content: flex-end; margin-top: 6px; flex-wrap: wrap;">
+        <button class="btn btn-outline" style="font-size: 12px; padding: 7px 14px;" onclick="disconnectCloud()">Desconectar (Modo Local)</button>
+        <button class="btn btn-primary" style="font-size: 12px; padding: 7px 18px;" onclick="saveCloudConfig()">Salvar &amp; Sincronizar</button>
+      </div>
     </div>
   </div>
 </div>
@@ -7384,18 +7613,19 @@ const MultiplayerEngine = {
 
     const myData = sorted.find(p => p.id === this.myPlayerId);
     if (myData && myData.score > 0) {
-      const list = getLeaderboardData();
-      list.push({
+      const entry = {
         id: Date.now(),
         name: myData.name,
         mode: 'multiplayer',
         score: myData.score,
         correct: myData.correct || 0,
         streak: 0,
-        date: new Date().toLocaleDateString('pt-BR')
-      });
-      list.sort((a, b) => b.score - a.score);
-      saveLeaderboardData(list);
+        date: new Date().toLocaleDateString('pt-BR'),
+        timestamp: Date.now()
+      };
+      if (window.CloudLeaderboard) {
+        CloudLeaderboard.submitScore(entry);
+      }
     }
 
     const rematchBtn = document.getElementById('mp-rematch-btn');
@@ -7426,66 +7656,384 @@ const MultiplayerEngine = {
 window.MultiplayerEngine = MultiplayerEngine;
 
 /* ==============================================================
-   LEADERBOARD (HALL DA FAMA LOCAL & HISTÓRICO)
+   LEADERBOARD (HALL DA FAMA GLOBAL, ANTI-CHEAT & PRESTIGE BADGES)
    ============================================================== */
 const DEFAULT_LEADERBOARD = [
-  { id: 1, name: "GokuSSJ", mode: "mode1", score: 2450, correct: 27, streak: 12, date: "Hoje" },
-  { id: 2, name: "Mikasa_Ackerman", mode: "mode2", score: 2180, correct: 20, streak: 15, date: "Ontem" },
-  { id: 3, name: "L_Lawliet", mode: "mode3", score: 1950, correct: 18, streak: 9, date: "02/10" },
-  { id: 4, name: "TanjiroKamado", mode: "mode2", score: 1600, correct: 15, streak: 8, date: "01/10" },
-  { id: 5, name: "Zoro_Lost", mode: "mode1", score: 1420, correct: 16, streak: 5, date: "30/09" },
-  { id: 6, name: "NarutoUzumaki", mode: "mode3", score: 1200, correct: 13, streak: 6, date: "28/09" }
+  { id: 1, name: "GokuSSJ", mode: "mode1", score: 2450, correct: 27, streak: 12, date: "Hoje", source: "local" },
+  { id: 2, name: "Mikasa_Ackerman", mode: "mode2", score: 2180, correct: 20, streak: 15, date: "Ontem", source: "local" },
+  { id: 3, name: "L_Lawliet", mode: "mode3", score: 1950, correct: 18, streak: 9, date: "02/10", source: "local" },
+  { id: 4, name: "TanjiroKamado", mode: "mode2", score: 1600, correct: 15, streak: 8, date: "01/10", source: "local" },
+  { id: 5, name: "Zoro_Lost", mode: "mode1", score: 1420, correct: 16, streak: 5, date: "30/09", source: "local" },
+  { id: 6, name: "NarutoUzumaki", mode: "mode3", score: 1200, correct: 13, streak: 6, date: "28/09", source: "local" }
 ];
 
-function getLeaderboardData() {
-  const saved = localStorage.getItem('AMQ_LEADERBOARD_V2');
-  if (saved) {
-    try { return JSON.parse(saved); } catch(e) {}
+/* 1.3 MOTOR DE TÍTULOS E BADGES DE PRESTÍGIO */
+const PrestigeBadges = {
+  getBadge(item) {
+    const score = Number(item.score) || 0;
+    const correct = Number(item.correct) || 0;
+    const streak = Number(item.streak) || 0;
+    const mode = item.mode || 'mode2';
+
+    if (score >= 2200 || correct >= 20) {
+      return {
+        title: "Mestre Otaku",
+        icon: "👑",
+        cssClass: "badge-master",
+        tooltip: "Pontuação de elite (2200+ pts ou 20+ acertos)"
+      };
+    }
+    if (streak >= 8) {
+      return {
+        title: "Fogo Eterno",
+        icon: "🔥",
+        cssClass: "badge-fire",
+        tooltip: "Sequência ardente de 8+ acertos seguidos sem errar"
+      };
+    }
+    if (score >= 1200 && (score / Math.max(1, correct)) >= 125) {
+      return {
+        title: "Velocista Neon",
+        icon: "⚡",
+        cssClass: "badge-speed",
+        tooltip: "Reflexos sobre-humanos com bônus de velocidade máxima"
+      };
+    }
+    if (streak >= 5 && streak === correct) {
+      return {
+        title: "Mira Perfeita",
+        icon: "🎯",
+        cssClass: "badge-perfect",
+        tooltip: "100% de precisão (5+ acertos sem nenhum erro)"
+      };
+    }
+    if (mode === 'mode1' && correct >= 8) {
+      return {
+        title: "Ouvido Absoluto",
+        icon: "🎧",
+        cssClass: "badge-ear",
+        tooltip: "Reconheceu 8+ aberturas às cegas no Blind Test"
+      };
+    }
+    if (mode === 'mode2' && correct >= 8) {
+      return {
+        title: "DJ de Aberturas",
+        icon: "🎵",
+        cssClass: "badge-dj",
+        tooltip: "Identificou 8+ músicas oficiais em 'Qual é a Abertura?'"
+      };
+    }
+    if (mode === 'mode3' && correct >= 8) {
+      return {
+        title: "Olho Clínico",
+        icon: "🖼️",
+        cssClass: "badge-eye",
+        tooltip: "Decifrou 8+ cenas de animes em alta definição"
+      };
+    }
+    if (score >= 1000) {
+      return {
+        title: "Veterano",
+        icon: "💎",
+        cssClass: "badge-veteran",
+        tooltip: "Veterano de arcade com mais de 1000 pontos"
+      };
+    }
+    return {
+      title: "Aspirante",
+      icon: "🔰",
+      cssClass: "badge-rookie",
+      tooltip: "Iniciante promissor no mundo dos animes"
+    };
   }
-  return DEFAULT_LEADERBOARD;
+};
+window.PrestigeBadges = PrestigeBadges;
+
+/* 1.2 MOTOR ANTI-CHEAT E INTEGRIDADE DE PONTUAÇÃO */
+const AntiCheatEngine = {
+  validateSubmission(rawNick, mode, score, correct, streak) {
+    const cleanNick = (rawNick || '').replace(/[<>\\/\\\\"'&;]/g, '').trim();
+
+    if (!cleanNick || cleanNick.length < 2) {
+      return { ok: false, msg: "O apelido deve ter pelo menos 2 caracteres!" };
+    }
+    if (cleanNick.length > 15) {
+      return { ok: false, msg: "O apelido pode ter no máximo 15 caracteres!" };
+    }
+    if (typeof score !== 'number' || isNaN(score) || score <= 0) {
+      return { ok: false, msg: "Jogue pelo menos uma rodada antes de salvar sua pontuação!" };
+    }
+    if (typeof correct !== 'number' || isNaN(correct) || correct < 1) {
+      return { ok: false, msg: "É necessário ter pelo menos 1 acerto para entrar no Hall da Fama!" };
+    }
+    if (typeof streak !== 'number' || streak > correct) {
+      return { ok: false, msg: "O combo streak não pode ser maior que o número total de acertos!" };
+    }
+
+    // Limite matemático por acerto (máx possível por rodada com bônus de velocidade e combo)
+    const maxPerCorrect = (mode === 'mode1') ? 220 : 180;
+    if (score > (correct * maxPerCorrect) + 50) {
+      return { 
+        ok: false, 
+        msg: `Pontuação inconsistente detectada (${score} pts para ${correct} acertos). Limite de integridade violado!` 
+      };
+    }
+
+    // Verificação de correspondência com o estado de memória da sessão
+    if (['mode1', 'mode2', 'mode3'].includes(mode)) {
+      const liveScore = mode === 'mode2' ? m2Score : (mode === 'mode3' ? m3Score : m1Score);
+      const liveCorrect = mode === 'mode2' ? m2CorrectCount : (mode === 'mode3' ? m3CorrectCount : m1CorrectCount);
+      if (score !== liveScore || correct !== liveCorrect) {
+        return { ok: false, msg: "A pontuação informada não coincide com a sessão atual do jogo!" };
+      }
+    }
+
+    return { ok: true, cleanNick };
+  }
+};
+window.AntiCheatEngine = AntiCheatEngine;
+
+/* 1.1 MOTOR DE BANCO EM NUVEM E SINCRONIZAÇÃO HÍBRIDA */
+const CloudLeaderboard = {
+  STORAGE_KEY: 'AMQ_LEADERBOARD_V2',
+  FIREBASE_KEY: 'AMQ_FIREBASE_URL',
+  cachedScores: [],
+  isSyncing: false,
+  isOnline: false,
+
+  getFirebaseUrl() {
+    const custom = localStorage.getItem(this.FIREBASE_KEY);
+    if (custom && custom.trim() !== '') return custom.trim();
+    return '';
+  },
+
+  setFirebaseUrl(url) {
+    if (!url || url.trim() === '') {
+      localStorage.removeItem(this.FIREBASE_KEY);
+    } else {
+      let clean = url.trim();
+      if (clean.includes('firebaseio.com') && !clean.endsWith('.json')) {
+        clean = clean.replace(/\\/+$/, '') + '/leaderboard.json';
+      }
+      localStorage.setItem(this.FIREBASE_KEY, clean);
+    }
+  },
+
+  getLocalScores() {
+    try {
+      const saved = localStorage.getItem(this.STORAGE_KEY);
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        if (Array.isArray(parsed) && parsed.length > 0) return parsed;
+      }
+    } catch(e) {}
+    return DEFAULT_LEADERBOARD;
+  },
+
+  saveLocalScores(list) {
+    try {
+      localStorage.setItem(this.STORAGE_KEY, JSON.stringify(list));
+    } catch(e) {}
+  },
+
+  init() {
+    this.cachedScores = this.getLocalScores();
+    this.updateStatusBadge();
+    const url = this.getFirebaseUrl();
+    if (url) {
+      this.fetchScores();
+    }
+  },
+
+  async fetchScores() {
+    const url = this.getFirebaseUrl();
+    if (!url) {
+      this.isOnline = false;
+      this.cachedScores = this.getLocalScores();
+      this.updateStatusBadge();
+      return this.cachedScores;
+    }
+
+    try {
+      this.isSyncing = true;
+      this.updateStatusBadge();
+      const res = await fetch(url, {
+        method: 'GET',
+        headers: { 'Accept': 'application/json' }
+      });
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      const data = await res.json();
+
+      let cloudList = [];
+      if (data) {
+        if (Array.isArray(data)) {
+          cloudList = data.filter(Boolean);
+        } else if (typeof data === 'object') {
+          cloudList = Object.keys(data).map(k => ({ ...data[k], cloudId: k, source: 'cloud' }));
+        }
+      }
+
+      const localList = this.getLocalScores();
+      const merged = this.mergeScores(cloudList, localList);
+      merged.sort((a, b) => (Number(b.score) || 0) - (Number(a.score) || 0));
+
+      this.cachedScores = merged;
+      this.saveLocalScores(merged);
+      this.isOnline = true;
+      return merged;
+    } catch (err) {
+      console.warn("Falha ao sincronizar com nuvem, mantendo cache local:", err);
+      this.isOnline = false;
+      this.cachedScores = this.getLocalScores();
+      return this.cachedScores;
+    } finally {
+      this.isSyncing = false;
+      this.updateStatusBadge();
+    }
+  },
+
+  mergeScores(cloudList, localList) {
+    const map = new Map();
+    cloudList.forEach(item => {
+      if (item && item.name && typeof item.score !== 'undefined') {
+        const key = `${String(item.name).toLowerCase()}_${item.mode}_${item.score}`;
+        map.set(key, { ...item, source: 'cloud' });
+      }
+    });
+    localList.forEach(item => {
+      if (item && item.name && typeof item.score !== 'undefined') {
+        const key = `${String(item.name).toLowerCase()}_${item.mode}_${item.score}`;
+        if (!map.has(key)) {
+          map.set(key, { ...item, source: 'local' });
+        }
+      }
+    });
+    return Array.from(map.values());
+  },
+
+  async submitScore(entry) {
+    // 1. Salva no cache local primeiro
+    const local = this.getLocalScores();
+    local.push(entry);
+    local.sort((a, b) => (Number(b.score) || 0) - (Number(a.score) || 0));
+    this.saveLocalScores(local);
+    this.cachedScores = local;
+
+    // 2. Se houver nuvem configurada, envia via POST
+    const url = this.getFirebaseUrl();
+    if (url) {
+      try {
+        const res = await fetch(url, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(entry)
+        });
+        if (res.ok) {
+          entry.source = 'cloud';
+          this.isOnline = true;
+        }
+      } catch (err) {
+        console.warn("Nuvem offline no momento. O recorde foi guardado no cache local:", err);
+        this.isOnline = false;
+      }
+    }
+    this.updateStatusBadge();
+  },
+
+  updateStatusBadge() {
+    const el = document.getElementById('cloud-status-badge');
+    if (!el) return;
+    const url = this.getFirebaseUrl();
+    if (this.isSyncing) {
+      el.className = 'cloud-status-pill syncing';
+      el.innerHTML = '<span class="status-dot spin"></span> Sincronizando Nuvem...';
+    } else if (url && this.isOnline) {
+      el.className = 'cloud-status-pill online';
+      el.innerHTML = '<span class="status-dot pulse-green"></span> 🌐 Nuvem Global Conectada';
+    } else if (url && !this.isOnline) {
+      el.className = 'cloud-status-pill error';
+      el.innerHTML = '<span class="status-dot"></span> ⚠️ Nuvem Offline (Cache Local)';
+    } else {
+      el.className = 'cloud-status-pill local';
+      el.innerHTML = '<span class="status-dot pulse-amber"></span> 💾 Placar Local (Dispositivo)';
+    }
+  }
+};
+window.CloudLeaderboard = CloudLeaderboard;
+
+function getLeaderboardData() {
+  return (CloudLeaderboard.cachedScores && CloudLeaderboard.cachedScores.length > 0)
+    ? CloudLeaderboard.cachedScores
+    : CloudLeaderboard.getLocalScores();
 }
 
 function saveLeaderboardData(list) {
-  localStorage.setItem('AMQ_LEADERBOARD_V2', JSON.stringify(list));
+  CloudLeaderboard.saveLocalScores(list);
 }
 
 function updateSaveScoreKPIs() {
-  const currentTotal = activeGameMode === 'mode2' ? m2Score : (activeGameMode === 'mode3' ? m3Score : m1Score);
-  const currentCorrect = activeGameMode === 'mode2' ? m2CorrectCount : (activeGameMode === 'mode3' ? m3CorrectCount : m1CorrectCount);
+  const currentTotal = activeGameMode === 'mode2' ? m2Score : (activeGameMode === 'mode3' ? m3Score : (activeGameMode === 'mode1' ? m1Score : 0));
+  const currentCorrect = activeGameMode === 'mode2' ? m2CorrectCount : (activeGameMode === 'mode3' ? m3CorrectCount : (activeGameMode === 'mode1' ? m1CorrectCount : 0));
+  const currentStreak = activeGameMode === 'mode2' ? m2Streak : (activeGameMode === 'mode3' ? m3Streak : (activeGameMode === 'mode1' ? m1Streak : 0));
+
   const scoreEl = document.getElementById('save-score-val');
   const corrEl = document.getElementById('save-correct-val');
+  const streakEl = document.getElementById('save-streak-val');
+  const previewEl = document.getElementById('save-badge-preview');
+
   if (scoreEl) scoreEl.textContent = `${currentTotal} pts`;
   if (corrEl) corrEl.textContent = currentCorrect;
+  if (streakEl) streakEl.textContent = `${currentStreak}x`;
+
+  if (previewEl) {
+    if (currentTotal > 0 && currentCorrect > 0) {
+      const badge = PrestigeBadges.getBadge({ score: currentTotal, correct: currentCorrect, streak: currentStreak, mode: activeGameMode });
+      previewEl.innerHTML = `<span class="prestige-badge ${badge.cssClass}" title="${escapeHtml(badge.tooltip)}">${badge.icon} ${escapeHtml(badge.title)}</span>`;
+    } else {
+      previewEl.innerHTML = '';
+    }
+  }
 }
 
-function saveCurrentScoreToLeaderboard() {
+async function saveCurrentScoreToLeaderboard() {
   const nickInput = document.getElementById('player-nickname');
-  const nick = (nickInput ? nickInput.value : '').trim() || 'Otaku Anônimo';
-  const score = activeGameMode === 'mode2' ? m2Score : (activeGameMode === 'mode3' ? m3Score : m1Score);
-  const correct = activeGameMode === 'mode2' ? m2CorrectCount : (activeGameMode === 'mode3' ? m3CorrectCount : m1CorrectCount);
-  const streak = activeGameMode === 'mode2' ? m2Streak : (activeGameMode === 'mode3' ? m3Streak : m1Streak);
+  const rawNick = (nickInput ? nickInput.value : '').trim();
+  const score = activeGameMode === 'mode2' ? m2Score : (activeGameMode === 'mode3' ? m3Score : (activeGameMode === 'mode1' ? m1Score : 0));
+  const correct = activeGameMode === 'mode2' ? m2CorrectCount : (activeGameMode === 'mode3' ? m3CorrectCount : (activeGameMode === 'mode1' ? m1CorrectCount : 0));
+  const streak = activeGameMode === 'mode2' ? m2Streak : (activeGameMode === 'mode3' ? m3Streak : (activeGameMode === 'mode1' ? m1Streak : 0));
 
-  if (score === 0) {
-    alert("Jogue pelo menos uma rodada antes de salvar sua pontuação!");
+  const validation = AntiCheatEngine.validateSubmission(rawNick, activeGameMode, score, correct, streak);
+  if (!validation.ok) {
+    if (window.AudioManager) AudioManager.playSfx('wrong');
+    showToast(`⚠️ ${validation.msg}`);
     return;
   }
 
-  const list = getLeaderboardData();
-  list.push({
+  const cleanNick = validation.cleanNick;
+  const badgeInfo = PrestigeBadges.getBadge({ score, correct, streak, mode: activeGameMode });
+
+  const entry = {
     id: Date.now(),
-    name: nick,
+    name: cleanNick,
     mode: activeGameMode,
     score: score,
     correct: correct,
     streak: streak,
-    date: new Date().toLocaleDateString('pt-BR')
-  });
+    badgeTitle: badgeInfo.title,
+    badgeIcon: badgeInfo.icon,
+    date: new Date().toLocaleDateString('pt-BR'),
+    timestamp: Date.now()
+  };
 
-  list.sort((a, b) => b.score - a.score);
-  saveLeaderboardData(list);
-  renderLeaderboardTable('all');
-  showToast("🎉 Recorde salvo com sucesso no Hall da Fama!");
+  if (window.AudioManager) AudioManager.playSfx('correct');
+  showToast("⏳ Salvando recorde no Hall da Fama...");
+
+  await CloudLeaderboard.submitScore(entry);
+
   if (nickInput) nickInput.value = '';
+  renderLeaderboardTable('all');
+  updateSaveScoreKPIs();
+  showToast(`🎉 Recorde salvo! ${cleanNick} conquistou: [${badgeInfo.icon} ${badgeInfo.title}]`);
 }
 
 function filterLeaderboard(mode, btnEl) {
@@ -7503,6 +8051,13 @@ function renderLeaderboardTable(filterMode = 'all') {
   if (!tbody) return;
   tbody.innerHTML = '';
 
+  if (filtered.length === 0) {
+    const tr = document.createElement('tr');
+    tr.innerHTML = `<td colspan="6" style="text-align: center; color: var(--text-muted); padding: 26px;">Nenhum recorde registrado nesta categoria ainda. Jogue e seja o primeiro!</td>`;
+    tbody.appendChild(tr);
+    return;
+  }
+
   filtered.slice(0, 50).forEach((item, idx) => {
     const tr = document.createElement('tr');
     let rankHtml = `<span class="rank-badge">${idx + 1}</span>`;
@@ -7511,27 +8066,101 @@ function renderLeaderboardTable(filterMode = 'all') {
     if (idx === 2) rankHtml = `<span class="rank-badge rank-3">🥉</span>`;
 
     let modeName = "Blind Test";
-    if (item.mode === 'mode2') modeName = "3 Músicas";
-    if (item.mode === 'mode3') modeName = "Adivinhe a Cena";
-    if (item.mode === 'multiplayer') modeName = "🎮 Multiplayer";
+    let modeIcon = "🎧";
+    if (item.mode === 'mode2') { modeName = "3 Músicas"; modeIcon = "🎵"; }
+    if (item.mode === 'mode3') { modeName = "Adivinhe a Cena"; modeIcon = "🖼️"; }
+    if (item.mode === 'multiplayer') { modeName = "Multiplayer"; modeIcon = "🎮"; }
+
+    const badge = PrestigeBadges.getBadge(item);
+    const sourceHtml = (item.source === 'cloud')
+      ? `<span class="source-chip" title="Recorde sincronizado da nuvem global">🌐 Global</span>`
+      : `<span class="source-chip" title="Recorde salvo neste dispositivo">💾 Local</span>`;
+
+    const streakTxt = (item.streak && Number(item.streak) > 1)
+      ? ` <span style="color: #f97316; font-size: 11px; font-weight: 700;">(🔥${item.streak}x)</span>`
+      : '';
 
     tr.innerHTML = `
       <td>${rankHtml}</td>
-      <td><strong>${escapeHtml(item.name)}</strong></td>
-      <td><span class="pill-chip">${modeName}</span></td>
-      <td><strong style="color: var(--gold);">${item.score}</strong></td>
-      <td>${item.correct} acertos</td>
-      <td style="color: var(--text-muted); font-size: 11px;">${item.date}</td>
+      <td>
+        <div class="player-cell">
+          <span class="player-name">${escapeHtml(item.name || 'Otaku')}</span>
+          <span class="prestige-badge ${badge.cssClass}" title="${escapeHtml(badge.tooltip)}">${badge.icon} ${escapeHtml(badge.title)}</span>
+          ${sourceHtml}
+        </div>
+      </td>
+      <td><span class="pill-chip">${modeIcon} ${modeName}</span></td>
+      <td><strong style="color: var(--gold); font-family: 'JetBrains Mono', monospace; font-size: 13.5px;">${item.score || 0}</strong></td>
+      <td>${item.correct || 0} acertos${streakTxt}</td>
+      <td style="color: var(--text-muted); font-size: 11px;">${item.date || 'Hoje'}</td>
     `;
     tbody.appendChild(tr);
   });
 }
 
+async function syncLeaderboardNow() {
+  if (window.AudioManager) AudioManager.playSfx('click');
+  const syncBtn = document.getElementById('btn-sync-leaderboard');
+  const icon = document.getElementById('sync-icon');
+  if (icon) icon.style.animation = 'dotSpin 0.8s infinite linear';
+  if (syncBtn) syncBtn.disabled = true;
+
+  showToast("🔄 Sincronizando com a Nuvem Global...");
+  await CloudLeaderboard.fetchScores();
+  renderLeaderboardTable('all');
+
+  if (icon) icon.style.animation = 'none';
+  if (syncBtn) syncBtn.disabled = false;
+  if (window.AudioManager) AudioManager.playSfx('hover');
+  showToast(CloudLeaderboard.isOnline ? "✅ Hall da Fama sincronizado com a Nuvem!" : "💾 Placar atualizado (Modo Local ativo)");
+}
+
+function openCloudConfigModal() {
+  if (window.AudioManager) AudioManager.playSfx('click');
+  const modal = document.getElementById('cloud-config-modal');
+  const input = document.getElementById('firebase-url-input');
+  if (input) {
+    input.value = CloudLeaderboard.getFirebaseUrl() || '';
+  }
+  if (modal) modal.style.display = 'flex';
+}
+
+function closeCloudConfigModal() {
+  if (window.AudioManager) AudioManager.playSfx('click');
+  const modal = document.getElementById('cloud-config-modal');
+  if (modal) modal.style.display = 'none';
+}
+
+async function saveCloudConfig() {
+  const input = document.getElementById('firebase-url-input');
+  const url = (input ? input.value : '').trim();
+  if (!url) {
+    disconnectCloud();
+    return;
+  }
+
+  showToast("⏳ Testando conexão com o Banco na Nuvem...");
+  CloudLeaderboard.setFirebaseUrl(url);
+  closeCloudConfigModal();
+
+  await syncLeaderboardNow();
+}
+
+function disconnectCloud() {
+  CloudLeaderboard.setFirebaseUrl('');
+  closeCloudConfigModal();
+  CloudLeaderboard.isOnline = false;
+  CloudLeaderboard.updateStatusBadge();
+  renderLeaderboardTable('all');
+  showToast("💾 Desconectado da Nuvem. Operando em Modo Local.");
+}
+
 function clearLeaderboard() {
-  if (confirm("Deseja realmente limpar todos os recordes do placar?")) {
+  if (confirm("Deseja realmente limpar os recordes salvos no seu dispositivo? (Os recordes na nuvem continuarão preservados)")) {
     localStorage.removeItem('AMQ_LEADERBOARD_V2');
+    CloudLeaderboard.cachedScores = CloudLeaderboard.getLocalScores();
     renderLeaderboardTable('all');
-    showToast("Placar resetado!");
+    showToast("Placar local resetado!");
   }
 }
 
@@ -7582,6 +8211,9 @@ window.addEventListener('DOMContentLoaded', () => {
   FloatingArcade.init();
   if (window.MultiplayerEngine) {
     MultiplayerEngine.init();
+  }
+  if (window.CloudLeaderboard) {
+    CloudLeaderboard.init();
   }
 
   // Prevenir perda acidental da sala se o usuário recarregar (F5) durante uma partida ativa
