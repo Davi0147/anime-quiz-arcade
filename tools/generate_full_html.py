@@ -772,16 +772,21 @@ html_template = """<!DOCTYPE html>
       gap: 8px;
       margin-bottom: 14px;
       position: relative;
+      width: 100%;
+      box-sizing: border-box;
     }
 
     .autocomplete-wrapper {
       position: relative;
       flex: 1;
+      min-width: 0;
       display: flex;
     }
 
     .quiz-input {
       width: 100%;
+      min-width: 0;
+      box-sizing: border-box;
       background: #090d1a;
       border: 2px solid #1e2640;
       border-radius: 12px;
@@ -1234,16 +1239,18 @@ html_template = """<!DOCTYPE html>
       position: relative;
       width: 100%;
       aspect-ratio: 16 / 9;
-      max-height: 200px;
-      background: #000;
+      min-height: 175px;
+      max-height: 240px;
+      background: #050811 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40"><path d="M0 40 L40 0 M0 0 L40 40" stroke="rgba(255,255,255,0.02)" stroke-width="1"/></svg>');
       border-radius: 14px;
       overflow: hidden;
       border: 2px solid var(--card-border);
-      margin-bottom: 10px;
+      margin-bottom: 8px;
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
       display: flex;
       align-items: center;
       justify-content: center;
+      box-sizing: border-box;
     }
 
     .scene-frame-img {
@@ -1251,6 +1258,7 @@ html_template = """<!DOCTYPE html>
       height: 100%;
       object-fit: cover;
       transition: transform 0.3s ease;
+      background: #020617;
     }
 
     .scene-cinema-bar {
@@ -1291,29 +1299,45 @@ html_template = """<!DOCTYPE html>
       display: flex;
       flex-direction: column;
       gap: 8px;
+      width: 100%;
+      box-sizing: border-box;
     }
 
     .scene-tags-row {
-      display: flex;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 6px;
-      min-height: 32px;
+      width: 100%;
+      box-sizing: border-box;
     }
 
     .scene-tag-badge {
       background: #11172a;
       border: 1px solid #222d4f;
       color: var(--text-muted);
-      padding: 5px 9px;
-      border-radius: 6px;
+      padding: 6px 10px;
+      border-radius: 8px;
       font-size: 11px;
       font-weight: 600;
       cursor: pointer;
       user-select: none;
       display: flex;
       align-items: center;
-      gap: 5px;
+      gap: 6px;
       transition: all 0.2s;
+      min-width: 0;
+      height: 38px;
+      box-sizing: border-box;
+      overflow: hidden;
+    }
+
+    .scene-tag-badge span,
+    .scene-tag-badge .tag-content {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      min-width: 0;
+      flex: 1;
     }
 
     .scene-tag-badge.locked {
@@ -1327,9 +1351,10 @@ html_template = """<!DOCTYPE html>
     }
 
     .m3-hint-btn {
-      padding: 5px 12px;
+      padding: 6px 12px;
       font-size: 11px;
       align-self: flex-start;
+      border-radius: 8px;
     }
 
     .m3-result-slot {
@@ -1372,8 +1397,19 @@ html_template = """<!DOCTYPE html>
     .m3-nav-row {
       margin-top: 8px;
       display: flex;
-      justify-content: space-between;
-      gap: 10px;
+      flex-wrap: wrap;
+      gap: 8px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .m3-nav-row .btn {
+      flex: 1 1 auto;
+      min-width: 100px;
+      padding: 8px 12px;
+      font-size: 12px;
+      white-space: nowrap;
+      text-align: center;
+      justify-content: center;
     }
 
     .lightbox-modal {
@@ -1750,19 +1786,21 @@ html_template = """<!DOCTYPE html>
       gap: 16px;
       align-items: flex-start;
       width: 100%;
+      box-sizing: border-box;
     }
     .gameplay-main-col {
       flex: 1;
       min-width: 0;
       width: 100%;
+      box-sizing: border-box;
     }
     .mp-live-sidebar {
-      width: 310px;
+      width: 270px;
       flex-shrink: 0;
       background: #0d1224;
       border: 1px solid #1e2640;
       border-radius: 16px;
-      padding: 14px;
+      padding: 12px;
       box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
       position: sticky;
       top: 16px;
@@ -1772,6 +1810,23 @@ html_template = """<!DOCTYPE html>
       display: flex;
       flex-direction: column;
       overflow: hidden;
+    }
+
+    @media (max-width: 1120px) {
+      .gameplay-wrapper {
+        flex-direction: column;
+        gap: 14px;
+      }
+      .mp-live-sidebar {
+        width: 100%;
+        position: static;
+        order: 2;
+      }
+      .mp-sidebar-list {
+        display: grid !important;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) !important;
+        gap: 8px !important;
+      }
     }
     .mp-sidebar-header {
       width: 100%;
@@ -2973,19 +3028,27 @@ img[src^="icons/"] {
    ============================================================== */
 .mode-split-grid {
   display: grid;
-  grid-template-columns: 1fr 1.15fr;
-  gap: 18px;
+  grid-template-columns: minmax(280px, 1fr) minmax(290px, 1.15fr);
+  gap: 16px;
   align-items: flex-start;
+  width: 100%;
+  box-sizing: border-box;
 }
 .mode-col-media {
   display: flex;
   flex-direction: column;
   gap: 12px;
+  min-width: 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 .mode-col-interactive {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  min-width: 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 .hints-section {
   display: flex;
@@ -3552,7 +3615,7 @@ img[src^="icons/"] {
         <div>
           <div style="display: flex; align-items: center; gap: 8px;">
             <h1 style="font-size: 16px; font-weight: 800; margin: 0; color: #fff;">Anime Music & Scene Quiz</h1>
-            <span class="version-badge" style="font-size: 10px; padding: 2px 8px;">🎮 v3.2.0 • Arcade</span>
+            <span class="version-badge" style="font-size: 10px; padding: 2px 8px;">🎮 v3.2.1 • Arcade</span>
           </div>
           <p class="subtitle" style="font-size: 11px; margin: 2px 0 0 0; color: var(--text-muted);">
             Desafio interativo com 129 aberturas e 127 cenas reais. Ouça as músicas e teste seus conhecimentos!
@@ -3909,7 +3972,7 @@ img[src^="icons/"] {
         <!-- Scene Viewport (Frames Reais de Episódios) -->
         <div class="scene-viewport" id="m3-scene-viewport">
           <div class="scene-cinema-bar top"></div>
-          <img id="m3-scene-img" class="scene-frame-img" src="" alt="Cena do Anime" />
+          <img id="m3-scene-img" class="scene-frame-img" src="" alt="Cena do Anime" referrerpolicy="no-referrer" loading="eager" />
           <div class="scene-cinema-bar bottom"></div>
           <button class="scene-zoom-trigger" onclick="openLightbox()">
             <img src="icons/search.png" class="app-icon icon-white" /> Ampliar Cena
@@ -6384,15 +6447,26 @@ function m3InitScene() {
     kpiProgress.textContent = `${m3RoundsPlayed} / ${isChallengeActive ? challengeRounds : ALL_SCENES.length}`;
   }
 
-  m3SceneImg.src = scene.image_url || 'https://via.placeholder.com/800x450?text=Cena+do+Anime';
+  m3SceneImg.onerror = function() {
+    console.warn("Fallback de imagem ativado para:", scene.anime, scene.image_url);
+    const songMatch = ALL_SONGS.find(s => s.anime.toLowerCase() === (scene.anime || '').toLowerCase());
+    const fallbackPoster = scene.poster_url || (songMatch ? songMatch.image_url : null);
+    if (fallbackPoster && this.src !== fallbackPoster) {
+      this.src = fallbackPoster;
+      return;
+    }
+    this.onerror = null;
+    this.src = 'https://media.kitsu.app/anime/poster_images/1/small.jpg';
+  };
+  m3SceneImg.src = scene.image_url || 'https://media.kitsu.app/anime/poster_images/1/small.jpg';
 
   // Render Hint Badges
   m3TagsRow.innerHTML = '';
   const hintBadges = [
-    { title: 'Ano', val: `<img src="icons/calendar.png" class="app-icon app-icon-xs icon-white" alt="Ano" /> ${scene.year}` },
-    { title: 'Gêneros', val: `<img src="icons/star.png" class="app-icon app-icon-xs icon-gold" alt="Gêneros" /> ${(scene.tags || []).slice(0, 2).join(' / ')}` },
-    { title: 'Detalhe', val: `<img src="icons/clapperboard.png" class="app-icon app-icon-xs icon-cyan" alt="Detalhe" /> ${(scene.tags || [])[2] || 'Ação / Animação'}` },
-    { title: 'Enredo', val: `<img src="icons/lightbulb.png" class="app-icon app-icon-xs icon-gold" alt="Enredo" /> ${scene.hint || 'Anime clássico e aclamado'}` }
+    { title: 'Ano', val: `<img src="icons/calendar.png" class="app-icon app-icon-xs icon-white" alt="Ano" /> <span>Ano: ${scene.year}</span>`, raw: `Ano: ${scene.year}` },
+    { title: 'Gêneros', val: `<img src="icons/star.png" class="app-icon app-icon-xs icon-gold" alt="Gêneros" /> <span>${(scene.tags || []).slice(0, 2).join(' / ')}</span>`, raw: (scene.tags || []).slice(0, 2).join(' / ') },
+    { title: 'Detalhe', val: `<img src="icons/clapperboard.png" class="app-icon app-icon-xs icon-cyan" alt="Detalhe" /> <span>${(scene.tags || [])[2] || 'Ação / Animação'}</span>`, raw: (scene.tags || [])[2] || 'Ação / Animação' },
+    { title: 'Enredo', val: `<img src="icons/lightbulb.png" class="app-icon app-icon-xs icon-gold" alt="Enredo" /> <span>${scene.hint || 'Anime clássico e aclamado'}</span>`, raw: scene.hint || 'Anime clássico e aclamado' }
   ];
 
   hintBadges.forEach((h, idx) => {
@@ -6400,7 +6474,9 @@ function m3InitScene() {
     b.className = 'scene-tag-badge locked';
     b.dataset.val = h.val;
     b.dataset.title = h.title;
-    b.innerHTML = `<img src="icons/padlock.png" class="app-icon app-icon-xs icon-white" alt="Bloqueado" /> ${h.title} (Oculto)`;
+    b.dataset.raw = h.raw;
+    b.title = `${h.title} (Bloqueado - clique para revelar)`;
+    b.innerHTML = `<img src="icons/padlock.png" class="app-icon app-icon-xs icon-white" alt="Bloqueado" /> <span>${h.title} (Oculto)</span>`;
     b.onclick = () => m3RevealTagBadge(b);
     m3TagsRow.appendChild(b);
   });
@@ -6411,6 +6487,7 @@ function m3RevealTagBadge(badgeEl) {
     badgeEl.classList.remove('locked');
     badgeEl.classList.add('revealed');
     badgeEl.innerHTML = badgeEl.dataset.val;
+    badgeEl.title = badgeEl.dataset.raw || '';
     m3HintsRevealed++;
     AudioManager.playSfx('hint');
   }
@@ -7174,6 +7251,14 @@ const MultiplayerEngine = {
       m3CurrentIndex = itemIdx % ALL_SCENES.length;
       m3RoundsPlayed = idx + 1;
       m3InitScene();
+      if (this.roundItems && this.roundItems[idx + 1] !== undefined) {
+        const nextScene = ALL_SCENES[this.roundItems[idx + 1] % ALL_SCENES.length];
+        if (nextScene && nextScene.image_url) {
+          const preImg = new Image();
+          preImg.referrerPolicy = 'no-referrer';
+          preImg.src = nextScene.image_url;
+        }
+      }
     }
 
     updateGlobalKPIs();
