@@ -1227,7 +1227,28 @@ html_template = """<!DOCTYPE html>
       font-size: 12px;
       border-color: rgba(239, 68, 68, 0.45);
       color: #fca5a5;
+      background: rgba(239, 68, 68, 0.08);
       white-space: nowrap;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      cursor: pointer;
+    }
+
+    .m2-actions #m2-btn-finish:hover,
+    #m3-btn-finish:hover,
+    .m1-nav-btn[onclick*="finishCurrentGame"]:hover {
+      background: rgba(239, 68, 68, 0.28) !important;
+      border-color: #ef4444 !important;
+      color: #ffffff !important;
+      box-shadow: 0 0 16px rgba(239, 68, 68, 0.65), 0 0 28px rgba(239, 68, 68, 0.25) !important;
+      transform: translateY(-2px);
+      filter: brightness(1.2);
+    }
+
+    .m2-actions #m2-btn-finish:active,
+    #m3-btn-finish:active,
+    .m1-nav-btn[onclick*="finishCurrentGame"]:active {
+      transform: translateY(1px);
+      box-shadow: 0 0 8px rgba(239, 68, 68, 0.4) !important;
     }
 
     .m2-feedback-banner {
@@ -3448,13 +3469,14 @@ img[src^="icons/"] {
 .settings-modal-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(5, 8, 16, 0.85);
-  backdrop-filter: blur(8px);
+  background: rgba(5, 8, 16, 0.86);
+  backdrop-filter: blur(3px);
   z-index: 99999;
   display: none;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  padding: 16px;
+  animation: fadeIn 0.15s ease;
 }
 .settings-modal-card {
   width: 100%;
@@ -3635,7 +3657,7 @@ img[src^="icons/"] {
         <div>
           <div style="display: flex; align-items: center; gap: 8px;">
             <h1 style="font-size: 16px; font-weight: 800; margin: 0; color: #fff;">Anime Music & Scene Quiz</h1>
-            <span class="version-badge" style="font-size: 10px; padding: 2px 8px;">🎮 v3.2.2 • Arcade</span>
+            <span class="version-badge" style="font-size: 10px; padding: 2px 8px;">🎮 v3.2.3 • Arcade</span>
           </div>
           <p class="subtitle" style="font-size: 11px; margin: 2px 0 0 0; color: var(--text-muted);">
             Desafio interativo com 129 aberturas e 127 cenas reais. Ouça as músicas e teste seus conhecimentos!
@@ -4361,39 +4383,12 @@ img[src^="icons/"] {
   </div>
 </div>
 
-<!-- MODAL DE CONFIRMAÇÃO PARA FINALIZAR PARTIDA (PREVINE CLIQUES ACIDENTAIS) -->
-<div class="settings-modal-overlay" id="confirm-finish-modal" style="display: none;" onclick="if(event.target===this)closeConfirmFinishModal()">
-  <div class="settings-modal-card" style="max-width: 440px; text-align: center; border-color: rgba(239, 68, 68, 0.45); box-shadow: 0 0 30px rgba(239, 68, 68, 0.15);">
-    <div style="font-size: 36px; line-height: 1; margin-bottom: 6px;">🏁</div>
-    <h2 style="font-size: 20px; font-weight: 800; color: #fff; margin-bottom: 4px;">Finalizar Partida Agora?</h2>
-    <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 14px;">
-      Deseja encerrar para salvar seu recorde no Hall da Fama ou prefere continuar jogando?
-    </p>
-
-    <!-- Resumo da Pontuação Atual em Destaque -->
-    <div style="background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 14px; margin-bottom: 16px;">
-      <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted);">Sua Pontuação Atual</div>
-      <div style="font-size: 28px; font-weight: 800; color: var(--gold); margin: 4px 0;" id="cfm-score-val">0 pts</div>
-      <div style="font-size: 12px; color: #94a3b8;" id="cfm-stats-meta">0 acertos • Combo 0x</div>
-    </div>
-
-    <div style="display: flex; gap: 10px; justify-content: center;">
-      <button class="btn btn-green" style="flex: 1.3; padding: 10px; font-size: 13px;" onclick="closeConfirmFinishModal()">
-        ▶️ Continuar Jogando
-      </button>
-      <button class="btn btn-outline" style="flex: 1; padding: 10px; font-size: 12px; border-color: rgba(239, 68, 68, 0.5); color: #fca5a5;" onclick="confirmAndFinishGame()">
-        🏁 Sim, Finalizar
-      </button>
-    </div>
-  </div>
-</div>
-
 <!-- MODAL UNIVERSAL DE FIM DE PARTIDA & SALVAR NO HALL DA FAMA -->
 <div class="settings-modal-overlay" id="game-over-modal" style="display: none;" onclick="if(event.target===this)closeGameOverModal()">
-  <div class="settings-modal-card game-over-modal-card" style="max-width: 490px; text-align: center;">
+  <div class="settings-modal-card game-over-modal-card" style="max-width: 480px; text-align: center;">
     <div class="game-over-header" style="margin-bottom: 12px;">
-      <div style="font-size: 38px; line-height: 1;">🏆</div>
-      <h2 style="font-size: 21px; font-weight: 800; color: #fff; margin-top: 6px;">Partida Concluída!</h2>
+      <div style="font-size: 34px; line-height: 1;">🏆</div>
+      <h2 style="font-size: 21px; font-weight: 800; color: #fff; margin-top: 4px;">Partida Concluída!</h2>
       <p style="font-size: 12px; color: var(--text-muted); margin-top: 2px;" id="game-over-subtitle">
         Veja seu resultado e registre seu nome no Hall da Fama Mundial.
       </p>
@@ -4444,13 +4439,16 @@ img[src^="icons/"] {
       </div>
     </div>
 
-    <!-- Ações -->
-    <div style="display: flex; gap: 10px; justify-content: center; margin-top: 18px;">
-      <button class="btn btn-outline" style="flex: 1; padding: 10px; font-size: 12px; border-radius: 10px;" onclick="closeGameOverModal()">
-        Não Salvar (Cancelar)
+    <!-- Ações Claras e Objetivas -->
+    <div style="display: flex; gap: 8px; justify-content: center; margin-top: 16px; flex-wrap: wrap;">
+      <button class="btn btn-outline" style="flex: 1; padding: 10px 12px; font-size: 11px; border-radius: 10px;" onclick="closeGameOverModal()" title="Voltar ao jogo mantendo a pontuação atual">
+        ▶️ Voltar ao Jogo
       </button>
-      <button class="btn btn-green" id="go-save-btn" style="flex: 1.5; padding: 10px; font-size: 12px; border-radius: 10px; opacity: 0.45; pointer-events: none;" onclick="submitGameOverScore()">
-        💾 Salvar no Ranking Global
+      <button class="btn btn-outline" style="flex: 1.1; padding: 10px 12px; font-size: 11px; border-radius: 10px; border-color: rgba(239, 68, 68, 0.45); color: #fca5a5;" onclick="discardSessionAndReset()" title="Zerar pontuação atual e começar novo jogo">
+        🗑️ Não Salvar (Zerar)
+      </button>
+      <button class="btn btn-green" id="go-save-btn" style="flex: 1.4; padding: 10px 14px; font-size: 12px; border-radius: 10px; opacity: 0.45; pointer-events: none;" onclick="submitGameOverScore()">
+        💾 Salvar no Ranking
       </button>
     </div>
   </div>
@@ -8138,7 +8136,6 @@ function openGameOverModal(mode, score, correct, streak, defaultNick = '') {
   const modal = document.getElementById('game-over-modal');
   if (modal) modal.style.display = 'flex';
   if (window.AudioManager) AudioManager.playSfx('combo');
-  if (window.ConfettiEngine) ConfettiEngine.burst();
 }
 
 function closeGameOverModal() {
@@ -8221,12 +8218,44 @@ async function submitGameOverScore() {
   if (window.ConfettiEngine) ConfettiEngine.burst();
   if (window.AudioManager) AudioManager.playSfx('correct');
 
+  resetModeSession(mode);
+
   switchGameMode('mode5');
   renderLeaderboardTable('all');
   showToast(`🎉 Parabéns ${entry.name}! Seu recorde de ${entry.score} pts foi salvo no Top 50!`);
 }
 
-let pendingFinishData = null;
+function resetModeSession(mode = activeGameMode) {
+  if (mode === 'mode1') {
+    m1Score = 0;
+    m1CorrectCount = 0;
+    m1Streak = 0;
+    m1Attempts = 0;
+    m1PlaylistIndex = 0;
+    m1Playlist = [];
+    m1LoadSong(true);
+  } else if (mode === 'mode2') {
+    m2Score = 0;
+    m2CorrectCount = 0;
+    m2Streak = 0;
+    m2RoundsPlayed = 0;
+    m2StartGame();
+  } else if (mode === 'mode3') {
+    m3Score = 0;
+    m3CorrectCount = 0;
+    m3Streak = 0;
+    m3RoundsPlayed = 0;
+    m3StartGame();
+  }
+  updateGlobalKPIs();
+}
+
+function discardSessionAndReset() {
+  const mode = currentGameOverData.mode || activeGameMode;
+  closeGameOverModal();
+  resetModeSession(mode);
+  showToast("🔄 Sessão reiniciada! Pontuação zerada para um novo jogo.");
+}
 
 function finishCurrentGame(mode = activeGameMode) {
   const score = (mode === 'mode2') ? m2Score : ((mode === 'mode3') ? m3Score : m1Score);
@@ -8239,38 +8268,6 @@ function finishCurrentGame(mode = activeGameMode) {
     return;
   }
 
-  pendingFinishData = { mode, score, correct, streak };
-
-  const modal = document.getElementById('confirm-finish-modal');
-  const scoreEl = document.getElementById('cfm-score-val');
-  const metaEl = document.getElementById('cfm-stats-meta');
-
-  if (scoreEl) scoreEl.textContent = `${score} pts`;
-  if (metaEl) metaEl.textContent = `${correct} acerto(s) • Maior Combo: ${streak}x`;
-
-  if (modal) {
-    if (window.AudioManager) AudioManager.playSfx('click');
-    modal.style.display = 'flex';
-  } else {
-    const cfm = confirm(`Deseja realmente finalizar a partida agora?\n\n⭐ Pontuação Atual: ${score} pts (${correct} acertos, combo ${streak}x)\n\nClique em OK para encerrar e registrar no Hall da Fama, ou Cancelar para continuar jogando.`);
-    if (cfm) {
-      stopAllMedia();
-      openGameOverModal(mode, score, correct, streak);
-    }
-  }
-}
-
-function closeConfirmFinishModal() {
-  if (window.AudioManager) AudioManager.playSfx('click');
-  const modal = document.getElementById('confirm-finish-modal');
-  if (modal) modal.style.display = 'none';
-  pendingFinishData = null;
-}
-
-function confirmAndFinishGame() {
-  if (!pendingFinishData) return;
-  const { mode, score, correct, streak } = pendingFinishData;
-  closeConfirmFinishModal();
   stopAllMedia();
   openGameOverModal(mode, score, correct, streak);
 }
