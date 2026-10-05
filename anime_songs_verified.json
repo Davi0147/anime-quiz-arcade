@@ -1,0 +1,3119 @@
+[
+  {
+    "id": 1,
+    "anime": "Neon Genesis Evangelion",
+    "song": "A Cruel Angel's Thesis",
+    "artist": "Yoko Takahashi",
+    "year": 1995,
+    "era": "classicos",
+    "diff": "⭐ Fácil",
+    "tags": [
+      "Mecha",
+      "Psicológico",
+      "Anjos & Evas",
+      "Estúdio Gainax",
+      "Anos 90"
+    ],
+    "synonyms": [
+      "evangelion",
+      "neon genesis evangelion",
+      "eva",
+      "shin seiki evangelion"
+    ],
+    "video_id": "nU21rCWkuJw",
+    "video_url": "https://www.youtube.com/watch?v=nU21rCWkuJw",
+    "hint": "Mecha / Psicológico / Anjos & Evas",
+    "image_url": "https://media.kitsu.app/anime/21/poster_image/large-9a3a9086a1b563e9e72d510118eb7d3c.jpeg"
+  },
+  {
+    "id": 2,
+    "anime": "Cowboy Bebop",
+    "song": "Tank!",
+    "artist": "The Seatbelts",
+    "year": 1998,
+    "era": "classicos",
+    "diff": "⭐ Fácil",
+    "tags": [
+      "Ficção Científica",
+      "Jazz / Noir",
+      "Caçadores de Recompensa",
+      "Estúdio Sunrise",
+      "Espaço"
+    ],
+    "synonyms": [
+      "cowboy bebop",
+      "bebop"
+    ],
+    "video_id": "EL-D9LrFJd4",
+    "video_url": "https://www.youtube.com/watch?v=EL-D9LrFJd4",
+    "hint": "Ficção Científica / Jazz / Noir / Caçadores de Recompensa",
+    "image_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx1-GCsPm7waJ4kS.png"
+  },
+  {
+    "id": 3,
+    "anime": "Digimon Adventure",
+    "song": "Butter-Fly",
+    "artist": "Koji Wada",
+    "year": 1999,
+    "era": "classicos",
+    "diff": "⭐ Fácil",
+    "tags": [
+      "Monstros Digitais",
+      "Digiescolhidos",
+      "Agumon",
+      "Nostalgia",
+      "Toei Animation"
+    ],
+    "synonyms": [
+      "digimon",
+      "digimon adventure",
+      "digimon 1"
+    ],
+    "video_id": "0SMfWmEf8Wo",
+    "video_url": "https://www.youtube.com/watch?v=0SMfWmEf8Wo",
+    "hint": "Monstros Digitais / Digiescolhidos / Agumon",
+    "image_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx552-zad0ts5hylQJ.jpg"
+  },
+  {
+    "id": 4,
+    "anime": "One Piece",
+    "song": "We Are!",
+    "artist": "Hiroshi Kitadani",
+    "year": 1999,
+    "era": "classicos",
+    "diff": "⭐ Fácil",
+    "tags": [
+      "Piratas",
+      "Shounen",
+      "Akuma no Mi",
+      "Luffy",
+      "Toei Animation"
+    ],
+    "synonyms": [
+      "one piece",
+      "op",
+      "wan pisu"
+    ],
+    "video_id": "y9B_cgqM-kA",
+    "video_url": "https://www.youtube.com/watch?v=y9B_cgqM-kA",
+    "hint": "Piratas / Shounen / Akuma no Mi",
+    "image_url": "https://media.kitsu.app/anime/poster_images/12/large.jpg"
+  },
+  {
+    "id": 5,
+    "anime": "InuYasha",
+    "song": "Change the World",
+    "artist": "V6",
+    "year": 2000,
+    "era": "classicos",
+    "diff": "⭐⭐ Média",
+    "tags": [
+      "Shounen",
+      "Fantasia Feudal",
+      "Youkai / Meio-Demônio",
+      "Joia de Quatro Almas",
+      "Estúdio Sunrise"
+    ],
+    "synonyms": [
+      "inuyasha",
+      "inu yasha",
+      "inu-yasha"
+    ],
+    "video_id": "tkNfLYr-MyM",
+    "video_url": "https://www.youtube.com/watch?v=tkNfLYr-MyM",
+    "hint": "Ação / Fantasia Feudal / Youkai",
+    "image_url": "https://media.kitsu.app/anime/poster_images/224/large.jpg"
+  },
+  {
+    "id": 6,
+    "anime": "Digimon Tamers",
+    "song": "The Biggest Dreamer",
+    "artist": "Koji Wada",
+    "year": 2001,
+    "era": "classicos",
+    "diff": "⭐⭐⭐ Difícil",
+    "tags": [
+      "Monstros Digitais",
+      "Cartas & Digivoluções",
+      "Guilmon",
+      "Mundo Real vs Digital",
+      "Toei Animation"
+    ],
+    "synonyms": [
+      "digimon tamers",
+      "digimon 3",
+      "digimon tamer"
+    ],
+    "video_id": "V_SgzFm2llk",
+    "video_url": "https://www.youtube.com/watch?v=V_SgzFm2llk",
+    "hint": "Aventura / Monstros Digitais",
+    "image_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx874-3uug3PiSeyf7.jpg"
+  },
+  {
+    "id": 7,
+    "anime": "Shaman King",
+    "song": "Over Soul",
+    "artist": "Megumi Hayashibara",
+    "year": 2001,
+    "era": "classicos",
+    "diff": "⭐⭐⭐ Difícil",
+    "tags": [
+      "Xamanismo",
+      "Espíritos Guardiões",
+      "Torneio Xamã",
+      "Yoh Asakura",
+      "Estúdio Xebec"
+    ],
+    "synonyms": [
+      "shaman king",
+      "o rei dos xamas",
+      "rei dos xamas"
+    ],
+    "video_id": "231NHU1cInw",
+    "video_url": "https://www.youtube.com/watch?v=231NHU1cInw",
+    "hint": "Ação / Sobrenatural / Espíritos Guardiões",
+    "image_url": "https://media.kitsu.app/anime/poster_images/132/large.jpg"
+  },
+  {
+    "id": 8,
+    "anime": "Naruto",
+    "song": "Haruka Kanata",
+    "artist": "Asian Kung-Fu Generation",
+    "year": 2002,
+    "era": "classicos",
+    "diff": "⭐ Fácil",
+    "tags": [
+      "Ninjas / Shinobi",
+      "Exame Chuunin",
+      "Floresta da Morte",
+      "Konoha",
+      "Studio Pierrot"
+    ],
+    "synonyms": [
+      "naruto",
+      "naruto classico",
+      "naruto shonen"
+    ],
+    "video_id": "RiQrbSuLrsU",
+    "video_url": "https://www.youtube.com/watch?v=RiQrbSuLrsU",
+    "hint": "Ação / Ninjas / Exame Chuunin",
+    "image_url": "https://media.kitsu.app/anime/poster_images/1555/large.jpg"
+  },
+  {
+    "id": 9,
+    "anime": "Fullmetal Alchemist",
+    "song": "Melissa",
+    "artist": "Porno Graffitti",
+    "year": 2003,
+    "era": "classicos",
+    "diff": "⭐⭐ Média",
+    "tags": [
+      "Alquimia",
+      "Irmãos Elric",
+      "Braço de Metal",
+      "Pedra Filosofal",
+      "Estúdio Bones"
+    ],
+    "synonyms": [
+      "fullmetal alchemist",
+      "fullmetal",
+      "fma",
+      "fma 2003",
+      "hagane no renkinjutsushi"
+    ],
+    "video_id": "1HOhxibhCWg",
+    "video_url": "https://www.youtube.com/watch?v=1HOhxibhCWg",
+    "hint": "Fantasia / Alquimia / Irmãos Elric",
+    "image_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx121-zjmixZ428Mwv.png"
+  },
+  {
+    "id": 10,
+    "anime": "Bleach",
+    "song": "~Asterisk~",
+    "artist": "ORANGE RANGE",
+    "year": 2004,
+    "era": "classicos",
+    "diff": "⭐ Fácil",
+    "tags": [
+      "Shinigami / Ceifeiros",
+      "Espadas Zanpakutou",
+      "Hollows",
+      "Ichigo Kurosaki",
+      "Studio Pierrot"
+    ],
+    "synonyms": [
+      "bleach",
+      "burichi"
+    ],
+    "video_id": "wW9TwZdWpjw",
+    "video_url": "https://www.youtube.com/watch?v=wW9TwZdWpjw",
+    "hint": "Ação / Shinigami / Espadas e Hollows",
+    "image_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx269-d2GmRkJbMopq.png"
+  },
+  {
+    "id": 11,
+    "anime": "Naruto",
+    "song": "GO!!!",
+    "artist": "FLOW",
+    "year": 2004,
+    "era": "classicos",
+    "diff": "⭐ Fácil",
+    "tags": [
+      "Ninjas",
+      "We Are Fighting Dreamers",
+      "Vale do Fim",
+      "Sasuke & Naruto",
+      "Studio Pierrot"
+    ],
+    "synonyms": [
+      "naruto",
+      "naruto classico"
+    ],
+    "video_id": "GBE1VkrL8b0",
+    "video_url": "https://www.youtube.com/watch?v=GBE1VkrL8b0",
+    "hint": "Ação / Ninjas / We Are Fighting Dreamers",
+    "image_url": "https://media.kitsu.app/anime/poster_images/1555/large.jpg"
+  },
+  {
+    "id": 12,
+    "anime": "Code Geass: Lelouch of the Rebellion",
+    "song": "COLORS",
+    "artist": "FLOW",
+    "year": 2006,
+    "era": "ouro",
+    "diff": "⭐⭐ Média",
+    "tags": [
+      "Mecha / Robôs",
+      "Estratégia Militar",
+      "Olho do Geass",
+      "Lelouch / Zero",
+      "Estúdio Sunrise"
+    ],
+    "synonyms": [
+      "code geass",
+      "code geass lelouch of the rebellion",
+      "lelouch of the rebellion"
+    ],
+    "video_id": "G8CFuZ9MseQ",
+    "video_url": "https://www.youtube.com/watch?v=G8CFuZ9MseQ",
+    "hint": "Mecha / Estratégia / Rebelião e Poder Absoluto",
+    "image_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx1575-hsmWM2ydNm1m.jpg"
+  },
+  {
+    "id": 13,
+    "anime": "Death Note",
+    "song": "the WORLD",
+    "artist": "Nightmare",
+    "year": 2006,
+    "era": "ouro",
+    "diff": "⭐ Fácil",
+    "tags": [
+      "Suspense Psicológico",
+      "Caderno da Morte",
+      "Shinigami Ryuk",
+      "Light vs L",
+      "Estúdio Madhouse"
+    ],
+    "synonyms": [
+      "death note",
+      "caderno da morte",
+      "deathnote"
+    ],
+    "video_id": "D7MMMNTQ7H0",
+    "video_url": "https://www.youtube.com/watch?v=D7MMMNTQ7H0",
+    "hint": "Suspense / Caderno da Morte / Shinigami",
+    "image_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx1535-kUgkcrfOrkUM.jpg"
+  },
+  {
+    "id": 14,
+    "anime": "Fate/stay night",
+    "song": "Disillusion",
+    "artist": "Sachi Tainaka",
+    "year": 2006,
+    "era": "ouro",
+    "diff": "⭐⭐⭐ Difícil",
+    "tags": [
+      "Guerra do Santo Graal",
+      "Mestres & Servos",
+      "Saber / Excalibur",
+      "Magia Urbana",
+      "Studio Deen"
+    ],
+    "synonyms": [
+      "fate stay night",
+      "fate/stay night",
+      "fate",
+      "fate 2006"
+    ],
+    "video_id": "Qy7Q77ZD_ME",
+    "video_url": "https://www.youtube.com/watch?v=Qy7Q77ZD_ME",
+    "hint": "Fantasia Urbana / Guerra do Santo Graal / Servants",
+    "image_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx356-mTpMvtillumS.png"
+  },
+  {
+    "id": 15,
+    "anime": "Tengen Toppa Gurren Lagann",
+    "song": "Sorairo Days",
+    "artist": "Shoko Nakagawa",
+    "year": 2007,
+    "era": "ouro",
+    "diff": "⭐⭐ Média",
+    "tags": [
+      "Mecha Épico",
+      "Brocas Gigantes",
+      "Kamina & Simon",
+      "Perfurar os Céus",
+      "Estúdio Gainax"
+    ],
+    "synonyms": [
+      "tengen toppa gurren lagann",
+      "gurren lagann",
+      "ttgl"
+    ],
+    "video_id": "PKRUKalbx3s",
+    "video_url": "https://www.youtube.com/watch?v=PKRUKalbx3s",
+    "hint": "Mecha / Brocas que perfuram os céus",
+    "image_url": "https://media.kitsu.app/anime/poster_images/1801/large.jpg"
+  },
+  {
+    "id": 16,
+    "anime": "Naruto Shippuden",
+    "song": "Blue Bird",
+    "artist": "Ikimonogakari",
+    "year": 2008,
+    "era": "ouro",
+    "diff": "⭐ Fácil",
+    "tags": [
+      "Ninjas",
+      "Habataitara",
+      "Akatsuki",
+      "Konoha",
+      "Studio Pierrot"
+    ],
+    "synonyms": [
+      "naruto shippuden",
+      "naruto shippuuden",
+      "naruto"
+    ],
+    "video_id": "2upuBiEiXDk",
+    "video_url": "https://www.youtube.com/watch?v=2upuBiEiXDk",
+    "hint": "Ação / Habataitara modoranai to itte",
+    "image_url": "https://media.kitsu.app/anime/poster_images/1555/large.jpg"
+  },
+  {
+    "anime": "Rosario + Vampire",
+    "song": "DISCOTHEQUE",
+    "artist": "Nana Mizuki",
+    "year": 2008,
+    "era": "ouro",
+    "diff": "⭐ Fácil",
+    "tags": [
+      "Harém",
+      "Ecchi",
+      "Vampira & Monstros",
+      "Moka Akashiya",
+      "Gonzo"
+    ],
+    "synonyms": [
+      "rosario vampire",
+      "rosario to vampire",
+      "rosario + vampire capu2",
+      "rosario"
+    ],
+    "q": "Rosario Vampire Capu2 opening DISCOTHEQUE Nana Mizuki official",
+    "video_id": "o2L-4b0Q6Zg",
+    "video_url": "https://www.youtube.com/watch?v=o2L-4b0Q6Zg",
+    "video_title": "[4K] Rosario+Vampire OP2 - Discotheque by 水樹奈々",
+    "id": 17,
+    "image_url": "https://media.kitsu.app/anime/poster_images/2706/large.jpg"
+  },
+  {
+    "id": 18,
+    "anime": "Soul Eater",
+    "song": "Resonance",
+    "artist": "T.M.Revolution",
+    "year": 2008,
+    "era": "ouro",
+    "diff": "⭐⭐ Média",
+    "tags": [
+      "Armas & Artífices",
+      "Academia DWMA",
+      "Gadanha Mortal",
+      "Maka & Soul",
+      "Estúdio Bones"
+    ],
+    "synonyms": [
+      "soul eater",
+      "souleater"
+    ],
+    "video_id": "zzJ8U8OtEsE",
+    "video_url": "https://www.youtube.com/watch?v=zzJ8U8OtEsE",
+    "hint": "Ação / Armas Humanas e Artesãos de Almas",
+    "image_url": "https://media.kitsu.app/anime/poster_images/3128/large.jpg"
+  },
+  {
+    "id": 19,
+    "anime": "Toradora!",
+    "song": "Pre-Parade",
+    "artist": "Rie Kugimiya, Eri Kitamura, Yui Horie",
+    "year": 2008,
+    "era": "ouro",
+    "diff": "⭐⭐⭐ Difícil",
+    "tags": [
+      "Romance Escolar",
+      "Comédia",
+      "Tigresa de Bolso",
+      "Taiga & Ryuuji",
+      "J.C.Staff"
+    ],
+    "synonyms": [
+      "toradora",
+      "toradora!"
+    ],
+    "video_id": "CzOEMJSQRZU",
+    "video_url": "https://www.youtube.com/watch?v=CzOEMJSQRZU",
+    "hint": "Romance / Comédia / Tigresa de Bolso",
+    "image_url": "https://media.kitsu.app/anime/poster_images/3532/large.jpg"
+  },
+  {
+    "id": 20,
+    "anime": "Bakemonogatari",
+    "song": "Renai Circulation",
+    "artist": "Kana Hanazawa",
+    "year": 2009,
+    "era": "ouro",
+    "diff": "⭐⭐ Média",
+    "tags": [
+      "Sobrenatural",
+      "Vampiros & Maldições",
+      "Renai Circulation",
+      "Araragi & Nadeko",
+      "Estúdio Shaft"
+    ],
+    "synonyms": [
+      "bakemonogatari",
+      "monogatari",
+      "monogatari series"
+    ],
+    "video_id": "jQ6gPyYNgPo",
+    "video_url": "https://www.youtube.com/watch?v=jQ6gPyYNgPo",
+    "hint": "Sobrenatural / Se~no / Aparições",
+    "image_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx5081-9GocceQ5Z865.jpg"
+  },
+  {
+    "id": 21,
+    "anime": "Fairy Tail",
+    "song": "Snow Fairy",
+    "artist": "FUNKIST",
+    "year": 2009,
+    "era": "ouro",
+    "diff": "⭐⭐ Média",
+    "tags": [
+      "Guilda de Magos",
+      "Dragon Slayer de Fogo",
+      "Natsu & Happy",
+      "Magia",
+      "A-1 Pictures"
+    ],
+    "synonyms": [
+      "fairy tail",
+      "fairytail"
+    ],
+    "video_id": "SC6s6ATi90s",
+    "video_url": "https://www.youtube.com/watch?v=SC6s6ATi90s",
+    "hint": "Magia / Guilda / Dragon Slayer de Fogo",
+    "image_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b6702-KI4qgSMyI8Pm.png"
+  },
+  {
+    "id": 22,
+    "anime": "Fullmetal Alchemist: Brotherhood",
+    "song": "Again",
+    "artist": "YUI",
+    "year": 2009,
+    "era": "ouro",
+    "diff": "⭐ Fácil",
+    "tags": [
+      "Alquimia",
+      "Irmãos Elric",
+      "Homúnculos",
+      "Amestris",
+      "Estúdio Bones"
+    ],
+    "synonyms": [
+      "fullmetal alchemist brotherhood",
+      "fullmetal alchemist",
+      "fmab",
+      "fma brotherhood",
+      "fma"
+    ],
+    "video_id": "elyXcwunIYA",
+    "video_url": "https://www.youtube.com/watch?v=elyXcwunIYA",
+    "hint": "Aventura / Transmutações / Homúnculos",
+    "image_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx5114-nSWCgQlmOMtj.jpg"
+  },
+  {
+    "anime": "Sora no Otoshimono",
+    "song": "Ring My Bell",
+    "artist": "blue drops",
+    "year": 2009,
+    "era": "ouro",
+    "diff": "⭐⭐ Média",
+    "tags": [
+      "Harém / Ecchi",
+      "Anjo Artificial (Angeloid)",
+      "Ikaros",
+      "Comédia / Romance",
+      "AIC A.S.T.A."
+    ],
+    "synonyms": [
+      "sora no otoshimono",
+      "heavens lost property",
+      "heaven's lost property"
+    ],
+    "q": "Sora no Otoshimono opening Ring My Bell",
+    "video_id": "Obwi3vSuxa4",
+    "video_url": "https://www.youtube.com/watch?v=Obwi3vSuxa4",
+    "video_title": "SORA NO OTOSHIMONO OPENING 1 SEASON 1 RING MY BELL BLUE DROPS",
+    "id": 23,
+    "image_url": "https://media.kitsu.app/anime/poster_images/4363/large.jpg"
+  },
+  {
+    "id": 24,
+    "anime": "Bleach",
+    "song": "Ranbu no Melody",
+    "artist": "SID",
+    "year": 2010,
+    "era": "ouro",
+    "diff": "⭐⭐ Média",
+    "tags": [
+      "Shounen",
+      "Shinigami",
+      "Batalha de Karakura",
+      "Ichigo vs Aizen",
+      "Studio Pierrot"
+    ],
+    "synonyms": [
+      "bleach",
+      "burichi"
+    ],
+    "video_id": "5emM3JGI5JA",
+    "video_url": "https://www.youtube.com/watch?v=5emM3JGI5JA",
+    "hint": "Shounen / Shinigami / Batalha de Karakura",
+    "image_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx269-d2GmRkJbMopq.png"
+  },
+  {
+    "id": 25,
+    "anime": "Durarara!!",
+    "song": "Uragiri no Yuuyake",
+    "artist": "THEATRE BROOK",
+    "year": 2010,
+    "era": "ouro",
+    "diff": "⭐⭐ Média",
+    "tags": [
+      "Mistério Urbano",
+      "Ikebukuro",
+      "Motoqueira Sem Cabeça",
+      "Gangue Dollars",
+      "Brain's Base"
+    ],
+    "synonyms": [
+      "durarara",
+      "durarara!!",
+      "drrr"
+    ],
+    "video_id": "oikvju7vAg4",
+    "video_url": "https://www.youtube.com/watch?v=oikvju7vAg4",
+    "hint": "Mistério / Ikebukuro / Motoqueiro Sem Cabeça e Gangue dos Dollars",
+    "image_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx6746-3LTwM95Uqeoa.png"
+  },
+  {
+    "anime": "Highschool of the Dead",
+    "song": "HIGHSCHOOL OF THE DEAD",
+    "artist": "Kishida Kyoudan & THE Akeboshi Rockets",
+    "year": 2010,
+    "era": "ouro",
+    "diff": "⭐ Fácil",
+    "tags": [
+      "Ecchi / Sobrevivência",
+      "Zumbis no Colégio",
+      "Armas & Ação",
+      "Estúdio Madhouse",
+      "Apocalipse"
+    ],
+    "synonyms": [
+      "highschool of the dead",
+      "hotd",
+      "high school of the dead",
+      "escola dos mortos"
+    ],
+    "q": "Highschool of the Dead opening Kishida Kyoudan",
+    "video_id": "H0mCytVZQiY",
+    "video_url": "https://www.youtube.com/watch?v=H0mCytVZQiY",
+    "video_title": "HIGHSCHOOL OF THE DEAD - Kishida Kyoudan",
+    "id": 26,
+    "image_url": "https://media.kitsu.app/anime/poster_images/5187/large.jpg"
+  },
+  {
+    "id": 27,
+    "anime": "Fate/Zero",
+    "song": "oath sign",
+    "artist": "LiSA",
+    "year": 2011,
+    "era": "moderna",
+    "diff": "⭐⭐⭐ Difícil",
+    "tags": [
+      "Guerra do Santo Graal",
+      "Assassino de Magos",
+      "Kiritsugu",
+      "Tragédia Épica",
+      "ufotable"
+    ],
+    "synonyms": [
+      "fate zero",
+      "fate/zero"
+    ],
+    "video_id": "gCnCFtbY0ZI",
+    "video_url": "https://www.youtube.com/watch?v=gCnCFtbY0ZI",
+    "hint": "Guerra do Santo Graal / Trágico / Saber e Kiritsugu",
+    "image_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx10087-M4Hd9qrHGrXk.png"
+  },
+  {
+    "id": 28,
+    "anime": "Hunter x Hunter",
+    "song": "departure!",
+    "artist": "Masatoshi Ono",
+    "year": 2011,
+    "era": "moderna",
+    "diff": "⭐ Fácil",
+    "tags": [
+      "Exame Hunter",
+      "Energia Nen",
+      "Gon & Killua",
+      "You can smile again!",
+      "Estúdio Madhouse"
+    ],
+    "synonyms": [
+      "hunter x hunter",
+      "hunter hunter",
+      "hxh",
+      "hunter x hunter 2011"
+    ],
+    "video_id": "faqmNf_fZlE",
+    "video_url": "https://www.youtube.com/watch?v=faqmNf_fZlE",
+    "hint": "Aventura / Exame Hunter / Nen",
+    "image_url": "https://media.kitsu.app/anime/poster_images/6448/large.jpg"
+  },
+  {
+    "anime": "IS: Infinite Stratos",
+    "song": "STRAIGHT JET",
+    "artist": "Minami Kuribayashi",
+    "year": 2011,
+    "era": "moderna",
+    "diff": "⭐⭐ Média",
+    "tags": [
+      "Harém / Mecha",
+      "Armaduras Voadoras",
+      "Ichika Orimura",
+      "Academia Feminina",
+      "8bit"
+    ],
+    "synonyms": [
+      "infinite stratos",
+      "is infinite stratos",
+      "is"
+    ],
+    "q": "Infinite Stratos opening STRAIGHT JET",
+    "video_id": "u1u5wxPrSxU",
+    "video_url": "https://www.youtube.com/watch?v=u1u5wxPrSxU",
+    "video_title": "〖IS〗 Infinite Stratos Opening 1 インフィニット·ストラトスフルストレートジェット AMV",
+    "id": 29,
+    "image_url": "https://media.kitsu.app/anime/poster_images/5583/large.jpg"
+  },
+  {
+    "id": 30,
+    "anime": "Steins;Gate",
+    "song": "Hacking to the Gate",
+    "artist": "Kanako Itou",
+    "year": 2011,
+    "era": "moderna",
+    "diff": "⭐⭐ Média",
+    "tags": [
+      "Ficção Científica",
+      "Viagem no Tempo",
+      "Cientista Louco",
+      "Okabe & Kurisu",
+      "White Fox"
+    ],
+    "synonyms": [
+      "steins gate",
+      "steins;gate",
+      "steinsgate"
+    ],
+    "video_id": "ZGM90Bo3zH0",
+    "video_url": "https://www.youtube.com/watch?v=ZGM90Bo3zH0",
+    "hint": "Ficção Científica / Linhas temporais / Micro-ondas telefone",
+    "image_url": "https://media.kitsu.app/anime/poster_images/5646/large.jpg"
+  },
+  {
+    "anime": "High School DxD",
+    "song": "Trip -Innocent of D-",
+    "artist": "Larval Stage Planning",
+    "year": 2012,
+    "era": "moderna",
+    "diff": "⭐ Fácil",
+    "tags": [
+      "Harém / Ecchi Supremo",
+      "Demônios & Peças de Xadrez",
+      "Issei & Rias Gremory",
+      "Oppai",
+      "TNK"
+    ],
+    "synonyms": [
+      "high school dxd",
+      "highschool dxd",
+      "dxd"
+    ],
+    "q": "High School DxD opening 1 Trip Innocent of D",
+    "video_id": "q6nBo3aq-OE",
+    "video_url": "https://www.youtube.com/watch?v=q6nBo3aq-OE",
+    "video_title": "[Vietsub + Kara] High School DxD OP Full - Trip -Innocent of d-",
+    "id": 31,
+    "image_url": "https://media.kitsu.app/anime/6550/poster_image/large-9a9352a43891fd441c0b82734ade67cc.jpeg"
+  },
+  {
+    "id": 32,
+    "anime": "JoJo's Bizarre Adventure",
+    "song": "JoJo Sono Chi no Sadame",
+    "artist": "Hiroaki TOMMY Tominaga",
+    "year": 2012,
+    "era": "moderna",
+    "diff": "⭐⭐ Média",
+    "tags": [
+      "Família Joestar",
+      "Hamon & Vampiros",
+      "Dio Brando",
+      "Jonathan Joestar",
+      "David Production"
+    ],
+    "synonyms": [
+      "jojo",
+      "jojos bizarre adventure",
+      "jojo no kimyou na bouken",
+      "phantom blood"
+    ],
+    "video_id": "1ZKAQzGYYSo",
+    "video_url": "https://www.youtube.com/watch?v=1ZKAQzGYYSo",
+    "hint": "Ação / Hamon / Vampiros / Família Joestar",
+    "image_url": "https://media.kitsu.app/anime/7158/poster_image/large-9e79f5c290ae821d2141473e6fdb6532.jpeg"
+  },
+  {
+    "id": 33,
+    "anime": "Sword Art Online",
+    "song": "crossing field",
+    "artist": "LiSA",
+    "year": 2012,
+    "era": "moderna",
+    "diff": "⭐ Fácil",
+    "tags": [
+      "Isekai / Realidade Virtual",
+      "Espadas & MMORPG",
+      "Kirito & Asuna",
+      "Aincrad",
+      "A-1 Pictures"
+    ],
+    "synonyms": [
+      "sword art online",
+      "sao"
+    ],
+    "video_id": "Y4kfe8R1Iqs",
+    "video_url": "https://www.youtube.com/watch?v=Y4kfe8R1Iqs",
+    "hint": "Isekai / Realidade Virtual / Se morrer no jogo morre na vida real",
+    "image_url": "https://media.kitsu.app/anime/poster_images/6589/large.jpg"
+  },
+  {
+    "anime": "To LOVE-Ru Darkness",
+    "song": "Rakuen PROJECT",
+    "artist": "Ray",
+    "year": 2012,
+    "era": "moderna",
+    "diff": "⭐⭐ Média",
+    "tags": [
+      "Harém / Ecchi",
+      "Alienígenas",
+      "Momo & Golden Darkness (Yami)",
+      "Rito Yuuki",
+      "Xebec"
+    ],
+    "synonyms": [
+      "to love ru",
+      "to love-ru",
+      "to love ru darkness",
+      "to loveru"
+    ],
+    "q": "To LOVE-Ru Darkness opening Rakuen PROJECT Ray",
+    "video_id": "5XmzWqw-b7E",
+    "video_url": "https://www.youtube.com/watch?v=5XmzWqw-b7E",
+    "video_title": "To LOVEる-とらぶる-ダークネス OP FULL 楽園PROJECT／Ray HQ",
+    "id": 34,
+    "image_url": "https://media.kitsu.app/anime/poster_images/7007/large.jpg"
+  },
+  {
+    "id": 35,
+    "anime": "Attack on Titan (Shingeki no Kyojin)",
+    "song": "Guren no Yumiya",
+    "artist": "Linked Horizon",
+    "year": 2013,
+    "era": "moderna",
+    "diff": "⭐ Fácil",
+    "tags": [
+      "Muralhas & Titãs",
+      "Tropa de Exploração",
+      "Eren & Mikasa",
+      "Dispositivo DMT",
+      "Wit Studio"
+    ],
+    "synonyms": [
+      "attack on titan",
+      "shingeki no kyojin",
+      "ataque dos titas",
+      "aot",
+      "snk",
+      "shingeki"
+    ],
+    "video_id": "8OkpRK2_gVs",
+    "video_url": "https://www.youtube.com/watch?v=8OkpRK2_gVs",
+    "hint": "Ação / Muralhas / Titãs / Tropa de Exploração",
+    "image_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx16498-buvcRTBx4NSm.jpg"
+  },
+  {
+    "anime": "Date A Live",
+    "song": "Date A Live",
+    "artist": "sweet ARMS",
+    "year": 2013,
+    "era": "moderna",
+    "diff": "⭐ Fácil",
+    "tags": [
+      "Harém / Sci-Fi",
+      "Espíritos",
+      "Conquistar Garotas para Salvar o Mundo",
+      "Tohka & Kurumi",
+      "AIC PLUS+"
+    ],
+    "synonyms": [
+      "date a live",
+      "dal"
+    ],
+    "q": "Date A Live opening 1 sweet ARMS",
+    "video_id": "Vz_BqxcdHMM",
+    "video_url": "https://www.youtube.com/watch?v=Vz_BqxcdHMM",
+    "video_title": "デート・ア・ライブ",
+    "id": 36,
+    "image_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx15583-Sxd2J4RJdRhj.jpg"
+  },
+  {
+    "id": 37,
+    "anime": "Kill la Kill",
+    "song": "Sirius",
+    "artist": "Eir Aoi",
+    "year": 2013,
+    "era": "moderna",
+    "diff": "⭐⭐⭐ Difícil",
+    "tags": [
+      "Fibras de Vida",
+      "Espada Tesoura",
+      "Ryuko Matoi",
+      "Academia Honnouji",
+      "Studio Trigger"
+    ],
+    "synonyms": [
+      "kill la kill",
+      "klk"
+    ],
+    "video_id": "RLurtSZzGBI",
+    "video_url": "https://www.youtube.com/watch?v=RLurtSZzGBI",
+    "hint": "Ação / Fibras de Vida / Espada Tesoura",
+    "image_url": "https://media.kitsu.app/anime/poster_images/7712/large.jpg"
+  },
+  {
+    "id": 38,
+    "anime": "Haikyuu!!",
+    "song": "Imagination",
+    "artist": "SPYAIR",
+    "year": 2014,
+    "era": "moderna",
+    "diff": "⭐⭐ Média",
+    "tags": [
+      "Vôlei Colegial",
+      "Corvos do Karasuno",
+      "Hinata & Kageyama",
+      "Esportes",
+      "Production I.G"
+    ],
+    "synonyms": [
+      "haikyuu",
+      "haikyuu!!",
+      "haikyu"
+    ],
+    "video_id": "2QpeSCXP2t0",
+    "video_url": "https://www.youtube.com/watch?v=2QpeSCXP2t0",
+    "hint": "Esportes / Vôlei / Corvos do Karasuno",
+    "image_url": "https://media.kitsu.app/anime/poster_images/8133/large.jpg"
+  },
+  {
+    "anime": "Nisekoi",
+    "song": "CLICK",
+    "artist": "ClariS",
+    "year": 2014,
+    "era": "moderna",
+    "diff": "⭐ Fácil",
+    "tags": [
+      "Harém / Romcom",
+      "Amor Falso",
+      "Chitoge & Kosaki",
+      "Pingente e Chaves",
+      "Estúdio Shaft"
+    ],
+    "synonyms": [
+      "nisekoi",
+      "falso amor"
+    ],
+    "q": "Nisekoi opening 1 CLICK ClariS",
+    "video_id": "0SHOuFY9_dg",
+    "video_url": "https://www.youtube.com/watch?v=0SHOuFY9_dg",
+    "video_title": "ClariS -「Click」 (Nisekoi ニセコイ Season 1 Opening Theme - Full Ver.) [KAN/ROM/ENG Lyrics]",
+    "id": 39,
+    "image_url": "https://media.kitsu.app/anime/poster_images/7821/large.jpg"
+  },
+  {
+    "id": 40,
+    "anime": "No Game No Life",
+    "song": "This Game",
+    "artist": "Konomi Suzuki",
+    "year": 2014,
+    "era": "moderna",
+    "diff": "⭐⭐ Média",
+    "tags": [
+      "Isekai de Jogos",
+      "Irmãos Kuuhaku (Espaço em Branco)",
+      "Sora & Shiro",
+      "Deus dos Jogos Tet",
+      "Estúdio Madhouse"
+    ],
+    "synonyms": [
+      "no game no life",
+      "ngnl"
+    ],
+    "video_id": "6CBp4qylX6I",
+    "video_url": "https://www.youtube.com/watch?v=6CBp4qylX6I",
+    "hint": "Isekai / Jogos / Kuuhaku (Branco) nunca perde",
+    "image_url": "https://media.kitsu.app/anime/poster_images/7880/large.jpg"
+  },
+  {
+    "id": 41,
+    "anime": "Noragami",
+    "song": "Goya no Machiawase",
+    "artist": "Hello Sleepwalkers",
+    "year": 2014,
+    "era": "moderna",
+    "diff": "⭐⭐⭐ Difícil",
+    "tags": [
+      "Deus por 5 Ienes",
+      "Espíritos & Regalias",
+      "Yato & Hiyori",
+      "Fantasmas Ayakashi",
+      "Estúdio Bones"
+    ],
+    "synonyms": [
+      "noragami",
+      "noragami aragoto"
+    ],
+    "video_id": "gWCnKoEgfP0",
+    "video_url": "https://www.youtube.com/watch?v=gWCnKoEgfP0",
+    "hint": "Sobrenatural / Deus delivery por 5 ienes",
+    "image_url": "https://media.kitsu.app/anime/poster_images/7881/large.jpg"
+  },
+  {
+    "id": 42,
+    "anime": "Parasyte: The Maxim",
+    "song": "Let Me Hear",
+    "artist": "Fear, and Loathing in Las Vegas",
+    "year": 2014,
+    "era": "moderna",
+    "diff": "⭐⭐ Média",
+    "tags": [
+      "Ficção Científica",
+      "Horror / Suspense",
+      "Parasitas Alienígenas",
+      "Migi",
+      "Estúdio Madhouse"
+    ],
+    "synonyms": [
+      "parasyte",
+      "parasyte the maxim",
+      "kiseijuu",
+      "kiseiju",
+      "parasita"
+    ],
+    "video_id": "D-SQqppuGvc",
+    "video_url": "https://www.youtube.com/watch?v=D-SQqppuGvc",
+    "hint": "Ficção Científica / Horror / Suspense / Parasitas Alienígenas",
+    "image_url": "https://media.kitsu.app/anime/poster_images/8147/large.jpg"
+  },
+  {
+    "id": 43,
+    "anime": "Tokyo Ghoul",
+    "song": "unravel",
+    "artist": "TK from Ling Tosite Sigure",
+    "year": 2014,
+    "era": "moderna",
+    "diff": "⭐ Fácil",
+    "tags": [
+      "Ghouls de Tóquio",
+      "Máscara & Kagune",
+      "Kaneki Ken",
+      "Café Anteiku",
+      "Studio Pierrot"
+    ],
+    "synonyms": [
+      "tokyo ghoul",
+      "tokyoghoul"
+    ],
+    "video_id": "7aMOurgDB-o",
+    "video_url": "https://www.youtube.com/watch?v=7aMOurgDB-o",
+    "hint": "Sobrenatural / Metade humano, metade devorador de carne",
+    "image_url": "https://media.kitsu.app/anime/poster_images/8271/large.jpg"
+  },
+  {
+    "anime": "Trinity Seven",
+    "song": "Seven Doors",
+    "artist": "ZAQ",
+    "year": 2014,
+    "era": "moderna",
+    "diff": "⭐⭐ Média",
+    "tags": [
+      "Harém / Magia",
+      "7 Pecados Capitais",
+      "Arata Kasuga",
+      "Mundo dos Magos",
+      "Seven Arcs Pictures"
+    ],
+    "synonyms": [
+      "trinity seven",
+      "trinity 7"
+    ],
+    "q": "Trinity Seven opening Seven Doors ZAQ",
+    "video_id": "EtZn__7l6dM",
+    "video_url": "https://www.youtube.com/watch?v=EtZn__7l6dM",
+    "video_title": "ZAQ / Seven Doors",
+    "id": 44,
+    "image_url": "https://media.kitsu.app/anime/poster_images/8607/large.jpg"
+  },
+  {
+    "id": 45,
+    "anime": "Your Lie in April (Shigatsu wa Kimi no Uso)",
+    "song": "Hikaru Nara",
+    "artist": "Goose house",
+    "year": 2014,
+    "era": "moderna",
+    "diff": "⭐⭐ Média",
+    "tags": [
+      "Drama Musical",
+      "Piano & Violino",
+      "Kousei & Kaori",
+      "Primavera",
+      "A-1 Pictures"
+    ],
+    "synonyms": [
+      "your lie in april",
+      "shigatsu wa kimi no uso",
+      "sua mentira em abril"
+    ],
+    "video_id": "fBsfD0Eytjw",
+    "video_url": "https://www.youtube.com/watch?v=fBsfD0Eytjw",
+    "hint": "Drama / Música / Violino e Piano",
+    "image_url": "https://media.kitsu.app/anime/poster_images/8403/large.jpg"
+  },
+  {
+    "anime": "Gakusen Toshi Asterisk",
+    "song": "Brand-new World",
+    "artist": "Shiena Nishizawa",
+    "year": 2015,
+    "era": "moderna",
+    "diff": "⭐⭐ Média",
+    "tags": [
+      "Harém de Batalha",
+      "Festa Estelar / Torneio",
+      "Julis & Ayato",
+      "Armas Lux",
+      "A-1 Pictures"
+    ],
+    "synonyms": [
+      "gakusen toshi asterisk",
+      "the asterisk war",
+      "asterisk war",
+      "gakusen toshi"
+    ],
+    "q": "The Asterisk War opening 1 Brand-new World Shiena Nishizawa",
+    "video_id": "kB3Io-yK4Pw",
+    "video_url": "https://www.youtube.com/watch?v=kB3Io-yK4Pw",
+    "video_title": "The Asterisk War OP 1 : Brand-new World - 1080p Creditless",
+    "id": 46,
+    "image_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21131-sh1HBXuF6qHH.jpg"
+  },
+  {
+    "anime": "Monster Musume no Iru Nichijou",
+    "song": "Saikousoku Fall in Love",
+    "artist": "Miia, Papi, Centorea",
+    "year": 2015,
+    "era": "moderna",
+    "diff": "⭐⭐ Média",
+    "tags": [
+      "Harém / Monster Girls",
+      "Mulheres Monstro",
+      "Miia Lamia & Papi Harpia",
+      "Comédia / Ecchi",
+      "Lerche"
+    ],
+    "synonyms": [
+      "monster musume",
+      "everyday life with monster girls",
+      "monmusu"
+    ],
+    "q": "Monster Musume opening Saikousoku Fall in Love",
+    "video_id": "K--QO3MQfmE",
+    "video_url": "https://www.youtube.com/watch?v=K--QO3MQfmE",
+    "video_title": "\"Saikousoku Fall in Love (最高速 Fall in Love)\" by Monster Girls | MONSTER MUSUME",
+    "id": 47,
+    "image_url": "https://media.kitsu.app/anime/poster_images/10748/large.jpg"
+  },
+  {
+    "id": 48,
+    "anime": "One Punch Man",
+    "song": "THE HERO !!",
+    "artist": "JAM Project",
+    "year": 2015,
+    "era": "moderna",
+    "diff": "⭐ Fácil",
+    "tags": [
+      "Herói por Hobby",
+      "Derrota com 1 Soco",
+      "Saitama & Genos",
+      "Associação de Heróis",
+      "Estúdio Madhouse"
+    ],
+    "synonyms": [
+      "one punch man",
+      "one punch",
+      "opm",
+      "homem de um soco so"
+    ],
+    "video_id": "QImBolnTVH8",
+    "video_url": "https://www.youtube.com/watch?v=QImBolnTVH8",
+    "hint": "Ação / Super-herói / Derrota qualquer um com um soco",
+    "image_url": "https://media.kitsu.app/anime/poster_images/10740/large.jpg"
+  },
+  {
+    "anime": "Prison School",
+    "song": "Ai no Prison",
+    "artist": "Kangoku Danshi",
+    "year": 2015,
+    "era": "moderna",
+    "diff": "⭐⭐ Média",
+    "tags": [
+      "Comédia / Ecchi Extremo",
+      "Prisão Escolar",
+      "Conselho Estudantil Secreto",
+      "Kiyoshi",
+      "J.C.Staff"
+    ],
+    "synonyms": [
+      "prison school",
+      "kangoku gakuen"
+    ],
+    "q": "Prison School opening Ai no Prison",
+    "video_id": "KrHWAHegw14",
+    "video_url": "https://www.youtube.com/watch?v=KrHWAHegw14",
+    "video_title": "Prison school Opening HD",
+    "id": 49,
+    "image_url": "https://media.kitsu.app/anime/poster_images/10734/large.jpg"
+  },
+  {
+    "anime": "Rakudai Kishi no Cavalry",
+    "song": "Identity",
+    "artist": "Mikio Sakai",
+    "year": 2015,
+    "era": "moderna",
+    "diff": "⭐⭐ Média",
+    "tags": [
+      "Cavaleiros Mágicos",
+      "Stella Vermillion",
+      "Ikki Kurogane (O Pior)",
+      "Romance & Espadas",
+      "SILVER LINK."
+    ],
+    "synonyms": [
+      "rakudai kishi no cavalry",
+      "chivalry of a failed knight",
+      "rakudai kishi"
+    ],
+    "q": "Rakudai Kishi no Cavalry opening Identity Mikio Sakai",
+    "video_id": "knhRVdl8aOI",
+    "video_url": "https://www.youtube.com/watch?v=knhRVdl8aOI",
+    "video_title": "Rakudai Kishi no Cavalry OP Full /『Mikio Sakai - Identity』/【AMV Lyrics】",
+    "id": 50,
+    "image_url": "https://media.kitsu.app/anime/10745/poster_image/large-6c0881efcb35da7c4cd42709d0fc1c5e.jpeg"
+  },
+  {
+    "anime": "Shokugeki no Souma",
+    "song": "Kibou no Uta",
+    "artist": "Ultra Tower",
+    "year": 2015,
+    "era": "moderna",
+    "diff": "⭐ Fácil",
+    "tags": [
+      "Culinária / Ecchi Gastronômico",
+      "Batalhas de Cozinha",
+      "Souma Yukihira & Erina",
+      "Academia Totsuki",
+      "J.C.Staff"
+    ],
+    "synonyms": [
+      "shokugeki no souma",
+      "food wars",
+      "food wars shokugeki no soma",
+      "shokugeki"
+    ],
+    "q": "Food Wars opening 1 Kibou no Uta Crunchyroll",
+    "video_id": "251nvywgHdg",
+    "video_url": "https://www.youtube.com/watch?v=251nvywgHdg",
+    "video_title": "Food Wars! Shokugeki no Soma - Opening 1 | Kibo no Uta",
+    "id": 51,
+    "image_url": "https://media.kitsu.app/anime/9967/poster_image/large-a95e716ae5f3567f7cbc01fbac53d3a5.jpeg"
+  },
+  {
+    "id": 52,
+    "anime": "Boku no Hero Academia",
+    "song": "The Day",
+    "artist": "Porno Graffitti",
+    "year": 2016,
+    "era": "recente",
+    "diff": "⭐ Fácil",
+    "tags": [
+      "Super-Heróis",
+      "All Might & Deku",
+      "One For All",
+      "Escola U.A.",
+      "Estúdio Bones"
+    ],
+    "synonyms": [
+      "boku no hero academia",
+      "my hero academia",
+      "boku no hero",
+      "mha",
+      "bnha"
+    ],
+    "video_id": "yu0HjPzFYnY",
+    "video_url": "https://www.youtube.com/watch?v=yu0HjPzFYnY",
+    "hint": "Super-heróis / All Might / Individualidades",
+    "image_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21459-nYh85uj2Fuwr.jpg"
+  },
+  {
+    "id": 53,
+    "anime": "Erased",
+    "song": "Re:Re:",
+    "artist": "Asian Kung-Fu Generation",
+    "year": 2016,
+    "era": "recente",
+    "diff": "⭐⭐ Média",
+    "tags": [
+      "Mistério",
+      "Viagem no Tempo",
+      "Revival",
+      "Suspense",
+      "A-1 Pictures"
+    ],
+    "synonyms": [
+      "erased",
+      "boku dake ga inai machi",
+      "bokumachi",
+      "a cidade onde apenas eu nao existo"
+    ],
+    "video_id": "fodAJ-1dN3I",
+    "video_url": "https://www.youtube.com/watch?v=fodAJ-1dN3I",
+    "hint": "Mistério / Viagem no Tempo / Revival",
+    "image_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21234-XmqW39aQ9o7O.jpg"
+  },
+  {
+    "id": 54,
+    "anime": "KonoSuba",
+    "song": "fantastic dreamer",
+    "artist": "Machico",
+    "year": 2016,
+    "era": "recente",
+    "diff": "⭐⭐ Média",
+    "tags": [
+      "Comédia / Paródia Isekai",
+      "Deusa Aqua Inútil",
+      "Megumin Explosão",
+      "Kazuma",
+      "Studio Deen"
+    ],
+    "synonyms": [
+      "konosuba",
+      "kono subarashii sekai ni shukufuku wo",
+      "kono suba"
+    ],
+    "video_id": "fpG3BPNQepY",
+    "video_url": "https://www.youtube.com/watch?v=fpG3BPNQepY",
+    "hint": "Comédia / Deusa inútil e mago de uma explosão só",
+    "image_url": "https://media.kitsu.app/anime/poster_images/10941/large.jpg"
+  },
+  {
+    "id": 55,
+    "anime": "Mob Psycho 100",
+    "song": "99",
+    "artist": "MOB CHOIR",
+    "year": 2016,
+    "era": "recente",
+    "diff": "⭐⭐ Média",
+    "tags": [
+      "Poderes Psíquicos",
+      "Reigen Mestre Trapaceiro",
+      "Shigeo Kageyama (Mob)",
+      "Porcentagem 100%",
+      "Estúdio Bones"
+    ],
+    "synonyms": [
+      "mob psycho 100",
+      "mob psycho",
+      "mob"
+    ],
+    "video_id": "Bw-5Lka7gPE",
+    "video_url": "https://www.youtube.com/watch?v=Bw-5Lka7gPE",
+    "hint": "Sobrenatural / Poderes psíquicos / Porcentagem de emoção",
+    "image_url": "https://media.kitsu.app/anime/11578/poster_image/large-e969f8a688549dd8e02ffd59f49122e9.jpeg"
+  },
+  {
+    "id": 56,
+    "anime": "Re:Zero",
+    "song": "Redo",
+    "artist": "Konomi Suzuki",
+    "year": 2016,
+    "era": "recente",
+    "diff": "⭐⭐ Média",
+    "tags": [
+      "Retorno através da Morte",
+      "Subaru & Emilia",
+      "Rem & Ram",
+      "Isekai Sombrio",
+      "White Fox"
+    ],
+    "synonyms": [
+      "re zero",
+      "re:zero",
+      "re:zero kara hajimeru isekai seikatsu",
+      "rezero"
+    ],
+    "video_id": "0Vwwr3VGsYg",
+    "video_url": "https://www.youtube.com/watch?v=0Vwwr3VGsYg",
+    "hint": "Isekai / Retorno através da morte / Rem e Emilia",
+    "image_url": "https://media.kitsu.app/anime/poster_images/11209/large.jpg"
+  },
+  {
+    "id": 57,
+    "anime": "Boku no Hero Academia S2",
+    "song": "Peace Sign",
+    "artist": "Kenshi Yonezu",
+    "year": 2017,
+    "era": "recente",
+    "diff": "⭐⭐ Média",
+    "tags": [
+      "Festival Esportivo da U.A.",
+      "Midoriya vs Todoroki",
+      "Paz e Vitória",
+      "Estúdio Bones",
+      "Super-Heróis"
+    ],
+    "synonyms": [
+      "boku no hero academia",
+      "my hero academia",
+      "boku no hero",
+      "mha",
+      "bnha"
+    ],
+    "video_id": "Q7w5IMyJ3pM",
+    "video_url": "https://www.youtube.com/watch?v=Q7w5IMyJ3pM",
+    "hint": "Festival Esportivo / V de Vitória",
+    "image_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx195322-hqBf19mBtM5K.jpg"
+  },
+  {
+    "id": 58,
+    "anime": "Black Clover",
+    "song": "Black Rover",
+    "artist": "Vickeblanka",
+    "year": 2018,
+    "era": "recente",
+    "diff": "⭐⭐ Média",
+    "tags": [
+      "Garoto Sem Magia",
+      "Grimório do Trevo de 5 Folhas",
+      "Asta & Yuno",
+      "Touros Negros",
+      "Studio Pierrot"
+    ],
+    "synonyms": [
+      "black clover",
+      "blackclover"
+    ],
+    "video_id": "dUiDZJMPh-s",
+    "video_url": "https://www.youtube.com/watch?v=dUiDZJMPh-s",
+    "hint": "Magia / Garoto sem magia / Grimório de 5 folhas",
+    "image_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx97940-fyh8o7gNbha0.png"
+  },
+  {
+    "id": 59,
+    "anime": "Dr. Stone",
+    "song": "Good Morning World!",
+    "artist": "BURNOUT SYNDROMES",
+    "year": 2019,
+    "era": "recente",
+    "diff": "⭐⭐ Média",
+    "tags": [
+      "Mundo de Pedra Petrificado",
+      "Renascimento pela Ciência",
+      "Senku Ishigami",
+      "Reino da Ciência",
+      "TMS Entertainment"
+    ],
+    "synonyms": [
+      "dr stone",
+      "dr. stone",
+      "doctor stone"
+    ],
+    "video_id": "yQEUGxngQN4",
+    "video_url": "https://www.youtube.com/watch?v=yQEUGxngQN4",
+    "hint": "Ficção Científica / Petrificação / Ciência do zero",
+    "image_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx105333-GybuoSoOZfpH.jpg"
+  },
+  {
+    "id": 60,
+    "anime": "Fire Force",
+    "song": "Inferno",
+    "artist": "Mrs. GREEN APPLE",
+    "year": 2019,
+    "era": "recente",
+    "diff": "⭐ Fácil",
+    "tags": [
+      "Shounen",
+      "Bombeiros Especiais",
+      "Chamas & Demônios",
+      "David Production",
+      "Ação"
+    ],
+    "synonyms": [
+      "fire force",
+      "enen no shouboutai",
+      "enen"
+    ],
+    "video_id": "JBqxVX_LXvk",
+    "video_url": "https://www.youtube.com/watch?v=JBqxVX_LXvk",
+    "hint": "Shounen / Bombeiros Especiais / Chamas & Demônios",
+    "image_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx105310-2PKUvoaA6fTn.jpg"
+  },
+  {
+    "id": 61,
+    "anime": "Kimetsu no Yaiba (Demon Slayer)",
+    "song": "Gurenge",
+    "artist": "LiSA",
+    "year": 2019,
+    "era": "recente",
+    "diff": "⭐ Fácil",
+    "tags": [
+      "Caçadores de Demônios / Onis",
+      "Respiração da Água & Sol",
+      "Tanjiro & Nezuko",
+      "Espadas Nichirin",
+      "ufotable"
+    ],
+    "synonyms": [
+      "kimetsu no yaiba",
+      "demon slayer",
+      "kimetsu",
+      "demon slayer kimetsu no yaiba"
+    ],
+    "video_id": "YkJvHe3KK2c",
+    "video_url": "https://www.youtube.com/watch?v=YkJvHe3KK2c",
+    "hint": "Ação / Caçadores de Onis / Respiração da Água",
+    "image_url": "https://media.kitsu.app/anime/poster_images/41370/large.jpg"
+  },
+  {
+    "id": 62,
+    "anime": "The Promised Neverland",
+    "song": "Touch off",
+    "artist": "UVERworld",
+    "year": 2019,
+    "era": "recente",
+    "diff": "⭐⭐⭐ Difícil",
+    "tags": [
+      "Orfanato Sinistro",
+      "Crianças Gênias",
+      "Emma, Norman & Ray",
+      "Fuga dos Demônios",
+      "CloverWorks"
+    ],
+    "synonyms": [
+      "the promised neverland",
+      "yakusoku no neverland",
+      "promised neverland"
+    ],
+    "video_id": "yB2t5y7ujlg",
+    "video_url": "https://www.youtube.com/watch?v=yB2t5y7ujlg",
+    "hint": "Suspense / Orfanato / Fuga de gênios",
+    "image_url": "https://media.kitsu.app/anime/poster_images/41312/large.jpg"
+  },
+  {
+    "id": 63,
+    "anime": "Vinland Saga",
+    "song": "Mukanjyo",
+    "artist": "Survive Said The Prophet",
+    "year": 2019,
+    "era": "recente",
+    "diff": "⭐⭐⭐ Difícil",
+    "tags": [
+      "Vikings Históricos",
+      "Vingança de Thorfinn",
+      "Askeladd & Canute",
+      "Inglaterra Medieval",
+      "Wit Studio"
+    ],
+    "synonyms": [
+      "vinland saga",
+      "vinland"
+    ],
+    "video_id": "l5wAdQ-UkWY",
+    "video_url": "https://www.youtube.com/watch?v=l5wAdQ-UkWY",
+    "hint": "Histórico / Vikings / Vingança de Thorfinn",
+    "image_url": "https://media.kitsu.app/anime/poster_images/41084/large.jpg"
+  },
+  {
+    "id": 64,
+    "anime": "Jujutsu Kaisen",
+    "song": "Kaikai Kitan",
+    "artist": "Eve",
+    "year": 2020,
+    "era": "recente",
+    "diff": "⭐ Fácil",
+    "tags": [
+      "Feiticeiros Jujutsu",
+      "Dedos de Sukuna",
+      "Yuji Itadori & Gojo Satoru",
+      "Energia Amaldiçoada",
+      "Estúdio MAPPA"
+    ],
+    "synonyms": [
+      "jujutsu kaisen",
+      "jujutsu",
+      "jjk",
+      "batalha de feiticeiros"
+    ],
+    "video_id": "GwaRztMaoY0",
+    "video_url": "https://www.youtube.com/watch?v=GwaRztMaoY0",
+    "hint": "Sobrenatural / Feiticeiros / Dedos de Sukuna",
+    "image_url": "https://media.kitsu.app/anime/42765/poster_image/large-5ce19551c1a6cf995b378205b9149b5c.jpeg"
+  },
+  {
+    "id": 65,
+    "anime": "Tokyo Revengers",
+    "song": "Cry Baby",
+    "artist": "Official HIGE DANdism",
+    "year": 2021,
+    "era": "nova_geracao",
+    "diff": "⭐ Fácil",
+    "tags": [
+      "Gangues de Rua",
+      "Viagem no Tempo",
+      "Delinquentes",
+      "Takemichi e Mikey",
+      "LIDENFILMS"
+    ],
+    "synonyms": [
+      "tokyo revengers",
+      "tokyo revenger",
+      "tokrev"
+    ],
+    "video_id": "O1bhZgkC4Gw",
+    "video_url": "https://www.youtube.com/watch?v=O1bhZgkC4Gw",
+    "hint": "Gangues de Rua / Viagem no Tempo / Delinquentes",
+    "image_url": "https://media.kitsu.app/anime/poster_images/43321/large.jpg"
+  },
+  {
+    "id": 66,
+    "anime": "Attack on Titan Final Season Pt 2",
+    "song": "The Rumbling",
+    "artist": "SiM",
+    "year": 2022,
+    "era": "nova_geracao",
+    "diff": "⭐ Fácil",
+    "tags": [
+      "O Estrondo",
+      "Metal / Rock",
+      "Eren Jaeger",
+      "Titãs Colossais",
+      "Estúdio MAPPA"
+    ],
+    "synonyms": [
+      "attack on titan",
+      "shingeki no kyojin",
+      "shingeki",
+      "aot",
+      "ataque dos titas"
+    ],
+    "video_id": "EtjQVqXUPHo",
+    "video_url": "https://www.youtube.com/watch?v=EtjQVqXUPHo",
+    "hint": "O Estrondo / Metal / Rock / Eren Jaeger",
+    "image_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx131681-5ooUqvqNtee1.jpg"
+  },
+  {
+    "id": 67,
+    "anime": "Chainsaw Man",
+    "song": "KICK BACK",
+    "artist": "Kenshi Yonezu",
+    "year": 2022,
+    "era": "nova_geracao",
+    "diff": "⭐ Fácil",
+    "tags": [
+      "Demônio da Motosserra",
+      "Denji & Pochita",
+      "Caçadores de Demônios",
+      "Estúdio MAPPA",
+      "Gore / Ação"
+    ],
+    "synonyms": [
+      "chainsaw man",
+      "chainsawman",
+      "homem motosserra",
+      "csm"
+    ],
+    "video_id": "dFlDRhvM4L0",
+    "video_url": "https://www.youtube.com/watch?v=dFlDRhvM4L0",
+    "hint": "Demônio da Motosserra / Denji & Pochita / Caçadores de Demônios",
+    "image_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx127230-DdP4vAdssLoz.png"
+  },
+  {
+    "id": 68,
+    "anime": "Spy x Family",
+    "song": "Mixed Nuts",
+    "artist": "Official HIGE DANdism",
+    "year": 2022,
+    "era": "nova_geracao",
+    "diff": "⭐ Fácil",
+    "tags": [
+      "Espiões",
+      "Família Falsa",
+      "Anya & Waku Waku",
+      "Comédia / Slice of Life",
+      "Wit Studio / CloverWorks"
+    ],
+    "synonyms": [
+      "spy x family",
+      "spy family",
+      "spyxfamily"
+    ],
+    "video_id": "CbH2F0kXgTY",
+    "video_url": "https://www.youtube.com/watch?v=CbH2F0kXgTY",
+    "hint": "Espiões / Família Falsa / Anya & Waku Waku",
+    "image_url": "https://media.kitsu.app/anime/45398/poster_image/large-c26c1e0b77e881fcd66475af6bd22c57.jpeg"
+  },
+  {
+    "id": 69,
+    "anime": "Frieren: Beyond Journey's End",
+    "song": "Yuusha",
+    "artist": "YOASOBI",
+    "year": 2023,
+    "era": "nova_geracao",
+    "diff": "⭐⭐ Média",
+    "tags": [
+      "Fantasia Épica",
+      "Maga Elfa",
+      "Pós-Derrota do Rei Demônio",
+      "Estúdio Madhouse",
+      "Aventura"
+    ],
+    "synonyms": [
+      "frieren",
+      "frieren beyond journeys end",
+      "sousou no frieren",
+      "frieren e a jornada para o alem"
+    ],
+    "video_id": "OIBODIPC_8Y",
+    "video_url": "https://www.youtube.com/watch?v=OIBODIPC_8Y",
+    "hint": "Fantasia Épica / Maga Elfa / Pós-Derrota do Rei Demônio",
+    "image_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx170068-ijY3tCP8KoWP.jpg"
+  },
+  {
+    "id": 70,
+    "anime": "Jujutsu Kaisen S2 (Shibuya)",
+    "song": "SPECIALZ",
+    "artist": "King Gnu",
+    "year": 2023,
+    "era": "nova_geracao",
+    "diff": "⭐ Fácil",
+    "tags": [
+      "Incidente de Shibuya",
+      "You are my special",
+      "Feiticeiros Jujutsu",
+      "Sukuna",
+      "Estúdio MAPPA"
+    ],
+    "synonyms": [
+      "jujutsu kaisen",
+      "jujutsu kaisen s2",
+      "jujutsu kaisen 2",
+      "jujutsu",
+      "jjk",
+      "batalha de feiticeiros"
+    ],
+    "video_id": "5yb2N3pnztU",
+    "video_url": "https://www.youtube.com/watch?v=5yb2N3pnztU",
+    "hint": "Incidente de Shibuya / You are my special / Feiticeiros Jujutsu",
+    "image_url": "https://media.kitsu.app/anime/45857/poster_image/large-1ebb56f346edda6bcde9cdffa9b89316.jpeg"
+  },
+  {
+    "id": 71,
+    "anime": "Oshi no Ko",
+    "song": "Idol",
+    "artist": "YOASOBI",
+    "year": 2023,
+    "era": "nova_geracao",
+    "diff": "⭐ Fácil",
+    "tags": [
+      "Idols Japonesas",
+      "Showbiz / Reencarnação",
+      "Ai Hoshino",
+      "Mistério & Drama",
+      "Doga Kobo"
+    ],
+    "synonyms": [
+      "oshi no ko",
+      "my star",
+      "oshinoko"
+    ],
+    "video_id": "ZRtdQ81jPUQ",
+    "video_url": "https://www.youtube.com/watch?v=ZRtdQ81jPUQ",
+    "hint": "Idols Japonesas / Showbiz / Reencarnação / Ai Hoshino",
+    "image_url": "https://media.kitsu.app/anime/46170/poster_image/large-0bad1050afcf9e5320ca46bf17ac007a.jpeg"
+  },
+  {
+    "id": 72,
+    "anime": "Dandadan",
+    "song": "Otonoke",
+    "artist": "Creepy Nuts",
+    "year": 2024,
+    "era": "nova_geracao",
+    "diff": "⭐ Fácil",
+    "tags": [
+      "Aliens & Fantasmas / Youkai",
+      "Creepy Nuts",
+      "Momo & Okarun",
+      "Science SARU",
+      "Comédia Sobrenatural"
+    ],
+    "synonyms": [
+      "dandadan"
+    ],
+    "video_id": "a4na2opArGY",
+    "video_url": "https://www.youtube.com/watch?v=a4na2opArGY",
+    "hint": "Aliens & Fantasmas / Youkai / Creepy Nuts / Momo & Okarun",
+    "image_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx171018-60q1B6GK2Ghb.jpg"
+  },
+  {
+    "id": 73,
+    "anime": "Kaiju No. 8",
+    "song": "Abyss",
+    "artist": "YUNGBLUD",
+    "year": 2024,
+    "era": "nova_geracao",
+    "diff": "⭐⭐ Média",
+    "tags": [
+      "Monstros Gigantes / Kaijus",
+      "Força de Defesa",
+      "Kafka Hibino",
+      "Production I.G",
+      "Ação Sci-Fi"
+    ],
+    "synonyms": [
+      "kaiju no 8",
+      "kaiju 8",
+      "kaiju numero 8",
+      "kaijuu 8-gou"
+    ],
+    "video_id": "LYabT4zZnJQ",
+    "video_url": "https://www.youtube.com/watch?v=LYabT4zZnJQ",
+    "hint": "Monstros Gigantes / Kaijus / Força de Defesa / Kafka Hibino",
+    "image_url": "https://media.kitsu.app/anime/46300/poster_image/large-31cc66fd5854cc555d496ced7ab40c31.jpeg"
+  },
+  {
+    "id": 74,
+    "anime": "Mashle: Magic and Muscles S2",
+    "song": "Bling-Bang-Bang-Born",
+    "artist": "Creepy Nuts",
+    "year": 2024,
+    "era": "nova_geracao",
+    "diff": "⭐ Fácil",
+    "tags": [
+      "Magia & Músculos",
+      "Creepy Nuts",
+      "Dança Viral",
+      "Escola de Magia",
+      "A-1 Pictures"
+    ],
+    "synonyms": [
+      "mashle",
+      "mashle magic and muscles",
+      "mashle s2"
+    ],
+    "video_id": "mLW35YMzELE",
+    "video_url": "https://www.youtube.com/watch?v=mLW35YMzELE",
+    "hint": "Magia & Músculos / Creepy Nuts / Dança Viral",
+    "image_url": "https://media.kitsu.app/anime/47671/poster_image/large-4d4034102e31ac79f0c2a98f91321cc3.jpeg"
+  },
+  {
+    "id": 75,
+    "anime": "Solo Leveling",
+    "song": "LEveL",
+    "artist": "SawanoHiroyuki[nZk]:TXT",
+    "year": 2024,
+    "era": "nova_geracao",
+    "diff": "⭐ Fácil",
+    "tags": [
+      "Caçadores & Dungeons",
+      "Sung Jinwoo",
+      "Erga-se / Arise",
+      "A-1 Pictures",
+      "Manhwa Coreano"
+    ],
+    "synonyms": [
+      "solo leveling",
+      "ore dake level up na ken"
+    ],
+    "video_id": "XqD0oCHLIF8",
+    "video_url": "https://www.youtube.com/watch?v=XqD0oCHLIF8",
+    "hint": "Caçadores & Dungeons / Sung Jinwoo / Erga-se / Arise",
+    "image_url": "https://media.kitsu.app/anime/46231/poster_image/large-cdadff31f42490b9f48a035939a01a92.jpeg"
+  },
+  {
+    "id": 76,
+    "anime": "Kaguya-sama: Love is War",
+    "song": "Love Dramatic",
+    "artist": "Masayuki Suzuki feat. Rikka Ihara",
+    "year": 2019,
+    "era": "2010s",
+    "diff": "⭐ Fácil",
+    "tags": [
+      "Romance",
+      "Comédia Escolar",
+      "Batalha Psicológica",
+      "A-1 Pictures"
+    ],
+    "synonyms": [
+      "kaguya-sama",
+      "kaguya sama",
+      "love is war",
+      "kaguya-sama wa kokurasetai",
+      "kaguya"
+    ],
+    "video_id": "BC4zaaiXNMI",
+    "video_url": "https://www.youtube.com/watch?v=BC4zaaiXNMI",
+    "hint": "Romance / Comédia Escolar / Duelo Psicológico de Confissões",
+    "image_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx101921-ufrjLzhSz7L1.jpg"
+  },
+  {
+    "id": 77,
+    "anime": "Cyberpunk: Edgerunners",
+    "song": "This Fffire",
+    "artist": "Franz Ferdinand",
+    "year": 2022,
+    "era": "2020s",
+    "diff": "⭐ Fácil",
+    "tags": [
+      "Cyberpunk",
+      "Ação / Ficção Científica",
+      "Night City / David",
+      "Studio Trigger"
+    ],
+    "synonyms": [
+      "cyberpunk edgerunners",
+      "cyberpunk",
+      "edgerunners"
+    ],
+    "video_id": "mH2wmyeiIpA",
+    "video_url": "https://www.youtube.com/watch?v=mH2wmyeiIpA",
+    "hint": "Ficção Científica / Cyberpunk / Night City / Studio Trigger",
+    "image_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx120377-ayZPoxiWt4Li.jpg"
+  },
+  {
+    "id": 78,
+    "anime": "Bocchi the Rock!",
+    "song": "Seishun Complex",
+    "artist": "Kessoku Band",
+    "year": 2022,
+    "era": "2020s",
+    "diff": "⭐ Fácil",
+    "tags": [
+      "Comédia",
+      "Música / Banda",
+      "Ansiedade Social / Guitarra",
+      "CloverWorks"
+    ],
+    "synonyms": [
+      "bocchi the rock",
+      "bocchi the rock!",
+      "bocchi"
+    ],
+    "video_id": "dlSbEP4V-gI",
+    "video_url": "https://www.youtube.com/watch?v=dlSbEP4V-gI",
+    "hint": "Comédia / Música / Guitarra e Ansiedade Social / Kessoku Band",
+    "image_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx130003-HTDmeL4RGeJ4.png"
+  },
+  {
+    "id": 79,
+    "anime": "Overlord",
+    "song": "Clattanoia",
+    "artist": "OxT",
+    "year": 2015,
+    "era": "2010s",
+    "diff": "⭐ Fácil",
+    "tags": [
+      "Isekai",
+      "Fantasia Sombria",
+      "Ainz Ooal Gown / Nazarick",
+      "Madhouse"
+    ],
+    "synonyms": [
+      "overlord",
+      "ainz ooal gown"
+    ],
+    "video_id": "KOWcj7XKnfQ",
+    "video_url": "https://www.youtube.com/watch?v=KOWcj7XKnfQ",
+    "hint": "Isekai / Fantasia Sombria / Grande Tumba de Nazarick / Madhouse",
+    "image_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx20832-vUNm5zrYWifc.jpg"
+  },
+  {
+    "id": 80,
+    "anime": "Blue Lock",
+    "song": "Chaos ga Kiwamaru",
+    "artist": "UNISON SQUARE GARDEN",
+    "year": 2022,
+    "era": "2020s",
+    "diff": "⭐ Fácil",
+    "tags": [
+      "Esportes",
+      "Futebol / Egoísmo",
+      "Isagi Yoichi",
+      "Eight Bit"
+    ],
+    "synonyms": [
+      "blue lock",
+      "bluelock"
+    ],
+    "video_id": "5Iv3Fi8eb7w",
+    "video_url": "https://www.youtube.com/watch?v=5Iv3Fi8eb7w",
+    "hint": "Esportes / Futebol Egoísta / Projeto Blue Lock",
+    "image_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx137822-U8naszP96vzC.png"
+  },
+  {
+    "id": 81,
+    "anime": "Akame ga Kill!",
+    "song": "Skyreach",
+    "artist": "Sora Amamiya",
+    "year": 2014,
+    "era": "2010s",
+    "diff": "⭐⭐ Média",
+    "tags": [
+      "Ação",
+      "Fantasia Sombria",
+      "Assassinos / Night Raid",
+      "White Fox"
+    ],
+    "synonyms": [
+      "akame ga kill",
+      "akame ga kill!"
+    ],
+    "video_id": "wVFWBoKP-lQ",
+    "video_url": "https://www.youtube.com/watch?v=wVFWBoKP-lQ",
+    "hint": "Ação / Fantasia Sombria / Grupo Rebelde Night Raid / Armas Teigu",
+    "image_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx20613-HXHpec4bemk5.jpg"
+  },
+  {
+    "id": 82,
+    "anime": "Delicious in Dungeon",
+    "song": "Sleep Walking Orchestra",
+    "artist": "BUMP OF CHICKEN",
+    "year": 2024,
+    "era": "2020s",
+    "diff": "⭐ Fácil",
+    "tags": [
+      "Fantasia",
+      "Culinária de Monstros",
+      "Masmorra / Laios",
+      "Studio Trigger"
+    ],
+    "synonyms": [
+      "delicious in dungeon",
+      "dungeon meshi",
+      "dungeon meshi: delicious in dungeon"
+    ],
+    "video_id": "60_2zt9l3Yk",
+    "video_url": "https://www.youtube.com/watch?v=60_2zt9l3Yk",
+    "hint": "Fantasia / Cozinha de Monstros em Masmorra / Studio Trigger",
+    "image_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx153518-IVXPDY5ph3kO.jpg"
+  },
+  {
+    "id": 83,
+    "anime": "Samurai Champloo",
+    "song": "Battlecry",
+    "artist": "Nujabes feat. Shing02",
+    "year": 2004,
+    "era": "2000s",
+    "diff": "⭐⭐ Média",
+    "tags": [
+      "Samurai / Hip-Hop",
+      "Ação Histórica",
+      "Mugen & Jin",
+      "Manglobe"
+    ],
+    "synonyms": [
+      "samurai champloo",
+      "champloo"
+    ],
+    "video_id": "Eq6EYcpWB_c",
+    "video_url": "https://www.youtube.com/watch?v=Eq6EYcpWB_c",
+    "hint": "Samurais & Hip-Hop / Era Edo / Mugen e Jin / Estúdio Manglobe",
+    "image_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx205-7tHVFu6dPBm9.png"
+  },
+  {
+    "id": 84,
+    "anime": "Trigun",
+    "song": "H.T.",
+    "artist": "Tsuneo Imahori",
+    "year": 1998,
+    "era": "classicos",
+    "diff": "⭐⭐ Média",
+    "tags": [
+      "Western Espacial",
+      "Ação / Ficção Científica",
+      "Vash the Stampede",
+      "Madhouse"
+    ],
+    "synonyms": [
+      "trigun",
+      "vash the stampede",
+      "trigun 1998"
+    ],
+    "video_id": "NPDWuip1k5o",
+    "video_url": "https://www.youtube.com/watch?v=NPDWuip1k5o",
+    "hint": "Western Espacial / Tufão Humanoide Vash / Madhouse",
+    "image_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx6-wd4saT1JzStH.jpg"
+  },
+  {
+    "id": 85,
+    "anime": "Monster",
+    "song": "Grain",
+    "artist": "Kuniaki Haishima",
+    "year": 2004,
+    "era": "2000s",
+    "diff": "⭐⭐⭐ Difícil",
+    "tags": [
+      "Suspense Psicológico",
+      "Mistério / Drama",
+      "Dr. Tenma / Johan Liebert",
+      "Madhouse"
+    ],
+    "synonyms": [
+      "monster",
+      "dr tenma",
+      "naoki urasawa monster"
+    ],
+    "video_id": "IG7yZ33ILbs",
+    "video_url": "https://www.youtube.com/watch?v=IG7yZ33ILbs",
+    "hint": "Suspense Psicológico / Dr. Kenzo Tenma & Johan Liebert / Madhouse",
+    "image_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx19-gtMC64182sm4.jpg"
+  },
+  {
+    "id": 86,
+    "anime": "Hellsing Ultimate",
+    "song": "Logos Naki World",
+    "artist": "Yasushi Ishii",
+    "year": 2006,
+    "era": "2000s",
+    "diff": "⭐⭐ Média",
+    "tags": [
+      "Vampiros",
+      "Ação Sobrenatural / Terror",
+      "Alucard / Organização Hellsing",
+      "Madhouse / Satelight"
+    ],
+    "synonyms": [
+      "hellsing",
+      "hellsing ultimate",
+      "alucard"
+    ],
+    "video_id": "ScTYzjFOqN4",
+    "video_url": "https://www.youtube.com/watch?v=ScTYzjFOqN4",
+    "hint": "Vampiros / Sobrenatural Sombrio / Alucard / Organização Hellsing",
+    "image_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx777-F6547pSAR2Zd.jpg"
+  },
+  {
+    "id": 87,
+    "anime": "Bleach: Thousand-Year Blood War",
+    "song": "Scar",
+    "artist": "Tatsuya Kitani",
+    "year": 2022,
+    "era": "2020s",
+    "diff": "⭐ Fácil",
+    "tags": [
+      "Ação / Shinigami",
+      "Guerra de Sangue de Mil Anos",
+      "Quincy / Yhwach",
+      "Studio Pierrot"
+    ],
+    "synonyms": [
+      "bleach thousand year blood war",
+      "bleach tybw",
+      "bleach sennen kessen-hen",
+      "bleach guerra sangrenta"
+    ],
+    "video_id": "mjeR7vUrDvM",
+    "video_url": "https://www.youtube.com/watch?v=mjeR7vUrDvM",
+    "hint": "Shinigami vs Quincy / Guerra de Mil Anos / Yhwach / Pierrot",
+    "image_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx116674-p3zK4PUX2Aag.jpg"
+  },
+  {
+    "id": 88,
+    "anime": "Classroom of the Elite",
+    "song": "Caste Room",
+    "artist": "ZAQ",
+    "year": 2017,
+    "era": "2010s",
+    "diff": "⭐⭐ Média",
+    "tags": [
+      "Drama Psicológico",
+      "Escola de Elite / Turma D",
+      "Kiyotaka Ayanokouji",
+      "Lerche"
+    ],
+    "synonyms": [
+      "classroom of the elite",
+      "youkoso jitsuryoku shijou shugi no kyoushitsu e",
+      "cote"
+    ],
+    "video_id": "hsfBOwAIhOw",
+    "video_url": "https://www.youtube.com/watch?v=hsfBOwAIhOw",
+    "hint": "Psicológico / Manipulação Escolar / Turma D / Kiyotaka Ayanokouji",
+    "image_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx98659-WNyPLIZDpGGY.jpg"
+  },
+  {
+    "id": 89,
+    "anime": "Fate/stay night: Unlimited Blade Works",
+    "song": "Brave Shine",
+    "artist": "Aimer",
+    "year": 2015,
+    "era": "2010s",
+    "diff": "⭐ Fácil",
+    "tags": [
+      "Fantasia / Magia",
+      "Guerra do Santo Graal",
+      "Shirou Emiya & Archer",
+      "ufotable"
+    ],
+    "synonyms": [
+      "fate stay night unlimited blade works",
+      "fate stay night ubw",
+      "fate ubw",
+      "unlimited blade works"
+    ],
+    "video_id": "7vZp3yGxZXE",
+    "video_url": "https://www.youtube.com/watch?v=7vZp3yGxZXE",
+    "hint": "Guerra do Santo Graal / Shirou Emiya & Archer / I am the bone of my sword / ufotable",
+    "image_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx19603-ycT0pyEgDVQu.jpg"
+  },
+  {
+    "id": 90,
+    "anime": "Horimiya",
+    "song": "Iro Kousui",
+    "artist": "Yoh Kamiyama",
+    "year": 2021,
+    "era": "2020s",
+    "diff": "⭐⭐ Média",
+    "tags": [
+      "Romance Escolar",
+      "Comédia / Slice of Life",
+      "Hori & Miyamura",
+      "CloverWorks"
+    ],
+    "synonyms": [
+      "horimiya",
+      "hori-san to miyamura-kun"
+    ],
+    "video_id": "7DpONAPM3Zw",
+    "video_url": "https://www.youtube.com/watch?v=7DpONAPM3Zw",
+    "hint": "Romance Escolar / Dupla Identidade Secreta / Hori e Miyamura / CloverWorks",
+    "image_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx124080-3i22mRVPBS0T.jpg"
+  },
+  {
+    "id": 91,
+    "anime": "Clannad",
+    "song": "Megumeru",
+    "artist": "eufonius",
+    "year": 2007,
+    "era": "2000s",
+    "diff": "⭐⭐⭐ Difícil",
+    "tags": [
+      "Drama / Emoção",
+      "Romance / Sobrenatural",
+      "Tomoya & Nagisa / Dango",
+      "Kyoto Animation"
+    ],
+    "synonyms": [
+      "clannad",
+      "clannad after story"
+    ],
+    "video_id": "hEOgOtK4iGk",
+    "video_url": "https://www.youtube.com/watch?v=hEOgOtK4iGk",
+    "hint": "Drama Emocionante / Dango Daikazoku / Tomoya & Nagisa / Kyoto Animation",
+    "image_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx2167-pSDBcyc0vjej.jpg"
+  },
+  {
+    "id": 92,
+    "anime": "Steins;Gate 0",
+    "song": "Fatima",
+    "artist": "Kanako Itou",
+    "year": 2018,
+    "era": "2010s",
+    "diff": "⭐⭐ Média",
+    "tags": [
+      "Ficção Científica",
+      "Viagem no Tempo / Linha Beta",
+      "Okabe Rintarou / Amadeus",
+      "White Fox"
+    ],
+    "synonyms": [
+      "steins gate 0",
+      "steins;gate 0",
+      "steinsgate 0"
+    ],
+    "video_id": "1xJbdY9B3A8",
+    "video_url": "https://www.youtube.com/watch?v=1xJbdY9B3A8",
+    "hint": "Viagem no Tempo / Linha do Tempo Beta / IA Amadeus Kurisu / White Fox",
+    "image_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx21127-7ARWZkDXKiiD.jpg"
+  },
+  {
+    "id": 93,
+    "anime": "Made in Abyss",
+    "song": "Deep in Abyss",
+    "artist": "Miyu Tomita & Mariya Ise",
+    "year": 2017,
+    "era": "2010s",
+    "diff": "⭐⭐ Média",
+    "tags": [
+      "Aventura / Fantasia",
+      "Exploração do Abismo",
+      "Riko & Reg",
+      "Kinema Citrus"
+    ],
+    "synonyms": [
+      "made in abyss",
+      "o abismo"
+    ],
+    "video_id": "EJYKsY0Vcts",
+    "video_url": "https://www.youtube.com/watch?v=EJYKsY0Vcts",
+    "hint": "Aventura Sombria / Fossa Profunda do Abismo / Riko & Reg / Apito Branco",
+    "image_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx97986-TQ7dCgbS3y5s.jpg"
+  },
+  {
+    "id": 94,
+    "anime": "Dororo",
+    "song": "Kaen",
+    "artist": "Queen Bee",
+    "year": 2019,
+    "era": "2010s",
+    "diff": "⭐⭐ Média",
+    "tags": [
+      "Ação / Sobrenatural",
+      "Demônios & Samurai",
+      "Hyakkimaru / Próteses",
+      "MAPPA / Tezuka Productions"
+    ],
+    "synonyms": [
+      "dororo",
+      "hyakkimaru"
+    ],
+    "video_id": "FgQR2O8PGf4",
+    "video_url": "https://www.youtube.com/watch?v=FgQR2O8PGf4",
+    "hint": "Japão Feudal / 48 Demônios / Hyakkimaru recuperando partes do corpo / MAPPA",
+    "image_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx101347-TGaDwEYqLfm1.jpg"
+  },
+  {
+    "id": 95,
+    "anime": "Charlotte",
+    "song": "Bravely You",
+    "artist": "Lia",
+    "year": 2015,
+    "era": "2010s",
+    "diff": "⭐⭐ Média",
+    "tags": [
+      "Superpoderes Juvenis",
+      "Drama / Escolar",
+      "Yuu Otosaka & Nao Tomori",
+      "P.A. Works"
+    ],
+    "synonyms": [
+      "charlotte",
+      "charlote"
+    ],
+    "video_id": "oDdysk3bDdw",
+    "video_url": "https://www.youtube.com/watch?v=oDdysk3bDdw",
+    "hint": "Superpoderes Imperfeitos na Adolescência / Yuu Otosaka & Nao Tomori / P.A. Works",
+    "image_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx20997-axVYrsIfjtYJ.jpg"
+  },
+  {
+    "id": 96,
+    "anime": "Guilty Crown",
+    "song": "My Dearest",
+    "artist": "supercell",
+    "year": 2011,
+    "era": "2010s",
+    "diff": "⭐⭐ Média",
+    "tags": [
+      "Ação / Ficção Científica",
+      "Poder do Genoma Vazio",
+      "Shu Ouma & Inori",
+      "Production I.G"
+    ],
+    "synonyms": [
+      "guilty crown",
+      "inori yuzuriha"
+    ],
+    "video_id": "W10RXr9c44Y",
+    "video_url": "https://www.youtube.com/watch?v=W10RXr9c44Y",
+    "hint": "Ficção Científica / Vírus do Apocalipse / Poder Void de Inori / Production I.G",
+    "image_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx10793-KCysCbrVNqK9.jpg"
+  },
+  {
+    "id": 97,
+    "anime": "Noragami Aragoto",
+    "song": "Kyouran Hey Kids!!",
+    "artist": "THE ORAL CIGARETTES",
+    "year": 2015,
+    "era": "2010s",
+    "diff": "⭐ Fácil",
+    "tags": [
+      "Ação / Sobrenatural",
+      "Deus Menor por 5 Ienes",
+      "Yato, Yukine & Hiyori",
+      "Bones"
+    ],
+    "synonyms": [
+      "noragami aragoto",
+      "noragami",
+      "noragami 2"
+    ],
+    "video_id": "C-o8pTi6vd8",
+    "video_url": "https://www.youtube.com/watch?v=C-o8pTi6vd8",
+    "hint": "Deus da Calamidade por 5 Ienes / Yato & Espada Sagrada Yukine / Bones",
+    "image_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx21128-eQgH3TG4nngo.jpg"
+  },
+  {
+    "id": 98,
+    "anime": "DanMachi (Is It Wrong to Try to Pick Up Girls in a Dungeon?)",
+    "song": "Hey World",
+    "artist": "Yuka Iguchi",
+    "year": 2015,
+    "era": "2010s",
+    "diff": "⭐ Fácil",
+    "tags": [
+      "Fantasia / Aventura",
+      "Família de Deusa & Masmorra",
+      "Bell Cranel & Hestia",
+      "J.C.Staff"
+    ],
+    "synonyms": [
+      "danmachi",
+      "dungeon ni deai",
+      "dungeon ni deai o motomeru no wa machigatteiru darou ka",
+      "dungeon ni deai wo motomeru no wa machigatteiru darou ka",
+      "is it wrong to try to pick up girls in a dungeon",
+      "familia myth"
+    ],
+    "video_id": "4VXtJmvoV3s",
+    "video_url": "https://www.youtube.com/watch?v=4VXtJmvoV3s",
+    "hint": "Aventura em Masmorra / Bell Cranel & Deusa Hestia / J.C.Staff",
+    "image_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx20920-MTREwZOG4BAD.jpg"
+  },
+  {
+    "id": 99,
+    "anime": "Black Lagoon",
+    "song": "Red fraction",
+    "artist": "MELL",
+    "year": 2006,
+    "era": "2000s",
+    "diff": "⭐⭐ Média",
+    "tags": [
+      "Ação / Crime / Armas",
+      "Mercenários em Roanapur",
+      "Revy 'Two-Hands' & Rock",
+      "Madhouse"
+    ],
+    "synonyms": [
+      "black lagoon",
+      "roanapur",
+      "revy"
+    ],
+    "video_id": "dWfxcRj39tg",
+    "video_url": "https://www.youtube.com/watch?v=dWfxcRj39tg",
+    "hint": "Crime & Mercenários / Cidade sem Lei de Roanapur / Revy Duas Mãos / Madhouse",
+    "image_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx889-4S7N2ciq2cwA.png"
+  },
+  {
+    "id": 100,
+    "anime": "Assassination Classroom",
+    "song": "Seishun Satsubatsuron",
+    "artist": "3-nen E-gumi Utatan",
+    "year": 2015,
+    "era": "2010s",
+    "diff": "⭐ Fácil",
+    "tags": [
+      "Comédia / Escolar",
+      "Professor Polvo Alien",
+      "Koro-sensei / Turma 3-E",
+      "Lerche"
+    ],
+    "synonyms": [
+      "assassination classroom",
+      "ansatsu kyoushitsu",
+      "koro sensei",
+      "koro-sensei"
+    ],
+    "video_id": "Tgla0Q88V_Y",
+    "video_url": "https://www.youtube.com/watch?v=Tgla0Q88V_Y",
+    "hint": "Escola de Assassinos / Alvo: Professor Polvo Amarelo Koro-sensei / Lerche",
+    "image_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx20755-dWrhs569YGUO.jpg"
+  },
+  {
+    "id": 101,
+    "anime": "Yu Yu Hakusho",
+    "song": "Hohoemi no Bakudan",
+    "artist": "Matsuko Mawatari",
+    "year": 1992,
+    "diff": "Fácil",
+    "tags": [
+      "Shounen",
+      "Sobrenatural",
+      "Torneio das Trevas",
+      "Detetive Espiritual"
+    ],
+    "synonyms": [
+      "yu yu hakusho",
+      "yuyu hakusho",
+      "ghost files"
+    ],
+    "video_id": "IMkmbAP0CAo",
+    "video_url": "https://www.youtube.com/watch?v=IMkmbAP0CAo",
+    "image_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx392-z90299zIvYmx.png"
+  },
+  {
+    "id": 102,
+    "anime": "Dragon Ball Z",
+    "song": "CHA-LA HEAD-CHA-LA",
+    "artist": "Hironobu Kageyama",
+    "year": 1989,
+    "diff": "Fácil",
+    "tags": [
+      "Shounen",
+      "Super Saiyajin",
+      "Artes Marciais",
+      "Nostalgia"
+    ],
+    "synonyms": [
+      "dragon ball z",
+      "dbz",
+      "dragon ball"
+    ],
+    "video_id": "3hl2nDB8lUw",
+    "video_url": "https://www.youtube.com/watch?v=3hl2nDB8lUw",
+    "image_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx813-ZhnFNOeCU5dQ.png"
+  },
+  {
+    "id": 103,
+    "anime": "Saint Seiya",
+    "song": "Pegasus Fantasy",
+    "artist": "MAKE-UP",
+    "year": 1986,
+    "diff": "Fácil",
+    "tags": [
+      "Shounen",
+      "Armaduras do Zodíaco",
+      "Cavaleiros",
+      "Mitologia"
+    ],
+    "synonyms": [
+      "saint seiya",
+      "os cavaleiros do zodiaco",
+      "cavaleiros do zodiaco"
+    ],
+    "video_id": "bWPkk21atDo",
+    "video_url": "https://www.youtube.com/watch?v=bWPkk21atDo",
+    "image_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/1254.jpg"
+  },
+  {
+    "id": 104,
+    "anime": "Great Teacher Onizuka",
+    "song": "Driver's High",
+    "artist": "L'Arc~en~Ciel",
+    "year": 1999,
+    "diff": "Médio",
+    "tags": [
+      "Comédia",
+      "Escola",
+      "Ex-Gangster",
+      "Professores"
+    ],
+    "synonyms": [
+      "great teacher onizuka",
+      "gto"
+    ],
+    "video_id": "2JGl6UzfPkE",
+    "video_url": "https://www.youtube.com/watch?v=2JGl6UzfPkE",
+    "image_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx245-NcQAyTipUMeO.jpg"
+  },
+  {
+    "id": 105,
+    "anime": "Rurouni Kenshin",
+    "song": "Sobakasu",
+    "artist": "JUDY AND MARY",
+    "year": 1996,
+    "diff": "Médio",
+    "tags": [
+      "Samurais",
+      "Histórico",
+      "Espadas",
+      "Era Meiji"
+    ],
+    "synonyms": [
+      "rurouni kenshin",
+      "samurai x"
+    ],
+    "video_id": "YvvlGma6COM",
+    "video_url": "https://www.youtube.com/watch?v=YvvlGma6COM",
+    "image_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx45-DEFgZRCxiGmF.png"
+  },
+  {
+    "id": 106,
+    "anime": "Cardcaptor Sakura",
+    "song": "Catch You Catch Me",
+    "artist": "Gumi",
+    "year": 1998,
+    "diff": "Fácil",
+    "tags": [
+      "Mahou Shoujo",
+      "Cartas Clow",
+      "Magia",
+      "Clamp"
+    ],
+    "synonyms": [
+      "cardcaptor sakura",
+      "sakura card captors",
+      "sakura"
+    ],
+    "video_id": "-8vqfcF7CZo",
+    "video_url": "https://www.youtube.com/watch?v=-8vqfcF7CZo",
+    "image_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx232-ERyKCNNPJJeh.png"
+  },
+  {
+    "id": 107,
+    "anime": "Hajime no Ippo",
+    "song": "Under Star",
+    "artist": "Shocking Lemon",
+    "year": 2000,
+    "diff": "Médio",
+    "tags": [
+      "Esportes",
+      "Boxe",
+      "Dempsey Roll",
+      "Determinação"
+    ],
+    "synonyms": [
+      "hajime no ippo",
+      "the fighting",
+      "ippo"
+    ],
+    "video_id": "nb04udTrAxE",
+    "video_url": "https://www.youtube.com/watch?v=nb04udTrAxE",
+    "image_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx19647-cIy7ShTL6e9h.jpg"
+  },
+  {
+    "id": 108,
+    "anime": "Gintama",
+    "song": "Pray",
+    "artist": "Tommy heavenly6",
+    "year": 2006,
+    "diff": "Médio",
+    "tags": [
+      "Comédia",
+      "Paródia",
+      "Alienígenas",
+      "Samurais"
+    ],
+    "synonyms": [
+      "gintama",
+      "gin tama"
+    ],
+    "video_id": "OQYcEEkG_V0",
+    "video_url": "https://www.youtube.com/watch?v=OQYcEEkG_V0",
+    "image_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx918-iOaeBVUn4uK7.jpg"
+  },
+  {
+    "id": 109,
+    "anime": "Angel Beats!",
+    "song": "My Soul, Your Beats!",
+    "artist": "Lia",
+    "year": 2010,
+    "diff": "Fácil",
+    "tags": [
+      "Drama",
+      "Sobrenatural",
+      "Vida Após a Morte",
+      "Piano Emocionante"
+    ],
+    "synonyms": [
+      "angel beats",
+      "angel beats!"
+    ],
+    "video_id": "PZpJpxUAKew",
+    "video_url": "https://www.youtube.com/watch?v=PZpJpxUAKew",
+    "image_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx6547-SYexAn5aFyss.png"
+  },
+  {
+    "id": 110,
+    "anime": "Anohana",
+    "song": "Aoi Shiori",
+    "artist": "Galileo Galilei",
+    "year": 2011,
+    "diff": "Médio",
+    "tags": [
+      "Drama",
+      "Lágrimas",
+      "Menma",
+      "Amizade de Infância"
+    ],
+    "synonyms": [
+      "anohana",
+      "ano hi mita hana no namae"
+    ],
+    "video_id": "sGzYDL9otb8",
+    "video_url": "https://www.youtube.com/watch?v=sGzYDL9otb8",
+    "image_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx9989-hImMg6kCMm6I.jpg"
+  },
+  {
+    "id": 111,
+    "anime": "Campione!",
+    "song": "BRAVE BLADE",
+    "artist": "Meg Rock",
+    "year": 2012,
+    "diff": "Médio",
+    "tags": [
+      "Harem / Ecchi",
+      "Mitologia",
+      "Matador de Deuses",
+      "Espadas Mágicas"
+    ],
+    "synonyms": [
+      "campione",
+      "campione!"
+    ],
+    "video_id": "ZKumuxgTw9c",
+    "video_url": "https://www.youtube.com/watch?v=ZKumuxgTw9c",
+    "image_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx12293-DKc0XJ0cacSZ.jpg"
+  },
+  {
+    "id": 112,
+    "anime": "Shinmai Maou no Testament",
+    "song": "Blade of Hope",
+    "artist": "sweet ARMS",
+    "year": 2015,
+    "diff": "Médio",
+    "tags": [
+      "Harem / Ecchi",
+      "Demônios",
+      "Pacto de Mestre e Servo",
+      "Ação Sobrenatural"
+    ],
+    "synonyms": [
+      "shinmai maou no testament",
+      "the testament of sister new devil"
+    ],
+    "video_id": "3pOM-3vslLg",
+    "video_url": "https://www.youtube.com/watch?v=3pOM-3vslLg",
+    "image_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20678-58D9Yhi4GcH2.png"
+  },
+  {
+    "id": 113,
+    "anime": "Saekano: How to Raise a Boring Girlfriend",
+    "song": "Kimiiro Signal",
+    "artist": "Luna Haruna",
+    "year": 2015,
+    "diff": "Médio",
+    "tags": [
+      "Harem / Romance",
+      "Desenvolvimento de Jogos",
+      "Otaku",
+      "Heroínas"
+    ],
+    "synonyms": [
+      "saekano",
+      "how to raise a boring girlfriend",
+      "saenai heroine no sodatekata"
+    ],
+    "video_id": "C2DJZTuEL1g",
+    "video_url": "https://www.youtube.com/watch?v=C2DJZTuEL1g",
+    "image_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/nx20657-pMZBj6K6mLhi.jpg"
+  },
+  {
+    "id": 114,
+    "anime": "Strike the Blood",
+    "song": "Strike the Blood",
+    "artist": "Kishida Kyoudan & The Akeboshi Rockets",
+    "year": 2013,
+    "diff": "Médio",
+    "tags": [
+      "Harem / Ação",
+      "Vampiros",
+      "Ilha Artificial",
+      "Xamãs Espadachins"
+    ],
+    "synonyms": [
+      "strike the blood"
+    ],
+    "video_id": "gC68s6hlHwM",
+    "video_url": "https://www.youtube.com/watch?v=gC68s6hlHwM",
+    "image_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx18277-Vwm314Nr6vsg.jpg"
+  },
+  {
+    "id": 115,
+    "anime": "Sekirei",
+    "song": "Sekirei",
+    "artist": "Saori Hayami, Marina Inoue, Kana Hanazawa, Aya Endou",
+    "year": 2008,
+    "diff": "Médio",
+    "tags": [
+      "Harem / Ecchi",
+      "Torneio de Batalha",
+      "Poderes Elementais",
+      "Parceiros"
+    ],
+    "synonyms": [
+      "sekirei"
+    ],
+    "video_id": "tTpnVosp47k",
+    "video_url": "https://www.youtube.com/watch?v=tTpnVosp47k",
+    "image_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx4063-ZP7agutiaOCf.png"
+  },
+  {
+    "id": 116,
+    "anime": "Freezing",
+    "song": "Color",
+    "artist": "MARiA",
+    "year": 2011,
+    "diff": "Médio",
+    "tags": [
+      "Harem / Ecchi",
+      "Academia Militar",
+      "Pandora",
+      "Invasores Nova"
+    ],
+    "synonyms": [
+      "freezing"
+    ],
+    "video_id": "Z3sSfi8v_nk",
+    "video_url": "https://www.youtube.com/watch?v=Z3sSfi8v_nk",
+    "image_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/9367.jpg"
+  },
+  {
+    "id": 117,
+    "anime": "Eromanga Sensei",
+    "song": "Hitorigoto",
+    "artist": "ClariS",
+    "year": 2017,
+    "diff": "Fácil",
+    "tags": [
+      "Comédia / Harem",
+      "Light Novels",
+      "Ilustradores",
+      "ClariS"
+    ],
+    "synonyms": [
+      "eromanga sensei",
+      "eromanga-sensei"
+    ],
+    "video_id": "rxL2rChOQ1I",
+    "video_url": "https://www.youtube.com/watch?v=rxL2rChOQ1I",
+    "image_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21685-h1SrcpaNnrIq.jpg"
+  },
+  {
+    "id": 118,
+    "anime": "Oreimo",
+    "song": "irony",
+    "artist": "ClariS",
+    "year": 2010,
+    "diff": "Fácil",
+    "tags": [
+      "Comédia / Romance",
+      "Irmã Otaku",
+      "Segredo Familiar",
+      "ClariS"
+    ],
+    "synonyms": [
+      "oreimo",
+      "ore no imouto ga konna ni kawaii wake ga nai"
+    ],
+    "video_id": "VJxedFvbSBQ",
+    "video_url": "https://www.youtube.com/watch?v=VJxedFvbSBQ",
+    "image_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx8769-Lat76qlOwdBN.jpg"
+  },
+  {
+    "id": 119,
+    "anime": "Shimoneta",
+    "song": "B Chiku Sentai Soutou H-Gumi",
+    "artist": "SOX",
+    "year": 2015,
+    "diff": "Médio",
+    "tags": [
+      "Comédia / Ecchi",
+      "Terrorismo de Piadas Sujas",
+      "Distopia",
+      "SOX"
+    ],
+    "synonyms": [
+      "shimoneta",
+      "shimoneta to iu gainen"
+    ],
+    "video_id": "cbvDnHjloRc",
+    "video_url": "https://www.youtube.com/watch?v=cbvDnHjloRc",
+    "image_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20910-U7txwG3o9gma.jpg"
+  },
+  {
+    "id": 120,
+    "anime": "Yuuna and the Haunted Hot Springs",
+    "song": "Momoiro Typhoon",
+    "artist": "Luna Haruna",
+    "year": 2018,
+    "diff": "Médio",
+    "tags": [
+      "Harem / Ecchi",
+      "Fantasmas",
+      "Águas Termais",
+      "Youkais"
+    ],
+    "synonyms": [
+      "yuuna and the haunted hot springs",
+      "yuragi-sou no yuuna-san",
+      "yuuna-san"
+    ],
+    "video_id": "ZK-47qsGhKs",
+    "video_url": "https://www.youtube.com/watch?v=ZK-47qsGhKs",
+    "image_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/nx100483-fzseZYJnQTLI.jpg"
+  },
+  {
+    "id": 121,
+    "anime": "We Never Learn: BOKUBEN",
+    "song": "Seishun Seminar",
+    "artist": "Study",
+    "year": 2019,
+    "diff": "Médio",
+    "tags": [
+      "Harem / Comédia",
+      "Tutoria Escolar",
+      "Gênias Incompetentes",
+      "Romance"
+    ],
+    "synonyms": [
+      "we never learn",
+      "bokuben",
+      "bokutachi wa benkyou ga dekinai"
+    ],
+    "video_id": "M4eBNeE_kwY",
+    "video_url": "https://www.youtube.com/watch?v=M4eBNeE_kwY",
+    "image_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx103900-E3rqgpq4X0Py.jpg"
+  },
+  {
+    "id": 122,
+    "anime": "The Quintessential Quintuplets",
+    "song": "Gotoubun no Kimochi",
+    "artist": "Nakano Sisters",
+    "year": 2019,
+    "diff": "Fácil",
+    "tags": [
+      "Harem / Romance",
+      "Irmãs Quíntuplas",
+      "Futaro",
+      "Casamento Futuro"
+    ],
+    "synonyms": [
+      "the quintessential quintuplets",
+      "gotoubun no hanayome",
+      "as quintuplas"
+    ],
+    "video_id": "FKIT6G_lw7c",
+    "video_url": "https://www.youtube.com/watch?v=FKIT6G_lw7c",
+    "image_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx103572-cchriAdH95cQ.png"
+  },
+  {
+    "id": 123,
+    "anime": "Mushoku Tensei: Jobless Reincarnation",
+    "song": "Tabibito no Uta",
+    "artist": "Yuiko Ohara",
+    "year": 2021,
+    "diff": "Médio",
+    "tags": [
+      "Isekai",
+      "Fantasia Épica",
+      "Rudeus Greyrat",
+      "Magia"
+    ],
+    "synonyms": [
+      "mushoku tensei",
+      "jobless reincarnation"
+    ],
+    "video_id": "pEoCT-Kv5CI",
+    "video_url": "https://www.youtube.com/watch?v=pEoCT-Kv5CI",
+    "image_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx108465-1ANspF1EWyFx.jpg"
+  },
+  {
+    "id": 124,
+    "anime": "Dungeon Meshi",
+    "song": "Sleep Walking Orchestra",
+    "artist": "BUMP OF CHICKEN",
+    "year": 2024,
+    "diff": "Fácil",
+    "tags": [
+      "Fantasia",
+      "Culinária de Monstros",
+      "Masmorras",
+      "Studio Trigger"
+    ],
+    "synonyms": [
+      "dungeon meshi",
+      "delicious in dungeon"
+    ],
+    "video_id": "60_2zt9l3Yk",
+    "video_url": "https://www.youtube.com/watch?v=60_2zt9l3Yk",
+    "image_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx153518-IVXPDY5ph3kO.jpg"
+  },
+  {
+    "id": 125,
+    "anime": "Hell's Paradise",
+    "song": "WORK",
+    "artist": "millenium parade x Ringo Sheena",
+    "year": 2023,
+    "diff": "Fácil",
+    "tags": [
+      "Ação",
+      "Shinobi",
+      "Ilha Sobrenatural",
+      "Elixir da Vida"
+    ],
+    "synonyms": [
+      "hell's paradise",
+      "jigokuraku"
+    ],
+    "video_id": "Rr1UQlJxXB8",
+    "video_url": "https://www.youtube.com/watch?v=Rr1UQlJxXB8",
+    "image_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx128893-Gc2t8b8M0mVu.jpg"
+  },
+  {
+    "id": 126,
+    "anime": "The Apothecary Diaries",
+    "song": "Hana ni Natte",
+    "artist": "Ryokuoushoku Shakai",
+    "year": 2023,
+    "diff": "Fácil",
+    "tags": [
+      "Mistério",
+      "Palácio Imperial",
+      "Ervas Medicinais",
+      "Maomao"
+    ],
+    "synonyms": [
+      "the apothecary diaries",
+      "kusuriya no hitorigoto"
+    ],
+    "video_id": "E3QN_uoHysA",
+    "video_url": "https://www.youtube.com/watch?v=E3QN_uoHysA",
+    "image_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx161645-QLbzHXiYRgV2.jpg"
+  },
+  {
+    "id": 127,
+    "anime": "My Dress-Up Darling",
+    "song": "Sansan Days",
+    "artist": "Spira Spica",
+    "year": 2022,
+    "diff": "Fácil",
+    "tags": [
+      "Romance",
+      "Cosplay",
+      "Marin Kitagawa",
+      "Costura"
+    ],
+    "synonyms": [
+      "my dress-up darling",
+      "sono bisque doll wa koi wo suru",
+      "sono bisque doll"
+    ],
+    "video_id": "oG4eu4HMtbo",
+    "video_url": "https://www.youtube.com/watch?v=oG4eu4HMtbo",
+    "image_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx132405-qP7FQYGmNI3d.jpg"
+  },
+  {
+    "id": 128,
+    "anime": "The Dangers in My Heart",
+    "song": "Shayou",
+    "artist": "Yorushika",
+    "year": 2023,
+    "diff": "Fácil",
+    "tags": [
+      "Romcom",
+      "Ichikawa e Yamada",
+      "Crescimento Pessoal",
+      "Fofo"
+    ],
+    "synonyms": [
+      "the dangers in my heart",
+      "boku no kokoro no yabai yatsu",
+      "bokuyaba"
+    ],
+    "video_id": "Za2FmwuIEwY",
+    "video_url": "https://www.youtube.com/watch?v=Za2FmwuIEwY",
+    "image_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx153152-Xnwmx7wuoIWV.jpg"
+  },
+  {
+    "id": 129,
+    "anime": "Komi Can't Communicate",
+    "song": "Cinderella",
+    "artist": "Cidergirl",
+    "year": 2021,
+    "diff": "Fácil",
+    "tags": [
+      "Comédia",
+      "Escola",
+      "100 Amigos",
+      "Comunicação"
+    ],
+    "synonyms": [
+      "komi can't communicate",
+      "komi-san wa comyushou desu"
+    ],
+    "video_id": "xHlx3rx5Bew",
+    "video_url": "https://www.youtube.com/watch?v=xHlx3rx5Bew",
+    "image_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx142984-nv2MWVWZ1yYH.jpg"
+  }
+]

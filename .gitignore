@@ -1,0 +1,8 @@
+# Temporary and test files
+scratch/
+__pycache__/
+*.pyc
+*.bak
+*.tmp
+.DS_Store
+Thumbs.db

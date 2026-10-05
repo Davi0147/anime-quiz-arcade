@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Test YT Player</title>
+</head>
+<body style="background: #222; color: #fff; font-family: sans-serif; padding: 20px;">
+  <h2>Teste de Reprodução YouTube API</h2>
+  <button id="btn" style="padding: 12px 24px; font-size: 16px; cursor: pointer;">▶️ CLIQUE AQUI PARA TESTAR ÁUDIO</button>
+  <p id="status">Aguardando carregamento da API...</p>
+
+  <!-- Player container with 200x200 or masked -->
+  <div id="player-container" style="margin-top: 20px; width: 300px; height: 180px; position: relative; overflow: hidden; border-radius: 8px;">
+    <div id="yt-player"></div>
+  </div>
+
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script>
+    let player;
+    let isReady = false;
+
+    function onYouTubeIframeAPIReady() {
+      document.getElementById('status').textContent = 'API carregada! Criando player...';
+      player = new YT.Player('yt-player', {
+        height: '180',
+        width: '300',
+        videoId: 'tkNfLYr-MyM',
+        playerVars: {
+          'playsinline': 1,
+          'controls': 1,
+          'rel': 0
+        },
+        events: {
+          'onReady': () => {
+            isReady = true;
+            document.getElementById('status').textContent = '✅ Player pronto! Clique no botão acima para tocar!';
+          },
+          'onStateChange': (e) => {
+            if (e.data === YT.PlayerState.PLAYING) {
+              document.getElementById('status').textContent = '🎵 TOCANDO COM SUCESSO!';
+            }
+          },
+          'onError': (e) => {
+            document.getElementById('status').textContent = '❌ Erro no player: ' + e.data;
+          }
+        }
+      });
+    }
+
+    document.getElementById('btn').addEventListener('click', () => {
+      if (player && isReady) {
+        player.playVideo();
+        document.getElementById('status').textContent = 'Tentando dar play...';
+      } else {
+        alert('Player ainda não está pronto!');
+      }
+    });
+  </script>
+</body>
+</html>

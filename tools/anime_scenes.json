@@ -1,0 +1,2605 @@
+[
+  {
+    "id": 1,
+    "anime": "Neon Genesis Evangelion",
+    "image_url": "https://media.kitsu.app/episodes/thumbnails/1095/original.jpg",
+    "has_cinematic_banner": true,
+    "year": 1995,
+    "tags": [
+      "Mecha",
+      "Psicológico",
+      "Anjos & Evas",
+      "Estúdio Gainax",
+      "Anos 90"
+    ],
+    "synonyms": [
+      "evangelion",
+      "neon genesis evangelion",
+      "eva",
+      "shin seiki evangelion"
+    ],
+    "hint": "Mecha / Psicológico / Anjos & Evas",
+    "poster_url": "https://media.kitsu.app/anime/21/poster_image/large-9a3a9086a1b563e9e72d510118eb7d3c.jpeg"
+  },
+  {
+    "id": 2,
+    "anime": "Cowboy Bebop",
+    "image_url": "https://img1.ak.crunchyroll.com/i/spire2-tmb/e3a45e86c597fe16f02d29efcadedcd81473268732_full.jpg",
+    "has_cinematic_banner": true,
+    "year": 1998,
+    "tags": [
+      "Ficção Científica",
+      "Jazz / Noir",
+      "Caçadores de Recompensa",
+      "Estúdio Sunrise",
+      "Espaço"
+    ],
+    "synonyms": [
+      "cowboy bebop",
+      "bebop"
+    ],
+    "hint": "Ficção Científica / Jazz / Noir / Caçadores de Recompensa",
+    "poster_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx1-GCsPm7waJ4kS.png"
+  },
+  {
+    "id": 3,
+    "anime": "Digimon Adventure",
+    "image_url": "https://img1.ak.crunchyroll.com/i/spire4-tmb/4d58d32a8592b166cd092ce1c81bcd0b1609390149_full.jpg",
+    "has_cinematic_banner": true,
+    "year": 1999,
+    "tags": [
+      "Monstros Digitais",
+      "Digiescolhidos",
+      "Agumon",
+      "Nostalgia",
+      "Toei Animation"
+    ],
+    "synonyms": [
+      "digimon",
+      "digimon adventure",
+      "digimon 1"
+    ],
+    "hint": "Monstros Digitais / Digiescolhidos / Agumon",
+    "poster_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx552-zad0ts5hylQJ.jpg"
+  },
+  {
+    "id": 4,
+    "anime": "One Piece",
+    "image_url": "https://img1.ak.crunchyroll.com/i/spire4-tmb/d80b3fbce742e6deb4d2caf37d08ca6e1395451246_full.jpg",
+    "has_cinematic_banner": true,
+    "year": 1999,
+    "tags": [
+      "Piratas",
+      "Shounen",
+      "Akuma no Mi",
+      "Luffy",
+      "Toei Animation"
+    ],
+    "synonyms": [
+      "one piece",
+      "op",
+      "wan pisu"
+    ],
+    "hint": "Piratas / Shounen / Akuma no Mi",
+    "poster_url": "https://media.kitsu.app/anime/poster_images/12/large.jpg"
+  },
+  {
+    "id": 5,
+    "anime": "InuYasha",
+    "image_url": "https://img1.ak.crunchyroll.com/i/spire1-tmb/b68e79efd7e4a8dc004a1fc151c0ab301575495305_full.jpg",
+    "has_cinematic_banner": true,
+    "year": 2000,
+    "tags": [
+      "Shounen",
+      "Fantasia Feudal",
+      "Youkai / Meio-Demônio",
+      "Joia de Quatro Almas",
+      "Estúdio Sunrise"
+    ],
+    "synonyms": [
+      "inuyasha",
+      "inu yasha",
+      "inu-yasha"
+    ],
+    "hint": "Ação / Fantasia Feudal / Youkai",
+    "poster_url": "https://media.kitsu.app/anime/poster_images/224/large.jpg"
+  },
+  {
+    "id": 6,
+    "anime": "Digimon Tamers",
+    "image_url": "https://media.kitsu.app/episodes/thumbnails/2682/original.jpeg",
+    "has_cinematic_banner": true,
+    "year": 2001,
+    "tags": [
+      "Monstros Digitais",
+      "Cartas & Digivoluções",
+      "Guilmon",
+      "Mundo Real vs Digital",
+      "Toei Animation"
+    ],
+    "synonyms": [
+      "digimon tamers",
+      "digimon 3",
+      "digimon tamer"
+    ],
+    "hint": "Aventura / Monstros Digitais",
+    "poster_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx874-3uug3PiSeyf7.jpg"
+  },
+  {
+    "id": 7,
+    "anime": "Shaman King",
+    "image_url": "https://media.kitsu.app/episodes/thumbnails/3915/original.jpg",
+    "has_cinematic_banner": true,
+    "year": 2001,
+    "tags": [
+      "Xamanismo",
+      "Espíritos Guardiões",
+      "Torneio Xamã",
+      "Yoh Asakura",
+      "Estúdio Xebec"
+    ],
+    "synonyms": [
+      "shaman king",
+      "o rei dos xamas",
+      "rei dos xamas"
+    ],
+    "hint": "Ação / Sobrenatural / Espíritos Guardiões",
+    "poster_url": "https://media.kitsu.app/anime/poster_images/132/large.jpg"
+  },
+  {
+    "id": 8,
+    "anime": "Naruto",
+    "image_url": "https://img1.ak.crunchyroll.com/i/spire4-tmb/ea976df50bf201db97c78c2e2ed72f641233900918_full.jpg",
+    "has_cinematic_banner": true,
+    "year": 2002,
+    "tags": [
+      "Ninjas / Shinobi",
+      "Exame Chuunin",
+      "Floresta da Morte",
+      "Konoha",
+      "Studio Pierrot"
+    ],
+    "synonyms": [
+      "naruto",
+      "naruto classico",
+      "naruto shonen"
+    ],
+    "hint": "Ação / Ninjas / Exame Chuunin",
+    "poster_url": "https://media.kitsu.app/anime/poster_images/1555/large.jpg"
+  },
+  {
+    "id": 9,
+    "anime": "Fullmetal Alchemist",
+    "image_url": "https://media.kitsu.app/episodes/thumbnails/3015/original.jpg",
+    "has_cinematic_banner": true,
+    "year": 2003,
+    "tags": [
+      "Alquimia",
+      "Irmãos Elric",
+      "Braço de Metal",
+      "Pedra Filosofal",
+      "Estúdio Bones"
+    ],
+    "synonyms": [
+      "fullmetal alchemist",
+      "fullmetal",
+      "fma",
+      "fma 2003",
+      "hagane no renkinjutsushi"
+    ],
+    "hint": "Fantasia / Alquimia / Irmãos Elric",
+    "poster_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx5114-nSWCgQlmOMtj.jpg"
+  },
+  {
+    "id": 10,
+    "anime": "Bleach",
+    "image_url": "https://img1.ak.crunchyroll.com/i/spire3-tmb/3873f2dbcef91cf5919ec90176d4f7611279747858_full.jpg",
+    "has_cinematic_banner": true,
+    "year": 2004,
+    "tags": [
+      "Shinigami / Ceifeiros",
+      "Espadas Zanpakutou",
+      "Hollows",
+      "Ichigo Kurosaki",
+      "Studio Pierrot"
+    ],
+    "synonyms": [
+      "bleach",
+      "burichi"
+    ],
+    "hint": "Ação / Shinigami / Espadas e Hollows",
+    "poster_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx269-d2GmRkJbMopq.png"
+  },
+  {
+    "id": 11,
+    "anime": "Code Geass: Lelouch of the Rebellion",
+    "image_url": "https://img1.ak.crunchyroll.com/i/spire3-tmb/30b7c1126f35f14258761f19c977c0d91498578276_full.jpg",
+    "has_cinematic_banner": true,
+    "year": 2006,
+    "tags": [
+      "Mecha / Robôs",
+      "Estratégia Militar",
+      "Olho do Geass",
+      "Lelouch / Zero",
+      "Estúdio Sunrise"
+    ],
+    "synonyms": [
+      "code geass",
+      "code geass lelouch of the rebellion",
+      "lelouch of the rebellion"
+    ],
+    "hint": "Mecha / Estratégia / Rebelião e Poder Absoluto",
+    "poster_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx1575-hsmWM2ydNm1m.jpg"
+  },
+  {
+    "id": 12,
+    "anime": "Death Note",
+    "image_url": "https://img1.ak.crunchyroll.com/i/spire1-tmb/01cd4172aee96c4add1272b59923f3c71576113307_full.jpg",
+    "has_cinematic_banner": true,
+    "year": 2006,
+    "tags": [
+      "Suspense Psicológico",
+      "Caderno da Morte",
+      "Shinigami Ryuk",
+      "Light vs L",
+      "Estúdio Madhouse"
+    ],
+    "synonyms": [
+      "death note",
+      "caderno da morte",
+      "deathnote"
+    ],
+    "hint": "Suspense / Caderno da Morte / Shinigami",
+    "poster_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx1535-kUgkcrfOrkUM.jpg"
+  },
+  {
+    "id": 13,
+    "anime": "Fate/stay night",
+    "image_url": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/356-0VzS7BcObayT.jpg",
+    "has_cinematic_banner": true,
+    "year": 2006,
+    "tags": [
+      "Guerra do Santo Graal",
+      "Mestres & Servos",
+      "Saber / Excalibur",
+      "Magia Urbana",
+      "Studio Deen"
+    ],
+    "synonyms": [
+      "fate stay night",
+      "fate/stay night",
+      "fate",
+      "fate 2006"
+    ],
+    "hint": "Fantasia Urbana / Guerra do Santo Graal / Servants",
+    "poster_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx356-mTpMvtillumS.png"
+  },
+  {
+    "id": 14,
+    "anime": "Tengen Toppa Gurren Lagann",
+    "image_url": "https://img1.ak.crunchyroll.com/i/spire1-tmb/2ede57e062057e2a5d6990f02920947c1367609394_full.jpg",
+    "has_cinematic_banner": true,
+    "year": 2007,
+    "tags": [
+      "Mecha Épico",
+      "Brocas Gigantes",
+      "Kamina & Simon",
+      "Perfurar os Céus",
+      "Estúdio Gainax"
+    ],
+    "synonyms": [
+      "tengen toppa gurren lagann",
+      "gurren lagann",
+      "ttgl"
+    ],
+    "hint": "Mecha / Brocas que perfuram os céus",
+    "poster_url": "https://media.kitsu.app/anime/poster_images/1801/large.jpg"
+  },
+  {
+    "id": 15,
+    "anime": "Naruto Shippuden",
+    "image_url": "https://img1.ak.crunchyroll.com/i/spire1-tmb/f6edc43fdd35d99fbe8e6f794717cf381229989826_full.jpg",
+    "has_cinematic_banner": true,
+    "year": 2008,
+    "tags": [
+      "Ninjas",
+      "Habataitara",
+      "Akatsuki",
+      "Konoha",
+      "Studio Pierrot"
+    ],
+    "synonyms": [
+      "naruto shippuden",
+      "naruto shippuuden",
+      "naruto"
+    ],
+    "hint": "Ação / Habataitara modoranai to itte",
+    "poster_url": "https://media.kitsu.app/anime/poster_images/1555/large.jpg"
+  },
+  {
+    "id": 16,
+    "anime": "Rosario + Vampire",
+    "image_url": "https://media.kitsu.app/episodes/thumbnails/45648/original.jpg",
+    "has_cinematic_banner": true,
+    "year": 2008,
+    "tags": [
+      "Harém",
+      "Ecchi",
+      "Vampira & Monstros",
+      "Moka Akashiya",
+      "Gonzo"
+    ],
+    "synonyms": [
+      "rosario vampire",
+      "rosario to vampire",
+      "rosario + vampire capu2",
+      "rosario"
+    ],
+    "hint": "Harém / Ecchi / Vampira & Monstros / Moka Akashiya / Gonzo",
+    "poster_url": "https://media.kitsu.app/anime/poster_images/2706/large.jpg"
+  },
+  {
+    "id": 17,
+    "anime": "Soul Eater",
+    "image_url": "https://img1.ak.crunchyroll.com/i/spire1-tmb/f5f7ac15029a636e3c6822e34fb53c291497826757_full.jpg",
+    "has_cinematic_banner": true,
+    "year": 2008,
+    "tags": [
+      "Armas & Artífices",
+      "Academia DWMA",
+      "Gadanha Mortal",
+      "Maka & Soul",
+      "Estúdio Bones"
+    ],
+    "synonyms": [
+      "soul eater",
+      "souleater"
+    ],
+    "hint": "Ação / Armas Humanas e Artesãos de Almas",
+    "poster_url": "https://media.kitsu.app/anime/poster_images/3128/large.jpg"
+  },
+  {
+    "id": 18,
+    "anime": "Toradora!",
+    "image_url": "https://img1.ak.crunchyroll.com/i/spire1-tmb/adf8100e58077a3aa7fc2d690bff2b821404421713_full.jpg",
+    "has_cinematic_banner": true,
+    "year": 2008,
+    "tags": [
+      "Romance Escolar",
+      "Comédia",
+      "Tigresa de Bolso",
+      "Taiga & Ryuuji",
+      "J.C.Staff"
+    ],
+    "synonyms": [
+      "toradora",
+      "toradora!"
+    ],
+    "hint": "Romance / Comédia / Tigresa de Bolso",
+    "poster_url": "https://media.kitsu.app/anime/poster_images/3532/large.jpg"
+  },
+  {
+    "id": 19,
+    "anime": "Bakemonogatari",
+    "image_url": "https://img1.ak.crunchyroll.com/i/spire4-tmb/0c04588785851d184602c930502764031347406127_full.jpg",
+    "has_cinematic_banner": true,
+    "year": 2009,
+    "tags": [
+      "Sobrenatural",
+      "Vampiros & Maldições",
+      "Renai Circulation",
+      "Araragi & Nadeko",
+      "Estúdio Shaft"
+    ],
+    "synonyms": [
+      "bakemonogatari",
+      "monogatari",
+      "monogatari series"
+    ],
+    "hint": "Sobrenatural / Se~no / Aparições",
+    "poster_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx5081-9GocceQ5Z865.jpg"
+  },
+  {
+    "id": 20,
+    "anime": "Fairy Tail",
+    "image_url": "https://img1.ak.crunchyroll.com/i/spire1-tmb/00aacbb8bcfe784b3c8e728b269af0821644957412_full.jpg",
+    "has_cinematic_banner": true,
+    "year": 2009,
+    "tags": [
+      "Guilda de Magos",
+      "Dragon Slayer de Fogo",
+      "Natsu & Happy",
+      "Magia",
+      "A-1 Pictures"
+    ],
+    "synonyms": [
+      "fairy tail",
+      "fairytail"
+    ],
+    "hint": "Magia / Guilda / Dragon Slayer de Fogo",
+    "poster_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b6702-KI4qgSMyI8Pm.png"
+  },
+  {
+    "id": 21,
+    "anime": "Fullmetal Alchemist: Brotherhood",
+    "image_url": "https://img1.ak.crunchyroll.com/i/spire2-tmb/bba713cd933d6eadd690fcf477cfb2c21471054462_full.jpg",
+    "has_cinematic_banner": true,
+    "year": 2009,
+    "tags": [
+      "Alquimia",
+      "Irmãos Elric",
+      "Homúnculos",
+      "Amestris",
+      "Estúdio Bones"
+    ],
+    "synonyms": [
+      "fullmetal alchemist brotherhood",
+      "fullmetal alchemist",
+      "fmab",
+      "fma brotherhood",
+      "fma"
+    ],
+    "hint": "Aventura / Transmutações / Homúnculos",
+    "poster_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx5114-nSWCgQlmOMtj.jpg"
+  },
+  {
+    "id": 22,
+    "anime": "Sora no Otoshimono",
+    "image_url": "https://img1.ak.crunchyroll.com/i/spire4-tmb/ff8cd741d24b36c0f80c2e73ecc0c7fa1519606126_full.jpg",
+    "has_cinematic_banner": true,
+    "year": 2009,
+    "tags": [
+      "Harém / Ecchi",
+      "Anjo Artificial (Angeloid)",
+      "Ikaros",
+      "Comédia / Romance",
+      "AIC A.S.T.A."
+    ],
+    "synonyms": [
+      "sora no otoshimono",
+      "heavens lost property",
+      "heaven's lost property"
+    ],
+    "hint": "Harém / Ecchi / Anjo Artificial (Angeloid) / Ikaros / Comédia / Romance / AIC A.S.T.A.",
+    "poster_url": "https://media.kitsu.app/anime/poster_images/4363/large.jpg"
+  },
+  {
+    "id": 23,
+    "anime": "Durarara!!",
+    "image_url": "https://img1.ak.crunchyroll.com/i/spire2-tmb/e2b8d33e5ddb70fbc2e2f6b5f87022b71262642812_full.jpg",
+    "has_cinematic_banner": true,
+    "year": 2010,
+    "tags": [
+      "Mistério Urbano",
+      "Ikebukuro",
+      "Motoqueira Sem Cabeça",
+      "Gangue Dollars",
+      "Brain's Base"
+    ],
+    "synonyms": [
+      "durarara",
+      "durarara!!",
+      "drrr"
+    ],
+    "hint": "Mistério / Ikebukuro / Motoqueiro Sem Cabeça e Gangue dos Dollars",
+    "poster_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx6746-3LTwM95Uqeoa.png"
+  },
+  {
+    "id": 24,
+    "anime": "Highschool of the Dead",
+    "image_url": "https://media.kitsu.app/episodes/thumbnails/80530/original.jpg",
+    "has_cinematic_banner": true,
+    "year": 2010,
+    "tags": [
+      "Ecchi / Sobrevivência",
+      "Zumbis no Colégio",
+      "Armas & Ação",
+      "Estúdio Madhouse",
+      "Apocalipse"
+    ],
+    "synonyms": [
+      "highschool of the dead",
+      "hotd",
+      "high school of the dead",
+      "escola dos mortos"
+    ],
+    "hint": "Ecchi / Sobrevivência / Zumbis no Colégio / Armas & Ação / Estúdio Madhouse / Apocalipse",
+    "poster_url": "https://media.kitsu.app/anime/poster_images/5187/large.jpg"
+  },
+  {
+    "id": 25,
+    "anime": "Fate/Zero",
+    "image_url": "https://img1.ak.crunchyroll.com/i/spire2-tmb/20b0cf76c93471975a17485d44ac79391432957314_full.jpg",
+    "has_cinematic_banner": true,
+    "year": 2011,
+    "tags": [
+      "Guerra do Santo Graal",
+      "Assassino de Magos",
+      "Kiritsugu",
+      "Tragédia Épica",
+      "ufotable"
+    ],
+    "synonyms": [
+      "fate zero",
+      "fate/zero"
+    ],
+    "hint": "Guerra do Santo Graal / Trágico / Saber e Kiritsugu",
+    "poster_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx10087-M4Hd9qrHGrXk.png"
+  },
+  {
+    "id": 26,
+    "anime": "Hunter x Hunter",
+    "image_url": "https://media.kitsu.app/episodes/thumbnails/104999/original.jpg",
+    "has_cinematic_banner": true,
+    "year": 2011,
+    "tags": [
+      "Exame Hunter",
+      "Energia Nen",
+      "Gon & Killua",
+      "You can smile again!",
+      "Estúdio Madhouse"
+    ],
+    "synonyms": [
+      "hunter x hunter",
+      "hunter hunter",
+      "hxh",
+      "hunter x hunter 2011"
+    ],
+    "hint": "Aventura / Exame Hunter / Nen",
+    "poster_url": "https://media.kitsu.app/anime/poster_images/6448/large.jpg"
+  },
+  {
+    "id": 27,
+    "anime": "IS: Infinite Stratos",
+    "image_url": "https://media.kitsu.app/episodes/thumbnails/85978/original.jpg",
+    "has_cinematic_banner": true,
+    "year": 2011,
+    "tags": [
+      "Harém / Mecha",
+      "Armaduras Voadoras",
+      "Ichika Orimura",
+      "Academia Feminina",
+      "8bit"
+    ],
+    "synonyms": [
+      "infinite stratos",
+      "is infinite stratos",
+      "is"
+    ],
+    "hint": "Harém / Mecha / Armaduras Voadoras / Ichika Orimura / Academia Feminina / 8bit",
+    "poster_url": "https://media.kitsu.app/anime/poster_images/5583/large.jpg"
+  },
+  {
+    "id": 28,
+    "anime": "Steins;Gate",
+    "image_url": "https://img1.ak.crunchyroll.com/i/spire1-tmb/5b45600ea630f84863be018ed4f441681301790416_full.jpg",
+    "has_cinematic_banner": true,
+    "year": 2011,
+    "tags": [
+      "Ficção Científica",
+      "Viagem no Tempo",
+      "Cientista Louco",
+      "Okabe & Kurisu",
+      "White Fox"
+    ],
+    "synonyms": [
+      "steins gate",
+      "steins;gate",
+      "steinsgate"
+    ],
+    "hint": "Ficção Científica / Linhas temporais / Micro-ondas telefone",
+    "poster_url": "https://media.kitsu.app/anime/poster_images/5646/large.jpg"
+  },
+  {
+    "id": 29,
+    "anime": "High School DxD",
+    "image_url": "https://media.kitsu.app/episodes/thumbnails/97197/original.jpg",
+    "has_cinematic_banner": true,
+    "year": 2012,
+    "tags": [
+      "Harém / Ecchi Supremo",
+      "Demônios & Peças de Xadrez",
+      "Issei & Rias Gremory",
+      "Oppai",
+      "TNK"
+    ],
+    "synonyms": [
+      "high school dxd",
+      "highschool dxd",
+      "dxd"
+    ],
+    "hint": "Harém / Ecchi Supremo / Demônios & Peças de Xadrez / Issei & Rias Gremory / Oppai / TNK",
+    "poster_url": "https://media.kitsu.app/anime/6550/poster_image/large-9a9352a43891fd441c0b82734ade67cc.jpeg"
+  },
+  {
+    "id": 30,
+    "anime": "JoJo's Bizarre Adventure",
+    "image_url": "https://media.kitsu.app/episodes/thumbnails/101316/original.jpg",
+    "has_cinematic_banner": true,
+    "year": 2012,
+    "tags": [
+      "Família Joestar",
+      "Hamon & Vampiros",
+      "Dio Brando",
+      "Jonathan Joestar",
+      "David Production"
+    ],
+    "synonyms": [
+      "jojo",
+      "jojos bizarre adventure",
+      "jojo no kimyou na bouken",
+      "phantom blood"
+    ],
+    "hint": "Ação / Hamon / Vampiros / Família Joestar",
+    "poster_url": "https://media.kitsu.app/anime/7158/poster_image/large-9e79f5c290ae821d2141473e6fdb6532.jpeg"
+  },
+  {
+    "id": 31,
+    "anime": "Sword Art Online",
+    "image_url": "https://media.kitsu.app/episodes/thumbnails/97395/original.jpg",
+    "has_cinematic_banner": true,
+    "year": 2012,
+    "tags": [
+      "Isekai / Realidade Virtual",
+      "Espadas & MMORPG",
+      "Kirito & Asuna",
+      "Aincrad",
+      "A-1 Pictures"
+    ],
+    "synonyms": [
+      "sword art online",
+      "sao"
+    ],
+    "hint": "Isekai / Realidade Virtual / Se morrer no jogo morre na vida real",
+    "poster_url": "https://media.kitsu.app/anime/poster_images/6589/large.jpg"
+  },
+  {
+    "id": 32,
+    "anime": "To LOVE-Ru Darkness",
+    "image_url": "https://media.kitsu.app/episodes/thumbnails/171574/original.jpeg",
+    "has_cinematic_banner": true,
+    "year": 2012,
+    "tags": [
+      "Harém / Ecchi",
+      "Alienígenas",
+      "Momo & Golden Darkness (Yami)",
+      "Rito Yuuki",
+      "Xebec"
+    ],
+    "synonyms": [
+      "to love ru",
+      "to love-ru",
+      "to love ru darkness",
+      "to loveru"
+    ],
+    "hint": "Harém / Ecchi / Alienígenas / Momo & Golden Darkness (Yami) / Rito Yuuki / Xebec",
+    "poster_url": "https://media.kitsu.app/anime/poster_images/7007/large.jpg"
+  },
+  {
+    "id": 33,
+    "anime": "Attack on Titan (Shingeki no Kyojin)",
+    "image_url": "https://media.kitsu.app/episodes/thumbnails/104938/original.jpg",
+    "has_cinematic_banner": true,
+    "year": 2013,
+    "tags": [
+      "Muralhas & Titãs",
+      "Tropa de Exploração",
+      "Eren & Mikasa",
+      "Dispositivo DMT",
+      "Wit Studio"
+    ],
+    "synonyms": [
+      "attack on titan",
+      "shingeki no kyojin",
+      "ataque dos titas",
+      "aot",
+      "snk",
+      "shingeki"
+    ],
+    "hint": "Ação / Muralhas / Titãs / Tropa de Exploração",
+    "poster_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx16498-buvcRTBx4NSm.jpg"
+  },
+  {
+    "id": 34,
+    "anime": "Date A Live",
+    "image_url": "https://media.kitsu.app/episodes/thumbnails/104221/original.jpg",
+    "has_cinematic_banner": true,
+    "year": 2013,
+    "tags": [
+      "Harém / Sci-Fi",
+      "Espíritos",
+      "Conquistar Garotas para Salvar o Mundo",
+      "Tohka & Kurumi",
+      "AIC PLUS+"
+    ],
+    "synonyms": [
+      "date a live",
+      "dal"
+    ],
+    "hint": "Harém / Sci-Fi / Espíritos / Conquistar Garotas para Salvar o Mundo / Tohka & Kurumi / AIC PLUS+",
+    "poster_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx15583-Sxd2J4RJdRhj.jpg"
+  },
+  {
+    "id": 35,
+    "anime": "Kill la Kill",
+    "image_url": "https://media.kitsu.app/episodes/thumbnails/112186/original.jpg",
+    "has_cinematic_banner": true,
+    "year": 2013,
+    "tags": [
+      "Fibras de Vida",
+      "Espada Tesoura",
+      "Ryuko Matoi",
+      "Academia Honnouji",
+      "Studio Trigger"
+    ],
+    "synonyms": [
+      "kill la kill",
+      "klk"
+    ],
+    "hint": "Ação / Fibras de Vida / Espada Tesoura",
+    "poster_url": "https://media.kitsu.app/anime/poster_images/7712/large.jpg"
+  },
+  {
+    "id": 36,
+    "anime": "Haikyuu!!",
+    "image_url": "https://media.kitsu.app/episodes/thumbnails/114757/original.jpg",
+    "has_cinematic_banner": true,
+    "year": 2014,
+    "tags": [
+      "Vôlei Colegial",
+      "Corvos do Karasuno",
+      "Hinata & Kageyama",
+      "Esportes",
+      "Production I.G"
+    ],
+    "synonyms": [
+      "haikyuu",
+      "haikyuu!!",
+      "haikyu"
+    ],
+    "hint": "Esportes / Vôlei / Corvos do Karasuno",
+    "poster_url": "https://media.kitsu.app/anime/poster_images/8133/large.jpg"
+  },
+  {
+    "id": 37,
+    "anime": "Nisekoi",
+    "image_url": "https://media.kitsu.app/episodes/thumbnails/113960/original.jpg",
+    "has_cinematic_banner": true,
+    "year": 2014,
+    "tags": [
+      "Harém / Romcom",
+      "Amor Falso",
+      "Chitoge & Kosaki",
+      "Pingente e Chaves",
+      "Estúdio Shaft"
+    ],
+    "synonyms": [
+      "nisekoi",
+      "falso amor"
+    ],
+    "hint": "Harém / Romcom / Amor Falso / Chitoge & Kosaki / Pingente e Chaves / Estúdio Shaft",
+    "poster_url": "https://media.kitsu.app/anime/poster_images/7821/large.jpg"
+  },
+  {
+    "id": 38,
+    "anime": "No Game No Life",
+    "image_url": "https://media.kitsu.app/episodes/thumbnails/159084/original.jpg",
+    "has_cinematic_banner": true,
+    "year": 2014,
+    "tags": [
+      "Isekai de Jogos",
+      "Irmãos Kuuhaku (Espaço em Branco)",
+      "Sora & Shiro",
+      "Deus dos Jogos Tet",
+      "Estúdio Madhouse"
+    ],
+    "synonyms": [
+      "no game no life",
+      "ngnl"
+    ],
+    "hint": "Isekai / Jogos / Kuuhaku (Branco) nunca perde",
+    "poster_url": "https://media.kitsu.app/anime/poster_images/7880/large.jpg"
+  },
+  {
+    "id": 39,
+    "anime": "Noragami",
+    "image_url": "https://media.kitsu.app/episodes/thumbnails/159019/original.jpg",
+    "has_cinematic_banner": true,
+    "year": 2014,
+    "tags": [
+      "Deus por 5 Ienes",
+      "Espíritos & Regalias",
+      "Yato & Hiyori",
+      "Fantasmas Ayakashi",
+      "Estúdio Bones"
+    ],
+    "synonyms": [
+      "noragami",
+      "noragami aragoto"
+    ],
+    "hint": "Sobrenatural / Deus delivery por 5 ienes",
+    "poster_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx21128-eQgH3TG4nngo.jpg"
+  },
+  {
+    "id": 40,
+    "anime": "Parasyte: The Maxim",
+    "image_url": "https://img1.ak.crunchyroll.com/i/spire4-tmb/69274fc89462cf6f82e9f92144dc861a1412723358_full.jpg",
+    "has_cinematic_banner": true,
+    "year": 2014,
+    "tags": [
+      "Ficção Científica",
+      "Horror / Suspense",
+      "Parasitas Alienígenas",
+      "Migi",
+      "Estúdio Madhouse"
+    ],
+    "synonyms": [
+      "parasyte",
+      "parasyte the maxim",
+      "kiseijuu",
+      "kiseiju",
+      "parasita"
+    ],
+    "hint": "Ficção Científica / Horror / Suspense / Parasitas Alienígenas",
+    "poster_url": "https://media.kitsu.app/anime/poster_images/8147/large.jpg"
+  },
+  {
+    "id": 41,
+    "anime": "Tokyo Ghoul",
+    "image_url": "https://img1.ak.crunchyroll.com/i/spire3-tmb/04fce0b6f8885e85cb78a65d22ba0ea91644482778_full.jpg",
+    "has_cinematic_banner": true,
+    "year": 2014,
+    "tags": [
+      "Ghouls de Tóquio",
+      "Máscara & Kagune",
+      "Kaneki Ken",
+      "Café Anteiku",
+      "Studio Pierrot"
+    ],
+    "synonyms": [
+      "tokyo ghoul",
+      "tokyoghoul"
+    ],
+    "hint": "Sobrenatural / Metade humano, metade devorador de carne",
+    "poster_url": "https://media.kitsu.app/anime/poster_images/8271/large.jpg"
+  },
+  {
+    "id": 42,
+    "anime": "Trinity Seven",
+    "image_url": "https://img1.ak.crunchyroll.com/i/spire2-tmb/9ff23b51b871cc2ff940b7e332da334e1412280094_full.jpg",
+    "has_cinematic_banner": true,
+    "year": 2014,
+    "tags": [
+      "Harém / Magia",
+      "7 Pecados Capitais",
+      "Arata Kasuga",
+      "Mundo dos Magos",
+      "Seven Arcs Pictures"
+    ],
+    "synonyms": [
+      "trinity seven",
+      "trinity 7"
+    ],
+    "hint": "Harém / Magia / 7 Pecados Capitais / Arata Kasuga / Mundo dos Magos / Seven Arcs Pictures",
+    "poster_url": "https://media.kitsu.app/anime/poster_images/8607/large.jpg"
+  },
+  {
+    "id": 43,
+    "anime": "Your Lie in April (Shigatsu wa Kimi no Uso)",
+    "image_url": "https://img1.ak.crunchyroll.com/i/spire1-tmb/b4aec65f04c703d13f05f6d135ed9cd11412823066_full.jpg",
+    "has_cinematic_banner": true,
+    "year": 2014,
+    "tags": [
+      "Drama Musical",
+      "Piano & Violino",
+      "Kousei & Kaori",
+      "Primavera",
+      "A-1 Pictures"
+    ],
+    "synonyms": [
+      "your lie in april",
+      "shigatsu wa kimi no uso",
+      "sua mentira em abril"
+    ],
+    "hint": "Drama / Música / Violino e Piano",
+    "poster_url": "https://media.kitsu.app/anime/poster_images/8403/large.jpg"
+  },
+  {
+    "id": 44,
+    "anime": "Gakusen Toshi Asterisk",
+    "image_url": "https://img1.ak.crunchyroll.com/i/spire1-tmb/681e7387f27e4c02bc51abad058126901443854724_full.jpg",
+    "has_cinematic_banner": true,
+    "year": 2015,
+    "tags": [
+      "Harém de Batalha",
+      "Festa Estelar / Torneio",
+      "Julis & Ayato",
+      "Armas Lux",
+      "A-1 Pictures"
+    ],
+    "synonyms": [
+      "gakusen toshi asterisk",
+      "the asterisk war",
+      "asterisk war",
+      "gakusen toshi"
+    ],
+    "hint": "Harém de Batalha / Festa Estelar / Torneio / Julis & Ayato / Armas Lux / A-1 Pictures",
+    "poster_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21131-sh1HBXuF6qHH.jpg"
+  },
+  {
+    "id": 45,
+    "anime": "Monster Musume no Iru Nichijou",
+    "image_url": "https://media.kitsu.app/episodes/thumbnails/178220/original.jpg",
+    "has_cinematic_banner": true,
+    "year": 2015,
+    "tags": [
+      "Harém / Monster Girls",
+      "Mulheres Monstro",
+      "Miia Lamia & Papi Harpia",
+      "Comédia / Ecchi",
+      "Lerche"
+    ],
+    "synonyms": [
+      "monster musume",
+      "everyday life with monster girls",
+      "monmusu"
+    ],
+    "hint": "Harém / Monster Girls / Mulheres Monstro / Miia Lamia & Papi Harpia / Comédia / Ecchi / Lerche",
+    "poster_url": "https://media.kitsu.app/anime/poster_images/10748/large.jpg"
+  },
+  {
+    "id": 46,
+    "anime": "One Punch Man",
+    "image_url": "https://img1.ak.crunchyroll.com/i/spire4-tmb/f6e652a05c944ef5a4df2f343868b6211558480512_full.jpg",
+    "has_cinematic_banner": true,
+    "year": 2015,
+    "tags": [
+      "Herói por Hobby",
+      "Derrota com 1 Soco",
+      "Saitama & Genos",
+      "Associação de Heróis",
+      "Estúdio Madhouse"
+    ],
+    "synonyms": [
+      "one punch man",
+      "one punch",
+      "opm",
+      "homem de um soco so"
+    ],
+    "hint": "Ação / Super-herói / Derrota qualquer um com um soco",
+    "poster_url": "https://media.kitsu.app/anime/poster_images/10740/large.jpg"
+  },
+  {
+    "id": 47,
+    "anime": "Prison School",
+    "image_url": "https://img1.ak.crunchyroll.com/i/spire2-tmb/a404b0f999404be77b0bee74d48fb74d1436543138_full.jpg",
+    "has_cinematic_banner": true,
+    "year": 2015,
+    "tags": [
+      "Comédia / Ecchi Extremo",
+      "Prisão Escolar",
+      "Conselho Estudantil Secreto",
+      "Kiyoshi",
+      "J.C.Staff"
+    ],
+    "synonyms": [
+      "prison school",
+      "kangoku gakuen"
+    ],
+    "hint": "Comédia / Ecchi Extremo / Prisão Escolar / Conselho Estudantil Secreto / Kiyoshi / J.C.Staff",
+    "poster_url": "https://media.kitsu.app/anime/poster_images/10734/large.jpg"
+  },
+  {
+    "id": 48,
+    "anime": "Rakudai Kishi no Cavalry",
+    "image_url": "https://img1.ak.crunchyroll.com/i/spire3-tmb/3515d95960c6887f70f69e3b0ae249541542415750_full.jpg",
+    "has_cinematic_banner": true,
+    "year": 2015,
+    "tags": [
+      "Cavaleiros Mágicos",
+      "Stella Vermillion",
+      "Ikki Kurogane (O Pior)",
+      "Romance & Espadas",
+      "SILVER LINK."
+    ],
+    "synonyms": [
+      "rakudai kishi no cavalry",
+      "chivalry of a failed knight",
+      "rakudai kishi"
+    ],
+    "hint": "Cavaleiros Mágicos / Stella Vermillion / Ikki Kurogane (O Pior) / Romance & Espadas / SILVER LINK.",
+    "poster_url": "https://media.kitsu.app/anime/10745/poster_image/large-6c0881efcb35da7c4cd42709d0fc1c5e.jpeg"
+  },
+  {
+    "id": 49,
+    "anime": "Shokugeki no Souma",
+    "image_url": "https://img1.ak.crunchyroll.com/i/spire2-tmb/6d69e64be60f3b52b5f7bd65fea731ad1570799711_full.jpg",
+    "has_cinematic_banner": true,
+    "year": 2015,
+    "tags": [
+      "Culinária / Ecchi Gastronômico",
+      "Batalhas de Cozinha",
+      "Souma Yukihira & Erina",
+      "Academia Totsuki",
+      "J.C.Staff"
+    ],
+    "synonyms": [
+      "shokugeki no souma",
+      "food wars",
+      "food wars shokugeki no soma",
+      "shokugeki"
+    ],
+    "hint": "Culinária / Ecchi Gastronômico / Batalhas de Cozinha / Souma Yukihira & Erina / Academia Totsuki / J.C.Staff",
+    "poster_url": "https://media.kitsu.app/anime/9967/poster_image/large-a95e716ae5f3567f7cbc01fbac53d3a5.jpeg"
+  },
+  {
+    "id": 50,
+    "anime": "Boku no Hero Academia",
+    "image_url": "https://media.kitsu.app/episodes/thumbnails/184522/original.jpg",
+    "has_cinematic_banner": true,
+    "year": 2016,
+    "tags": [
+      "Super-Heróis",
+      "All Might & Deku",
+      "One For All",
+      "Escola U.A.",
+      "Estúdio Bones"
+    ],
+    "synonyms": [
+      "boku no hero academia",
+      "my hero academia",
+      "boku no hero",
+      "mha",
+      "bnha"
+    ],
+    "hint": "Super-heróis / All Might / Individualidades",
+    "poster_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx195322-hqBf19mBtM5K.jpg"
+  },
+  {
+    "id": 51,
+    "anime": "Erased",
+    "image_url": "https://media.kitsu.app/episodes/thumbnails/181619/original.jpg",
+    "has_cinematic_banner": true,
+    "year": 2016,
+    "tags": [
+      "Mistério",
+      "Viagem no Tempo",
+      "Revival",
+      "Suspense",
+      "A-1 Pictures"
+    ],
+    "synonyms": [
+      "erased",
+      "boku dake ga inai machi",
+      "bokumachi",
+      "a cidade onde apenas eu nao existo"
+    ],
+    "hint": "Mistério / Viagem no Tempo / Revival",
+    "poster_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21234-XmqW39aQ9o7O.jpg"
+  },
+  {
+    "id": 52,
+    "anime": "KonoSuba",
+    "image_url": "https://media.kitsu.app/episodes/thumbnails/181827/original.jpg",
+    "has_cinematic_banner": true,
+    "year": 2016,
+    "tags": [
+      "Comédia / Paródia Isekai",
+      "Deusa Aqua Inútil",
+      "Megumin Explosão",
+      "Kazuma",
+      "Studio Deen"
+    ],
+    "synonyms": [
+      "konosuba",
+      "kono subarashii sekai ni shukufuku wo",
+      "kono suba"
+    ],
+    "hint": "Comédia / Deusa inútil e mago de uma explosão só",
+    "poster_url": "https://media.kitsu.app/anime/poster_images/10941/large.jpg"
+  },
+  {
+    "id": 53,
+    "anime": "Mob Psycho 100",
+    "image_url": "https://media.kitsu.app/episodes/thumbnails/186890/original.jpg",
+    "has_cinematic_banner": true,
+    "year": 2016,
+    "tags": [
+      "Poderes Psíquicos",
+      "Reigen Mestre Trapaceiro",
+      "Shigeo Kageyama (Mob)",
+      "Porcentagem 100%",
+      "Estúdio Bones"
+    ],
+    "synonyms": [
+      "mob psycho 100",
+      "mob psycho",
+      "mob"
+    ],
+    "hint": "Sobrenatural / Poderes psíquicos / Porcentagem de emoção",
+    "poster_url": "https://media.kitsu.app/anime/11578/poster_image/large-e969f8a688549dd8e02ffd59f49122e9.jpeg"
+  },
+  {
+    "id": 54,
+    "anime": "Re:Zero",
+    "image_url": "https://media.kitsu.app/anime/cover_images/11209/large.jpg",
+    "has_cinematic_banner": true,
+    "year": 2016,
+    "tags": [
+      "Retorno através da Morte",
+      "Subaru & Emilia",
+      "Rem & Ram",
+      "Isekai Sombrio",
+      "White Fox"
+    ],
+    "synonyms": [
+      "re zero",
+      "re:zero",
+      "re:zero kara hajimeru isekai seikatsu",
+      "rezero"
+    ],
+    "hint": "Isekai / Retorno através da morte / Rem e Emilia",
+    "poster_url": "https://media.kitsu.app/anime/poster_images/11209/large.jpg"
+  },
+  {
+    "id": 55,
+    "anime": "Boku no Hero Academia S2",
+    "image_url": "https://media.kitsu.app/episodes/thumbnails/184523/original.jpg",
+    "has_cinematic_banner": true,
+    "year": 2017,
+    "tags": [
+      "Festival Esportivo da U.A.",
+      "Midoriya vs Todoroki",
+      "Paz e Vitória",
+      "Estúdio Bones",
+      "Super-Heróis"
+    ],
+    "synonyms": [
+      "boku no hero academia",
+      "my hero academia",
+      "boku no hero",
+      "mha",
+      "bnha"
+    ],
+    "hint": "Festival Esportivo / V de Vitória",
+    "poster_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx195322-hqBf19mBtM5K.jpg"
+  },
+  {
+    "id": 56,
+    "anime": "Black Clover",
+    "image_url": "https://media.kitsu.app/episodes/thumbnails/254738/original.jpg",
+    "has_cinematic_banner": true,
+    "year": 2018,
+    "tags": [
+      "Garoto Sem Magia",
+      "Grimório do Trevo de 5 Folhas",
+      "Asta & Yuno",
+      "Touros Negros",
+      "Studio Pierrot"
+    ],
+    "synonyms": [
+      "black clover",
+      "blackclover"
+    ],
+    "hint": "Magia / Garoto sem magia / Grimório de 5 folhas",
+    "poster_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx97940-fyh8o7gNbha0.png"
+  },
+  {
+    "id": 57,
+    "anime": "Dr. Stone",
+    "image_url": "https://media.kitsu.app/episodes/thumbnails/259137/original.jpg",
+    "has_cinematic_banner": true,
+    "year": 2019,
+    "tags": [
+      "Mundo de Pedra Petrificado",
+      "Renascimento pela Ciência",
+      "Senku Ishigami",
+      "Reino da Ciência",
+      "TMS Entertainment"
+    ],
+    "synonyms": [
+      "dr stone",
+      "dr. stone",
+      "doctor stone"
+    ],
+    "hint": "Ficção Científica / Petrificação / Ciência do zero",
+    "poster_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx105333-GybuoSoOZfpH.jpg"
+  },
+  {
+    "id": 58,
+    "anime": "Fire Force",
+    "image_url": "https://media.kitsu.app/episodes/thumbnails/259661/original.jpg",
+    "has_cinematic_banner": true,
+    "year": 2019,
+    "tags": [
+      "Shounen",
+      "Bombeiros Especiais",
+      "Chamas & Demônios",
+      "David Production",
+      "Ação"
+    ],
+    "synonyms": [
+      "fire force",
+      "enen no shouboutai",
+      "enen"
+    ],
+    "hint": "Shounen / Bombeiros Especiais / Chamas & Demônios",
+    "poster_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx105310-2PKUvoaA6fTn.jpg"
+  },
+  {
+    "id": 59,
+    "anime": "Kimetsu no Yaiba (Demon Slayer)",
+    "image_url": "https://media.kitsu.app/episodes/thumbnails/246946/original.jpg",
+    "has_cinematic_banner": true,
+    "year": 2019,
+    "tags": [
+      "Caçadores de Demônios / Onis",
+      "Respiração da Água & Sol",
+      "Tanjiro & Nezuko",
+      "Espadas Nichirin",
+      "ufotable"
+    ],
+    "synonyms": [
+      "kimetsu no yaiba",
+      "demon slayer",
+      "kimetsu",
+      "demon slayer kimetsu no yaiba"
+    ],
+    "hint": "Ação / Caçadores de Onis / Respiração da Água",
+    "poster_url": "https://media.kitsu.app/anime/poster_images/41370/large.jpg"
+  },
+  {
+    "id": 60,
+    "anime": "The Promised Neverland",
+    "image_url": "https://media.kitsu.app/episodes/thumbnails/254663/original.jpg",
+    "has_cinematic_banner": true,
+    "year": 2019,
+    "tags": [
+      "Orfanato Sinistro",
+      "Crianças Gênias",
+      "Emma, Norman & Ray",
+      "Fuga dos Demônios",
+      "CloverWorks"
+    ],
+    "synonyms": [
+      "the promised neverland",
+      "yakusoku no neverland",
+      "promised neverland"
+    ],
+    "hint": "Suspense / Orfanato / Fuga de gênios",
+    "poster_url": "https://media.kitsu.app/anime/poster_images/41312/large.jpg"
+  },
+  {
+    "id": 61,
+    "anime": "Vinland Saga",
+    "image_url": "https://media.kitsu.app/episodes/thumbnails/250571/original.jpg",
+    "has_cinematic_banner": true,
+    "year": 2019,
+    "tags": [
+      "Vikings Históricos",
+      "Vingança de Thorfinn",
+      "Askeladd & Canute",
+      "Inglaterra Medieval",
+      "Wit Studio"
+    ],
+    "synonyms": [
+      "vinland saga",
+      "vinland"
+    ],
+    "hint": "Histórico / Vikings / Vingança de Thorfinn",
+    "poster_url": "https://media.kitsu.app/anime/poster_images/41084/large.jpg"
+  },
+  {
+    "id": 62,
+    "anime": "Jujutsu Kaisen",
+    "image_url": "https://media.kitsu.app/episodes/thumbnails/277464/original.png",
+    "has_cinematic_banner": true,
+    "year": 2020,
+    "tags": [
+      "Feiticeiros Jujutsu",
+      "Dedos de Sukuna",
+      "Yuji Itadori & Gojo Satoru",
+      "Energia Amaldiçoada",
+      "Estúdio MAPPA"
+    ],
+    "synonyms": [
+      "jujutsu kaisen",
+      "jujutsu",
+      "jjk",
+      "batalha de feiticeiros"
+    ],
+    "hint": "Sobrenatural / Feiticeiros / Dedos de Sukuna",
+    "poster_url": "https://media.kitsu.app/anime/45857/poster_image/large-1ebb56f346edda6bcde9cdffa9b89316.jpeg"
+  },
+  {
+    "id": 63,
+    "anime": "Tokyo Revengers",
+    "image_url": "https://media.kitsu.app/anime/cover_images/43321/large.jpg",
+    "has_cinematic_banner": true,
+    "year": 2021,
+    "tags": [
+      "Gangues de Rua",
+      "Viagem no Tempo",
+      "Delinquentes",
+      "Takemichi e Mikey",
+      "LIDENFILMS"
+    ],
+    "synonyms": [
+      "tokyo revengers",
+      "tokyo revenger",
+      "tokrev"
+    ],
+    "hint": "Gangues de Rua / Viagem no Tempo / Delinquentes",
+    "poster_url": "https://media.kitsu.app/anime/poster_images/43321/large.jpg"
+  },
+  {
+    "id": 64,
+    "anime": "Attack on Titan Final Season Pt 2",
+    "image_url": "https://media.kitsu.app/episode/342384/thumbnail/7585181f79bd8058e64e835e21f40c19.jpg",
+    "has_cinematic_banner": true,
+    "year": 2022,
+    "tags": [
+      "O Estrondo",
+      "Metal / Rock",
+      "Eren Jaeger",
+      "Titãs Colossais",
+      "Estúdio MAPPA"
+    ],
+    "synonyms": [
+      "attack on titan",
+      "shingeki no kyojin",
+      "shingeki",
+      "aot",
+      "ataque dos titas"
+    ],
+    "hint": "O Estrondo / Metal / Rock / Eren Jaeger",
+    "poster_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx131681-5ooUqvqNtee1.jpg"
+  },
+  {
+    "id": 65,
+    "anime": "Chainsaw Man",
+    "image_url": "https://media.kitsu.app/episode/296896/thumbnail/3978365e4d8366f29e9d3be3a83bbb8d.jpg",
+    "has_cinematic_banner": true,
+    "year": 2022,
+    "tags": [
+      "Demônio da Motosserra",
+      "Denji & Pochita",
+      "Caçadores de Demônios",
+      "Estúdio MAPPA",
+      "Gore / Ação"
+    ],
+    "synonyms": [
+      "chainsaw man",
+      "chainsawman",
+      "homem motosserra",
+      "csm"
+    ],
+    "hint": "Demônio da Motosserra / Denji & Pochita / Caçadores de Demônios",
+    "poster_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx127230-DdP4vAdssLoz.png"
+  },
+  {
+    "id": 66,
+    "anime": "Spy x Family",
+    "image_url": "https://media.kitsu.app/episode/321350/thumbnail/b9e1028f9fef36322ade5415dbffadd7.jpg",
+    "has_cinematic_banner": true,
+    "year": 2022,
+    "tags": [
+      "Espiões",
+      "Família Falsa",
+      "Anya & Waku Waku",
+      "Comédia / Slice of Life",
+      "Wit Studio / CloverWorks"
+    ],
+    "synonyms": [
+      "spy x family",
+      "spy family",
+      "spyxfamily"
+    ],
+    "hint": "Espiões / Família Falsa / Anya & Waku Waku",
+    "poster_url": "https://media.kitsu.app/anime/45398/poster_image/large-c26c1e0b77e881fcd66475af6bd22c57.jpeg"
+  },
+  {
+    "id": 67,
+    "anime": "Frieren: Beyond Journey's End",
+    "image_url": "https://media.kitsu.app/episode/353471/thumbnail/586ff8f159af3cefedfe7c48d454c982.png",
+    "has_cinematic_banner": true,
+    "year": 2023,
+    "tags": [
+      "Fantasia Épica",
+      "Maga Elfa",
+      "Pós-Derrota do Rei Demônio",
+      "Estúdio Madhouse",
+      "Aventura"
+    ],
+    "synonyms": [
+      "frieren",
+      "frieren beyond journeys end",
+      "sousou no frieren",
+      "frieren e a jornada para o alem"
+    ],
+    "hint": "Fantasia Épica / Maga Elfa / Pós-Derrota do Rei Demônio",
+    "poster_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx170068-ijY3tCP8KoWP.jpg"
+  },
+  {
+    "id": 68,
+    "anime": "Jujutsu Kaisen S2 (Shibuya)",
+    "image_url": "https://media.kitsu.app/episodes/thumbnails/277465/original.png",
+    "has_cinematic_banner": true,
+    "year": 2023,
+    "tags": [
+      "Incidente de Shibuya",
+      "You are my special",
+      "Feiticeiros Jujutsu",
+      "Sukuna",
+      "Estúdio MAPPA"
+    ],
+    "synonyms": [
+      "jujutsu kaisen",
+      "jujutsu kaisen s2",
+      "jujutsu kaisen 2",
+      "jujutsu",
+      "jjk",
+      "batalha de feiticeiros"
+    ],
+    "hint": "Incidente de Shibuya / You are my special / Feiticeiros Jujutsu",
+    "poster_url": "https://media.kitsu.app/anime/45857/poster_image/large-1ebb56f346edda6bcde9cdffa9b89316.jpeg"
+  },
+  {
+    "id": 69,
+    "anime": "Oshi no Ko",
+    "image_url": "https://media.kitsu.app/episode/341631/thumbnail/488a6598d71454e780d7f329a3b335fc.jpg",
+    "has_cinematic_banner": true,
+    "year": 2023,
+    "tags": [
+      "Idols Japonesas",
+      "Showbiz / Reencarnação",
+      "Ai Hoshino",
+      "Mistério & Drama",
+      "Doga Kobo"
+    ],
+    "synonyms": [
+      "oshi no ko",
+      "my star",
+      "oshinoko"
+    ],
+    "hint": "Idols Japonesas / Showbiz / Reencarnação / Ai Hoshino",
+    "poster_url": "https://media.kitsu.app/anime/46170/poster_image/large-0bad1050afcf9e5320ca46bf17ac007a.jpeg"
+  },
+  {
+    "id": 70,
+    "anime": "Dandadan",
+    "image_url": "https://media.kitsu.app/episode/365098/thumbnail/935c12eb196667521e2525f9df32df02.jpg",
+    "has_cinematic_banner": true,
+    "year": 2024,
+    "tags": [
+      "Aliens & Fantasmas / Youkai",
+      "Creepy Nuts",
+      "Momo & Okarun",
+      "Science SARU",
+      "Comédia Sobrenatural"
+    ],
+    "synonyms": [
+      "dandadan"
+    ],
+    "hint": "Aliens & Fantasmas / Youkai / Creepy Nuts / Momo & Okarun",
+    "poster_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx171018-60q1B6GK2Ghb.jpg"
+  },
+  {
+    "id": 71,
+    "anime": "Kaiju No. 8",
+    "image_url": "https://media.kitsu.app/episode/342843/thumbnail/1d33fe16c9a709366c1f9faec5ac44a0.jpg",
+    "has_cinematic_banner": true,
+    "year": 2024,
+    "tags": [
+      "Monstros Gigantes / Kaijus",
+      "Força de Defesa",
+      "Kafka Hibino",
+      "Production I.G",
+      "Ação Sci-Fi"
+    ],
+    "synonyms": [
+      "kaiju no 8",
+      "kaiju 8",
+      "kaiju numero 8",
+      "kaijuu 8-gou"
+    ],
+    "hint": "Monstros Gigantes / Kaijus / Força de Defesa / Kafka Hibino",
+    "poster_url": "https://media.kitsu.app/anime/46300/poster_image/large-31cc66fd5854cc555d496ced7ab40c31.jpeg"
+  },
+  {
+    "id": 72,
+    "anime": "Mashle: Magic and Muscles S2",
+    "image_url": "https://media.kitsu.app/episode/341203/thumbnail/153024a92692b737634fd4862879dbcf.jpg",
+    "has_cinematic_banner": true,
+    "year": 2024,
+    "tags": [
+      "Magia & Músculos",
+      "Creepy Nuts",
+      "Dança Viral",
+      "Escola de Magia",
+      "A-1 Pictures"
+    ],
+    "synonyms": [
+      "mashle",
+      "mashle magic and muscles",
+      "mashle s2"
+    ],
+    "hint": "Magia & Músculos / Creepy Nuts / Dança Viral",
+    "poster_url": "https://media.kitsu.app/anime/47671/poster_image/large-4d4034102e31ac79f0c2a98f91321cc3.jpeg"
+  },
+  {
+    "id": 73,
+    "anime": "Solo Leveling",
+    "image_url": "https://media.kitsu.app/episode/331986/thumbnail/07ad7787e9e6820ecacc18dc73b23d6b.jpg",
+    "has_cinematic_banner": true,
+    "year": 2024,
+    "tags": [
+      "Caçadores & Dungeons",
+      "Sung Jinwoo",
+      "Erga-se / Arise",
+      "A-1 Pictures",
+      "Manhwa Coreano"
+    ],
+    "synonyms": [
+      "solo leveling",
+      "ore dake level up na ken"
+    ],
+    "hint": "Caçadores & Dungeons / Sung Jinwoo / Erga-se / Arise",
+    "poster_url": "https://media.kitsu.app/anime/46231/poster_image/large-cdadff31f42490b9f48a035939a01a92.jpeg"
+  },
+  {
+    "id": 74,
+    "anime": "Kaguya-sama: Love is War",
+    "image_url": "https://media.kitsu.app/episodes/thumbnails/257362/original.jpg",
+    "has_cinematic_banner": true,
+    "year": 2019,
+    "tags": [
+      "Romance",
+      "Comédia Escolar",
+      "Batalha Psicológica",
+      "A-1 Pictures"
+    ],
+    "synonyms": [
+      "kaguya-sama",
+      "kaguya sama",
+      "love is war",
+      "kaguya-sama wa kokurasetai",
+      "kaguya"
+    ],
+    "hint": "Romance / Comédia Escolar / Duelo Psicológico de Confissões",
+    "poster_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx101921-ufrjLzhSz7L1.jpg"
+  },
+  {
+    "id": 75,
+    "anime": "Cyberpunk: Edgerunners",
+    "image_url": "https://media.kitsu.app/episode/282315/thumbnail/747b45bcf1790ceb2bc0746f9ac11880.jpg",
+    "has_cinematic_banner": true,
+    "year": 2022,
+    "tags": [
+      "Cyberpunk",
+      "Ação / Ficção Científica",
+      "Night City / David",
+      "Studio Trigger"
+    ],
+    "synonyms": [
+      "cyberpunk edgerunners",
+      "cyberpunk",
+      "edgerunners"
+    ],
+    "hint": "Ficção Científica / Cyberpunk / Night City / Studio Trigger",
+    "poster_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx120377-ayZPoxiWt4Li.jpg"
+  },
+  {
+    "id": 76,
+    "anime": "Bocchi the Rock!",
+    "image_url": "https://media.kitsu.app/episode/335115/thumbnail/9cdd76f0cad3ef9bb37cfe3eadd99e60.jpg",
+    "has_cinematic_banner": true,
+    "year": 2022,
+    "tags": [
+      "Comédia",
+      "Música / Banda",
+      "Ansiedade Social / Guitarra",
+      "CloverWorks"
+    ],
+    "synonyms": [
+      "bocchi the rock",
+      "bocchi the rock!",
+      "bocchi"
+    ],
+    "hint": "Comédia / Música / Guitarra e Ansiedade Social / Kessoku Band",
+    "poster_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx130003-HTDmeL4RGeJ4.png"
+  },
+  {
+    "id": 77,
+    "anime": "Overlord",
+    "image_url": "https://media.kitsu.app/episodes/thumbnails/177914/original.jpg",
+    "has_cinematic_banner": true,
+    "year": 2015,
+    "tags": [
+      "Isekai",
+      "Fantasia Sombria",
+      "Ainz Ooal Gown / Nazarick",
+      "Madhouse"
+    ],
+    "synonyms": [
+      "overlord",
+      "ainz ooal gown"
+    ],
+    "hint": "Isekai / Fantasia Sombria / Grande Tumba de Nazarick / Madhouse",
+    "poster_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx20832-vUNm5zrYWifc.jpg"
+  },
+  {
+    "id": 78,
+    "anime": "Blue Lock",
+    "image_url": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/137822-oevspckMGLuY.jpg",
+    "has_cinematic_banner": true,
+    "year": 2022,
+    "tags": [
+      "Esportes",
+      "Futebol / Egoísmo",
+      "Isagi Yoichi",
+      "Eight Bit"
+    ],
+    "synonyms": [
+      "blue lock",
+      "bluelock"
+    ],
+    "hint": "Esportes / Futebol Egoísta / Projeto Blue Lock",
+    "poster_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx137822-U8naszP96vzC.png"
+  },
+  {
+    "id": 79,
+    "anime": "Akame ga Kill!",
+    "image_url": "https://media.kitsu.app/episodes/thumbnails/115670/original.jpg",
+    "has_cinematic_banner": true,
+    "year": 2014,
+    "tags": [
+      "Ação",
+      "Fantasia Sombria",
+      "Assassinos / Night Raid",
+      "White Fox"
+    ],
+    "synonyms": [
+      "akame ga kill",
+      "akame ga kill!"
+    ],
+    "hint": "Ação / Fantasia Sombria / Grupo Rebelde Night Raid / Armas Teigu",
+    "poster_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx20613-HXHpec4bemk5.jpg"
+  },
+  {
+    "id": 80,
+    "anime": "Delicious in Dungeon",
+    "image_url": "https://media.kitsu.app/episode/332902/thumbnail/e9f5236da1479bab03104fcbc70d9a52.jpg",
+    "has_cinematic_banner": true,
+    "year": 2024,
+    "tags": [
+      "Fantasia",
+      "Culinária de Monstros",
+      "Masmorra / Laios",
+      "Studio Trigger"
+    ],
+    "synonyms": [
+      "delicious in dungeon",
+      "dungeon meshi",
+      "dungeon meshi: delicious in dungeon"
+    ],
+    "hint": "Fantasia / Cozinha de Monstros em Masmorra / Studio Trigger",
+    "poster_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx153518-IVXPDY5ph3kO.jpg"
+  },
+  {
+    "id": 81,
+    "anime": "Samurai Champloo",
+    "image_url": "https://img1.ak.crunchyroll.com/i/spire3-tmb/db3371b73840f318080eaea8c3fcecde1481760320_full.jpg",
+    "has_cinematic_banner": true,
+    "year": 2004,
+    "tags": [
+      "Samurai / Hip-Hop",
+      "Ação Histórica",
+      "Mugen & Jin",
+      "Manglobe"
+    ],
+    "synonyms": [
+      "samurai champloo",
+      "champloo"
+    ],
+    "hint": "Samurais & Hip-Hop / Era Edo / Mugen e Jin / Estúdio Manglobe",
+    "poster_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx205-7tHVFu6dPBm9.png"
+  },
+  {
+    "id": 82,
+    "anime": "Trigun",
+    "image_url": "https://img1.ak.crunchyroll.com/i/spire3-tmb/08a7eb46ac7cb42f8e030eb9de5439341519042547_full.jpg",
+    "has_cinematic_banner": true,
+    "year": 1998,
+    "tags": [
+      "Western Espacial",
+      "Ação / Ficção Científica",
+      "Vash the Stampede",
+      "Madhouse"
+    ],
+    "synonyms": [
+      "trigun",
+      "vash the stampede",
+      "trigun 1998"
+    ],
+    "hint": "Western Espacial / Tufão Humanoide Vash / Madhouse",
+    "poster_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx6-wd4saT1JzStH.jpg"
+  },
+  {
+    "id": 83,
+    "anime": "Monster",
+    "image_url": "https://media.kitsu.app/episodes/thumbnails/377/original.jpg",
+    "has_cinematic_banner": true,
+    "year": 2004,
+    "tags": [
+      "Suspense Psicológico",
+      "Mistério / Drama",
+      "Dr. Tenma / Johan Liebert",
+      "Madhouse"
+    ],
+    "synonyms": [
+      "monster",
+      "dr tenma",
+      "naoki urasawa monster"
+    ],
+    "hint": "Suspense Psicológico / Dr. Kenzo Tenma & Johan Liebert / Madhouse",
+    "poster_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx19-gtMC64182sm4.jpg"
+  },
+  {
+    "id": 84,
+    "anime": "Hellsing Ultimate",
+    "image_url": "https://media.kitsu.app/episodes/thumbnails/15145/original.jpg",
+    "has_cinematic_banner": true,
+    "year": 2006,
+    "tags": [
+      "Vampiros",
+      "Ação Sobrenatural / Terror",
+      "Alucard / Organização Hellsing",
+      "Madhouse / Satelight"
+    ],
+    "synonyms": [
+      "hellsing",
+      "hellsing ultimate",
+      "alucard"
+    ],
+    "hint": "Vampiros / Sobrenatural Sombrio / Alucard / Organização Hellsing",
+    "poster_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx777-F6547pSAR2Zd.jpg"
+  },
+  {
+    "id": 85,
+    "anime": "Bleach: Thousand-Year Blood War",
+    "image_url": "https://media.kitsu.app/episode/278950/thumbnail/5541f70a9c46db4e5641bc878a2b451c.jpg",
+    "has_cinematic_banner": true,
+    "year": 2022,
+    "tags": [
+      "Ação / Shinigami",
+      "Guerra de Sangue de Mil Anos",
+      "Quincy / Yhwach",
+      "Studio Pierrot"
+    ],
+    "synonyms": [
+      "bleach thousand year blood war",
+      "bleach tybw",
+      "bleach sennen kessen-hen",
+      "bleach guerra sangrenta"
+    ],
+    "hint": "Shinigami vs Quincy / Guerra de Mil Anos / Yhwach / Pierrot",
+    "poster_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx116674-p3zK4PUX2Aag.jpg"
+  },
+  {
+    "id": 86,
+    "anime": "Classroom of the Elite",
+    "image_url": "https://img1.ak.crunchyroll.com/i/spire1-tmb/1534c9fb80791aec609a7a69a646ba9a1499855007_full.jpg",
+    "has_cinematic_banner": true,
+    "year": 2017,
+    "tags": [
+      "Drama Psicológico",
+      "Escola de Elite / Turma D",
+      "Kiyotaka Ayanokouji",
+      "Lerche"
+    ],
+    "synonyms": [
+      "classroom of the elite",
+      "youkoso jitsuryoku shijou shugi no kyoushitsu e",
+      "cote"
+    ],
+    "hint": "Psicológico / Manipulação Escolar / Turma D / Kiyotaka Ayanokouji",
+    "poster_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx98659-WNyPLIZDpGGY.jpg"
+  },
+  {
+    "id": 87,
+    "anime": "Fate/stay night: Unlimited Blade Works",
+    "image_url": "https://img1.ak.crunchyroll.com/i/spire2-tmb/ae00b085b0ad23ee0da4611d110611fb1412428104_full.jpg",
+    "has_cinematic_banner": true,
+    "year": 2015,
+    "tags": [
+      "Fantasia / Magia",
+      "Guerra do Santo Graal",
+      "Shirou Emiya & Archer",
+      "ufotable"
+    ],
+    "synonyms": [
+      "fate stay night unlimited blade works",
+      "fate stay night ubw",
+      "fate ubw",
+      "unlimited blade works"
+    ],
+    "hint": "Guerra do Santo Graal / Shirou Emiya & Archer / I am the bone of my sword / ufotable",
+    "poster_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx19603-ycT0pyEgDVQu.jpg"
+  },
+  {
+    "id": 88,
+    "anime": "Horimiya",
+    "image_url": "https://img1.ak.crunchyroll.com/i/spire1-tmb/74a6ef6c1bbc1549800ffba752edc4031642766887_full.jpg",
+    "has_cinematic_banner": true,
+    "year": 2021,
+    "tags": [
+      "Romance Escolar",
+      "Comédia / Slice of Life",
+      "Hori & Miyamura",
+      "CloverWorks"
+    ],
+    "synonyms": [
+      "horimiya",
+      "hori-san to miyamura-kun"
+    ],
+    "hint": "Romance Escolar / Dupla Identidade Secreta / Hori e Miyamura / CloverWorks",
+    "poster_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx124080-3i22mRVPBS0T.jpg"
+  },
+  {
+    "id": 89,
+    "anime": "Clannad",
+    "image_url": "https://media.kitsu.app/episodes/thumbnails/33522/original.jpg",
+    "has_cinematic_banner": true,
+    "year": 2007,
+    "tags": [
+      "Drama / Emoção",
+      "Romance / Sobrenatural",
+      "Tomoya & Nagisa / Dango",
+      "Kyoto Animation"
+    ],
+    "synonyms": [
+      "clannad",
+      "clannad after story"
+    ],
+    "hint": "Drama Emocionante / Dango Daikazoku / Tomoya & Nagisa / Kyoto Animation",
+    "poster_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx2167-pSDBcyc0vjej.jpg"
+  },
+  {
+    "id": 90,
+    "anime": "Steins;Gate 0",
+    "image_url": "https://img1.ak.crunchyroll.com/i/spire1-tmb/65f088b57d6cbb241cba6679af8565021523440883_full.jpg",
+    "has_cinematic_banner": true,
+    "year": 2018,
+    "tags": [
+      "Ficção Científica",
+      "Viagem no Tempo / Linha Beta",
+      "Okabe Rintarou / Amadeus",
+      "White Fox"
+    ],
+    "synonyms": [
+      "steins gate 0",
+      "steins;gate 0",
+      "steinsgate 0"
+    ],
+    "hint": "Viagem no Tempo / Linha do Tempo Beta / IA Amadeus Kurisu / White Fox",
+    "poster_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx21127-7ARWZkDXKiiD.jpg"
+  },
+  {
+    "id": 91,
+    "anime": "Made in Abyss",
+    "image_url": "https://img1.ak.crunchyroll.com/i/spire4-tmb/1ebcaa2281526934c3d15cb8153170901657903283_full.jpg",
+    "has_cinematic_banner": true,
+    "year": 2017,
+    "tags": [
+      "Aventura / Fantasia",
+      "Exploração do Abismo",
+      "Riko & Reg",
+      "Kinema Citrus"
+    ],
+    "synonyms": [
+      "made in abyss",
+      "o abismo"
+    ],
+    "hint": "Aventura Sombria / Fossa Profunda do Abismo / Riko & Reg / Apito Branco",
+    "poster_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx97986-TQ7dCgbS3y5s.jpg"
+  },
+  {
+    "id": 92,
+    "anime": "Dororo",
+    "image_url": "https://media.kitsu.app/episodes/thumbnails/257210/original.jpg",
+    "has_cinematic_banner": true,
+    "year": 2019,
+    "tags": [
+      "Ação / Sobrenatural",
+      "Demônios & Samurai",
+      "Hyakkimaru / Próteses",
+      "MAPPA / Tezuka Productions"
+    ],
+    "synonyms": [
+      "dororo",
+      "hyakkimaru"
+    ],
+    "hint": "Japão Feudal / 48 Demônios / Hyakkimaru recuperando partes do corpo / MAPPA",
+    "poster_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx101347-TGaDwEYqLfm1.jpg"
+  },
+  {
+    "id": 93,
+    "anime": "Charlotte",
+    "image_url": "https://img1.ak.crunchyroll.com/i/spire2-tmb/e08c22f701ca7a3eeda1edd411d663be1435976690_full.jpg",
+    "has_cinematic_banner": true,
+    "year": 2015,
+    "tags": [
+      "Superpoderes Juvenis",
+      "Drama / Escolar",
+      "Yuu Otosaka & Nao Tomori",
+      "P.A. Works"
+    ],
+    "synonyms": [
+      "charlotte",
+      "charlote"
+    ],
+    "hint": "Superpoderes Imperfeitos na Adolescência / Yuu Otosaka & Nao Tomori / P.A. Works",
+    "poster_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx20997-axVYrsIfjtYJ.jpg"
+  },
+  {
+    "id": 94,
+    "anime": "Guilty Crown",
+    "image_url": "https://img1.ak.crunchyroll.com/i/spire1-tmb/fb4a0934bc67343f5d77a33a2f18afb61672780927_full.jpg",
+    "has_cinematic_banner": true,
+    "year": 2011,
+    "tags": [
+      "Ação / Ficção Científica",
+      "Poder do Genoma Vazio",
+      "Shu Ouma & Inori",
+      "Production I.G"
+    ],
+    "synonyms": [
+      "guilty crown",
+      "inori yuzuriha"
+    ],
+    "hint": "Ficção Científica / Vírus do Apocalipse / Poder Void de Inori / Production I.G",
+    "poster_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx10793-KCysCbrVNqK9.jpg"
+  },
+  {
+    "id": 95,
+    "anime": "Noragami Aragoto",
+    "image_url": "https://img1.ak.crunchyroll.com/i/spire4-tmb/2a34986d46a362cda43f4ddf391728dc1480999038_full.jpg",
+    "has_cinematic_banner": true,
+    "year": 2015,
+    "tags": [
+      "Ação / Sobrenatural",
+      "Deus Menor por 5 Ienes",
+      "Yato, Yukine & Hiyori",
+      "Bones"
+    ],
+    "synonyms": [
+      "noragami aragoto",
+      "noragami",
+      "noragami 2"
+    ],
+    "hint": "Deus da Calamidade por 5 Ienes / Yato & Espada Sagrada Yukine / Bones",
+    "poster_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx21128-eQgH3TG4nngo.jpg"
+  },
+  {
+    "id": 96,
+    "anime": "DanMachi (Is It Wrong to Try to Pick Up Girls in a Dungeon?)",
+    "image_url": "https://img1.ak.crunchyroll.com/i/spire3-tmb/5d7b2110239eb17f2952fcc300f55e421741181273_full.jpg",
+    "has_cinematic_banner": true,
+    "year": 2015,
+    "tags": [
+      "Fantasia / Aventura",
+      "Família de Deusa & Masmorra",
+      "Bell Cranel & Hestia",
+      "J.C.Staff"
+    ],
+    "synonyms": [
+      "danmachi",
+      "is it wrong to try to pick up girls in a dungeon",
+      "dungeon ni deai wo motomeru no wa machigatteiru darou ka",
+      "familia myth"
+    ],
+    "hint": "Aventura em Masmorra / Bell Cranel & Deusa Hestia / J.C.Staff",
+    "poster_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx20920-MTREwZOG4BAD.jpg"
+  },
+  {
+    "id": 97,
+    "anime": "Black Lagoon",
+    "image_url": "https://media.kitsu.app/episodes/thumbnails/16418/original.jpg",
+    "has_cinematic_banner": true,
+    "year": 2006,
+    "tags": [
+      "Ação / Crime / Armas",
+      "Mercenários em Roanapur",
+      "Revy 'Two-Hands' & Rock",
+      "Madhouse"
+    ],
+    "synonyms": [
+      "black lagoon",
+      "roanapur",
+      "revy"
+    ],
+    "hint": "Crime & Mercenários / Cidade sem Lei de Roanapur / Revy Duas Mãos / Madhouse",
+    "poster_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx889-4S7N2ciq2cwA.png"
+  },
+  {
+    "id": 98,
+    "anime": "Assassination Classroom",
+    "image_url": "https://img1.ak.crunchyroll.com/i/spire4-tmb/187816b65d4fa9e042e08ad0e25b68b51472882912_full.jpg",
+    "has_cinematic_banner": true,
+    "year": 2015,
+    "tags": [
+      "Comédia / Escolar",
+      "Professor Polvo Alien",
+      "Koro-sensei / Turma 3-E",
+      "Lerche"
+    ],
+    "synonyms": [
+      "assassination classroom",
+      "ansatsu kyoushitsu",
+      "koro sensei",
+      "koro-sensei"
+    ],
+    "hint": "Escola de Assassinos / Alvo: Professor Polvo Amarelo Koro-sensei / Lerche",
+    "poster_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx20755-dWrhs569YGUO.jpg"
+  },
+  {
+    "id": 99,
+    "anime": "Yu Yu Hakusho",
+    "image_url": "https://img1.ak.crunchyroll.com/i/spire2-tmb/e8c6e9cfcee9bffb449de3845cf147761510163028_full.jpg",
+    "has_cinematic_banner": true,
+    "year": 1992,
+    "tags": [
+      "Shounen",
+      "Sobrenatural",
+      "Torneio das Trevas",
+      "Detetive Espiritual"
+    ],
+    "synonyms": [
+      "yu yu hakusho",
+      "yuyu hakusho",
+      "ghost files"
+    ],
+    "hint": "Shounen / Fácil",
+    "poster_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx392-z90299zIvYmx.png"
+  },
+  {
+    "id": 100,
+    "anime": "Dragon Ball Z",
+    "image_url": "https://img1.ak.crunchyroll.com/i/spire4-tmb/1db900747e00a409779bdb57542350921645083307_full.jpg",
+    "has_cinematic_banner": true,
+    "year": 1989,
+    "tags": [
+      "Shounen",
+      "Super Saiyajin",
+      "Artes Marciais",
+      "Nostalgia"
+    ],
+    "synonyms": [
+      "dragon ball z",
+      "dbz",
+      "dragon ball"
+    ],
+    "hint": "Shounen / Fácil",
+    "poster_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx813-ZhnFNOeCU5dQ.png"
+  },
+  {
+    "id": 101,
+    "anime": "Saint Seiya",
+    "image_url": "https://img1.ak.crunchyroll.com/i/spire4-tmb/8e76cf2cedb833c8e05a901b55d8c9d81409877411_full.jpg",
+    "has_cinematic_banner": true,
+    "year": 1986,
+    "tags": [
+      "Shounen",
+      "Armaduras do Zodíaco",
+      "Cavaleiros",
+      "Mitologia"
+    ],
+    "synonyms": [
+      "saint seiya",
+      "os cavaleiros do zodiaco",
+      "cavaleiros do zodiaco"
+    ],
+    "hint": "Shounen / Fácil",
+    "poster_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/1254.jpg"
+  },
+  {
+    "id": 102,
+    "anime": "Great Teacher Onizuka",
+    "image_url": "https://img1.ak.crunchyroll.com/i/spire1-tmb/99db11f81c200d7e0ecb9f0fbc427f301418944311_full.jpg",
+    "has_cinematic_banner": true,
+    "year": 1999,
+    "tags": [
+      "Comédia",
+      "Escola",
+      "Ex-Gangster",
+      "Professores"
+    ],
+    "synonyms": [
+      "great teacher onizuka",
+      "gto"
+    ],
+    "hint": "Comédia / Médio",
+    "poster_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx245-NcQAyTipUMeO.jpg"
+  },
+  {
+    "id": 103,
+    "anime": "Rurouni Kenshin",
+    "image_url": "https://img1.ak.crunchyroll.com/i/spire3-tmb/68b3ce3993df078213088ff88531be5f1688661932_full.jpg",
+    "has_cinematic_banner": true,
+    "year": 1996,
+    "tags": [
+      "Samurais",
+      "Histórico",
+      "Espadas",
+      "Era Meiji"
+    ],
+    "synonyms": [
+      "rurouni kenshin",
+      "samurai x"
+    ],
+    "hint": "Samurais / Médio",
+    "poster_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx45-DEFgZRCxiGmF.png"
+  },
+  {
+    "id": 104,
+    "anime": "Cardcaptor Sakura",
+    "image_url": "https://img1.ak.crunchyroll.com/i/spire1-tmb/a989b191a4ca120805105e90511d4ba01407107148_full.jpg",
+    "has_cinematic_banner": true,
+    "year": 1998,
+    "tags": [
+      "Mahou Shoujo",
+      "Cartas Clow",
+      "Magia",
+      "Clamp"
+    ],
+    "synonyms": [
+      "cardcaptor sakura",
+      "sakura card captors",
+      "sakura"
+    ],
+    "hint": "Mahou Shoujo / Fácil",
+    "poster_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx232-ERyKCNNPJJeh.png"
+  },
+  {
+    "id": 105,
+    "anime": "Hajime no Ippo",
+    "image_url": "https://img1.ak.crunchyroll.com/i/spire1-tmb/dff575fabb2aaad41f3a57a7b080c5991380924238_full.jpg",
+    "has_cinematic_banner": true,
+    "year": 2000,
+    "tags": [
+      "Esportes",
+      "Boxe",
+      "Dempsey Roll",
+      "Determinação"
+    ],
+    "synonyms": [
+      "hajime no ippo",
+      "the fighting",
+      "ippo"
+    ],
+    "hint": "Esportes / Médio",
+    "poster_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx19647-cIy7ShTL6e9h.jpg"
+  },
+  {
+    "id": 106,
+    "anime": "Gintama",
+    "image_url": "https://img1.ak.crunchyroll.com/i/spire1-tmb/76257e029e2e01911e289b117e164ec31230030171_full.jpg",
+    "has_cinematic_banner": true,
+    "year": 2006,
+    "tags": [
+      "Comédia",
+      "Paródia",
+      "Alienígenas",
+      "Samurais"
+    ],
+    "synonyms": [
+      "gintama",
+      "gin tama"
+    ],
+    "hint": "Comédia / Médio",
+    "poster_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx918-iOaeBVUn4uK7.jpg"
+  },
+  {
+    "id": 107,
+    "anime": "Angel Beats!",
+    "image_url": "https://img1.ak.crunchyroll.com/i/spire4-tmb/7a9bc08ef3bb8113b00e9e145576d8861340485841_full.jpg",
+    "has_cinematic_banner": true,
+    "year": 2010,
+    "tags": [
+      "Drama",
+      "Sobrenatural",
+      "Vida Após a Morte",
+      "Piano Emocionante"
+    ],
+    "synonyms": [
+      "angel beats",
+      "angel beats!"
+    ],
+    "hint": "Drama / Fácil",
+    "poster_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx6547-SYexAn5aFyss.png"
+  },
+  {
+    "id": 108,
+    "anime": "Anohana",
+    "image_url": "https://img1.ak.crunchyroll.com/i/spire2-tmb/b4a169079d0628fe2d4e12eceaaf55921574028126_full.jpg",
+    "has_cinematic_banner": true,
+    "year": 2011,
+    "tags": [
+      "Drama",
+      "Lágrimas",
+      "Menma",
+      "Amizade de Infância"
+    ],
+    "synonyms": [
+      "anohana",
+      "ano hi mita hana no namae"
+    ],
+    "hint": "Drama / Médio",
+    "poster_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx9989-hImMg6kCMm6I.jpg"
+  },
+  {
+    "id": 109,
+    "anime": "Campione!",
+    "image_url": "https://img1.ak.crunchyroll.com/i/spire1-tmb/13eef4ee2e4ada2c5bff218f82b330c51341343815_full.jpg",
+    "has_cinematic_banner": true,
+    "year": 2012,
+    "tags": [
+      "Harem / Ecchi",
+      "Mitologia",
+      "Matador de Deuses",
+      "Espadas Mágicas"
+    ],
+    "synonyms": [
+      "campione",
+      "campione!"
+    ],
+    "hint": "Harem / Ecchi / Médio",
+    "poster_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx12293-DKc0XJ0cacSZ.jpg"
+  },
+  {
+    "id": 110,
+    "anime": "Shinmai Maou no Testament",
+    "image_url": "https://media.kitsu.app/episodes/thumbnails/172862/original.jpg",
+    "has_cinematic_banner": true,
+    "year": 2015,
+    "tags": [
+      "Harem / Ecchi",
+      "Demônios",
+      "Pacto de Mestre e Servo",
+      "Ação Sobrenatural"
+    ],
+    "synonyms": [
+      "shinmai maou no testament",
+      "the testament of sister new devil"
+    ],
+    "hint": "Harem / Ecchi / Médio",
+    "poster_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20678-58D9Yhi4GcH2.png"
+  },
+  {
+    "id": 111,
+    "anime": "Saekano: How to Raise a Boring Girlfriend",
+    "image_url": "https://img1.ak.crunchyroll.com/i/spire1-tmb/7a2565a95b4e0b3a19919580ad05dda31420741304_full.jpg",
+    "has_cinematic_banner": true,
+    "year": 2015,
+    "tags": [
+      "Harem / Romance",
+      "Desenvolvimento de Jogos",
+      "Otaku",
+      "Heroínas"
+    ],
+    "synonyms": [
+      "saekano",
+      "how to raise a boring girlfriend",
+      "saenai heroine no sodatekata"
+    ],
+    "hint": "Harem / Romance / Médio",
+    "poster_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/nx20657-pMZBj6K6mLhi.jpg"
+  },
+  {
+    "id": 112,
+    "anime": "Strike the Blood",
+    "image_url": "https://img1.ak.crunchyroll.com/i/spire2-tmb/47492fa567d6e16a7184340f299b4c2f1380740955_full.jpg",
+    "has_cinematic_banner": true,
+    "year": 2013,
+    "tags": [
+      "Harem / Ação",
+      "Vampiros",
+      "Ilha Artificial",
+      "Xamãs Espadachins"
+    ],
+    "synonyms": [
+      "strike the blood"
+    ],
+    "hint": "Harem / Ação / Médio",
+    "poster_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx18277-Vwm314Nr6vsg.jpg"
+  },
+  {
+    "id": 113,
+    "anime": "Sekirei",
+    "image_url": "https://media.kitsu.app/episodes/thumbnails/57970/original.jpg",
+    "has_cinematic_banner": true,
+    "year": 2008,
+    "tags": [
+      "Harem / Ecchi",
+      "Torneio de Batalha",
+      "Poderes Elementais",
+      "Parceiros"
+    ],
+    "synonyms": [
+      "sekirei"
+    ],
+    "hint": "Harem / Ecchi / Médio",
+    "poster_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx4063-ZP7agutiaOCf.png"
+  },
+  {
+    "id": 114,
+    "anime": "Freezing",
+    "image_url": "https://media.kitsu.app/episodes/thumbnails/86799/original.jpg",
+    "has_cinematic_banner": true,
+    "year": 2011,
+    "tags": [
+      "Harem / Ecchi",
+      "Academia Militar",
+      "Pandora",
+      "Invasores Nova"
+    ],
+    "synonyms": [
+      "freezing"
+    ],
+    "hint": "Harem / Ecchi / Médio",
+    "poster_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/9367.jpg"
+  },
+  {
+    "id": 115,
+    "anime": "Eromanga Sensei",
+    "image_url": "https://img1.ak.crunchyroll.com/i/spire3-tmb/dde4b0a91072de2ef683b0288dd1778b1491635581_full.jpg",
+    "has_cinematic_banner": true,
+    "year": 2017,
+    "tags": [
+      "Comédia / Harem",
+      "Light Novels",
+      "Ilustradores",
+      "ClariS"
+    ],
+    "synonyms": [
+      "eromanga sensei",
+      "eromanga-sensei"
+    ],
+    "hint": "Comédia / Harem / Fácil",
+    "poster_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21685-h1SrcpaNnrIq.jpg"
+  },
+  {
+    "id": 116,
+    "anime": "Oreimo",
+    "image_url": "https://img1.ak.crunchyroll.com/i/spire3-tmb/ccf1916119e34ba34add913cc3f24ad61314222685_full.jpg",
+    "has_cinematic_banner": true,
+    "year": 2010,
+    "tags": [
+      "Comédia / Romance",
+      "Irmã Otaku",
+      "Segredo Familiar",
+      "ClariS"
+    ],
+    "synonyms": [
+      "oreimo",
+      "ore no imouto ga konna ni kawaii wake ga nai"
+    ],
+    "hint": "Comédia / Romance / Fácil",
+    "poster_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx8769-Lat76qlOwdBN.jpg"
+  },
+  {
+    "id": 117,
+    "anime": "Shimoneta",
+    "image_url": "https://media.kitsu.app/episodes/thumbnails/177629/original.jpg",
+    "has_cinematic_banner": true,
+    "year": 2015,
+    "tags": [
+      "Comédia / Ecchi",
+      "Terrorismo de Piadas Sujas",
+      "Distopia",
+      "SOX"
+    ],
+    "synonyms": [
+      "shimoneta",
+      "shimoneta to iu gainen"
+    ],
+    "hint": "Comédia / Ecchi / Médio",
+    "poster_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20910-U7txwG3o9gma.jpg"
+  },
+  {
+    "id": 118,
+    "anime": "Yuuna and the Haunted Hot Springs",
+    "image_url": "https://img1.ak.crunchyroll.com/i/spire4-tmb/d4be77936b02b236abe363a19a2101921531551595_full.jpg",
+    "has_cinematic_banner": true,
+    "year": 2018,
+    "tags": [
+      "Harem / Ecchi",
+      "Fantasmas",
+      "Águas Termais",
+      "Youkais"
+    ],
+    "synonyms": [
+      "yuuna and the haunted hot springs",
+      "yuragi-sou no yuuna-san",
+      "yuuna-san"
+    ],
+    "hint": "Harem / Ecchi / Médio",
+    "poster_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/nx100483-fzseZYJnQTLI.jpg"
+  },
+  {
+    "id": 119,
+    "anime": "We Never Learn: BOKUBEN",
+    "image_url": "https://img1.ak.crunchyroll.com/i/spire4-tmb/fbc2180b08618bc5c1a58c790a12823e1554559170_full.jpg",
+    "has_cinematic_banner": true,
+    "year": 2019,
+    "tags": [
+      "Harem / Comédia",
+      "Tutoria Escolar",
+      "Gênias Incompetentes",
+      "Romance"
+    ],
+    "synonyms": [
+      "we never learn",
+      "bokuben",
+      "bokutachi wa benkyou ga dekinai"
+    ],
+    "hint": "Harem / Comédia / Médio",
+    "poster_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx103900-E3rqgpq4X0Py.jpg"
+  },
+  {
+    "id": 120,
+    "anime": "The Quintessential Quintuplets",
+    "image_url": "https://img1.ak.crunchyroll.com/i/spire4-tmb/4af2bfc0975916473c2d6bd9467134e91547154171_full.jpg",
+    "has_cinematic_banner": true,
+    "year": 2019,
+    "tags": [
+      "Harem / Romance",
+      "Irmãs Quíntuplas",
+      "Futaro",
+      "Casamento Futuro"
+    ],
+    "synonyms": [
+      "the quintessential quintuplets",
+      "gotoubun no hanayome",
+      "as quintuplas"
+    ],
+    "hint": "Harem / Romance / Fácil",
+    "poster_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx103572-cchriAdH95cQ.png"
+  },
+  {
+    "id": 121,
+    "anime": "Mushoku Tensei: Jobless Reincarnation",
+    "image_url": "https://img1.ak.crunchyroll.com/i/spire4-tmb/c1fd4e0621ca06c305305632673d51ae1719744322_full.jpg",
+    "has_cinematic_banner": true,
+    "year": 2021,
+    "tags": [
+      "Isekai",
+      "Fantasia Épica",
+      "Rudeus Greyrat",
+      "Magia"
+    ],
+    "synonyms": [
+      "mushoku tensei",
+      "jobless reincarnation"
+    ],
+    "hint": "Isekai / Médio",
+    "poster_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx108465-1ANspF1EWyFx.jpg"
+  },
+  {
+    "id": 122,
+    "anime": "Dungeon Meshi",
+    "image_url": "https://media.kitsu.app/episode/332902/thumbnail/e9f5236da1479bab03104fcbc70d9a52.jpg",
+    "has_cinematic_banner": true,
+    "year": 2024,
+    "tags": [
+      "Fantasia",
+      "Culinária de Monstros",
+      "Masmorras",
+      "Studio Trigger"
+    ],
+    "synonyms": [
+      "dungeon meshi",
+      "delicious in dungeon"
+    ],
+    "hint": "Fantasia / Fácil",
+    "poster_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx153518-IVXPDY5ph3kO.jpg"
+  },
+  {
+    "id": 123,
+    "anime": "Hell's Paradise",
+    "image_url": "https://img1.ak.crunchyroll.com/i/spire2-tmb/652f3503700f1f12fb907ed6e2a0398e1688216822_full.jpg",
+    "has_cinematic_banner": true,
+    "year": 2023,
+    "tags": [
+      "Ação",
+      "Shinobi",
+      "Ilha Sobrenatural",
+      "Elixir da Vida"
+    ],
+    "synonyms": [
+      "hell's paradise",
+      "jigokuraku"
+    ],
+    "hint": "Ação / Fácil",
+    "poster_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx128893-Gc2t8b8M0mVu.jpg"
+  },
+  {
+    "id": 124,
+    "anime": "The Apothecary Diaries",
+    "image_url": "https://img1.ak.crunchyroll.com/i/spire4-tmb/684f1e23301186ac476d81dccfcf0d9f1751641470_full.jpg",
+    "has_cinematic_banner": true,
+    "year": 2023,
+    "tags": [
+      "Mistério",
+      "Palácio Imperial",
+      "Ervas Medicinais",
+      "Maomao"
+    ],
+    "synonyms": [
+      "the apothecary diaries",
+      "kusuriya no hitorigoto"
+    ],
+    "hint": "Mistério / Fácil",
+    "poster_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx161645-QLbzHXiYRgV2.jpg"
+  },
+  {
+    "id": 125,
+    "anime": "My Dress-Up Darling",
+    "image_url": "https://media.kitsu.app/episode/301693/thumbnail/e8c24da3aea660023bfa5bd47c66ed4f.png",
+    "has_cinematic_banner": true,
+    "year": 2022,
+    "tags": [
+      "Romance",
+      "Cosplay",
+      "Marin Kitagawa",
+      "Costura"
+    ],
+    "synonyms": [
+      "my dress-up darling",
+      "sono bisque doll wa koi wo suru",
+      "sono bisque doll"
+    ],
+    "hint": "Romance / Fácil",
+    "poster_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx132405-qP7FQYGmNI3d.jpg"
+  },
+  {
+    "id": 126,
+    "anime": "The Dangers in My Heart",
+    "image_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx153152-Xnwmx7wuoIWV.jpg",
+    "has_cinematic_banner": true,
+    "year": 2023,
+    "tags": [
+      "Romcom",
+      "Ichikawa e Yamada",
+      "Crescimento Pessoal",
+      "Fofo"
+    ],
+    "synonyms": [
+      "the dangers in my heart",
+      "boku no kokoro no yabai yatsu",
+      "bokuyaba"
+    ],
+    "hint": "Romcom / Fácil",
+    "poster_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx153152-Xnwmx7wuoIWV.jpg"
+  },
+  {
+    "id": 127,
+    "anime": "Komi Can't Communicate",
+    "image_url": "https://media.kitsu.app/episode/303579/thumbnail/430065bea28e2552ab7bad315cca3484.jpg",
+    "has_cinematic_banner": true,
+    "year": 2021,
+    "tags": [
+      "Comédia",
+      "Escola",
+      "100 Amigos",
+      "Comunicação"
+    ],
+    "synonyms": [
+      "komi can't communicate",
+      "komi-san wa comyushou desu"
+    ],
+    "hint": "Comédia / Fácil",
+    "poster_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx142984-nv2MWVWZ1yYH.jpg"
+  }
+]

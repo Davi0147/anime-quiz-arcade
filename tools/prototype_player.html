@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Test Masked YouTube Player</title>
+  <style>
+    body {
+      background: #0f172a;
+      color: #fff;
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px;
+    }
+    .player-card {
+      width: 480px;
+      background: #1e293b;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+    .player-viewport {
+      position: relative;
+      width: 100%;
+      height: 270px;
+      background: #000;
+    }
+    .player-viewport iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    /* Blind Mask: covers title at top and video in center, leaves bottom 45px controls visible */
+    .blind-mask {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 45px; /* Leaves native YT controls bar accessible! */
+      background: radial-gradient(circle at center, #1e1b4b 0%, #090d16 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+      transition: all 0.4s ease;
+      border-bottom: 2px solid #6366f1;
+    }
+    .blind-mask.unmasked {
+      opacity: 0;
+      pointer-events: none;
+    }
+    .sound-pulse {
+      font-size: 48px;
+      margin-bottom: 8px;
+    }
+    .mask-title {
+      font-size: 16px;
+      font-weight: bold;
+      color: #c7d2fe;
+    }
+    .mask-sub {
+      font-size: 12px;
+      color: #94a3b8;
+      margin-top: 4px;
+    }
+    .controls-bar {
+      padding: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    button {
+      padding: 10px 18px;
+      border-radius: 8px;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h2>Protótipo: Player Blind Test com Controles Nativos</h2>
+  <div class="player-card">
+    <div class="player-viewport">
+      <iframe id="video-frame" 
+        src="https://www.youtube.com/embed/tkNfLYr-MyM?controls=1&modestbranding=1&rel=0" 
+        allow="autoplay; encrypted-media">
+      </iframe>
+      <div class="blind-mask" id="blind-mask">
+        <div class="sound-pulse">🎧</div>
+        <div class="mask-title">MODO BLIND TEST ATIVO</div>
+        <div class="mask-sub">Dê play na barra abaixo para ouvir o áudio sem spoiler!</div>
+      </div>
+    </div>
+    <div class="controls-bar">
+      <button onclick="toggleMask()" style="background: #f59e0b; color: #000;">
+        👁️ Revelar / Ocultar Vídeo
+      </button>
+      <button onclick="loadSong('RiQrbSuLrsU')" style="background: #6366f1; color: #fff;">
+        Próxima Música (Naruto)
+      </button>
+    </div>
+  </div>
+
+  <script>
+    function toggleMask() {
+      document.getElementById('blind-mask').classList.toggle('unmasked');
+    }
+    function loadSong(id) {
+      document.getElementById('blind-mask').classList.remove('unmasked');
+      document.getElementById('video-frame').src = 'https://www.youtube.com/embed/' + id + '?controls=1&modestbranding=1&rel=0&autoplay=1';
+    }
+  </script>
+</body>
+</html>

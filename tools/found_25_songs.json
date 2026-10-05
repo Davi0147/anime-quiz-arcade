@@ -1,0 +1,598 @@
+[
+  {
+    "id": 76,
+    "anime": "Kaguya-sama: Love is War",
+    "song": "Love Dramatic",
+    "artist": "Masayuki Suzuki feat. Rikka Ihara",
+    "year": 2019,
+    "era": "2010s",
+    "diff": "⭐ Fácil",
+    "tags": [
+      "Romance",
+      "Comédia Escolar",
+      "Batalha Psicológica",
+      "A-1 Pictures"
+    ],
+    "synonyms": [
+      "kaguya-sama",
+      "kaguya sama",
+      "love is war",
+      "kaguya-sama wa kokurasetai",
+      "kaguya"
+    ],
+    "video_id": "BC4zaaiXNMI",
+    "video_url": "https://www.youtube.com/watch?v=BC4zaaiXNMI",
+    "hint": "Romance / Comédia Escolar / Duelo Psicológico de Confissões",
+    "image_url": ""
+  },
+  {
+    "id": 77,
+    "anime": "Cyberpunk: Edgerunners",
+    "song": "This Fffire",
+    "artist": "Franz Ferdinand",
+    "year": 2022,
+    "era": "2020s",
+    "diff": "⭐ Fácil",
+    "tags": [
+      "Cyberpunk",
+      "Ação / Ficção Científica",
+      "Night City / David",
+      "Studio Trigger"
+    ],
+    "synonyms": [
+      "cyberpunk edgerunners",
+      "cyberpunk",
+      "edgerunners"
+    ],
+    "video_id": "mH2wmyeiIpA",
+    "video_url": "https://www.youtube.com/watch?v=mH2wmyeiIpA",
+    "hint": "Ficção Científica / Cyberpunk / Night City / Studio Trigger",
+    "image_url": ""
+  },
+  {
+    "id": 78,
+    "anime": "Bocchi the Rock!",
+    "song": "Seishun Complex",
+    "artist": "Kessoku Band",
+    "year": 2022,
+    "era": "2020s",
+    "diff": "⭐ Fácil",
+    "tags": [
+      "Comédia",
+      "Música / Banda",
+      "Ansiedade Social / Guitarra",
+      "CloverWorks"
+    ],
+    "synonyms": [
+      "bocchi the rock",
+      "bocchi the rock!",
+      "bocchi"
+    ],
+    "video_id": "dlSbEP4V-gI",
+    "video_url": "https://www.youtube.com/watch?v=dlSbEP4V-gI",
+    "hint": "Comédia / Música / Guitarra e Ansiedade Social / Kessoku Band",
+    "image_url": ""
+  },
+  {
+    "id": 79,
+    "anime": "Overlord",
+    "song": "Clattanoia",
+    "artist": "OxT",
+    "year": 2015,
+    "era": "2010s",
+    "diff": "⭐ Fácil",
+    "tags": [
+      "Isekai",
+      "Fantasia Sombria",
+      "Ainz Ooal Gown / Nazarick",
+      "Madhouse"
+    ],
+    "synonyms": [
+      "overlord",
+      "ainz ooal gown"
+    ],
+    "video_id": "KOWcj7XKnfQ",
+    "video_url": "https://www.youtube.com/watch?v=KOWcj7XKnfQ",
+    "hint": "Isekai / Fantasia Sombria / Grande Tumba de Nazarick / Madhouse",
+    "image_url": ""
+  },
+  {
+    "id": 80,
+    "anime": "Blue Lock",
+    "song": "Chaos ga Kiwamaru",
+    "artist": "UNISON SQUARE GARDEN",
+    "year": 2022,
+    "era": "2020s",
+    "diff": "⭐ Fácil",
+    "tags": [
+      "Esportes",
+      "Futebol / Egoísmo",
+      "Isagi Yoichi",
+      "Eight Bit"
+    ],
+    "synonyms": [
+      "blue lock",
+      "bluelock"
+    ],
+    "video_id": "5Iv3Fi8eb7w",
+    "video_url": "https://www.youtube.com/watch?v=5Iv3Fi8eb7w",
+    "hint": "Esportes / Futebol Egoísta / Projeto Blue Lock",
+    "image_url": ""
+  },
+  {
+    "id": 81,
+    "anime": "Akame ga Kill!",
+    "song": "Skyreach",
+    "artist": "Sora Amamiya",
+    "year": 2014,
+    "era": "2010s",
+    "diff": "⭐⭐ Média",
+    "tags": [
+      "Ação",
+      "Fantasia Sombria",
+      "Assassinos / Night Raid",
+      "White Fox"
+    ],
+    "synonyms": [
+      "akame ga kill",
+      "akame ga kill!"
+    ],
+    "video_id": "wVFWBoKP-lQ",
+    "video_url": "https://www.youtube.com/watch?v=wVFWBoKP-lQ",
+    "hint": "Ação / Fantasia Sombria / Grupo Rebelde Night Raid / Armas Teigu",
+    "image_url": ""
+  },
+  {
+    "id": 82,
+    "anime": "Delicious in Dungeon",
+    "song": "Sleep Walking Orchestra",
+    "artist": "BUMP OF CHICKEN",
+    "year": 2024,
+    "era": "2020s",
+    "diff": "⭐ Fácil",
+    "tags": [
+      "Fantasia",
+      "Culinária de Monstros",
+      "Masmorra / Laios",
+      "Studio Trigger"
+    ],
+    "synonyms": [
+      "delicious in dungeon",
+      "dungeon meshi",
+      "dungeon meshi: delicious in dungeon"
+    ],
+    "video_id": "60_2zt9l3Yk",
+    "video_url": "https://www.youtube.com/watch?v=60_2zt9l3Yk",
+    "hint": "Fantasia / Cozinha de Monstros em Masmorra / Studio Trigger",
+    "image_url": ""
+  },
+  {
+    "id": 83,
+    "anime": "Samurai Champloo",
+    "song": "Battlecry",
+    "artist": "Nujabes feat. Shing02",
+    "year": 2004,
+    "era": "2000s",
+    "diff": "⭐⭐ Média",
+    "tags": [
+      "Samurai / Hip-Hop",
+      "Ação Histórica",
+      "Mugen & Jin",
+      "Manglobe"
+    ],
+    "synonyms": [
+      "samurai champloo",
+      "champloo"
+    ],
+    "video_id": "Eq6EYcpWB_c",
+    "video_url": "https://www.youtube.com/watch?v=Eq6EYcpWB_c",
+    "hint": "Samurais & Hip-Hop / Era Edo / Mugen e Jin / Estúdio Manglobe",
+    "image_url": ""
+  },
+  {
+    "id": 84,
+    "anime": "Trigun",
+    "song": "H.T.",
+    "artist": "Tsuneo Imahori",
+    "year": 1998,
+    "era": "classicos",
+    "diff": "⭐⭐ Média",
+    "tags": [
+      "Western Espacial",
+      "Ação / Ficção Científica",
+      "Vash the Stampede",
+      "Madhouse"
+    ],
+    "synonyms": [
+      "trigun",
+      "vash the stampede",
+      "trigun 1998"
+    ],
+    "video_id": "NPDWuip1k5o",
+    "video_url": "https://www.youtube.com/watch?v=NPDWuip1k5o",
+    "hint": "Western Espacial / Tufão Humanoide Vash / Madhouse",
+    "image_url": ""
+  },
+  {
+    "id": 85,
+    "anime": "Monster",
+    "song": "Grain",
+    "artist": "Kuniaki Haishima",
+    "year": 2004,
+    "era": "2000s",
+    "diff": "⭐⭐⭐ Difícil",
+    "tags": [
+      "Suspense Psicológico",
+      "Mistério / Drama",
+      "Dr. Tenma / Johan Liebert",
+      "Madhouse"
+    ],
+    "synonyms": [
+      "monster",
+      "dr tenma",
+      "naoki urasawa monster"
+    ],
+    "video_id": "IG7yZ33ILbs",
+    "video_url": "https://www.youtube.com/watch?v=IG7yZ33ILbs",
+    "hint": "Suspense Psicológico / Dr. Kenzo Tenma & Johan Liebert / Madhouse",
+    "image_url": ""
+  },
+  {
+    "id": 86,
+    "anime": "Hellsing Ultimate",
+    "song": "Logos Naki World",
+    "artist": "Yasushi Ishii",
+    "year": 2006,
+    "era": "2000s",
+    "diff": "⭐⭐ Média",
+    "tags": [
+      "Vampiros",
+      "Ação Sobrenatural / Terror",
+      "Alucard / Organização Hellsing",
+      "Madhouse / Satelight"
+    ],
+    "synonyms": [
+      "hellsing",
+      "hellsing ultimate",
+      "alucard"
+    ],
+    "video_id": "ScTYzjFOqN4",
+    "video_url": "https://www.youtube.com/watch?v=ScTYzjFOqN4",
+    "hint": "Vampiros / Sobrenatural Sombrio / Alucard / Organização Hellsing",
+    "image_url": ""
+  },
+  {
+    "id": 87,
+    "anime": "Bleach: Thousand-Year Blood War",
+    "song": "Scar",
+    "artist": "Tatsuya Kitani",
+    "year": 2022,
+    "era": "2020s",
+    "diff": "⭐ Fácil",
+    "tags": [
+      "Ação / Shinigami",
+      "Guerra de Sangue de Mil Anos",
+      "Quincy / Yhwach",
+      "Studio Pierrot"
+    ],
+    "synonyms": [
+      "bleach thousand year blood war",
+      "bleach tybw",
+      "bleach sennen kessen-hen",
+      "bleach guerra sangrenta"
+    ],
+    "video_id": "mjeR7vUrDvM",
+    "video_url": "https://www.youtube.com/watch?v=mjeR7vUrDvM",
+    "hint": "Shinigami vs Quincy / Guerra de Mil Anos / Yhwach / Pierrot",
+    "image_url": ""
+  },
+  {
+    "id": 88,
+    "anime": "Classroom of the Elite",
+    "song": "Caste Room",
+    "artist": "ZAQ",
+    "year": 2017,
+    "era": "2010s",
+    "diff": "⭐⭐ Média",
+    "tags": [
+      "Drama Psicológico",
+      "Escola de Elite / Turma D",
+      "Kiyotaka Ayanokouji",
+      "Lerche"
+    ],
+    "synonyms": [
+      "classroom of the elite",
+      "youkoso jitsuryoku shijou shugi no kyoushitsu e",
+      "cote"
+    ],
+    "video_id": "hsfBOwAIhOw",
+    "video_url": "https://www.youtube.com/watch?v=hsfBOwAIhOw",
+    "hint": "Psicológico / Manipulação Escolar / Turma D / Kiyotaka Ayanokouji",
+    "image_url": ""
+  },
+  {
+    "id": 89,
+    "anime": "Fate/stay night: Unlimited Blade Works",
+    "song": "Brave Shine",
+    "artist": "Aimer",
+    "year": 2015,
+    "era": "2010s",
+    "diff": "⭐ Fácil",
+    "tags": [
+      "Fantasia / Magia",
+      "Guerra do Santo Graal",
+      "Shirou Emiya & Archer",
+      "ufotable"
+    ],
+    "synonyms": [
+      "fate stay night unlimited blade works",
+      "fate stay night ubw",
+      "fate ubw",
+      "unlimited blade works"
+    ],
+    "video_id": "7vZp3yGxZXE",
+    "video_url": "https://www.youtube.com/watch?v=7vZp3yGxZXE",
+    "hint": "Guerra do Santo Graal / Shirou Emiya & Archer / I am the bone of my sword / ufotable",
+    "image_url": ""
+  },
+  {
+    "id": 90,
+    "anime": "Horimiya",
+    "song": "Iro Kousui",
+    "artist": "Yoh Kamiyama",
+    "year": 2021,
+    "era": "2020s",
+    "diff": "⭐⭐ Média",
+    "tags": [
+      "Romance Escolar",
+      "Comédia / Slice of Life",
+      "Hori & Miyamura",
+      "CloverWorks"
+    ],
+    "synonyms": [
+      "horimiya",
+      "hori-san to miyamura-kun"
+    ],
+    "video_id": "7DpONAPM3Zw",
+    "video_url": "https://www.youtube.com/watch?v=7DpONAPM3Zw",
+    "hint": "Romance Escolar / Dupla Identidade Secreta / Hori e Miyamura / CloverWorks",
+    "image_url": ""
+  },
+  {
+    "id": 91,
+    "anime": "Clannad",
+    "song": "Megumeru",
+    "artist": "eufonius",
+    "year": 2007,
+    "era": "2000s",
+    "diff": "⭐⭐⭐ Difícil",
+    "tags": [
+      "Drama / Emoção",
+      "Romance / Sobrenatural",
+      "Tomoya & Nagisa / Dango",
+      "Kyoto Animation"
+    ],
+    "synonyms": [
+      "clannad",
+      "clannad after story"
+    ],
+    "video_id": "hEOgOtK4iGk",
+    "video_url": "https://www.youtube.com/watch?v=hEOgOtK4iGk",
+    "hint": "Drama Emocionante / Dango Daikazoku / Tomoya & Nagisa / Kyoto Animation",
+    "image_url": ""
+  },
+  {
+    "id": 92,
+    "anime": "Steins;Gate 0",
+    "song": "Fatima",
+    "artist": "Kanako Itou",
+    "year": 2018,
+    "era": "2010s",
+    "diff": "⭐⭐ Média",
+    "tags": [
+      "Ficção Científica",
+      "Viagem no Tempo / Linha Beta",
+      "Okabe Rintarou / Amadeus",
+      "White Fox"
+    ],
+    "synonyms": [
+      "steins gate 0",
+      "steins;gate 0",
+      "steinsgate 0"
+    ],
+    "video_id": "1xJbdY9B3A8",
+    "video_url": "https://www.youtube.com/watch?v=1xJbdY9B3A8",
+    "hint": "Viagem no Tempo / Linha do Tempo Beta / IA Amadeus Kurisu / White Fox",
+    "image_url": ""
+  },
+  {
+    "id": 93,
+    "anime": "Made in Abyss",
+    "song": "Deep in Abyss",
+    "artist": "Miyu Tomita & Mariya Ise",
+    "year": 2017,
+    "era": "2010s",
+    "diff": "⭐⭐ Média",
+    "tags": [
+      "Aventura / Fantasia",
+      "Exploração do Abismo",
+      "Riko & Reg",
+      "Kinema Citrus"
+    ],
+    "synonyms": [
+      "made in abyss",
+      "o abismo"
+    ],
+    "video_id": "EJYKsY0Vcts",
+    "video_url": "https://www.youtube.com/watch?v=EJYKsY0Vcts",
+    "hint": "Aventura Sombria / Fossa Profunda do Abismo / Riko & Reg / Apito Branco",
+    "image_url": ""
+  },
+  {
+    "id": 94,
+    "anime": "Dororo",
+    "song": "Kaen",
+    "artist": "Queen Bee",
+    "year": 2019,
+    "era": "2010s",
+    "diff": "⭐⭐ Média",
+    "tags": [
+      "Ação / Sobrenatural",
+      "Demônios & Samurai",
+      "Hyakkimaru / Próteses",
+      "MAPPA / Tezuka Productions"
+    ],
+    "synonyms": [
+      "dororo",
+      "hyakkimaru"
+    ],
+    "video_id": "FgQR2O8PGf4",
+    "video_url": "https://www.youtube.com/watch?v=FgQR2O8PGf4",
+    "hint": "Japão Feudal / 48 Demônios / Hyakkimaru recuperando partes do corpo / MAPPA",
+    "image_url": ""
+  },
+  {
+    "id": 95,
+    "anime": "Charlotte",
+    "song": "Bravely You",
+    "artist": "Lia",
+    "year": 2015,
+    "era": "2010s",
+    "diff": "⭐⭐ Média",
+    "tags": [
+      "Superpoderes Juvenis",
+      "Drama / Escolar",
+      "Yuu Otosaka & Nao Tomori",
+      "P.A. Works"
+    ],
+    "synonyms": [
+      "charlotte",
+      "charlote"
+    ],
+    "video_id": "oDdysk3bDdw",
+    "video_url": "https://www.youtube.com/watch?v=oDdysk3bDdw",
+    "hint": "Superpoderes Imperfeitos na Adolescência / Yuu Otosaka & Nao Tomori / P.A. Works",
+    "image_url": ""
+  },
+  {
+    "id": 96,
+    "anime": "Guilty Crown",
+    "song": "My Dearest",
+    "artist": "supercell",
+    "year": 2011,
+    "era": "2010s",
+    "diff": "⭐⭐ Média",
+    "tags": [
+      "Ação / Ficção Científica",
+      "Poder do Genoma Vazio",
+      "Shu Ouma & Inori",
+      "Production I.G"
+    ],
+    "synonyms": [
+      "guilty crown",
+      "inori yuzuriha"
+    ],
+    "video_id": "W10RXr9c44Y",
+    "video_url": "https://www.youtube.com/watch?v=W10RXr9c44Y",
+    "hint": "Ficção Científica / Vírus do Apocalipse / Poder Void de Inori / Production I.G",
+    "image_url": ""
+  },
+  {
+    "id": 97,
+    "anime": "Noragami Aragoto",
+    "song": "Kyouran Hey Kids!!",
+    "artist": "THE ORAL CIGARETTES",
+    "year": 2015,
+    "era": "2010s",
+    "diff": "⭐ Fácil",
+    "tags": [
+      "Ação / Sobrenatural",
+      "Deus Menor por 5 Ienes",
+      "Yato, Yukine & Hiyori",
+      "Bones"
+    ],
+    "synonyms": [
+      "noragami aragoto",
+      "noragami",
+      "noragami 2"
+    ],
+    "video_id": "C-o8pTi6vd8",
+    "video_url": "https://www.youtube.com/watch?v=C-o8pTi6vd8",
+    "hint": "Deus da Calamidade por 5 Ienes / Yato & Espada Sagrada Yukine / Bones",
+    "image_url": ""
+  },
+  {
+    "id": 98,
+    "anime": "DanMachi (Is It Wrong to Try to Pick Up Girls in a Dungeon?)",
+    "song": "Hey World",
+    "artist": "Yuka Iguchi",
+    "year": 2015,
+    "era": "2010s",
+    "diff": "⭐ Fácil",
+    "tags": [
+      "Fantasia / Aventura",
+      "Família de Deusa & Masmorra",
+      "Bell Cranel & Hestia",
+      "J.C.Staff"
+    ],
+    "synonyms": [
+      "danmachi",
+      "is it wrong to try to pick up girls in a dungeon",
+      "dungeon ni deai wo motomeru no wa machigatteiru darou ka",
+      "familia myth"
+    ],
+    "video_id": "4VXtJmvoV3s",
+    "video_url": "https://www.youtube.com/watch?v=4VXtJmvoV3s",
+    "hint": "Aventura em Masmorra / Bell Cranel & Deusa Hestia / J.C.Staff",
+    "image_url": ""
+  },
+  {
+    "id": 99,
+    "anime": "Black Lagoon",
+    "song": "Red fraction",
+    "artist": "MELL",
+    "year": 2006,
+    "era": "2000s",
+    "diff": "⭐⭐ Média",
+    "tags": [
+      "Ação / Crime / Armas",
+      "Mercenários em Roanapur",
+      "Revy 'Two-Hands' & Rock",
+      "Madhouse"
+    ],
+    "synonyms": [
+      "black lagoon",
+      "roanapur",
+      "revy"
+    ],
+    "video_id": "dWfxcRj39tg",
+    "video_url": "https://www.youtube.com/watch?v=dWfxcRj39tg",
+    "hint": "Crime & Mercenários / Cidade sem Lei de Roanapur / Revy Duas Mãos / Madhouse",
+    "image_url": ""
+  },
+  {
+    "id": 100,
+    "anime": "Assassination Classroom",
+    "song": "Seishun Satsubatsuron",
+    "artist": "3-nen E-gumi Utatan",
+    "year": 2015,
+    "era": "2010s",
+    "diff": "⭐ Fácil",
+    "tags": [
+      "Comédia / Escolar",
+      "Professor Polvo Alien",
+      "Koro-sensei / Turma 3-E",
+      "Lerche"
+    ],
+    "synonyms": [
+      "assassination classroom",
+      "ansatsu kyoushitsu",
+      "koro sensei",
+      "koro-sensei"
+    ],
+    "video_id": "Tgla0Q88V_Y",
+    "video_url": "https://www.youtube.com/watch?v=Tgla0Q88V_Y",
+    "hint": "Escola de Assassinos / Alvo: Professor Polvo Amarelo Koro-sensei / Lerche",
+    "image_url": ""
+  }
+]
