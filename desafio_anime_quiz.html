@@ -3640,7 +3640,7 @@ img[src^="icons/"] {
         <div>
           <div style="display: flex; align-items: center; gap: 8px;">
             <h1 style="font-size: 16px; font-weight: 800; margin: 0; color: #fff;">Anime Music & Scene Quiz</h1>
-            <span class="version-badge" style="font-size: 10px; padding: 2px 8px;">🎮 v3.2.3 • Arcade</span>
+            <span class="version-badge" style="font-size: 10px; padding: 2px 8px;">🎮 v3.2.4 • Arcade</span>
           </div>
           <p class="subtitle" style="font-size: 11px; margin: 2px 0 0 0; color: var(--text-muted);">
             Desafio interativo com 129 aberturas e 127 cenas reais. Ouça as músicas e teste seus conhecimentos!
@@ -6713,8 +6713,38 @@ const MultiplayerEngine = {
   answeredPlayers: new Set(),
   timeLeft: 0,
   botCounter: 1,
+  cloudPollInterval: null,
+  cloudHostPollInterval: null,
+  usingCloudRelay: false,
 
-  clearAllTimers() {
+  getPeerConfig() {
+    return {
+      debug: 1,
+      secure: true,
+      host: '0.peerjs.com',
+      port: 443,
+      path: '/',
+      config: {
+        iceServers: [
+          { urls: 'stun:stun.l.google.com:19302' },
+          { urls: 'stun:stun1.l.google.com:19302' },
+          { urls: 'stun:stun2.l.google.com:19302' },
+          { urls: 'stun:stun3.l.google.com:19302' },
+          { urls: 'stun:stun4.l.google.com:19302' },
+          { urls: 'stun:stun.cloudflare.com:3478' },
+          { urls: 'stun:stun.services.mozilla.com' },
+          { urls: 'stun:global.stun.twilio.com:3478' }
+        ],
+        iceCandidatePoolSize: 10
+      }
+    };
+  },
+
+  cleanRoomCode(raw) {
+    return (raw || '').trim().toUpperCase().replace(/[^A-Z0-9]/g, '');
+  },
+
+  clearRoundTimers() {
     if (this.roundTimerInterval) {
       clearInterval(this.roundTimerInterval);
       this.roundTimerInterval = null;
@@ -6727,6 +6757,19 @@ const MultiplayerEngine = {
       this.botTimeouts.forEach(t => clearTimeout(t));
       this.botTimeouts = [];
     }
+  },
+
+  clearAllTimers() {
+    this.clearRoundTimers();
+    if (this.cloudPollInterval) {
+      clearInterval(this.cloudPollInterval);
+      this.cloudPollInterval = null;
+    }
+    if (this.cloudHostPollInterval) {
+      clearInterval(this.cloudHostPollInterval);
+      this.cloudHostPollInterval = null;
+    }
+    this.usingCloudRelay = false;
   },
 
   init() {
@@ -6791,10 +6834,11 @@ const MultiplayerEngine = {
     for (let i = 0; i < 5; i++) {
       code += letters.charAt(Math.floor(Math.random() * letters.length));
     }
-    this.roomCode = code;
+    this.roomCode = this.cleanRoomCode(code);
     this.isHost = true;
     this.myPlayerName = rawNick;
     this.myStreak = 0;
+    this.usingCloudRelay = false;
     this.players = [{
       id: this.ensurePlayerId(),
       name: this.myPlayerName,
@@ -6810,13 +6854,17 @@ const MultiplayerEngine = {
   setupHostPeer() {
     showToast(`Criando sala #${this.roomCode}...`);
     try {
-      if (this.peer) this.peer.destroy();
-      const peerId = `amq-v2-${this.roomCode}`;
-      this.peer = new Peer(peerId, { debug: 1 });
+      if (this.peer) {
+        try { this.peer.destroy(); } catch(e) {}
+      }
+      const peerId = `amq-v2-${this.roomCode.toLowerCase()}`;
+      this.peer = new Peer(peerId, this.getPeerConfig());
 
       this.peer.on('open', () => {
         this.renderLobby();
         showToast(`🎉 Sala #${this.roomCode} criada! Convide seus amigos!`);
+        this.syncHostLobbyToCloud();
+        this.startHostCloudPolling();
       });
 
       this.peer.on('connection', (conn) => {
@@ -6832,15 +6880,20 @@ const MultiplayerEngine = {
           this.players = this.players.filter(p => p.peerId !== remotePeerId);
           this.broadcastLobby();
           this.renderLobby();
+          this.syncHostLobbyToCloud();
         });
       });
 
       this.peer.on('error', (err) => {
         console.warn('Peer host warning:', err);
         this.renderLobby();
+        this.syncHostLobbyToCloud();
+        this.startHostCloudPolling();
       });
     } catch (e) {
       this.renderLobby();
+      this.syncHostLobbyToCloud();
+      this.startHostCloudPolling();
     }
   },
 
@@ -6848,11 +6901,11 @@ const MultiplayerEngine = {
     this.ensurePlayerId();
     const codeInput = document.getElementById('mp-join-code');
     const nickInput = document.getElementById('mp-guest-nick');
-    const code = (codeInput ? codeInput.value : '').trim().toUpperCase();
+    const code = this.cleanRoomCode(codeInput ? codeInput.value : '');
     const nick = (nickInput ? nickInput.value : '').trim() || 'Zoro';
 
-    if (!code) {
-      alert("Por favor, digite o código da sala!");
+    if (!code || code.length < 3) {
+      alert("Por favor, digite o código válido da sala (letras e números)!");
       return;
     }
 
@@ -6860,19 +6913,37 @@ const MultiplayerEngine = {
     this.isHost = false;
     this.myPlayerName = nick;
     this.myStreak = 0;
+    this.usingCloudRelay = false;
     updateGlobalKPIs();
 
     showToast(`Conectando à sala #${code}...`);
 
+    let p2pEstablished = false;
+    let fallbackTriggered = false;
+
+    // Timeout de segurança: se o WebRTC travar por firewall/CGNAT do roteador, comuta silenciosamente para a Nuvem Firebase
+    const fallbackTimer = setTimeout(() => {
+      if (!p2pEstablished && !fallbackTriggered && this.roomCode === code) {
+        fallbackTriggered = true;
+        console.log("WebRTC P2P demorando (NAT/Firewall). Ativando Nuvem Firebase...");
+        this.connectViaCloudRelay(code, nick);
+      }
+    }, 3800);
+
     try {
-      if (this.peer) this.peer.destroy();
-      this.peer = new Peer(null, { debug: 1 });
+      if (this.peer) {
+        try { this.peer.destroy(); } catch(e) {}
+      }
+      this.peer = new Peer(null, this.getPeerConfig());
 
       this.peer.on('open', () => {
-        const hostPeerId = `amq-v2-${code}`;
-        this.hostConn = this.peer.connect(hostPeerId);
+        const hostPeerId = `amq-v2-${code.toLowerCase()}`;
+        this.hostConn = this.peer.connect(hostPeerId, { reliable: true });
 
         this.hostConn.on('open', () => {
+          p2pEstablished = true;
+          clearTimeout(fallbackTimer);
+          showToast(`⚡ Conectado diretamente ao Host via P2P!`);
           this.hostConn.send({
             type: 'JOIN_LOBBY',
             playerId: this.ensurePlayerId(),
@@ -6885,17 +6956,207 @@ const MultiplayerEngine = {
         });
 
         this.hostConn.on('close', () => {
-          alert("Conexão com a sala encerrada pelo Host.");
-          this.leaveRoom();
+          if (!this.usingCloudRelay) {
+            alert("Conexão com a sala encerrada pelo Host.");
+            this.leaveRoom();
+          }
+        });
+
+        this.hostConn.on('error', (err) => {
+          console.warn("Host connection error:", err);
+          if (!p2pEstablished && !fallbackTriggered) {
+            fallbackTriggered = true;
+            clearTimeout(fallbackTimer);
+            this.connectViaCloudRelay(code, nick);
+          }
         });
       });
 
-      this.peer.on('error', () => {
-        alert(`Não foi possível conectar à sala #${code}. Verifique se o código está correto e se o host ainda está online.`);
+      this.peer.on('error', (err) => {
+        console.warn("Peer client error:", err);
+        if (!p2pEstablished && !fallbackTriggered) {
+          fallbackTriggered = true;
+          clearTimeout(fallbackTimer);
+          this.connectViaCloudRelay(code, nick);
+        }
       });
     } catch(e) {
-      alert("Erro ao conectar à sala.");
+      if (!fallbackTriggered) {
+        fallbackTriggered = true;
+        clearTimeout(fallbackTimer);
+        this.connectViaCloudRelay(code, nick);
+      }
     }
+  },
+
+  connectViaCloudRelay(code, nick) {
+    this.usingCloudRelay = true;
+    showToast(`🌐 Conectando à sala #${code} via Nuvem Arcade...`);
+    const reqUrl = `https://anime-quiz-arcade-default-rtdb.firebaseio.com/rooms/${code}/requests/${this.myPlayerId}.json`;
+    fetch(reqUrl, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        id: this.myPlayerId,
+        name: nick,
+        timestamp: Date.now()
+      })
+    }).then(() => {
+      this.startGuestCloudPolling(code);
+    }).catch(err => {
+      console.warn("Erro ao registrar entrada na nuvem:", err);
+      alert(`Não foi possível conectar à sala #${code}. Verifique se a sala foi criada e se o Host está online.`);
+    });
+  },
+
+  startGuestCloudPolling(code) {
+    if (this.cloudPollInterval) clearInterval(this.cloudPollInterval);
+    const stateUrl = `https://anime-quiz-arcade-default-rtdb.firebaseio.com/rooms/${code}/state.json`;
+
+    let checkState = () => {
+      if (!this.roomCode || this.roomCode !== code) return;
+      fetch(stateUrl)
+        .then(r => r.json())
+        .then(state => {
+          if (!state) return;
+          if (state.players && !this.isMatchActive) {
+            this.players = state.players;
+            if (state.settings) this.activeSettings = state.settings;
+            this.renderLobby();
+          }
+
+          if (state.status === 'playing') {
+            if (!this.isMatchActive) {
+              this.activeSettings = state.settings;
+              this.roundItems = state.roundItems;
+              this.roomSeed = state.seed || 12345;
+              this.isMatchActive = true;
+              this.startRound(state.currentRoundIdx || 0);
+            } else if (state.currentRoundIdx !== this.currentRoundIdx) {
+              this.startRound(state.currentRoundIdx);
+            }
+          } else if (state.status === 'podium' && this.isMatchActive) {
+            this.showPodium(state.players || this.players);
+          }
+
+          if (this.isMatchActive && state.players) {
+            this.players = state.players;
+            this.renderLiveSidebar();
+            this.renderHudScores();
+            updateGlobalKPIs();
+          }
+        })
+        .catch(() => {});
+    };
+
+    checkState();
+    this.cloudPollInterval = setInterval(checkState, 1100);
+  },
+
+  syncHostLobbyToCloud() {
+    if (!this.isHost || !this.roomCode) return;
+    const url = `https://anime-quiz-arcade-default-rtdb.firebaseio.com/rooms/${this.roomCode}/state.json`;
+    fetch(url, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        hostName: this.myPlayerName,
+        settings: this.activeSettings,
+        players: this.players,
+        status: this.isMatchActive ? 'playing' : 'lobby',
+        currentRoundIdx: this.currentRoundIdx,
+        roundItems: this.roundItems,
+        seed: this.roomSeed,
+        updatedAt: Date.now()
+      })
+    }).catch(() => {});
+  },
+
+  startHostCloudPolling() {
+    if (this.cloudHostPollInterval) clearInterval(this.cloudHostPollInterval);
+    const code = this.roomCode;
+    const reqsUrl = `https://anime-quiz-arcade-default-rtdb.firebaseio.com/rooms/${code}/requests.json`;
+    const msgsUrl = `https://anime-quiz-arcade-default-rtdb.firebaseio.com/rooms/${code}/messages.json`;
+
+    this.cloudHostPollInterval = setInterval(() => {
+      if (!this.isHost || !this.roomCode || this.roomCode !== code) return;
+
+      // 1. Checa novos jogadores solicitando entrada via nuvem
+      fetch(reqsUrl)
+        .then(r => r.json())
+        .then(reqs => {
+          if (reqs && typeof reqs === 'object') {
+            let changed = false;
+            Object.values(reqs).forEach(req => {
+              if (req && req.id && !this.players.some(p => p.id === req.id)) {
+                const assigned = this.disambiguateName(req.name, this.players);
+                this.players.push({
+                  id: req.id,
+                  peerId: 'cloud_' + req.id,
+                  name: assigned,
+                  isHost: false,
+                  score: 0,
+                  correct: 0
+                });
+                changed = true;
+                showToast(`🟢 ${assigned} entrou na sala (Nuvem)!`);
+              }
+            });
+            if (changed) {
+              this.broadcastLobby();
+              this.renderLobby();
+              this.syncHostLobbyToCloud();
+            }
+          }
+        })
+        .catch(() => {});
+
+      // 2. Checa mensagens enviadas por convidados da nuvem (respostas / votos)
+      fetch(msgsUrl)
+        .then(r => r.json())
+        .then(msgs => {
+          if (msgs && typeof msgs === 'object') {
+            let changed = false;
+            Object.entries(msgs).forEach(([msgKey, msg]) => {
+              if (!msg) return;
+              if (msg.type === 'ANSWER_SUBMIT') {
+                const p = this.players.find(x => x.id === msg.playerId);
+                if (p) {
+                  p.score += (msg.points || 0);
+                  if (msg.isCorrect) p.correct += 1;
+                }
+                this.answeredPlayers.add(msg.playerId);
+                this.skipVotes.add(msg.playerId);
+                changed = true;
+              } else if (msg.type === 'VOTE_SKIP') {
+                this.handleSkipVote(msg.playerId);
+              }
+              fetch(`https://anime-quiz-arcade-default-rtdb.firebaseio.com/rooms/${code}/messages/${msgKey}.json`, { method: 'DELETE' }).catch(() => {});
+            });
+
+            if (changed) {
+              this.broadcastScores();
+              this.broadcastAnsweredState();
+              this.renderLiveSidebar();
+              this.renderHudScores();
+              updateGlobalKPIs();
+              this.syncHostLobbyToCloud();
+              this.checkAllAnswered();
+            }
+          }
+        })
+        .catch(() => {});
+    }, 1200);
+  },
+
+  sendCloudMessage(msg) {
+    if (!this.roomCode) return;
+    const msgId = 'm_' + Date.now() + '_' + Math.random().toString(36).substring(2, 6);
+    fetch(`https://anime-quiz-arcade-default-rtdb.firebaseio.com/rooms/${this.roomCode}/messages/${msgId}.json`, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(msg)
+    }).catch(() => {});
   },
 
   handleHostMessage(conn, msg) {
@@ -7054,6 +7315,11 @@ const MultiplayerEngine = {
     if (this.peer) {
       try { this.peer.destroy(); } catch(e) {}
     }
+    if (this.isHost && this.roomCode) {
+      fetch(`https://anime-quiz-arcade-default-rtdb.firebaseio.com/rooms/${this.roomCode}.json`, {
+        method: 'DELETE'
+      }).catch(() => {});
+    }
     seededRand = null;
     this.peer = null;
     this.isHost = false;
@@ -7172,13 +7438,14 @@ const MultiplayerEngine = {
       roundItems: this.roundItems,
       seed: this.roomSeed
     });
+    this.syncHostLobbyToCloud();
 
     this.startRound(0);
   },
 
   startRound(idx) {
     stopAllMedia();
-    this.clearAllTimers();
+    this.clearRoundTimers();
     this.isTransitioning = false;
     this.currentRoundIdx = idx;
     this.skipVotes.clear();
@@ -7506,8 +7773,13 @@ const MultiplayerEngine = {
     if (this.isHost) {
       this.handleSkipVote(this.myPlayerId);
     } else {
-      if (this.hostConn) {
+      if (this.hostConn && this.hostConn.open) {
         this.hostConn.send({
+          type: 'VOTE_SKIP',
+          playerId: this.myPlayerId
+        });
+      } else if (this.usingCloudRelay) {
+        this.sendCloudMessage({
           type: 'VOTE_SKIP',
           playerId: this.myPlayerId
         });
@@ -7623,26 +7895,37 @@ const MultiplayerEngine = {
     const btn = document.getElementById('mp-skip-vote-btn');
     if (btn) btn.classList.add('voted');
 
-    if (!this.isHost && this.hostConn) {
-      this.hostConn.send({
-        type: 'ANSWER_SUBMIT',
-        playerId: this.myPlayerId,
-        isCorrect,
-        points
-      });
+    if (!this.isHost) {
+      if (this.hostConn && this.hostConn.open) {
+        this.hostConn.send({
+          type: 'ANSWER_SUBMIT',
+          playerId: this.myPlayerId,
+          isCorrect,
+          points
+        });
+      } else if (this.usingCloudRelay) {
+        this.sendCloudMessage({
+          type: 'ANSWER_SUBMIT',
+          playerId: this.myPlayerId,
+          isCorrect,
+          points
+        });
+      }
     } else if (this.isHost) {
       this.broadcastScores();
       this.broadcastAnsweredState();
+      this.syncHostLobbyToCloud();
       this.checkAllAnswered();
     }
   },
 
   advanceOrEndRound() {
     if (!this.isHost) return;
-    this.clearAllTimers();
+    this.clearRoundTimers();
     if (this.currentRoundIdx + 1 < this.activeSettings.rounds) {
       const nextIdx = this.currentRoundIdx + 1;
       this.broadcast({ type: 'SYNC_ROUND', roundIdx: nextIdx });
+      this.syncHostLobbyToCloud();
       this.startRound(nextIdx);
     } else {
       this.endMatch();
@@ -7654,7 +7937,19 @@ const MultiplayerEngine = {
     this.isTransitioning = false;
     this.myStreak = 0;
     seededRand = null;
-    this.clearAllTimers();
+    this.clearRoundTimers();
+    if (this.isHost && this.roomCode) {
+      const url = `https://anime-quiz-arcade-default-rtdb.firebaseio.com/rooms/${this.roomCode}/state.json`;
+      fetch(url, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          status: 'podium',
+          players: this.players,
+          updatedAt: Date.now()
+        })
+      }).catch(() => {});
+    }
     updateGlobalKPIs();
     const hudBar = document.getElementById('mp-hud-bar');
     if (hudBar) hudBar.style.display = 'none';

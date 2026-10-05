@@ -6,7 +6,15 @@ Este documento cataloga o histórico cronológico de versões (Changelog) do **A
 
 ## 📜 Histórico de Versões (Changelog)
 
-### `v3.2.3 • Arcade` (Versão Atual)
+### `v3.2.4 • Arcade` (Versão Atual)
+* **Multiplayer Híbrido WebRTC P2P + Cloud Relay (Firebase):**
+  - **Canal WSS Universal:** Conexão segura forçada (`secure: true`, porta 443 WSS) no PeerJS, eliminando o erro de protocolo cruzado entre testes no `localhost` (HTTP) e jogadores no GitHub Pages (HTTPS).
+  - **Pool de 8 Servidores STUN:** Inclusão de servidores STUN de alta velocidade (Google 1-4, Cloudflare, Mozilla, Twilio) e expurgo de servidores TURN inativos do PeerJS que causavam timeouts de ICE.
+  - **Sanitização de Código de Sala:** Limpeza automática de espaços e caracteres especiais (como `#`), prevenindo IDs inválidos no PeerJS.
+  - **Auto-Fallback para Nuvem (Zero-Failure):** Se a conexão direta P2P travar ou for bloqueada por CGNAT / Firewall / 4G (timeout de 3.8s), o jogo comuta automaticamente e silenciosamente para sincronização via REST API do Firebase Realtime Database.
+  - **DataChannel Confiável:** Adição de `{ reliable: true }` para garantir entrega sequencial de pacotes sem perda em redes remotas.
+
+### `v3.2.3 • Arcade`
 * **UX de Finalização Aprimorada:**
   - Botão **Finalizar Partida** posicionado **lado a lado** com o botão **Confirmar Escolha** no Modo 2, com largura compacta (`max-width: 130px`) para prevenir cliques acidentais.
   - Efeito visual de brilho neon glow no hover (`box-shadow: 0 0 16px rgba(239, 68, 68, 0.65)`).
