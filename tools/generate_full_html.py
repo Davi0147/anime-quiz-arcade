@@ -1200,14 +1200,34 @@ html_template = """<!DOCTYPE html>
 
     .m2-actions {
       display: flex;
-      justify-content: center;
-      gap: 10px;
-      margin-top: 4px;
+      gap: 8px;
+      align-items: center;
+      margin-top: 6px;
+      width: 100%;
+      box-sizing: border-box;
     }
 
-    .m2-actions .btn {
-      width: 100%;
+    .m2-actions #m2-btn-confirm,
+    .m2-actions #m2-btn-next {
+      flex: 1;
+      min-width: 0;
       justify-content: center;
+      padding: 12px 16px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .m2-actions #m2-btn-finish {
+      flex: 0 0 auto;
+      width: auto;
+      min-width: 100px;
+      max-width: 130px;
+      justify-content: center;
+      padding: 12px 14px;
+      font-size: 12px;
+      border-color: rgba(239, 68, 68, 0.45);
+      color: #fca5a5;
+      white-space: nowrap;
     }
 
     .m2-feedback-banner {
@@ -3615,7 +3635,7 @@ img[src^="icons/"] {
         <div>
           <div style="display: flex; align-items: center; gap: 8px;">
             <h1 style="font-size: 16px; font-weight: 800; margin: 0; color: #fff;">Anime Music & Scene Quiz</h1>
-            <span class="version-badge" style="font-size: 10px; padding: 2px 8px;">🎮 v3.2.1 • Arcade</span>
+            <span class="version-badge" style="font-size: 10px; padding: 2px 8px;">🎮 v3.2.2 • Arcade</span>
           </div>
           <p class="subtitle" style="font-size: 11px; margin: 2px 0 0 0; color: var(--text-muted);">
             Desafio interativo com 129 aberturas e 127 cenas reais. Ouça as músicas e teste seus conhecimentos!
@@ -3946,8 +3966,8 @@ img[src^="icons/"] {
           <button class="btn btn-gold" id="m2-btn-next" onclick="m2NextRound()" style="display: none;">
             Próxima Rodada <img src="icons/fast-forward.png" class="app-icon icon-white" />
           </button>
-          <button class="btn btn-outline" id="m2-btn-finish" onclick="finishCurrentGame('mode2')" style="padding: 10px 14px; font-size: 12px; border-color: rgba(239, 68, 68, 0.4); color: #fca5a5;" title="Finalizar partida e registrar recorde">
-            🏁 Finalizar Partida
+          <button class="btn btn-outline" id="m2-btn-finish" onclick="finishCurrentGame('mode2')" title="Finalizar partida e salvar recorde">
+            🏁 Finalizar
           </button>
         </div>
       </div>
@@ -4336,6 +4356,33 @@ img[src^="icons/"] {
       </button>
       <button class="btn btn-danger" onclick="leaveRoomFromAlert()" style="padding: 10px 18px; font-weight: 700; border-radius: 10px; background: rgba(239, 68, 68, 0.15); border: 1px solid #ef4444; color: #fca5a5;">
         Sair da Sala
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL DE CONFIRMAÇÃO PARA FINALIZAR PARTIDA (PREVINE CLIQUES ACIDENTAIS) -->
+<div class="settings-modal-overlay" id="confirm-finish-modal" style="display: none;" onclick="if(event.target===this)closeConfirmFinishModal()">
+  <div class="settings-modal-card" style="max-width: 440px; text-align: center; border-color: rgba(239, 68, 68, 0.45); box-shadow: 0 0 30px rgba(239, 68, 68, 0.15);">
+    <div style="font-size: 36px; line-height: 1; margin-bottom: 6px;">🏁</div>
+    <h2 style="font-size: 20px; font-weight: 800; color: #fff; margin-bottom: 4px;">Finalizar Partida Agora?</h2>
+    <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 14px;">
+      Deseja encerrar para salvar seu recorde no Hall da Fama ou prefere continuar jogando?
+    </p>
+
+    <!-- Resumo da Pontuação Atual em Destaque -->
+    <div style="background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 14px; margin-bottom: 16px;">
+      <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted);">Sua Pontuação Atual</div>
+      <div style="font-size: 28px; font-weight: 800; color: var(--gold); margin: 4px 0;" id="cfm-score-val">0 pts</div>
+      <div style="font-size: 12px; color: #94a3b8;" id="cfm-stats-meta">0 acertos • Combo 0x</div>
+    </div>
+
+    <div style="display: flex; gap: 10px; justify-content: center;">
+      <button class="btn btn-green" style="flex: 1.3; padding: 10px; font-size: 13px;" onclick="closeConfirmFinishModal()">
+        ▶️ Continuar Jogando
+      </button>
+      <button class="btn btn-outline" style="flex: 1; padding: 10px; font-size: 12px; border-color: rgba(239, 68, 68, 0.5); color: #fca5a5;" onclick="confirmAndFinishGame()">
+        🏁 Sim, Finalizar
       </button>
     </div>
   </div>
@@ -8179,6 +8226,8 @@ async function submitGameOverScore() {
   showToast(`🎉 Parabéns ${entry.name}! Seu recorde de ${entry.score} pts foi salvo no Top 50!`);
 }
 
+let pendingFinishData = null;
+
 function finishCurrentGame(mode = activeGameMode) {
   const score = (mode === 'mode2') ? m2Score : ((mode === 'mode3') ? m3Score : m1Score);
   const correct = (mode === 'mode2') ? m2CorrectCount : ((mode === 'mode3') ? m3CorrectCount : m1CorrectCount);
@@ -8190,6 +8239,38 @@ function finishCurrentGame(mode = activeGameMode) {
     return;
   }
 
+  pendingFinishData = { mode, score, correct, streak };
+
+  const modal = document.getElementById('confirm-finish-modal');
+  const scoreEl = document.getElementById('cfm-score-val');
+  const metaEl = document.getElementById('cfm-stats-meta');
+
+  if (scoreEl) scoreEl.textContent = `${score} pts`;
+  if (metaEl) metaEl.textContent = `${correct} acerto(s) • Maior Combo: ${streak}x`;
+
+  if (modal) {
+    if (window.AudioManager) AudioManager.playSfx('click');
+    modal.style.display = 'flex';
+  } else {
+    const cfm = confirm(`Deseja realmente finalizar a partida agora?\n\n⭐ Pontuação Atual: ${score} pts (${correct} acertos, combo ${streak}x)\n\nClique em OK para encerrar e registrar no Hall da Fama, ou Cancelar para continuar jogando.`);
+    if (cfm) {
+      stopAllMedia();
+      openGameOverModal(mode, score, correct, streak);
+    }
+  }
+}
+
+function closeConfirmFinishModal() {
+  if (window.AudioManager) AudioManager.playSfx('click');
+  const modal = document.getElementById('confirm-finish-modal');
+  if (modal) modal.style.display = 'none';
+  pendingFinishData = null;
+}
+
+function confirmAndFinishGame() {
+  if (!pendingFinishData) return;
+  const { mode, score, correct, streak } = pendingFinishData;
+  closeConfirmFinishModal();
   stopAllMedia();
   openGameOverModal(mode, score, correct, streak);
 }
