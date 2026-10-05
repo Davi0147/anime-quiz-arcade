@@ -2365,27 +2365,45 @@
       gap: 3px;
     }
 
-    .cloud-step-card {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      background: rgba(15, 23, 42, 0.6);
-      border: 1px solid rgba(255, 255, 255, 0.06);
-      padding: 10px 12px;
-      border-radius: 10px;
+    .game-over-stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      margin: 14px 0;
+      background: rgba(15, 20, 36, 0.7);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 10px 8px;
     }
-    .cloud-step-card .step-num {
-      width: 22px;
-      height: 22px;
-      border-radius: 50%;
-      background: var(--accent);
-      color: #fff;
+    .go-stat-item {
       display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 11px;
+      flex-direction: column;
+      gap: 3px;
+    }
+    .go-stat-label {
+      font-size: 10px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      letter-spacing: 0.5px;
+    }
+    .go-stat-val {
+      font-size: 13px;
       font-weight: 800;
-      flex-shrink: 0;
+      color: #fff;
+    }
+    .go-stat-val.highlight {
+      color: var(--gold);
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .go-stat-val.flame {
+      color: #f97316;
+    }
+    .game-over-badge-box {
+      background: rgba(245, 158, 11, 0.05);
+      border: 1px dashed rgba(245, 158, 11, 0.3);
+      border-radius: 12px;
+      padding: 10px;
+      margin-bottom: 12px;
     }
 
     .save-score-box {
@@ -3711,6 +3729,10 @@ img[src^="icons/"] {
                 <img src="icons/fast-forward.png" class="app-icon icon-blue" alt="Próxima" />
                 <span class="m1-nav-label">Próxima</span>
               </button>
+              <button class="m1-nav-btn" id="m1-btn-finish" style="border-color: rgba(239, 68, 68, 0.4); color: #fca5a5;" onclick="finishCurrentGame('mode1')" title="Finalizar partida e salvar recorde">
+                <span style="font-size: 13px;">🏁</span>
+                <span class="m1-nav-label">Finalizar</span>
+              </button>
             </div>
           </div>
         </div>
@@ -3834,12 +3856,15 @@ img[src^="icons/"] {
         </div>
 
         <!-- Mode 2 Actions -->
-        <div class="m2-actions">
+        <div class="m2-actions" style="display: flex; gap: 8px; flex-wrap: wrap;">
           <button class="btn btn-green" id="m2-btn-confirm" onclick="m2ConfirmSelection()" disabled>
             <img src="icons/check.png" class="app-icon icon-raw" /> Confirmar Escolha
           </button>
           <button class="btn btn-gold" id="m2-btn-next" onclick="m2NextRound()" style="display: none;">
             Próxima Rodada <img src="icons/fast-forward.png" class="app-icon icon-white" />
+          </button>
+          <button class="btn btn-outline" id="m2-btn-finish" onclick="finishCurrentGame('mode2')" style="padding: 10px 14px; font-size: 12px; border-color: rgba(239, 68, 68, 0.4); color: #fca5a5;" title="Finalizar partida e registrar recorde">
+            🏁 Finalizar Partida
           </button>
         </div>
       </div>
@@ -3914,12 +3939,15 @@ img[src^="icons/"] {
         </div>
 
         <!-- Navigation -->
-        <div class="m3-nav-row nav-row">
+        <div class="m3-nav-row nav-row" style="display: flex; gap: 8px; flex-wrap: wrap;">
           <button class="btn btn-outline" onclick="m3GiveUp()">
             <img src="icons/eye.png" class="app-icon icon-white" /> Ver Resposta
           </button>
           <button class="btn btn-secondary" onclick="m3NextScene()">
             Próxima Cena <img src="icons/fast-forward.png" class="app-icon icon-white" />
+          </button>
+          <button class="btn btn-outline" id="m3-btn-finish" onclick="finishCurrentGame('mode3')" style="border-color: rgba(239, 68, 68, 0.4); color: #fca5a5;" title="Finalizar partida e registrar recorde">
+            🏁 Finalizar Partida
           </button>
         </div>
       </div>
@@ -4109,40 +4137,21 @@ img[src^="icons/"] {
       <div class="quiz-header" style="margin-bottom: 14px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
         <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
           <div class="round-indicator">🏆 HALL DA FAMA MUNDIAL • TOP 50</div>
-          <div id="cloud-status-badge" class="cloud-status-pill local" onclick="openCloudConfigModal()" style="cursor: pointer;" title="Clique para configurar o Banco na Nuvem">
-            <span class="status-dot pulse-amber"></span> 💾 Placar Local (Dispositivo)
+          <div id="cloud-status-badge" class="cloud-status-pill online" title="Conectado à Nuvem Global">
+            <span class="status-dot pulse-green"></span> 🟢 Nuvem Global • Ao Vivo
           </div>
         </div>
         <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
-          <button class="btn btn-outline" id="btn-sync-leaderboard" style="padding: 5px 12px; font-size: 11px;" onclick="syncLeaderboardNow()" title="Sincronizar com a nuvem">
-            <span id="sync-icon">🔄</span> Sincronizar
+          <button class="btn btn-outline" id="btn-sync-leaderboard" style="padding: 5px 12px; font-size: 11px;" onclick="syncLeaderboardNow()" title="Atualizar placar da nuvem">
+            <span id="sync-icon">🔄</span> Atualizar
           </button>
-          <button class="btn btn-outline" style="padding: 5px 12px; font-size: 11px;" onclick="openCloudConfigModal()" title="Configurar banco de dados na nuvem">
-            🌐 Conectar Nuvem
-          </button>
-          <button class="btn btn-outline" style="padding: 5px 10px; font-size: 11px;" onclick="clearLeaderboard()" title="Limpar histórico local">
+          <button class="btn btn-outline" style="padding: 5px 10px; font-size: 11px;" onclick="clearLeaderboard()" title="Limpar histórico do aparelho">
             <img src="icons/trash-can.png" class="app-icon icon-red" /> Limpar
           </button>
         </div>
       </div>
 
       <div class="leaderboard-container">
-        <!-- Salvar pontuação atual -->
-        <div class="save-score-box">
-          <div>
-            <div style="font-size: 13px; font-weight: 800; color: #fff; display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
-              <span>💾 Salvar Recorde Atual no Hall da Fama</span>
-              <span id="save-badge-preview"></span>
-            </div>
-            <div style="font-size: 11px; color: var(--text-muted); margin-top: 2px;">
-              Sua pontuação: <strong id="save-score-val" style="color: var(--accent);">0 pts</strong> • Acertos: <strong id="save-correct-val">0</strong> • Combo: <strong id="save-streak-val">0x</strong>
-            </div>
-          </div>
-          <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
-            <input type="text" class="save-score-input" id="player-nickname" placeholder="Seu Apelido Otaku..." maxlength="15" autocomplete="off" />
-            <button class="btn btn-green" onclick="saveCurrentScoreToLeaderboard()">Salvar Recorde</button>
-          </div>
-        </div>
 
         <!-- Filtros do Placar -->
         <div class="leaderboard-filter-tabs">
@@ -4257,45 +4266,70 @@ img[src^="icons/"] {
   </div>
 </div>
 
-<!-- MODAL DE CONFIGURAÇÃO DO BANCO EM NUVEM (FIREBASE REALTIME DB) -->
-<div class="settings-modal-overlay" id="cloud-config-modal" style="display: none;" onclick="if(event.target===this)closeCloudConfigModal()">
-  <div class="settings-modal-card" style="max-width: 540px;">
-    <div class="settings-modal-header">
-      <div class="settings-modal-title">
-        🌐 Conectar Banco Global (Firebase Realtime)
-      </div>
-      <button class="settings-close-btn" onclick="closeCloudConfigModal()">&times;</button>
+<!-- MODAL UNIVERSAL DE FIM DE PARTIDA & SALVAR NO HALL DA FAMA -->
+<div class="settings-modal-overlay" id="game-over-modal" style="display: none;" onclick="if(event.target===this)closeGameOverModal()">
+  <div class="settings-modal-card game-over-modal-card" style="max-width: 490px; text-align: center;">
+    <div class="game-over-header" style="margin-bottom: 12px;">
+      <div style="font-size: 38px; line-height: 1;">🏆</div>
+      <h2 style="font-size: 21px; font-weight: 800; color: #fff; margin-top: 6px;">Partida Concluída!</h2>
+      <p style="font-size: 12px; color: var(--text-muted); margin-top: 2px;" id="game-over-subtitle">
+        Veja seu resultado e registre seu nome no Hall da Fama Mundial.
+      </p>
     </div>
 
-    <div style="display: flex; flex-direction: column; gap: 14px; font-size: 13px; color: #cbd5e1; line-height: 1.5; padding: 4px 0;">
-      <p style="font-size: 12px; color: #94a3b8;">
-        Conecte um banco de dados gratuito na nuvem para que qualquer pessoa do mundo que jogar veja e dispute o mesmo <strong>Hall da Fama Global</strong>!
-      </p>
-
-      <div class="cloud-steps-list" style="display: flex; flex-direction: column; gap: 8px;">
-        <div class="cloud-step-card">
-          <div class="step-num">1</div>
-          <div>Acesse <strong>console.firebase.google.com</strong> com sua conta Google (100% gratuito).</div>
-        </div>
-        <div class="cloud-step-card">
-          <div class="step-num">2</div>
-          <div>Clique em <strong>Criar projeto</strong> &rarr; no menu vá em <strong>Criação &gt; Realtime Database &gt; Criar banco</strong> (modo de teste).</div>
-        </div>
-        <div class="cloud-step-card">
-          <div class="step-num">3</div>
-          <div>Copie a URL gerada (ex: <code>https://seu-quiz-default-rtdb.firebaseio.com</code>) e cole abaixo:</div>
-        </div>
+    <!-- Estatísticas da Partida -->
+    <div class="game-over-stats-grid">
+      <div class="go-stat-item">
+        <span class="go-stat-label">Modo</span>
+        <strong class="go-stat-val" id="go-mode-val">Blind Test</strong>
       </div>
-
-      <div style="margin-top: 4px;">
-        <label style="font-size: 11px; font-weight: 700; text-transform: uppercase; color: var(--accent); letter-spacing: 0.5px; display: block; margin-bottom: 6px;">URL da Realtime Database (.json)</label>
-        <input type="text" id="firebase-url-input" class="save-score-input" style="width: 100%; box-sizing: border-box;" placeholder="https://seu-projeto-default-rtdb.firebaseio.com/leaderboard.json" />
+      <div class="go-stat-item">
+        <span class="go-stat-label">Pontuação</span>
+        <strong class="go-stat-val highlight" id="go-score-val">0 pts</strong>
       </div>
-
-      <div style="display: flex; gap: 8px; justify-content: flex-end; margin-top: 6px; flex-wrap: wrap;">
-        <button class="btn btn-outline" style="font-size: 12px; padding: 7px 14px;" onclick="disconnectCloud()">Desconectar (Modo Local)</button>
-        <button class="btn btn-primary" style="font-size: 12px; padding: 7px 18px;" onclick="saveCloudConfig()">Salvar &amp; Sincronizar</button>
+      <div class="go-stat-item">
+        <span class="go-stat-label">Acertos</span>
+        <strong class="go-stat-val" id="go-correct-val">0</strong>
       </div>
+      <div class="go-stat-item">
+        <span class="go-stat-label">Maior Combo</span>
+        <strong class="go-stat-val flame" id="go-streak-val">0x</strong>
+      </div>
+    </div>
+
+    <!-- Título / Badge de Prestígio Conquistado -->
+    <div class="game-over-badge-box">
+      <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.6px; color: var(--text-muted); margin-bottom: 6px;">
+        Título de Prestígio Conquistado:
+      </div>
+      <div id="go-badge-container" style="display: flex; justify-content: center; gap: 8px; flex-wrap: wrap;"></div>
+      <div id="go-badge-desc" style="font-size: 11.5px; color: #94a3b8; margin-top: 6px;"></div>
+    </div>
+
+    <!-- Formulário de Registro do Jogador -->
+    <div class="game-over-form" style="margin-top: 14px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+        <label style="font-size: 12px; font-weight: 700; color: #cbd5e1;">
+          Digite seu Apelido Otaku <span style="color: var(--rose);">*</span>
+        </label>
+        <span id="go-char-count" style="font-size: 11px; font-weight: 700; color: var(--rose);">0/5 (mínimo 5 letras)</span>
+      </div>
+      <div style="position: relative;">
+        <input type="text" id="go-nickname-input" class="save-score-input" style="width: 100%; box-sizing: border-box; font-size: 14px; padding: 10px 14px;" placeholder="Ex: Levi_Ackerman..." maxlength="15" autocomplete="off" oninput="validateGoNickname()" />
+      </div>
+      <div id="go-nick-hint" style="font-size: 11px; color: var(--rose); margin-top: 5px; text-align: left;">
+        O apelido precisa ter no mínimo 5 caracteres para salvar no placar.
+      </div>
+    </div>
+
+    <!-- Ações -->
+    <div style="display: flex; gap: 10px; justify-content: center; margin-top: 18px;">
+      <button class="btn btn-outline" style="flex: 1; padding: 10px; font-size: 12px; border-radius: 10px;" onclick="closeGameOverModal()">
+        Não Salvar (Cancelar)
+      </button>
+      <button class="btn btn-green" id="go-save-btn" style="flex: 1.5; padding: 10px; font-size: 12px; border-radius: 10px; opacity: 0.45; pointer-events: none;" onclick="submitGameOverScore()">
+        💾 Salvar no Ranking Global
+      </button>
     </div>
   </div>
 </div>
@@ -5896,6 +5930,12 @@ function nextSong() {
   if (m1PlaylistIndex < m1Playlist.length - 1) {
     m1PlaylistIndex++;
     m1LoadSong(true);
+  } else {
+    if (m1Score > 0 || m1CorrectCount > 0) {
+      openGameOverModal('mode1', m1Score, m1CorrectCount, m1Streak);
+    } else {
+      showToast("🏁 Fim da lista de músicas!");
+    }
   }
 }
 
@@ -5928,8 +5968,7 @@ function m2NextRound() {
   }
   stopAllMedia();
   if (isChallengeActive && m2RoundsPlayed >= challengeRounds) {
-    alert(`🏆 Fim do Duelo! Você completou ${challengeRounds} rodadas com ${m2Score} pontos e ${m2CorrectCount} acertos! Salve seu recorde no Modo 4.`);
-    switchGameMode('mode4');
+    openGameOverModal('mode2', m2Score, m2CorrectCount, m2Streak);
     return;
   }
 
@@ -6292,8 +6331,7 @@ function m3NextScene() {
   }
   stopAllMedia();
   if (isChallengeActive && m3RoundsPlayed >= challengeRounds) {
-    alert(`🏆 Fim do Duelo! Você completou ${challengeRounds} rodadas de cenas com ${m3Score} pontos e ${m3CorrectCount} acertos! Salve seu recorde no Modo 4.`);
-    switchGameMode('mode4');
+    openGameOverModal('mode3', m3Score, m3CorrectCount, m3Streak);
     return;
   }
 
@@ -7599,19 +7637,11 @@ const MultiplayerEngine = {
 
     const myData = sorted.find(p => p.id === this.myPlayerId);
     if (myData && myData.score > 0) {
-      const entry = {
-        id: Date.now(),
-        name: myData.name,
-        mode: 'multiplayer',
-        score: myData.score,
-        correct: myData.correct || 0,
-        streak: 0,
-        date: new Date().toLocaleDateString('pt-BR'),
-        timestamp: Date.now()
-      };
-      if (window.CloudLeaderboard) {
-        CloudLeaderboard.submitScore(entry);
-      }
+      setTimeout(() => {
+        if (typeof openGameOverModal === 'function') {
+          openGameOverModal('multiplayer', myData.score, myData.correct || 0, 0, myData.name);
+        }
+      }, 1500);
     }
 
     const rematchBtn = document.getElementById('mp-rematch-btn');
@@ -7779,31 +7809,16 @@ const AntiCheatEngine = {
 };
 window.AntiCheatEngine = AntiCheatEngine;
 
-/* 1.1 MOTOR DE BANCO EM NUVEM E SINCRONIZAÇÃO HÍBRIDA */
+/* 1.1 MOTOR DE BANCO EM NUVEM GLOBAL (FIREBASE REALTIME DB INTEGRADO) */
 const CloudLeaderboard = {
   STORAGE_KEY: 'AMQ_LEADERBOARD_V2',
-  FIREBASE_KEY: 'AMQ_FIREBASE_URL',
-  DEFAULT_FIREBASE: 'https://anime-quiz-arcade-default-rtdb.firebaseio.com/leaderboard.json',
+  FIREBASE_URL: 'https://anime-quiz-arcade-default-rtdb.firebaseio.com/leaderboard.json',
   cachedScores: [],
   isSyncing: false,
-  isOnline: false,
+  isOnline: true,
 
   getFirebaseUrl() {
-    const custom = localStorage.getItem(this.FIREBASE_KEY);
-    if (custom && custom.trim() !== '') return custom.trim();
-    return this.DEFAULT_FIREBASE;
-  },
-
-  setFirebaseUrl(url) {
-    if (!url || url.trim() === '') {
-      localStorage.removeItem(this.FIREBASE_KEY);
-    } else {
-      let clean = url.trim();
-      if (clean.includes('firebaseio.com') && !clean.endsWith('.json')) {
-        clean = clean.replace(/\/+$/, '') + '/leaderboard.json';
-      }
-      localStorage.setItem(this.FIREBASE_KEY, clean);
-    }
+    return this.FIREBASE_URL;
   },
 
   getLocalScores() {
@@ -7826,27 +7841,16 @@ const CloudLeaderboard = {
   init() {
     this.cachedScores = this.getLocalScores();
     this.updateStatusBadge();
-    const url = this.getFirebaseUrl();
-    if (url) {
-      this.fetchScores().then(() => {
-        renderLeaderboardTable('all');
-      });
-    }
+    this.fetchScores().then(() => {
+      renderLeaderboardTable('all');
+    });
   },
 
   async fetchScores() {
-    const url = this.getFirebaseUrl();
-    if (!url) {
-      this.isOnline = false;
-      this.cachedScores = this.getLocalScores();
-      this.updateStatusBadge();
-      return this.cachedScores;
-    }
-
     try {
       this.isSyncing = true;
       this.updateStatusBadge();
-      const res = await fetch(url, {
+      const res = await fetch(this.FIREBASE_URL, {
         method: 'GET',
         headers: { 'Accept': 'application/json' }
       });
@@ -7871,8 +7875,7 @@ const CloudLeaderboard = {
       this.isOnline = true;
       return merged;
     } catch (err) {
-      console.warn("Falha ao sincronizar com nuvem, mantendo cache local:", err);
-      this.isOnline = false;
+      console.warn("Nuvem em sincronização, usando cache local:", err);
       this.cachedScores = this.getLocalScores();
       return this.cachedScores;
     } finally {
@@ -7901,30 +7904,26 @@ const CloudLeaderboard = {
   },
 
   async submitScore(entry) {
-    // 1. Salva no cache local primeiro
+    // 1. Salva no cache local primeiro (garantia de persistência)
     const local = this.getLocalScores();
     local.push(entry);
     local.sort((a, b) => (Number(b.score) || 0) - (Number(a.score) || 0));
     this.saveLocalScores(local);
     this.cachedScores = local;
 
-    // 2. Se houver nuvem configurada, envia via POST
-    const url = this.getFirebaseUrl();
-    if (url) {
-      try {
-        const res = await fetch(url, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(entry)
-        });
-        if (res.ok) {
-          entry.source = 'cloud';
-          this.isOnline = true;
-        }
-      } catch (err) {
-        console.warn("Nuvem offline no momento. O recorde foi guardado no cache local:", err);
-        this.isOnline = false;
+    // 2. Envia via POST diretamente para o Firebase Realtime DB na nuvem
+    try {
+      const res = await fetch(this.FIREBASE_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(entry)
+      });
+      if (res.ok) {
+        entry.source = 'cloud';
+        this.isOnline = true;
       }
+    } catch (err) {
+      console.warn("Nuvem offline no momento. O recorde foi guardado no cache local:", err);
     }
     this.updateStatusBadge();
   },
@@ -7932,19 +7931,12 @@ const CloudLeaderboard = {
   updateStatusBadge() {
     const el = document.getElementById('cloud-status-badge');
     if (!el) return;
-    const url = this.getFirebaseUrl();
     if (this.isSyncing) {
       el.className = 'cloud-status-pill syncing';
-      el.innerHTML = '<span class="status-dot spin"></span> Sincronizando Nuvem...';
-    } else if (url && this.isOnline) {
-      el.className = 'cloud-status-pill online';
-      el.innerHTML = '<span class="status-dot pulse-green"></span> 🌐 Nuvem Global Conectada';
-    } else if (url && !this.isOnline) {
-      el.className = 'cloud-status-pill error';
-      el.innerHTML = '<span class="status-dot"></span> ⚠️ Nuvem Offline (Cache Local)';
+      el.innerHTML = '<span class="status-dot spin"></span> Sincronizando...';
     } else {
-      el.className = 'cloud-status-pill local';
-      el.innerHTML = '<span class="status-dot pulse-amber"></span> 💾 Placar Local (Dispositivo)';
+      el.className = 'cloud-status-pill online';
+      el.innerHTML = '<span class="status-dot pulse-green"></span> 🟢 Nuvem Global • Ao Vivo';
     }
   }
 };
@@ -7960,51 +7952,114 @@ function saveLeaderboardData(list) {
   CloudLeaderboard.saveLocalScores(list);
 }
 
-function updateSaveScoreKPIs() {
-  const currentTotal = activeGameMode === 'mode2' ? m2Score : (activeGameMode === 'mode3' ? m3Score : (activeGameMode === 'mode1' ? m1Score : 0));
-  const currentCorrect = activeGameMode === 'mode2' ? m2CorrectCount : (activeGameMode === 'mode3' ? m3CorrectCount : (activeGameMode === 'mode1' ? m1CorrectCount : 0));
-  const currentStreak = activeGameMode === 'mode2' ? m2Streak : (activeGameMode === 'mode3' ? m3Streak : (activeGameMode === 'mode1' ? m1Streak : 0));
+/* MODAL DE FIM DE PARTIDA & SALVAMENTO AUTOMÁTICO */
+let currentGameOverData = { mode: 'mode1', score: 0, correct: 0, streak: 0 };
 
-  const scoreEl = document.getElementById('save-score-val');
-  const corrEl = document.getElementById('save-correct-val');
-  const streakEl = document.getElementById('save-streak-val');
-  const previewEl = document.getElementById('save-badge-preview');
+function openGameOverModal(mode, score, correct, streak, defaultNick = '') {
+  currentGameOverData = { mode, score, correct, streak };
 
-  if (scoreEl) scoreEl.textContent = `${currentTotal} pts`;
-  if (corrEl) corrEl.textContent = currentCorrect;
-  if (streakEl) streakEl.textContent = `${currentStreak}x`;
+  let modeLabel = "Blind Test";
+  if (mode === 'mode2') modeLabel = "Qual é a Abertura?";
+  if (mode === 'mode3') modeLabel = "Adivinhe a Cena";
+  if (mode === 'multiplayer') modeLabel = "Multiplayer";
 
-  if (previewEl) {
-    if (currentTotal > 0 && currentCorrect > 0) {
-      const badge = PrestigeBadges.getBadge({ score: currentTotal, correct: currentCorrect, streak: currentStreak, mode: activeGameMode });
-      previewEl.innerHTML = `<span class="prestige-badge ${badge.cssClass}" title="${escapeHtml(badge.tooltip)}">${badge.icon} ${escapeHtml(badge.title)}</span>`;
-    } else {
-      previewEl.innerHTML = '';
+  const modeEl = document.getElementById('go-mode-val');
+  const scoreEl = document.getElementById('go-score-val');
+  const corrEl = document.getElementById('go-correct-val');
+  const streakEl = document.getElementById('go-streak-val');
+  const badgeContainer = document.getElementById('go-badge-container');
+  const badgeDesc = document.getElementById('go-badge-desc');
+  const nickInput = document.getElementById('go-nickname-input');
+
+  if (modeEl) modeEl.textContent = modeLabel;
+  if (scoreEl) scoreEl.textContent = `${score} pts`;
+  if (corrEl) corrEl.textContent = correct;
+  if (streakEl) streakEl.textContent = `${streak}x`;
+
+  const badge = PrestigeBadges.getBadge({ score, correct, streak, mode });
+  if (badgeContainer) {
+    badgeContainer.innerHTML = `<span class="prestige-badge ${badge.cssClass}" style="font-size: 13px; padding: 4px 12px;">${badge.icon} ${escapeHtml(badge.title)}</span>`;
+  }
+  if (badgeDesc) {
+    badgeDesc.textContent = badge.tooltip;
+  }
+
+  const savedNick = defaultNick || localStorage.getItem('AMQ_LAST_NICK') || '';
+  if (nickInput) {
+    nickInput.value = savedNick;
+  }
+
+  validateGoNickname();
+
+  const modal = document.getElementById('game-over-modal');
+  if (modal) modal.style.display = 'flex';
+  if (window.AudioManager) AudioManager.playSfx('combo');
+  if (window.ConfettiEngine) ConfettiEngine.burst();
+}
+
+function closeGameOverModal() {
+  if (window.AudioManager) AudioManager.playSfx('click');
+  const modal = document.getElementById('game-over-modal');
+  if (modal) modal.style.display = 'none';
+}
+
+function validateGoNickname() {
+  const input = document.getElementById('go-nickname-input');
+  const countEl = document.getElementById('go-char-count');
+  const hintEl = document.getElementById('go-nick-hint');
+  const saveBtn = document.getElementById('go-save-btn');
+  if (!input) return;
+
+  const val = input.value.trim();
+  const len = val.length;
+
+  if (countEl) {
+    countEl.textContent = `${len}/5 letras (mín. 5)`;
+    countEl.style.color = len >= 5 ? 'var(--green)' : 'var(--rose)';
+  }
+
+  if (len < 5) {
+    if (hintEl) {
+      hintEl.textContent = len === 0 ? "O apelido precisa ter no mínimo 5 caracteres." : `Faltam ${5 - len} letra(s) para atingir o mínimo de 5.`;
+      hintEl.style.color = 'var(--rose)';
+    }
+    if (saveBtn) {
+      saveBtn.style.opacity = '0.45';
+      saveBtn.style.pointerEvents = 'none';
+    }
+  } else {
+    if (hintEl) {
+      hintEl.textContent = "✓ Apelido válido para entrar no Hall da Fama!";
+      hintEl.style.color = 'var(--green)';
+    }
+    if (saveBtn) {
+      saveBtn.style.opacity = '1';
+      saveBtn.style.pointerEvents = 'auto';
     }
   }
 }
 
-async function saveCurrentScoreToLeaderboard() {
-  const nickInput = document.getElementById('player-nickname');
-  const rawNick = (nickInput ? nickInput.value : '').trim();
-  const score = activeGameMode === 'mode2' ? m2Score : (activeGameMode === 'mode3' ? m3Score : (activeGameMode === 'mode1' ? m1Score : 0));
-  const correct = activeGameMode === 'mode2' ? m2CorrectCount : (activeGameMode === 'mode3' ? m3CorrectCount : (activeGameMode === 'mode1' ? m1CorrectCount : 0));
-  const streak = activeGameMode === 'mode2' ? m2Streak : (activeGameMode === 'mode3' ? m3Streak : (activeGameMode === 'mode1' ? m1Streak : 0));
-
-  const validation = AntiCheatEngine.validateSubmission(rawNick, activeGameMode, score, correct, streak);
-  if (!validation.ok) {
-    if (window.AudioManager) AudioManager.playSfx('wrong');
-    showToast(`⚠️ ${validation.msg}`);
+async function submitGameOverScore() {
+  const input = document.getElementById('go-nickname-input');
+  const rawNick = (input ? input.value : '').trim();
+  if (rawNick.length < 5) {
+    showToast("⚠️ O apelido deve ter no mínimo 5 caracteres!");
     return;
   }
 
-  const cleanNick = validation.cleanNick;
-  const badgeInfo = PrestigeBadges.getBadge({ score, correct, streak, mode: activeGameMode });
+  localStorage.setItem('AMQ_LAST_NICK', rawNick);
+
+  const mode = currentGameOverData.mode || activeGameMode;
+  const score = currentGameOverData.score || 0;
+  const correct = currentGameOverData.correct || 0;
+  const streak = currentGameOverData.streak || 0;
+
+  const badgeInfo = PrestigeBadges.getBadge({ score, correct, streak, mode });
 
   const entry = {
     id: Date.now(),
-    name: cleanNick,
-    mode: activeGameMode,
+    name: rawNick.substring(0, 15),
+    mode: mode,
     score: score,
     correct: correct,
     streak: streak,
@@ -8014,15 +8069,32 @@ async function saveCurrentScoreToLeaderboard() {
     timestamp: Date.now()
   };
 
-  if (window.AudioManager) AudioManager.playSfx('correct');
-  showToast("⏳ Salvando recorde no Hall da Fama...");
+  closeGameOverModal();
+  showToast("⏳ Salvando recorde no Hall da Fama Global...");
 
   await CloudLeaderboard.submitScore(entry);
 
-  if (nickInput) nickInput.value = '';
+  if (window.ConfettiEngine) ConfettiEngine.burst();
+  if (window.AudioManager) AudioManager.playSfx('correct');
+
+  switchGameMode('mode5');
   renderLeaderboardTable('all');
-  updateSaveScoreKPIs();
-  showToast(`🎉 Recorde salvo! ${cleanNick} conquistou: [${badgeInfo.icon} ${badgeInfo.title}]`);
+  showToast(`🎉 Parabéns ${entry.name}! Seu recorde de ${entry.score} pts foi salvo no Top 50!`);
+}
+
+function finishCurrentGame(mode = activeGameMode) {
+  const score = (mode === 'mode2') ? m2Score : ((mode === 'mode3') ? m3Score : m1Score);
+  const correct = (mode === 'mode2') ? m2CorrectCount : ((mode === 'mode3') ? m3CorrectCount : m1CorrectCount);
+  const streak = (mode === 'mode2') ? m2Streak : ((mode === 'mode3') ? m3Streak : m1Streak);
+
+  if (score <= 0 && correct <= 0) {
+    if (window.AudioManager) AudioManager.playSfx('wrong');
+    showToast("⚠️ Jogue pelo menos uma rodada antes de finalizar a partida!");
+    return;
+  }
+
+  stopAllMedia();
+  openGameOverModal(mode, score, correct, streak);
 }
 
 function filterLeaderboard(mode, btnEl) {
@@ -8061,10 +8133,6 @@ function renderLeaderboardTable(filterMode = 'all') {
     if (item.mode === 'multiplayer') { modeName = "Multiplayer"; modeIcon = "🎮"; }
 
     const badge = PrestigeBadges.getBadge(item);
-    const sourceHtml = (item.source === 'cloud')
-      ? `<span class="source-chip" title="Recorde sincronizado da nuvem global">🌐 Global</span>`
-      : `<span class="source-chip" title="Recorde salvo neste dispositivo">💾 Local</span>`;
-
     const streakTxt = (item.streak && Number(item.streak) > 1)
       ? ` <span style="color: #f97316; font-size: 11px; font-weight: 700;">(🔥${item.streak}x)</span>`
       : '';
@@ -8075,7 +8143,6 @@ function renderLeaderboardTable(filterMode = 'all') {
         <div class="player-cell">
           <span class="player-name">${escapeHtml(item.name || 'Otaku')}</span>
           <span class="prestige-badge ${badge.cssClass}" title="${escapeHtml(badge.tooltip)}">${badge.icon} ${escapeHtml(badge.title)}</span>
-          ${sourceHtml}
         </div>
       </td>
       <td><span class="pill-chip">${modeIcon} ${modeName}</span></td>
@@ -8094,62 +8161,22 @@ async function syncLeaderboardNow() {
   if (icon) icon.style.animation = 'dotSpin 0.8s infinite linear';
   if (syncBtn) syncBtn.disabled = true;
 
-  showToast("🔄 Sincronizando com a Nuvem Global...");
+  showToast("🔄 Atualizando placar com a Nuvem...");
   await CloudLeaderboard.fetchScores();
   renderLeaderboardTable('all');
 
   if (icon) icon.style.animation = 'none';
   if (syncBtn) syncBtn.disabled = false;
   if (window.AudioManager) AudioManager.playSfx('hover');
-  showToast(CloudLeaderboard.isOnline ? "✅ Hall da Fama sincronizado com a Nuvem!" : "💾 Placar atualizado (Modo Local ativo)");
-}
-
-function openCloudConfigModal() {
-  if (window.AudioManager) AudioManager.playSfx('click');
-  const modal = document.getElementById('cloud-config-modal');
-  const input = document.getElementById('firebase-url-input');
-  if (input) {
-    input.value = CloudLeaderboard.getFirebaseUrl() || '';
-  }
-  if (modal) modal.style.display = 'flex';
-}
-
-function closeCloudConfigModal() {
-  if (window.AudioManager) AudioManager.playSfx('click');
-  const modal = document.getElementById('cloud-config-modal');
-  if (modal) modal.style.display = 'none';
-}
-
-async function saveCloudConfig() {
-  const input = document.getElementById('firebase-url-input');
-  const url = (input ? input.value : '').trim();
-  if (!url) {
-    disconnectCloud();
-    return;
-  }
-
-  showToast("⏳ Testando conexão com o Banco na Nuvem...");
-  CloudLeaderboard.setFirebaseUrl(url);
-  closeCloudConfigModal();
-
-  await syncLeaderboardNow();
-}
-
-function disconnectCloud() {
-  CloudLeaderboard.setFirebaseUrl('');
-  closeCloudConfigModal();
-  CloudLeaderboard.isOnline = false;
-  CloudLeaderboard.updateStatusBadge();
-  renderLeaderboardTable('all');
-  showToast("💾 Desconectado da Nuvem. Operando em Modo Local.");
+  showToast("✅ Placar do Hall da Fama atualizado!");
 }
 
 function clearLeaderboard() {
-  if (confirm("Deseja realmente limpar os recordes salvos no seu dispositivo? (Os recordes na nuvem continuarão preservados)")) {
+  if (confirm("Deseja realmente limpar o cache salvo no seu dispositivo?")) {
     localStorage.removeItem('AMQ_LEADERBOARD_V2');
     CloudLeaderboard.cachedScores = CloudLeaderboard.getLocalScores();
     renderLeaderboardTable('all');
-    showToast("Placar local resetado!");
+    showToast("Cache local resetado!");
   }
 }
 
