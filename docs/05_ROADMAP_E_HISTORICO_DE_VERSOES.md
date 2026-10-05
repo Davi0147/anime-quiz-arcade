@@ -6,7 +6,16 @@ Este documento cataloga o histórico cronológico de versões (Changelog) do **A
 
 ## 📜 Histórico de Versões (Changelog)
 
-### `v3.2.4 • Arcade` (Versão Atual)
+### `v3.2.5 • Arcade` (Versão Atual)
+* **Sincronização Online 100% Autoritativa no Multiplayer:**
+  - **Correção da Rodada Congelada:** Corrigido o bug onde o convidado ficava preso na rodada #1 enquanto o host avançava. O loop de sincronização de rede (`startGuestSync`) agora persiste ininterrupto durante toda a partida (não sendo mais finalizado prematuramente por `clearAllTimers` entre rodadas).
+  - **Host como Fonte da Verdade Única:** Estado de jogo versionado (`v`), sincronizado atomicamente por dois canais simultâneos (WebRTC P2P + Nuvem Firebase REST). Se o pacote P2P for bloqueado, o estado via Nuvem assume imediatamente em tempo real.
+  - **Sincronia Estrita de Rodadas e Cronômetro:** O convidado sempre acompanha a rodada exata do host (`state.currentRoundIdx`), impedindo descompasso (se o host estiver na rodada 5, o convidado estará na rodada 5).
+  - **Heartbeat & Presença Ativa:** Pings periódicos de presença (`presence/${playerId}`) para detectar quedas e desconexões reais, além de limpeza automática de salas encerradas no Firebase.
+  - **Deduplicação de Respostas e Pontos:** Respostas recebidas simultaneamente por P2P e Nuvem são computadas exatamente uma vez, com feedback otimista e pontuações consolidadas no HUD e no Live Ranking.
+  - **Proteção do Botão Finalizar no Multiplayer:** Clicar em "Finalizar" durante uma partida ativa online agora aciona confirmação para sair da sala com segurança, sem zerar a sessão erradamente.
+
+### `v3.2.4 • Arcade`
 * **Multiplayer Híbrido WebRTC P2P + Cloud Relay (Firebase):**
   - **Canal WSS Universal:** Conexão segura forçada (`secure: true`, porta 443 WSS) no PeerJS, eliminando o erro de protocolo cruzado entre testes no `localhost` (HTTP) e jogadores no GitHub Pages (HTTPS).
   - **Pool de 8 Servidores STUN:** Inclusão de servidores STUN de alta velocidade (Google 1-4, Cloudflare, Mozilla, Twilio) e expurgo de servidores TURN inativos do PeerJS que causavam timeouts de ICE.

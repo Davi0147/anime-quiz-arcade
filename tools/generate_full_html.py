@@ -3657,7 +3657,7 @@ img[src^="icons/"] {
         <div>
           <div style="display: flex; align-items: center; gap: 8px;">
             <h1 style="font-size: 16px; font-weight: 800; margin: 0; color: #fff;">Anime Music & Scene Quiz</h1>
-            <span class="version-badge" style="font-size: 10px; padding: 2px 8px;">🎮 v3.2.4 • Arcade</span>
+            <span class="version-badge" style="font-size: 10px; padding: 2px 8px;">🎮 v3.2.5 • Arcade</span>
           </div>
           <p class="subtitle" style="font-size: 11px; margin: 2px 0 0 0; color: var(--text-muted);">
             Desafio interativo com 129 aberturas e 127 cenas reais. Ouça as músicas e teste seus conhecimentos!
@@ -6732,7 +6732,28 @@ const MultiplayerEngine = {
   botCounter: 1,
   cloudPollInterval: null,
   cloudHostPollInterval: null,
-  usingCloudRelay: false,
+  heartbeatInterval: null,
+  presenceInterval: null,
+  joinTimeout: null,
+  pushTimer: null,
+  stateVersion: 0,
+  lastStateVersion: 0,
+  lastStateChangeAt: 0,
+  lastAppliedStatus: '',
+  lastLobbySig: '',
+  joinConfirmed: false,
+  hostGoneHandled: false,
+  podiumActive: false,
+  roomSeed: 0,
+  myAnsweredRound: -1,
+  myVotedRound: -1,
+  myPendingAnswer: null,
+  processedMsgIds: new Set(),
+  processedRequestKeys: new Set(),
+  presenceSeen: {},
+  FIREBASE_ROOMS: 'https://anime-quiz-arcade-default-rtdb.firebaseio.com/rooms',
+  HOST_OFFLINE_MS: 90000,
+  PLAYER_INACTIVE_MS: 45000,
 
   getPeerConfig() {
     return {
@@ -6757,6 +6778,16 @@ const MultiplayerEngine = {
     };
   },
 
+  roomBase(code) {
+    return `${this.FIREBASE_ROOMS}/${code || this.roomCode}`;
+  },
+
+  normalizeList(x) {
+    if (Array.isArray(x)) return x.filter(v => v !== null && v !== undefined);
+    if (x && typeof x === 'object') return Object.values(x).filter(v => v !== null && v !== undefined);
+    return [];
+  },
+
   cleanRoomCode(raw) {
     return (raw || '').trim().toUpperCase().replace(/[^A-Z0-9]/g, '');
   },
@@ -6776,17 +6807,44 @@ const MultiplayerEngine = {
     }
   },
 
+  // Limpa SOMENTE os timers da rodada (chamado no fim de cada rodada).
+  // NUNCA desligar os loops de rede aqui: na v3.2.4 isso fazia o convidado
+  // parar de sincronizar ao fim da 1ª rodada. Loops de rede => stopSyncLoops().
   clearAllTimers() {
     this.clearRoundTimers();
-    if (this.cloudPollInterval) {
-      clearInterval(this.cloudPollInterval);
-      this.cloudPollInterval = null;
-    }
-    if (this.cloudHostPollInterval) {
-      clearInterval(this.cloudHostPollInterval);
-      this.cloudHostPollInterval = null;
-    }
-    this.usingCloudRelay = false;
+  },
+
+  stopSyncLoops() {
+    ['cloudPollInterval', 'cloudHostPollInterval', 'heartbeatInterval', 'presenceInterval'].forEach(k => {
+      if (this[k]) {
+        clearInterval(this[k]);
+        this[k] = null;
+      }
+    });
+    if (this.joinTimeout) { clearTimeout(this.joinTimeout); this.joinTimeout = null; }
+    if (this.pushTimer) { clearTimeout(this.pushTimer); this.pushTimer = null; }
+  },
+
+  resetSyncState() {
+    this.stateVersion = 0;
+    this.lastStateVersion = 0;
+    this.lastStateChangeAt = 0;
+    this.lastAppliedStatus = '';
+    this.lastLobbySig = '';
+    this.joinConfirmed = false;
+    this.hostGoneHandled = false;
+    this.podiumActive = false;
+    this.roomSeed = 0;
+    this.roundItems = [];
+    this.currentRoundIdx = 0;
+    this.myAnsweredRound = -1;
+    this.myVotedRound = -1;
+    this.myPendingAnswer = null;
+    this.processedMsgIds = new Set();
+    this.processedRequestKeys = new Set();
+    this.presenceSeen = {};
+    this.connections = {};
+    this.hostConn = null;
   },
 
   init() {
@@ -6835,6 +6893,8 @@ const MultiplayerEngine = {
     return `${clean} #${count}`;
   },
 
+  /* ---------------------------- HOST ---------------------------- */
+
   createRoom() {
     this.ensurePlayerId();
     const nickInput = document.getElementById('mp-host-nick');
@@ -6851,11 +6911,17 @@ const MultiplayerEngine = {
     for (let i = 0; i < 5; i++) {
       code += letters.charAt(Math.floor(Math.random() * letters.length));
     }
+
+    this.stopSyncLoops();
+    this.resetSyncState();
     this.roomCode = this.cleanRoomCode(code);
     this.isHost = true;
+    this.isMatchActive = false;
+    this.isTransitioning = false;
     this.myPlayerName = rawNick;
     this.myStreak = 0;
-    this.usingCloudRelay = false;
+    this.answeredPlayers = new Set();
+    this.skipVotes = new Set();
     this.players = [{
       id: this.ensurePlayerId(),
       name: this.myPlayerName,
@@ -6864,12 +6930,15 @@ const MultiplayerEngine = {
       correct: 0
     }];
     updateGlobalKPIs();
+    this.renderLobby();
+    showToast(`🎉 Sala #${this.roomCode} criada! Convide seus amigos!`);
 
+    // Nuvem primeiro (sempre funciona), P2P em paralelo (latência mínima quando a rede permite)
+    this.startHostSync();
     this.setupHostPeer();
   },
 
   setupHostPeer() {
-    showToast(`Criando sala #${this.roomCode}...`);
     try {
       if (this.peer) {
         try { this.peer.destroy(); } catch(e) {}
@@ -6878,41 +6947,238 @@ const MultiplayerEngine = {
       this.peer = new Peer(peerId, this.getPeerConfig());
 
       this.peer.on('open', () => {
-        this.renderLobby();
-        showToast(`🎉 Sala #${this.roomCode} criada! Convide seus amigos!`);
-        this.syncHostLobbyToCloud();
-        this.startHostCloudPolling();
+        console.log('[MP] Canal P2P do host pronto.');
       });
 
       this.peer.on('connection', (conn) => {
-        const remotePeerId = conn.peer;
-        this.connections[remotePeerId] = conn;
-
-        conn.on('data', (data) => {
-          this.handleHostMessage(conn, data);
+        this.connections[conn.peer] = conn;
+        conn.on('open', () => {
+          try { conn.send({ type: 'ROOM_STATE', state: this.buildRoomState(true) }); } catch(e) {}
         });
-
+        conn.on('data', (data) => {
+          this.hostProcessGuestMessage(data, conn);
+        });
         conn.on('close', () => {
-          delete this.connections[remotePeerId];
-          this.players = this.players.filter(p => p.peerId !== remotePeerId);
-          this.broadcastLobby();
-          this.renderLobby();
-          this.syncHostLobbyToCloud();
+          // Não remove o jogador: ele pode continuar pela Nuvem. Remoção é feita pela presença.
+          delete this.connections[conn.peer];
+        });
+        conn.on('error', () => {
+          delete this.connections[conn.peer];
         });
       });
 
       this.peer.on('error', (err) => {
-        console.warn('Peer host warning:', err);
-        this.renderLobby();
-        this.syncHostLobbyToCloud();
-        this.startHostCloudPolling();
+        console.warn('[MP] P2P do host indisponível, seguindo pela Nuvem:', err && err.type);
       });
     } catch (e) {
-      this.renderLobby();
-      this.syncHostLobbyToCloud();
-      this.startHostCloudPolling();
+      console.warn('[MP] Falha ao iniciar P2P do host, seguindo pela Nuvem.', e);
     }
   },
+
+  startHostSync() {
+    const code = this.roomCode;
+    this.pushState();
+    this.heartbeatInterval = setInterval(() => {
+      if (!this.isHost || this.roomCode !== code) return;
+      this.pushState();
+    }, 1500);
+    this.cloudHostPollInterval = setInterval(() => {
+      if (!this.isHost || this.roomCode !== code) return;
+      this.hostPollCloud(code);
+    }, 1000);
+  },
+
+  hostPollCloud(code) {
+    const base = this.roomBase(code);
+
+    // 1. Pedidos de entrada (cada pedido é processado uma única vez)
+    fetch(`${base}/requests.json`, { cache: 'no-store' })
+      .then(r => r.json())
+      .then(reqs => {
+        if (!reqs || typeof reqs !== 'object' || !this.isHost || this.roomCode !== code) return;
+        Object.values(reqs).forEach(req => {
+          if (!req || !req.id) return;
+          const key = `${req.id}_${req.timestamp || 0}`;
+          if (this.processedRequestKeys.has(key)) return;
+          this.processedRequestKeys.add(key);
+          this.hostProcessGuestMessage({ type: 'JOIN_LOBBY', playerId: req.id, name: req.name }, null);
+        });
+      })
+      .catch(() => {});
+
+    // 2. Mensagens dos convidados (respostas, votos, saída) — deduplicadas por ID
+    fetch(`${base}/messages.json`, { cache: 'no-store' })
+      .then(r => r.json())
+      .then(msgs => {
+        if (!msgs || typeof msgs !== 'object' || !this.isHost || this.roomCode !== code) return;
+        Object.entries(msgs).forEach(([key, msg]) => {
+          if (this.processedMsgIds.has(key)) return;
+          this.processedMsgIds.add(key);
+          if (msg) this.hostProcessGuestMessage(msg, null);
+          fetch(`${base}/messages/${key}.json`, { method: 'DELETE' }).catch(() => {});
+        });
+      })
+      .catch(() => {});
+
+    // 3. Presença: remove jogadores que fecharam a aba / perderam conexão
+    fetch(`${base}/presence.json`, { cache: 'no-store' })
+      .then(r => r.json())
+      .then(pres => {
+        if (!this.isHost || this.roomCode !== code) return;
+        const now = Date.now();
+        Object.entries(pres || {}).forEach(([pid, val]) => {
+          const prev = this.presenceSeen[pid];
+          if (!prev || prev.value !== val) this.presenceSeen[pid] = { value: val, seenAt: now };
+        });
+        this.players.filter(p => !p.isHost && !p.isBot).forEach(p => {
+          const conn = p.peerId ? this.connections[p.peerId] : null;
+          if (conn && conn.open) return;
+          const seen = this.presenceSeen[p.id];
+          if (seen && (now - seen.seenAt) > this.PLAYER_INACTIVE_MS) {
+            this.removePlayer(p.id, 'saiu (conexão perdida)');
+          }
+        });
+      })
+      .catch(() => {});
+  },
+
+  buildRoomState(bump = true) {
+    if (bump) this.stateVersion++;
+    return {
+      v: this.stateVersion,
+      hostId: this.myPlayerId,
+      hostName: this.myPlayerName,
+      settings: this.activeSettings,
+      players: this.players,
+      status: this.isMatchActive ? 'playing' : (this.podiumActive ? 'podium' : 'lobby'),
+      currentRoundIdx: this.currentRoundIdx || 0,
+      roundItems: this.roundItems || [],
+      seed: this.roomSeed || 0,
+      answered: Array.from(this.answeredPlayers),
+      skipVotes: Array.from(this.skipVotes),
+      transitioning: !!this.isTransitioning,
+      timeLeft: this.timeLeft || 0,
+      updatedAt: Date.now()
+    };
+  },
+
+  // Envia o estado autoritativo do host por P2P (instantâneo) e para a Nuvem (garantia)
+  pushState() {
+    if (!this.isHost || !this.roomCode) return;
+    if (this.pushTimer) { clearTimeout(this.pushTimer); this.pushTimer = null; }
+    const state = this.buildRoomState(true);
+    this.sendRawToPeers({ type: 'ROOM_STATE', state });
+    fetch(`${this.roomBase()}/state.json`, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(state)
+    }).catch(() => {});
+  },
+
+  pushStateSoon() {
+    if (!this.isHost || this.pushTimer) return;
+    this.pushTimer = setTimeout(() => {
+      this.pushTimer = null;
+      this.pushState();
+    }, 120);
+  },
+
+  // Compatibilidade com chamadas antigas
+  syncHostLobbyToCloud() {
+    this.pushState();
+  },
+
+  sendRawToPeers(msg) {
+    Object.values(this.connections).forEach(conn => {
+      try { if (conn && conn.open) conn.send(msg); } catch(e) {}
+    });
+  },
+
+  // Ponto ÚNICO de entrada das ações dos convidados (P2P ou Nuvem). Idempotente.
+  hostProcessGuestMessage(msg, conn) {
+    if (!msg || !this.isHost) return;
+
+    if (msg.type === 'JOIN_LOBBY') {
+      if (!msg.playerId) return;
+      let p = this.players.find(x => x.id === msg.playerId);
+      if (!p) {
+        const assignedName = this.disambiguateName(msg.name, this.players);
+        p = { id: msg.playerId, name: assignedName, isHost: false, score: 0, correct: 0 };
+        this.players.push(p);
+        showToast(`🟢 ${assignedName} entrou na sala!`);
+        if (this.isMatchActive) {
+          this.renderLiveSidebar();
+          this.renderHudScores();
+        } else if (!this.podiumActive) {
+          this.renderLobby();
+        }
+      }
+      if (!this.presenceSeen[p.id]) this.presenceSeen[p.id] = { value: 'join', seenAt: Date.now() };
+      if (conn) {
+        p.peerId = conn.peer;
+        try { conn.send({ type: 'JOIN_CONFIRMED', assignedName: p.name, playerId: p.id }); } catch(e) {}
+      }
+      this.pushState();
+      return;
+    }
+
+    const player = this.players.find(x => x.id === msg.playerId);
+    if (!player) return;
+
+    if (msg.type === 'ANSWER_SUBMIT') {
+      if (!this.isMatchActive) return;
+      if (typeof msg.roundIdx === 'number' && msg.roundIdx !== this.currentRoundIdx) return;
+      if (this.answeredPlayers.has(msg.playerId)) return; // já contabilizada (chegou por P2P e Nuvem)
+      player.score = (player.score || 0) + (msg.points || 0);
+      if (msg.isCorrect) player.correct = (player.correct || 0) + 1;
+      this.answeredPlayers.add(msg.playerId);
+      this.skipVotes.add(msg.playerId);
+      this.renderLiveSidebar();
+      this.renderHudScores();
+      updateGlobalKPIs();
+      this.updateWaitingBanner();
+      this.pushState();
+      this.checkAllAnswered();
+    } else if (msg.type === 'VOTE_SKIP') {
+      if (typeof msg.roundIdx === 'number' && msg.roundIdx !== this.currentRoundIdx) return;
+      this.handleSkipVote(msg.playerId);
+      this.pushState();
+    } else if (msg.type === 'LEAVE') {
+      this.removePlayer(msg.playerId, 'saiu da sala');
+    }
+  },
+
+  // Compatibilidade: mensagens P2P recebidas pelo host
+  handleHostMessage(conn, msg) {
+    this.hostProcessGuestMessage(msg, conn);
+  },
+
+  removePlayer(playerId, reason) {
+    const p = this.players.find(x => x.id === playerId);
+    if (!p || p.isHost) return;
+    this.players = this.players.filter(x => x.id !== playerId);
+    this.answeredPlayers.delete(playerId);
+    this.skipVotes.delete(playerId);
+    delete this.presenceSeen[playerId];
+    if (p.peerId && this.connections[p.peerId]) {
+      try { this.connections[p.peerId].close(); } catch(e) {}
+      delete this.connections[p.peerId];
+    }
+    const base = this.roomBase();
+    fetch(`${base}/requests/${playerId}.json`, { method: 'DELETE' }).catch(() => {});
+    fetch(`${base}/presence/${playerId}.json`, { method: 'DELETE' }).catch(() => {});
+    showToast(`🔴 ${p.name} ${reason || 'saiu da sala'}.`);
+    if (this.isMatchActive) {
+      this.renderLiveSidebar();
+      this.renderHudScores();
+      this.checkAllAnswered();
+    } else if (!this.podiumActive) {
+      this.renderLobby();
+    }
+    this.pushState();
+  },
+
+  /* --------------------------- CONVIDADO --------------------------- */
 
   joinRoom() {
     this.ensurePlayerId();
@@ -6926,27 +7192,41 @@ const MultiplayerEngine = {
       return;
     }
 
+    this.stopSyncLoops();
+    this.resetSyncState();
     this.roomCode = code;
     this.isHost = false;
+    this.isMatchActive = false;
+    this.isTransitioning = false;
     this.myPlayerName = nick;
     this.myStreak = 0;
-    this.usingCloudRelay = false;
+    this.players = [];
+    this.answeredPlayers = new Set();
+    this.skipVotes = new Set();
     updateGlobalKPIs();
 
-    showToast(`Conectando à sala #${code}...`);
+    showToast(`🔌 Conectando à sala #${code}...`);
 
-    let p2pEstablished = false;
-    let fallbackTriggered = false;
+    // 1. Canal Nuvem (sempre ativo: garante sincronia mesmo com P2P bloqueado por roteador/4G)
+    fetch(`${this.roomBase(code)}/requests/${this.myPlayerId}.json`, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ id: this.myPlayerId, name: nick, timestamp: Date.now() })
+    }).catch(() => {});
+    this.startGuestSync(code);
 
-    // Timeout de segurança: se o WebRTC travar por firewall/CGNAT do roteador, comuta silenciosamente para a Nuvem Firebase
-    const fallbackTimer = setTimeout(() => {
-      if (!p2pEstablished && !fallbackTriggered && this.roomCode === code) {
-        fallbackTriggered = true;
-        console.log("WebRTC P2P demorando (NAT/Firewall). Ativando Nuvem Firebase...");
-        this.connectViaCloudRelay(code, nick);
+    // 2. Canal P2P (latência mínima quando a rede permite)
+    this.connectGuestP2P(code);
+
+    this.joinTimeout = setTimeout(() => {
+      if (this.roomCode === code && !this.isHost && !this.joinConfirmed) {
+        alert(`Não foi possível encontrar a sala #${code}. Confira o código e se o Host está com a sala aberta.`);
+        this.leaveRoom();
       }
-    }, 3800);
+    }, 15000);
+  },
 
+  connectGuestP2P(code) {
     try {
       if (this.peer) {
         try { this.peer.destroy(); } catch(e) {}
@@ -6954,297 +7234,232 @@ const MultiplayerEngine = {
       this.peer = new Peer(null, this.getPeerConfig());
 
       this.peer.on('open', () => {
-        const hostPeerId = `amq-v2-${code.toLowerCase()}`;
-        this.hostConn = this.peer.connect(hostPeerId, { reliable: true });
-
-        this.hostConn.on('open', () => {
-          p2pEstablished = true;
-          clearTimeout(fallbackTimer);
-          showToast(`⚡ Conectado diretamente ao Host via P2P!`);
-          this.hostConn.send({
-            type: 'JOIN_LOBBY',
-            playerId: this.ensurePlayerId(),
-            name: this.myPlayerName
-          });
+        if (this.roomCode !== code || this.isHost) return;
+        const conn = this.peer.connect(`amq-v2-${code.toLowerCase()}`, { reliable: true });
+        this.hostConn = conn;
+        conn.on('open', () => {
+          try {
+            conn.send({ type: 'JOIN_LOBBY', playerId: this.ensurePlayerId(), name: this.myPlayerName });
+          } catch(e) {}
         });
-
-        this.hostConn.on('data', (data) => {
+        conn.on('data', (data) => {
           this.handleGuestMessage(data);
         });
-
-        this.hostConn.on('close', () => {
-          if (!this.usingCloudRelay) {
-            alert("Conexão com a sala encerrada pelo Host.");
-            this.leaveRoom();
-          }
+        conn.on('close', () => {
+          if (this.hostConn === conn) this.hostConn = null; // segue pela Nuvem
         });
-
-        this.hostConn.on('error', (err) => {
-          console.warn("Host connection error:", err);
-          if (!p2pEstablished && !fallbackTriggered) {
-            fallbackTriggered = true;
-            clearTimeout(fallbackTimer);
-            this.connectViaCloudRelay(code, nick);
-          }
+        conn.on('error', () => {
+          if (this.hostConn === conn) this.hostConn = null;
         });
       });
 
       this.peer.on('error', (err) => {
-        console.warn("Peer client error:", err);
-        if (!p2pEstablished && !fallbackTriggered) {
-          fallbackTriggered = true;
-          clearTimeout(fallbackTimer);
-          this.connectViaCloudRelay(code, nick);
-        }
+        console.warn('[MP] P2P indisponível, seguindo pela Nuvem:', err && err.type);
       });
-    } catch(e) {
-      if (!fallbackTriggered) {
-        fallbackTriggered = true;
-        clearTimeout(fallbackTimer);
-        this.connectViaCloudRelay(code, nick);
-      }
+    } catch (e) {
+      console.warn('[MP] Falha ao iniciar P2P do convidado, seguindo pela Nuvem.', e);
     }
   },
 
-  connectViaCloudRelay(code, nick) {
-    this.usingCloudRelay = true;
-    showToast(`🌐 Conectando à sala #${code} via Nuvem Arcade...`);
-    const reqUrl = `https://anime-quiz-arcade-default-rtdb.firebaseio.com/rooms/${code}/requests/${this.myPlayerId}.json`;
-    fetch(reqUrl, {
-      method: 'PUT',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        id: this.myPlayerId,
-        name: nick,
-        timestamp: Date.now()
-      })
-    }).then(() => {
-      this.startGuestCloudPolling(code);
-    }).catch(err => {
-      console.warn("Erro ao registrar entrada na nuvem:", err);
-      alert(`Não foi possível conectar à sala #${code}. Verifique se a sala foi criada e se o Host está online.`);
-    });
-  },
+  startGuestSync(code) {
+    const base = this.roomBase(code);
 
-  startGuestCloudPolling(code) {
-    if (this.cloudPollInterval) clearInterval(this.cloudPollInterval);
-    const stateUrl = `https://anime-quiz-arcade-default-rtdb.firebaseio.com/rooms/${code}/state.json`;
-
-    let checkState = () => {
-      if (!this.roomCode || this.roomCode !== code) return;
-      fetch(stateUrl)
+    const poll = () => {
+      if (this.isHost || this.roomCode !== code) return;
+      fetch(`${base}/state.json`, { cache: 'no-store' })
         .then(r => r.json())
         .then(state => {
-          if (!state) return;
-          if (state.players && !this.isMatchActive) {
-            this.players = state.players;
-            if (state.settings) this.activeSettings = state.settings;
-            this.renderLobby();
+          if (this.isHost || this.roomCode !== code) return;
+          if (state === null) {
+            if (this.joinConfirmed) this.handleHostGone('A sala foi encerrada pelo Host.');
+            return;
           }
-
-          if (state.status === 'playing') {
-            if (!this.isMatchActive) {
-              this.activeSettings = state.settings;
-              this.roundItems = state.roundItems;
-              this.roomSeed = state.seed || 12345;
-              this.isMatchActive = true;
-              this.startRound(state.currentRoundIdx || 0);
-            } else if (state.currentRoundIdx !== this.currentRoundIdx) {
-              this.startRound(state.currentRoundIdx);
-            }
-          } else if (state.status === 'podium' && this.isMatchActive) {
-            this.showPodium(state.players || this.players);
-          }
-
-          if (this.isMatchActive && state.players) {
-            this.players = state.players;
-            this.renderLiveSidebar();
-            this.renderHudScores();
-            updateGlobalKPIs();
-          }
+          this.applyRoomState(state, false);
         })
         .catch(() => {});
+
+      if (this.joinConfirmed && this.lastStateChangeAt && (Date.now() - this.lastStateChangeAt) > this.HOST_OFFLINE_MS) {
+        this.handleHostGone('O Host ficou offline. A sala foi encerrada.');
+      }
     };
 
-    checkState();
-    this.cloudPollInterval = setInterval(checkState, 1100);
+    const ping = () => {
+      if (this.isHost || this.roomCode !== code) return;
+      fetch(`${base}/presence/${this.myPlayerId}.json`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(Date.now())
+      }).catch(() => {});
+    };
+
+    poll();
+    ping();
+    this.cloudPollInterval = setInterval(poll, 900);
+    this.presenceInterval = setInterval(ping, 3000);
   },
 
-  syncHostLobbyToCloud() {
-    if (!this.isHost || !this.roomCode) return;
-    const url = `https://anime-quiz-arcade-default-rtdb.firebaseio.com/rooms/${this.roomCode}/state.json`;
-    fetch(url, {
-      method: 'PUT',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        hostName: this.myPlayerName,
-        settings: this.activeSettings,
-        players: this.players,
-        status: this.isMatchActive ? 'playing' : 'lobby',
-        currentRoundIdx: this.currentRoundIdx,
-        roundItems: this.roundItems,
-        seed: this.roomSeed,
-        updatedAt: Date.now()
-      })
-    }).catch(() => {});
+  // Envia ação ao host pelos DOIS canais (o host deduplica)
+  sendToHost(msg) {
+    if (this.hostConn && this.hostConn.open) {
+      try { this.hostConn.send(msg); } catch(e) {}
+    }
+    this.sendCloudMessage(msg);
   },
 
-  startHostCloudPolling() {
-    if (this.cloudHostPollInterval) clearInterval(this.cloudHostPollInterval);
-    const code = this.roomCode;
-    const reqsUrl = `https://anime-quiz-arcade-default-rtdb.firebaseio.com/rooms/${code}/requests.json`;
-    const msgsUrl = `https://anime-quiz-arcade-default-rtdb.firebaseio.com/rooms/${code}/messages.json`;
-
-    this.cloudHostPollInterval = setInterval(() => {
-      if (!this.isHost || !this.roomCode || this.roomCode !== code) return;
-
-      // 1. Checa novos jogadores solicitando entrada via nuvem
-      fetch(reqsUrl)
-        .then(r => r.json())
-        .then(reqs => {
-          if (reqs && typeof reqs === 'object') {
-            let changed = false;
-            Object.values(reqs).forEach(req => {
-              if (req && req.id && !this.players.some(p => p.id === req.id)) {
-                const assigned = this.disambiguateName(req.name, this.players);
-                this.players.push({
-                  id: req.id,
-                  peerId: 'cloud_' + req.id,
-                  name: assigned,
-                  isHost: false,
-                  score: 0,
-                  correct: 0
-                });
-                changed = true;
-                showToast(`🟢 ${assigned} entrou na sala (Nuvem)!`);
-              }
-            });
-            if (changed) {
-              this.broadcastLobby();
-              this.renderLobby();
-              this.syncHostLobbyToCloud();
-            }
-          }
-        })
-        .catch(() => {});
-
-      // 2. Checa mensagens enviadas por convidados da nuvem (respostas / votos)
-      fetch(msgsUrl)
-        .then(r => r.json())
-        .then(msgs => {
-          if (msgs && typeof msgs === 'object') {
-            let changed = false;
-            Object.entries(msgs).forEach(([msgKey, msg]) => {
-              if (!msg) return;
-              if (msg.type === 'ANSWER_SUBMIT') {
-                const p = this.players.find(x => x.id === msg.playerId);
-                if (p) {
-                  p.score += (msg.points || 0);
-                  if (msg.isCorrect) p.correct += 1;
-                }
-                this.answeredPlayers.add(msg.playerId);
-                this.skipVotes.add(msg.playerId);
-                changed = true;
-              } else if (msg.type === 'VOTE_SKIP') {
-                this.handleSkipVote(msg.playerId);
-              }
-              fetch(`https://anime-quiz-arcade-default-rtdb.firebaseio.com/rooms/${code}/messages/${msgKey}.json`, { method: 'DELETE' }).catch(() => {});
-            });
-
-            if (changed) {
-              this.broadcastScores();
-              this.broadcastAnsweredState();
-              this.renderLiveSidebar();
-              this.renderHudScores();
-              updateGlobalKPIs();
-              this.syncHostLobbyToCloud();
-              this.checkAllAnswered();
-            }
-          }
-        })
-        .catch(() => {});
-    }, 1200);
-  },
-
-  sendCloudMessage(msg) {
-    if (!this.roomCode) return;
-    const msgId = 'm_' + Date.now() + '_' + Math.random().toString(36).substring(2, 6);
-    fetch(`https://anime-quiz-arcade-default-rtdb.firebaseio.com/rooms/${this.roomCode}/messages/${msgId}.json`, {
+  sendCloudMessage(msg, code) {
+    const room = code || this.roomCode;
+    if (!room) return;
+    const msgId = 'm_' + Date.now() + '_' + Math.random().toString(36).substring(2, 8);
+    fetch(`${this.roomBase(room)}/messages/${msgId}.json`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(msg)
     }).catch(() => {});
   },
 
-  handleHostMessage(conn, msg) {
-    if (!msg) return;
-    if (msg.type === 'JOIN_LOBBY') {
-      const assignedName = this.disambiguateName(msg.name, this.players);
-      const newPlayer = {
-        id: msg.playerId,
-        peerId: conn.peer,
-        name: assignedName,
-        isHost: false,
-        score: 0,
-        correct: 0
-      };
-      this.players.push(newPlayer);
-      conn.send({
-        type: 'JOIN_CONFIRMED',
-        assignedName: assignedName,
-        playerId: msg.playerId
-      });
-      this.broadcastLobby();
-      this.renderLobby();
-      showToast(`🟢 ${assignedName} entrou na sala!`);
-    } else if (msg.type === 'VOTE_SKIP') {
-      this.handleSkipVote(msg.playerId);
-    } else if (msg.type === 'ANSWER_SUBMIT') {
-      const p = this.players.find(x => x.id === msg.playerId);
-      if (p) {
-        p.score += (msg.points || 0);
-        if (msg.isCorrect) p.correct += 1;
+  // Aplica o estado autoritativo do host (versão maior sempre vence)
+  applyRoomState(state, fromP2P = false) {
+    if (this.isHost || !state || typeof state.v !== 'number') return;
+    if (state.v <= this.lastStateVersion) return;
+    this.lastStateVersion = state.v;
+    this.lastStateChangeAt = Date.now();
+
+    const players = this.normalizeList(state.players);
+    const answered = this.normalizeList(state.answered);
+    const votes = this.normalizeList(state.skipVotes);
+    if (state.settings) this.activeSettings = state.settings;
+    if (players.length) this.players = players;
+
+    const amIn = this.players.some(p => p.id === this.myPlayerId);
+    if (!this.joinConfirmed) {
+      if (!amIn) return; // host ainda não processou a entrada
+      this.joinConfirmed = true;
+      if (this.joinTimeout) { clearTimeout(this.joinTimeout); this.joinTimeout = null; }
+      showToast(`✅ Você entrou na sala #${this.roomCode}!`);
+    } else if (!amIn) {
+      this.handleHostGone('Você foi desconectado da sala (conexão perdida).');
+      return;
+    }
+
+    const me = this.getMyPlayer();
+    if (me && me.name) this.myPlayerName = me.name;
+
+    const status = state.status || 'lobby';
+    const idx = Number(state.currentRoundIdx) || 0;
+    const seed = Number(state.seed) || 0;
+
+    // Pontuação otimista: mantém minha resposta visível até o host confirmá-la (e reenvia se preciso)
+    if (this.myPendingAnswer) {
+      const pend = this.myPendingAnswer;
+      const confirmed = status === 'playing' && idx === pend.roundIdx && answered.includes(this.myPlayerId);
+      const expired = status !== 'playing' || idx !== pend.roundIdx;
+      if (confirmed || expired) {
+        this.myPendingAnswer = null;
+      } else {
+        if (me) {
+          me.score = (me.score || 0) + pend.points;
+          if (pend.isCorrect) me.correct = (me.correct || 0) + 1;
+        }
+        if (Date.now() - pend.sentAt > 2500) {
+          pend.sentAt = Date.now();
+          this.sendToHost({ type: 'ANSWER_SUBMIT', playerId: this.myPlayerId, roundIdx: pend.roundIdx, isCorrect: pend.isCorrect, points: pend.points });
+        }
       }
-      this.answeredPlayers.add(msg.playerId);
-      this.skipVotes.add(msg.playerId);
-      this.broadcastScores();
-      this.broadcastAnsweredState();
+    }
+
+    if (status === 'playing') {
+      const isNewMatch = !this.isMatchActive || (seed && seed !== this.roomSeed);
+      if (isNewMatch) {
+        this.roundItems = this.normalizeList(state.roundItems);
+        this.roomSeed = seed;
+        this.isMatchActive = true;
+        this.myStreak = 0;
+        this.prevRankPositions = {};
+        this.myAnsweredRound = -1;
+        this.myVotedRound = -1;
+        this.startRound(idx);
+      } else if (idx > this.currentRoundIdx) {
+        this.startRound(idx); // alcança o host (nunca volta rodada)
+      }
+
+      if (idx === this.currentRoundIdx) {
+        const ans = new Set(answered);
+        if (this.myAnsweredRound === idx) ans.add(this.myPlayerId);
+        this.answeredPlayers = ans;
+        const vs = new Set(votes);
+        if (this.myVotedRound === idx || this.myAnsweredRound === idx) vs.add(this.myPlayerId);
+        this.skipVotes = vs;
+
+        if (state.transitioning && !this.isTransitioning) {
+          this.isTransitioning = true;
+          this.clearRoundTimers();
+          const banner = document.getElementById('mp-waiting-banner');
+          if (banner) {
+            banner.style.display = 'flex';
+            banner.className = 'mp-waiting-banner all-done';
+            banner.innerHTML = `
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <span style="font-size: 16px;">✨</span>
+                <span>Rodada encerrada! Preparando a próxima...</span>
+              </div>
+            `;
+          }
+        } else if (!this.isTransitioning && this.activeSettings.timer > 0 && typeof state.timeLeft === 'number') {
+          // Corrige desvio do cronômetro em relação ao host
+          const drift = this.timeLeft - state.timeLeft;
+          if ((fromP2P && Math.abs(drift) >= 2) || (!fromP2P && drift >= 3)) {
+            this.timeLeft = Math.max(1, state.timeLeft);
+          }
+        }
+      }
+
       this.renderLiveSidebar();
       this.renderHudScores();
       updateGlobalKPIs();
-      this.checkAllAnswered();
+      const total = this.players.length;
+      this.updateSkipUI(this.skipVotes.size, total, Math.floor(total / 2) + 1);
+      this.updateWaitingBanner();
+    } else if (status === 'podium') {
+      if (this.lastAppliedStatus !== 'podium') {
+        this.lastAppliedStatus = 'podium';
+        this.showPodium(this.players);
+      }
+    } else {
+      if (this.isMatchActive) {
+        this.isMatchActive = false;
+        this.isTransitioning = false;
+        this.clearRoundTimers();
+        stopAllMedia();
+        this.lastLobbySig = '';
+      }
+      const sig = JSON.stringify([this.players.map(p => [p.id, p.name]), this.activeSettings]);
+      if (sig !== this.lastLobbySig || this.lastAppliedStatus !== 'lobby') {
+        this.lastLobbySig = sig;
+        this.renderLobby();
+      }
     }
+    this.lastAppliedStatus = status;
+  },
+
+  handleHostGone(message) {
+    if (this.hostGoneHandled || this.isHost || !this.roomCode) return;
+    this.hostGoneHandled = true;
+    this.leaveRoom();
+    setTimeout(() => alert(`🚪 ${message}`), 50);
   },
 
   handleGuestMessage(msg) {
-    if (!msg) return;
-    if (msg.type === 'JOIN_CONFIRMED') {
-      this.myPlayerName = msg.assignedName;
-    } else if (msg.type === 'LOBBY_STATE') {
-      this.players = msg.players;
-      this.activeSettings = msg.settings;
-      this.renderLobby();
-    } else if (msg.type === 'MATCH_START') {
-      this.activeSettings = msg.settings;
-      this.roundItems = msg.roundItems;
-      this.roomSeed = msg.seed || 12345;
-      this.isMatchActive = true;
-      this.startRound(0);
-    } else if (msg.type === 'SKIP_UPDATE') {
-      this.updateSkipUI(msg.votes, msg.total, msg.threshold);
+    if (!msg || this.isHost) return;
+    if (msg.type === 'ROOM_STATE') {
+      this.applyRoomState(msg.state, true);
+    } else if (msg.type === 'JOIN_CONFIRMED') {
+      if (msg.assignedName) this.myPlayerName = msg.assignedName;
     } else if (msg.type === 'FAST_SKIP') {
-      this.executeFastSkipEffect();
-    } else if (msg.type === 'SCORE_UPDATE') {
-      this.players = msg.players;
-      this.renderLiveSidebar();
-      this.renderHudScores();
-      updateGlobalKPIs();
-    } else if (msg.type === 'ANSWERED_STATE') {
-      this.answeredPlayers = new Set(msg.answered || []);
-      this.renderLiveSidebar();
-      this.updateWaitingBanner();
+      if (this.isMatchActive) this.executeFastSkipEffect();
     } else if (msg.type === 'ALL_ANSWERED') {
+      if (!this.isMatchActive || this.isTransitioning) return;
       this.isTransitioning = true;
+      this.clearRoundTimers();
       const banner = document.getElementById('mp-waiting-banner');
       if (banner) {
         banner.style.display = 'flex';
@@ -7256,11 +7471,13 @@ const MultiplayerEngine = {
           </div>
         `;
       }
-    } else if (msg.type === 'SYNC_ROUND') {
-      this.startRound(msg.roundIdx);
     } else if (msg.type === 'MATCH_OVER') {
-      this.showPodium(msg.players);
+      if (this.lastAppliedStatus !== 'podium') {
+        this.lastAppliedStatus = 'podium';
+        this.showPodium(msg.players || this.players);
+      }
     }
+    // Demais estados (placar, rodada, respostas, lobby) chegam consolidados em ROOM_STATE.
   },
 
   broadcastAnsweredState() {
@@ -7292,9 +7509,8 @@ const MultiplayerEngine = {
   },
 
   broadcast(msg) {
-    Object.values(this.connections).forEach(conn => {
-      try { conn.send(msg); } catch(e) {}
-    });
+    this.sendRawToPeers(msg);
+    if (this.isHost && msg && msg.type !== 'ROOM_STATE') this.pushStateSoon();
   },
 
   broadcastLobby() {
@@ -7329,28 +7545,38 @@ const MultiplayerEngine = {
 
   leaveRoom() {
     stopAllMedia();
-    if (this.peer) {
-      try { this.peer.destroy(); } catch(e) {}
+    const code = this.roomCode;
+    const wasHost = this.isHost;
+    const pid = this.myPlayerId;
+    this.stopSyncLoops();
+    if (code) {
+      const base = this.roomBase(code);
+      if (wasHost) {
+        const del = () => fetch(`${base}.json`, { method: 'DELETE' }).catch(() => {});
+        del();
+        setTimeout(del, 1500); // garante limpeza mesmo se um PUT atrasado chegar depois
+      } else if (pid) {
+        try { if (this.hostConn && this.hostConn.open) this.hostConn.send({ type: 'LEAVE', playerId: pid }); } catch(e) {}
+        this.sendCloudMessage({ type: 'LEAVE', playerId: pid }, code);
+        fetch(`${base}/requests/${pid}.json`, { method: 'DELETE' }).catch(() => {});
+        fetch(`${base}/presence/${pid}.json`, { method: 'DELETE' }).catch(() => {});
+      }
     }
-    if (this.isHost && this.roomCode) {
-      fetch(`https://anime-quiz-arcade-default-rtdb.firebaseio.com/rooms/${this.roomCode}.json`, {
-        method: 'DELETE'
-      }).catch(() => {});
-    }
-    seededRand = null;
+    const oldPeer = this.peer;
     this.peer = null;
+    if (oldPeer) setTimeout(() => { try { oldPeer.destroy(); } catch(e) {} }, 300);
+    seededRand = null;
     this.isHost = false;
     this.roomCode = '';
     this.isMatchActive = false;
     this.isTransitioning = false;
     this.players = [];
-    this.connections = {};
-    this.hostConn = null;
     this.skipVotes.clear();
     this.answeredPlayers.clear();
-    this.clearAllTimers();
+    this.clearRoundTimers();
     this.prevRankPositions = {};
     this.myStreak = 0;
+    this.resetSyncState();
     updateGlobalKPIs();
 
     const banner = document.getElementById('mp-waiting-banner');
@@ -7448,16 +7674,23 @@ const MultiplayerEngine = {
     const shuffled = Array.from({ length: totalItems }, (_, i) => i).sort(() => Math.random() - 0.5);
     this.roundItems = shuffled.slice(0, rounds);
 
+    this.podiumActive = false;
     this.isMatchActive = true;
+    this.isTransitioning = false;
+    this.currentRoundIdx = 0;
+    this.myAnsweredRound = -1;
+    this.myVotedRound = -1;
+    this.answeredPlayers.clear();
+    this.skipVotes.clear();
     this.broadcast({
       type: 'MATCH_START',
       settings: this.activeSettings,
       roundItems: this.roundItems,
       seed: this.roomSeed
     });
-    this.syncHostLobbyToCloud();
 
     this.startRound(0);
+    this.pushState();
   },
 
   startRound(idx) {
@@ -7787,20 +8020,16 @@ const MultiplayerEngine = {
       }
     }
 
+    this.myVotedRound = this.currentRoundIdx;
     if (this.isHost) {
       this.handleSkipVote(this.myPlayerId);
     } else {
-      if (this.hostConn && this.hostConn.open) {
-        this.hostConn.send({
-          type: 'VOTE_SKIP',
-          playerId: this.myPlayerId
-        });
-      } else if (this.usingCloudRelay) {
-        this.sendCloudMessage({
-          type: 'VOTE_SKIP',
-          playerId: this.myPlayerId
-        });
-      }
+      this.skipVotes.add(this.myPlayerId);
+      this.sendToHost({
+        type: 'VOTE_SKIP',
+        playerId: this.myPlayerId,
+        roundIdx: this.currentRoundIdx
+      });
     }
   },
 
@@ -7882,6 +8111,7 @@ const MultiplayerEngine = {
     }
 
     if (this.isHost) {
+      this.pushState();
       this.roundTransitionTimeout = setTimeout(() => {
         if (!this.isMatchActive) return;
         this.advanceOrEndRound();
@@ -7891,6 +8121,8 @@ const MultiplayerEngine = {
 
   onPlayerAnswer(isCorrect, points) {
     if (!this.isMatchActive || this.isTransitioning) return;
+    if (this.myAnsweredRound === this.currentRoundIdx) return; // uma resposta por rodada
+    this.myAnsweredRound = this.currentRoundIdx;
     const me = this.getMyPlayer();
     if (me) {
       me.score += (points || 0);
@@ -7913,25 +8145,19 @@ const MultiplayerEngine = {
     if (btn) btn.classList.add('voted');
 
     if (!this.isHost) {
-      if (this.hostConn && this.hostConn.open) {
-        this.hostConn.send({
-          type: 'ANSWER_SUBMIT',
-          playerId: this.myPlayerId,
-          isCorrect,
-          points
-        });
-      } else if (this.usingCloudRelay) {
-        this.sendCloudMessage({
-          type: 'ANSWER_SUBMIT',
-          playerId: this.myPlayerId,
-          isCorrect,
-          points
-        });
-      }
-    } else if (this.isHost) {
+      const pts = points || 0;
+      this.myPendingAnswer = { roundIdx: this.currentRoundIdx, points: pts, isCorrect: !!isCorrect, sentAt: Date.now() };
+      this.sendToHost({
+        type: 'ANSWER_SUBMIT',
+        playerId: this.myPlayerId,
+        roundIdx: this.currentRoundIdx,
+        isCorrect: !!isCorrect,
+        points: pts
+      });
+    } else {
       this.broadcastScores();
       this.broadcastAnsweredState();
-      this.syncHostLobbyToCloud();
+      this.pushState();
       this.checkAllAnswered();
     }
   },
@@ -7941,9 +8167,10 @@ const MultiplayerEngine = {
     this.clearRoundTimers();
     if (this.currentRoundIdx + 1 < this.activeSettings.rounds) {
       const nextIdx = this.currentRoundIdx + 1;
-      this.broadcast({ type: 'SYNC_ROUND', roundIdx: nextIdx });
-      this.syncHostLobbyToCloud();
+      // Atualiza o índice ANTES de publicar (bug v3.2.4: a nuvem recebia a rodada antiga)
       this.startRound(nextIdx);
+      this.broadcast({ type: 'SYNC_ROUND', roundIdx: nextIdx });
+      this.pushState();
     } else {
       this.endMatch();
     }
@@ -7952,21 +8179,11 @@ const MultiplayerEngine = {
   endMatch() {
     this.isMatchActive = false;
     this.isTransitioning = false;
+    this.podiumActive = true;
     this.myStreak = 0;
     seededRand = null;
     this.clearRoundTimers();
-    if (this.isHost && this.roomCode) {
-      const url = `https://anime-quiz-arcade-default-rtdb.firebaseio.com/rooms/${this.roomCode}/state.json`;
-      fetch(url, {
-        method: 'PATCH',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          status: 'podium',
-          players: this.players,
-          updatedAt: Date.now()
-        })
-      }).catch(() => {});
-    }
+    this.pushState();
     updateGlobalKPIs();
     const hudBar = document.getElementById('mp-hud-bar');
     if (hudBar) hudBar.style.display = 'none';
@@ -8089,11 +8306,18 @@ const MultiplayerEngine = {
 
   rematch() {
     if (!this.isHost) return;
-    this.clearAllTimers();
+    this.clearRoundTimers();
     this.isTransitioning = false;
+    this.isMatchActive = false;
+    this.podiumActive = false;
+    this.currentRoundIdx = 0;
+    this.roundItems = [];
     this.myStreak = 0;
+    this.myAnsweredRound = -1;
+    this.myVotedRound = -1;
     this.prevRankPositions = {};
     this.answeredPlayers.clear();
+    this.skipVotes.clear();
     this.players.forEach(p => {
       p.score = 0;
       p.correct = 0;
@@ -8101,6 +8325,7 @@ const MultiplayerEngine = {
     updateGlobalKPIs();
     this.broadcastLobby();
     this.renderLobby();
+    this.pushState();
     showToast("🔄 Sala pronta para nova partida!");
   }
 };
@@ -8553,6 +8778,10 @@ function discardSessionAndReset() {
 }
 
 function finishCurrentGame(mode = activeGameMode) {
+  if (window.MultiplayerEngine && MultiplayerEngine.isMatchActive) {
+    MultiplayerEngine.confirmLeaveRoom();
+    return;
+  }
   const score = (mode === 'mode2') ? m2Score : ((mode === 'mode3') ? m3Score : m1Score);
   const correct = (mode === 'mode2') ? m2CorrectCount : ((mode === 'mode3') ? m3CorrectCount : m1CorrectCount);
   const streak = (mode === 'mode2') ? m2Streak : ((mode === 'mode3') ? m3Streak : m1Streak);
