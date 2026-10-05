@@ -5178,6 +5178,9 @@ function switchGameMode(mode, isInternal = false) {
     if (lbPanel) lbPanel.style.display = 'block';
     renderLeaderboardTable('all');
     updateSaveScoreKPIs();
+    if (window.CloudLeaderboard && CloudLeaderboard.getFirebaseUrl()) {
+      CloudLeaderboard.fetchScores().then(() => renderLeaderboardTable('all'));
+    }
   }
 }
 
@@ -7797,6 +7800,7 @@ window.AntiCheatEngine = AntiCheatEngine;
 const CloudLeaderboard = {
   STORAGE_KEY: 'AMQ_LEADERBOARD_V2',
   FIREBASE_KEY: 'AMQ_FIREBASE_URL',
+  DEFAULT_FIREBASE: 'https://anime-quiz-arcade-default-rtdb.firebaseio.com/leaderboard.json',
   cachedScores: [],
   isSyncing: false,
   isOnline: false,
@@ -7804,7 +7808,7 @@ const CloudLeaderboard = {
   getFirebaseUrl() {
     const custom = localStorage.getItem(this.FIREBASE_KEY);
     if (custom && custom.trim() !== '') return custom.trim();
-    return '';
+    return this.DEFAULT_FIREBASE;
   },
 
   setFirebaseUrl(url) {
@@ -7841,7 +7845,9 @@ const CloudLeaderboard = {
     this.updateStatusBadge();
     const url = this.getFirebaseUrl();
     if (url) {
-      this.fetchScores();
+      this.fetchScores().then(() => {
+        renderLeaderboardTable('all');
+      });
     }
   },
 
