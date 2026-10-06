@@ -23,12 +23,12 @@ html_template = """<!DOCTYPE html>
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
   <meta http-equiv="Pragma" content="no-cache" />
   <meta http-equiv="Expires" content="0" />
-  <title>🎧 Anime Music & Scene Quiz • v3.2.0 Arcade</title>
+  <title>🎧 Anime Music & Scene Quiz • v3.2.6 Arcade</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=JetBrains+Mono:wght@500;700;800&display=swap" rel="stylesheet">
   <script src="libs/peerjs.min.js"></script>
-  <script>if (typeof Peer === 'undefined') { document.write('<script src="https://unpkg.com/peerjs@1.5.4/dist/peerjs.min.js"><\\/script>'); }</script>
+  <script>if (typeof Peer === 'undefined') { document.write('<' + 'script src="https://unpkg.com/peerjs@1.5.4/dist/peerjs.min.js"><\\/' + 'script>'); }</script>
   <style>
     :root {
       --bg: #070913;
@@ -615,8 +615,8 @@ html_template = """<!DOCTYPE html>
       top: 44px;
       right: 0;
       background: rgba(13, 18, 34, 0.96);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
+      backdrop-filter: blur(3px);
+      -webkit-backdrop-filter: blur(3px);
       border: 1px solid rgba(99, 102, 241, 0.4);
       border-radius: 14px;
       padding: 16px;
@@ -1326,7 +1326,7 @@ html_template = """<!DOCTYPE html>
       font-weight: 700;
       cursor: pointer;
       z-index: 3;
-      backdrop-filter: blur(4px);
+      backdrop-filter: blur(3px);
       display: inline-flex;
       align-items: center;
       gap: 5px;
@@ -2876,7 +2876,8 @@ img[src^="icons/"] {
   width: var(--sidebar-w);
   background: rgba(10, 15, 30, 0.95);
   border-right: 1px solid rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(16px);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
   display: flex;
   flex-direction: column;
   position: fixed;
@@ -3121,8 +3122,8 @@ img[src^="icons/"] {
   padding: 10px 14px;
   margin-bottom: 8px;
   font-size: 13px;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
   animation: fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .feedback-box.correct {
@@ -3150,8 +3151,8 @@ img[src^="icons/"] {
 .answer-card {
   display: none;
   background: linear-gradient(135deg, rgba(20, 27, 48, 0.88) 0%, rgba(10, 15, 29, 0.96) 100%);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
   border: 1px solid rgba(99, 102, 241, 0.35);
   border-radius: 14px;
   padding: 12px 14px;
@@ -3221,8 +3222,8 @@ img[src^="icons/"] {
   position: fixed;
   inset: 0;
   background: rgba(3, 7, 18, 0.82);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -3308,8 +3309,8 @@ img[src^="icons/"] {
   display: inline-flex;
   align-items: center;
   background: rgba(13, 19, 36, 0.85);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 14px;
   padding: 6px 10px;
@@ -3657,7 +3658,7 @@ img[src^="icons/"] {
         <div>
           <div style="display: flex; align-items: center; gap: 8px;">
             <h1 style="font-size: 16px; font-weight: 800; margin: 0; color: #fff;">Anime Music & Scene Quiz</h1>
-            <span class="version-badge" style="font-size: 10px; padding: 2px 8px;">🎮 v3.2.5 • Arcade</span>
+            <span class="version-badge" style="font-size: 10px; padding: 2px 8px;">🎮 v3.2.6 • Arcade</span>
           </div>
           <p class="subtitle" style="font-size: 11px; margin: 2px 0 0 0; color: var(--text-muted);">
             Desafio interativo com 129 aberturas e 127 cenas reais. Ouça as músicas e teste seus conhecimentos!
@@ -5839,7 +5840,7 @@ function setPlayUI(playing) {
 }
 
 function m1ToggleMask() {
-  blindMask.classList.toggle('unmasked');
+  if (blindMask) blindMask.classList.toggle('unmasked');
 }
 
 function revealTagElement(el) {
@@ -8894,6 +8895,7 @@ function showToast(text) {
    ============================================================== */
 function renderCatalogTable() {
   const tbody = document.getElementById('songs-tbody');
+  if (!tbody) return;
   tbody.innerHTML = '';
   ALL_SONGS.forEach((s, idx) => {
     const tr = document.createElement('tr');
