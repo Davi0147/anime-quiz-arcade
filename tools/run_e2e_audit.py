@@ -25,7 +25,7 @@ report = {
 }
 
 print("=" * 70)
-print("🚀 INICIANDO AUDITORIA COMPLETA E TESTES PONTA A PONTA (AMQ ARCADE v3.2.7)")
+print("🚀 INICIANDO AUDITORIA COMPLETA E TESTES PONTA A PONTA (AMQ ARCADE v3.2.8)")
 print("=" * 70)
 
 # ============================================================================

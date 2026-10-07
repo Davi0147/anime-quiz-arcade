@@ -23,7 +23,7 @@ html_template = """<!DOCTYPE html>
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
   <meta http-equiv="Pragma" content="no-cache" />
   <meta http-equiv="Expires" content="0" />
-  <title>🎧 Anime Music & Scene Quiz • v3.2.7 Arcade</title>
+  <title>🎧 Anime Music & Scene Quiz • v3.2.8 Arcade</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=JetBrains+Mono:wght@500;700;800&display=swap" rel="stylesheet">
@@ -3551,6 +3551,18 @@ img[src^="icons/"] {
   box-shadow: 0 0 16px rgba(168, 85, 247, 0.45) !important;
 }
 
+/* Botões bloqueados de navegação antes de responder */
+.m1-nav-btn.nav-locked,
+.m1-nav-btn:disabled,
+.btn.btn-locked,
+#m3-btn-next:disabled {
+  opacity: 0.38 !important;
+  cursor: not-allowed !important;
+  filter: grayscale(0.7) !important;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
 @media (max-width: 900px) {
   .m1-bottom-controls-bar {
     grid-template-columns: 1fr;
@@ -3754,7 +3766,7 @@ img[src^="icons/"] {
         <div>
           <div style="display: flex; align-items: center; gap: 8px;">
             <h1 style="font-size: 16px; font-weight: 800; margin: 0; color: #fff;">Anime Music & Scene Quiz</h1>
-            <span class="version-badge" style="font-size: 10px; padding: 2px 8px;">🎮 v3.2.7 • Arcade</span>
+            <span class="version-badge" style="font-size: 10px; padding: 2px 8px;">🎮 v3.2.8 • Arcade</span>
           </div>
           <p class="subtitle" style="font-size: 11px; margin: 2px 0 0 0; color: var(--text-muted);">
             Desafio interativo com 129 aberturas e 127 cenas reais. Ouça as músicas e teste seus conhecimentos!
@@ -4162,10 +4174,10 @@ img[src^="icons/"] {
 
         <!-- Navigation -->
         <div class="m3-nav-row nav-row" style="display: flex; gap: 8px; flex-wrap: wrap;">
-          <button class="btn btn-outline" onclick="m3GiveUp()">
+          <button class="btn btn-outline" id="m3-btn-giveup" onclick="m3GiveUp()">
             <img src="icons/eye.png" class="app-icon icon-white" /> Ver Resposta
           </button>
-          <button class="btn btn-secondary" onclick="m3NextScene()">
+          <button class="btn btn-secondary" id="m3-btn-next" onclick="m3NextScene()">
             Próxima Cena <img src="icons/fast-forward.png" class="app-icon icon-white" />
           </button>
           <button class="btn btn-outline" id="m3-btn-finish" onclick="finishCurrentGame('mode3')" style="border-color: rgba(239, 68, 68, 0.4); color: #fca5a5;" title="Finalizar partida e registrar recorde">
@@ -4599,6 +4611,7 @@ let m1Streak = 0;
 let m1Attempts = 0;
 let m1RevealedTagsCount = 0;
 let m1AnsweredCurrent = false;
+let m1HasGuessed = false;
 let m1IsPlaying = false;
 let m1UseLocal = true;
 
@@ -4623,6 +4636,7 @@ let m3CorrectCount = 0;
 let m3Streak = 0;
 let m3HintsRevealed = 0;
 let m3Answered = false;
+let m3HasGuessed = false;
 let m3RoundsPlayed = 0;
 
 /* DOM ELEMENTS */
@@ -5810,6 +5824,11 @@ function handleM1Nav(action, event) {
   } else if (action === 'reveal') {
     giveUpAndReveal();
   } else if (action === 'next') {
+    if (!m1HasGuessed && !m1AnsweredCurrent && !(window.MultiplayerEngine && MultiplayerEngine.isMatchActive)) {
+      showToast("🔒 Dê um palpite ou clique no olho 👁️ (Revelar) antes de avançar!");
+      if (window.AudioManager) AudioManager.playSfx('wrong');
+      return;
+    }
     nextSong();
   }
 }
@@ -5853,8 +5872,23 @@ document.addEventListener('click', (e) => {
 function m1LoadSong(autoPlay = false) {
   stopAllMedia();
   m1AnsweredCurrent = false;
+  m1HasGuessed = false;
   m1Attempts = 0;
   m1RevealedTagsCount = 0;
+
+  const nextBtn = document.getElementById('m1-btn-next');
+  if (nextBtn) {
+    const isMpActive = (window.MultiplayerEngine && MultiplayerEngine.isMatchActive);
+    if (!isMpActive) {
+      nextBtn.disabled = true;
+      nextBtn.classList.add('nav-locked');
+      nextBtn.title = "Dê um palpite ou clique no olho 👁️ (Revelar) para avançar";
+    } else {
+      nextBtn.disabled = false;
+      nextBtn.classList.remove('nav-locked');
+      nextBtn.title = "Votar para pular rodada";
+    }
+  }
 
   const m1ResultSlot = document.getElementById('m1-result-slot');
   if (m1ResultSlot) m1ResultSlot.classList.remove('is-open');
@@ -5872,6 +5906,10 @@ function m1LoadSong(autoPlay = false) {
   const isMp = (window.MultiplayerEngine && MultiplayerEngine.isMatchActive);
   const song = isMp ? (ALL_SONGS[m1CurrentIndex] || ALL_SONGS[0]) : (m1Playlist[m1PlaylistIndex] || ALL_SONGS[0]);
   m1CurrentIndex = ALL_SONGS.findIndex(s => s.id === song.id);
+  if (isMp && m1Playlist && m1Playlist.length > 0) {
+    const pIdx = m1Playlist.findIndex(s => s.id === song.id);
+    if (pIdx !== -1) m1PlaylistIndex = pIdx;
+  }
 
   if (isMp) {
     m1RoundIndicator.textContent = `RODADA #${MultiplayerEngine.currentRoundIdx + 1} DE ${MultiplayerEngine.activeSettings.rounds} • ${formatDifficulty(song.diff)}`;
@@ -5999,6 +6037,13 @@ function submitGuess() {
   if (!val) return;
 
   m1Attempts++;
+  m1HasGuessed = true;
+  const nextBtn = document.getElementById('m1-btn-next');
+  if (nextBtn) {
+    nextBtn.disabled = false;
+    nextBtn.classList.remove('nav-locked');
+    nextBtn.title = "Próxima música";
+  }
   const song = ALL_SONGS[m1CurrentIndex];
   const result = checkAnimeMatch(val, song.anime, song.synonyms);
 
@@ -6106,7 +6151,7 @@ function giveUpAndReveal() {
   if (window.MultiplayerEngine && MultiplayerEngine.isMatchActive) {
     MultiplayerEngine.onPlayerAnswer(false, 0);
   }
-  const song = m1Playlist[m1PlaylistIndex] || ALL_SONGS[m1CurrentIndex];
+  const song = ALL_SONGS[m1CurrentIndex];
   feedbackBox.className = 'feedback-box wrong';
   feedbackBox.innerHTML = `<img src="icons/eye.png" class="app-icon icon-purple" /> <strong>RESPOSTA REVELADA!</strong> O anime era <strong>${escapeHtml(song.anime)}</strong>.`;
   feedbackBox.style.display = 'block';
@@ -6117,9 +6162,17 @@ function giveUpAndReveal() {
 
 function revealM1Answer(isCorrect) {
   m1AnsweredCurrent = true;
+  m1HasGuessed = true;
   guessInput.disabled = true;
 
-  const song = m1Playlist[m1PlaylistIndex] || ALL_SONGS[m1CurrentIndex];
+  const nextBtn = document.getElementById('m1-btn-next');
+  if (nextBtn) {
+    nextBtn.disabled = false;
+    nextBtn.classList.remove('nav-locked');
+    nextBtn.title = "Próxima música";
+  }
+
+  const song = ALL_SONGS[m1CurrentIndex];
 
   // Visual Card: Capa escura no fundo e nomes reluzentes na frente
   const visualCard = document.getElementById('player-visual-card');
@@ -6173,6 +6226,11 @@ function prevSong() {
 function nextSong() {
   if (window.MultiplayerEngine && MultiplayerEngine.isMatchActive) {
     MultiplayerEngine.voteSkip();
+    return;
+  }
+  if (!m1HasGuessed && !m1AnsweredCurrent) {
+    showToast("🔒 Dê um palpite ou clique no olho 👁️ (Revelar) antes de avançar!");
+    if (window.AudioManager) AudioManager.playSfx('wrong');
     return;
   }
   stopAllMedia();
@@ -6578,6 +6636,11 @@ function m3NextScene() {
     MultiplayerEngine.voteSkip();
     return;
   }
+  if (!m3HasGuessed && !m3Answered) {
+    showToast("🔒 Dê um palpite ou clique em 'Ver Resposta' antes de avançar!");
+    if (window.AudioManager) AudioManager.playSfx('wrong');
+    return;
+  }
   stopAllMedia();
   if (isChallengeActive && m3RoundsPlayed >= challengeRounds) {
     openGameOverModal('mode3', m3Score, m3CorrectCount, m3Streak);
@@ -6605,12 +6668,27 @@ function m3PickRandom() {
 
 function m3InitScene() {
   m3Answered = false;
+  m3HasGuessed = false;
   m3HintsRevealed = 0;
   m3Input.value = '';
   m3Input.disabled = false;
   m3Input.classList.remove('input-error-shake', 'input-success-pulse');
   m3FeedbackBox.style.display = 'none';
   m3AnswerBox.style.display = 'none';
+
+  const m3NextBtn = document.getElementById('m3-btn-next');
+  if (m3NextBtn) {
+    const isMpActive = (window.MultiplayerEngine && MultiplayerEngine.isMatchActive);
+    if (!isMpActive) {
+      m3NextBtn.disabled = true;
+      m3NextBtn.classList.add('btn-locked');
+      m3NextBtn.title = "Dê um palpite ou clique em 'Ver Resposta' para avançar";
+    } else {
+      m3NextBtn.disabled = false;
+      m3NextBtn.classList.remove('btn-locked');
+      m3NextBtn.title = "Votar para pular rodada";
+    }
+  }
 
   const scene = ALL_SCENES[m3CurrentIndex];
   if (window.MultiplayerEngine && MultiplayerEngine.isMatchActive) {
@@ -6678,6 +6756,14 @@ function m3SubmitGuess() {
   if (m3Answered) return;
   const val = m3Input.value.trim();
   if (!val) return;
+
+  m3HasGuessed = true;
+  const m3NextBtn = document.getElementById('m3-btn-next');
+  if (m3NextBtn) {
+    m3NextBtn.disabled = false;
+    m3NextBtn.classList.remove('btn-locked');
+    m3NextBtn.title = "Próxima Cena";
+  }
 
   const scene = ALL_SCENES[m3CurrentIndex];
   const res = checkAnimeMatch(val, scene.anime, scene.synonyms);
@@ -6782,7 +6868,15 @@ function m3GiveUp() {
 
 function m3RevealSceneAnswer(isCorrect) {
   m3Answered = true;
+  m3HasGuessed = true;
   m3Input.disabled = true;
+
+  const m3NextBtn = document.getElementById('m3-btn-next');
+  if (m3NextBtn) {
+    m3NextBtn.disabled = false;
+    m3NextBtn.classList.remove('btn-locked');
+    m3NextBtn.title = "Próxima Cena";
+  }
 
   Array.from(m3TagsRow.children).forEach(b => m3RevealTagBadge(b));
 
