@@ -23,7 +23,7 @@ html_template = """<!DOCTYPE html>
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
   <meta http-equiv="Pragma" content="no-cache" />
   <meta http-equiv="Expires" content="0" />
-  <title>🎧 Anime Music & Scene Quiz • v3.2.8 Arcade</title>
+  <title>🎧 Anime Music & Scene Quiz • v3.2.9 Arcade</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=JetBrains+Mono:wght@500;700;800&display=swap" rel="stylesheet">
@@ -3766,7 +3766,7 @@ img[src^="icons/"] {
         <div>
           <div style="display: flex; align-items: center; gap: 8px;">
             <h1 style="font-size: 16px; font-weight: 800; margin: 0; color: #fff;">Anime Music & Scene Quiz</h1>
-            <span class="version-badge" style="font-size: 10px; padding: 2px 8px;">🎮 v3.2.8 • Arcade</span>
+            <span class="version-badge" style="font-size: 10px; padding: 2px 8px;">🎮 v3.2.9 • Arcade</span>
           </div>
           <p class="subtitle" style="font-size: 11px; margin: 2px 0 0 0; color: var(--text-muted);">
             Desafio interativo com 129 aberturas e 127 cenas reais. Ouça as músicas e teste seus conhecimentos!
@@ -6626,7 +6626,11 @@ function m2ConfirmSelection() {
    ============================================================== */
 function m3StartGame() {
   stopAllMedia();
-  m3UnplayedQueue = buildProgressiveQueue(ALL_SCENES.map((_, i) => ALL_SCENES[i])).map(s => ALL_SCENES.findIndex(orig => orig.id === s.id));
+  m3UnplayedQueue = Array.from({ length: ALL_SCENES.length }, (_, i) => i);
+  for (let i = m3UnplayedQueue.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [m3UnplayedQueue[i], m3UnplayedQueue[j]] = [m3UnplayedQueue[j], m3UnplayedQueue[i]];
+  }
   m3RoundsPlayed = 0;
   m3NextScene();
 }
@@ -6648,7 +6652,11 @@ function m3NextScene() {
   }
 
   if (m3UnplayedQueue.length === 0) {
-    m3UnplayedQueue = ALL_SCENES.map((_, i) => i).sort(() => getGameRandom() - 0.5);
+    m3UnplayedQueue = Array.from({ length: ALL_SCENES.length }, (_, i) => i);
+    for (let i = m3UnplayedQueue.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [m3UnplayedQueue[i], m3UnplayedQueue[j]] = [m3UnplayedQueue[j], m3UnplayedQueue[i]];
+    }
   }
 
   m3CurrentIndex = m3UnplayedQueue.pop();
@@ -6708,7 +6716,8 @@ function m3InitScene() {
       return;
     }
     this.onerror = null;
-    this.src = 'https://media.kitsu.app/anime/poster_images/1/small.jpg';
+    const cleanTitle = encodeURIComponent((scene.anime || 'Cena de Anime').replace(/["'<>]/g, ''));
+    this.src = 'data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22600%22%20height%3D%22340%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22%230f172a%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20font-family%3D%22sans-serif%22%20font-size%3D%2218%22%20font-weight%3D%22bold%22%20fill%3D%22%2338bdf8%22%20text-anchor%3D%22middle%22%20dy%3D%22.3em%22%3E🎬%20' + cleanTitle + '%3C%2Ftext%3E%3C%2Fsvg%3E';
   };
   m3SceneImg.src = scene.image_url || 'https://media.kitsu.app/anime/poster_images/1/small.jpg';
 
