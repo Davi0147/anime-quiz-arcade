@@ -6,7 +6,7 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
   <meta http-equiv="Pragma" content="no-cache" />
   <meta http-equiv="Expires" content="0" />
-  <title>🎧 Anime Music & Scene Quiz • v3.2.9 Arcade</title>
+  <title>🎧 Anime Music & Scene Quiz • v3.3.0 Arcade</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=JetBrains+Mono:wght@500;700;800&display=swap" rel="stylesheet">
@@ -3749,7 +3749,7 @@ img[src^="icons/"] {
         <div>
           <div style="display: flex; align-items: center; gap: 8px;">
             <h1 style="font-size: 16px; font-weight: 800; margin: 0; color: #fff;">Anime Music & Scene Quiz</h1>
-            <span class="version-badge" style="font-size: 10px; padding: 2px 8px;">🎮 v3.2.9 • Arcade</span>
+            <span class="version-badge" style="font-size: 10px; padding: 2px 8px;">🎮 v3.3.0 • Arcade</span>
           </div>
           <p class="subtitle" style="font-size: 11px; margin: 2px 0 0 0; color: var(--text-muted);">
             Desafio interativo com 129 aberturas e 127 cenas reais. Ouça as músicas e teste seus conhecimentos!
@@ -5375,14 +5375,12 @@ function switchGameMode(mode, isInternal = false) {
       showMatchActiveAlert('⚠️ Você está em uma partida ativa! Para trocar de modo, conclua as rodadas ou clique em Sair da Sala.');
       return;
     }
-    if (MultiplayerEngine.roomCode) {
-      if (mode !== 'mode4') {
-        showMatchActiveAlert('⚠️ Você já está na Sala #' + MultiplayerEngine.roomCode + '! Saia da sala antes de escolher outro modo.');
-        return;
-      } else if (activeGameMode === 'mode4') {
-        // Já está no modo de salas dentro de um lobby, não reinicializa
-        return;
-      }
+    if (MultiplayerEngine.roomCode && mode !== 'mode4' && mode !== 'mode5') {
+      showMatchActiveAlert('⚠️ Você já está na Sala #' + MultiplayerEngine.roomCode + '! Saia da sala antes de escolher outro modo.');
+      return;
+    } else if (activeGameMode === 'mode4' && mode === 'mode4') {
+      // Já está no modo de salas dentro de um lobby, não reinicializa
+      return;
     }
   }
 
@@ -6245,6 +6243,9 @@ function openYouTubeDirect() {
    ============================================================== */
 function m2StartGame() {
   stopAllMedia();
+  m2Score = 0;
+  m2CorrectCount = 0;
+  m2Streak = 0;
   m2UnplayedQueue = ALL_SONGS.map((_, i) => i);
   m2UnplayedQueue.sort(() => getGameRandom() - 0.5);
   m2RoundsPlayed = 0;
@@ -6609,12 +6610,15 @@ function m2ConfirmSelection() {
    ============================================================== */
 function m3StartGame() {
   stopAllMedia();
+  m3Score = 0;
+  m3CorrectCount = 0;
+  m3Streak = 0;
+  m3RoundsPlayed = 0;
   m3UnplayedQueue = Array.from({ length: ALL_SCENES.length }, (_, i) => i);
   for (let i = m3UnplayedQueue.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     [m3UnplayedQueue[i], m3UnplayedQueue[j]] = [m3UnplayedQueue[j], m3UnplayedQueue[i]];
   }
-  m3RoundsPlayed = 0;
   m3NextScene();
 }
 
@@ -6769,8 +6773,6 @@ function m3SubmitGuess() {
       speedBonus = MultiplayerEngine.calculateSpeedBonus();
       currentStreak = MultiplayerEngine.myStreak || 0;
     }
-    m3Streak++;
-    m3CorrectCount++;
     const comboBonus = (currentStreak > 0 ? currentStreak * 20 : 0);
     const hintPenalty = m3HintsRevealed * 15;
     const pts = Math.max(30, 100 + speedBonus + comboBonus - hintPenalty);
@@ -7592,6 +7594,12 @@ const MultiplayerEngine = {
         this.prevRankPositions = {};
         this.myAnsweredRound = -1;
         this.myVotedRound = -1;
+
+        // Zerar contadores solo para garantir isolamento
+        m1Score = 0; m1CorrectCount = 0; m1Streak = 0;
+        m2Score = 0; m2CorrectCount = 0; m2Streak = 0;
+        m3Score = 0; m3CorrectCount = 0; m3Streak = 0;
+
         this.startRound(idx);
       } else if (idx > this.currentRoundIdx) {
         this.startRound(idx); // alcança o host (nunca volta rodada)
@@ -7792,6 +7800,12 @@ const MultiplayerEngine = {
     this.prevRankPositions = {};
     this.myStreak = 0;
     this.resetSyncState();
+
+    // Isolamento absoluto: zerar acumuladores de modos solo ao sair da sala
+    m1Score = 0; m1CorrectCount = 0; m1Streak = 0; m1Attempts = 0; m1PlaylistIndex = 0; m1Playlist = [];
+    m2Score = 0; m2CorrectCount = 0; m2Streak = 0; m2RoundsPlayed = 0; m2UnplayedQueue = [];
+    m3Score = 0; m3CorrectCount = 0; m3Streak = 0; m3RoundsPlayed = 0; m3UnplayedQueue = [];
+
     updateGlobalKPIs();
 
     const banner = document.getElementById('mp-waiting-banner');
@@ -7897,6 +7911,12 @@ const MultiplayerEngine = {
     this.myVotedRound = -1;
     this.answeredPlayers.clear();
     this.skipVotes.clear();
+
+    // Zerar contadores solo para garantir isolamento
+    m1Score = 0; m1CorrectCount = 0; m1Streak = 0;
+    m2Score = 0; m2CorrectCount = 0; m2Streak = 0;
+    m3Score = 0; m3CorrectCount = 0; m3Streak = 0;
+
     this.broadcast({
       type: 'MATCH_START',
       settings: this.activeSettings,
@@ -8417,6 +8437,12 @@ const MultiplayerEngine = {
     this.isMatchActive = false;
     this.clearAllTimers();
     this.isTransitioning = false;
+
+    // Resetar acumuladores de modos solo para não contaminar nada após a partida
+    m1Score = 0; m1CorrectCount = 0; m1Streak = 0; m1Attempts = 0; m1PlaylistIndex = 0; m1Playlist = [];
+    m2Score = 0; m2CorrectCount = 0; m2Streak = 0; m2RoundsPlayed = 0; m2UnplayedQueue = [];
+    m3Score = 0; m3CorrectCount = 0; m3Streak = 0; m3RoundsPlayed = 0; m3UnplayedQueue = [];
+
     const hudBar = document.getElementById('mp-hud-bar');
     if (hudBar) hudBar.style.display = 'none';
     const sidebar = document.getElementById('mp-live-sidebar');
@@ -8956,7 +8982,7 @@ async function submitGameOverScore() {
 
   resetModeSession(mode);
 
-  switchGameMode('mode5');
+  switchGameMode('mode5', true);
   renderLeaderboardTable('all');
   showToast(`🎉 Parabéns ${entry.name}! Seu recorde de ${entry.score} pts foi salvo no Top 50!`);
 }
@@ -8982,6 +9008,18 @@ function resetModeSession(mode = activeGameMode) {
     m3Streak = 0;
     m3RoundsPlayed = 0;
     m3StartGame();
+  } else if (mode === 'multiplayer') {
+    if (window.MultiplayerEngine) {
+      MultiplayerEngine.myStreak = 0;
+      const me = MultiplayerEngine.getMyPlayer();
+      if (me) {
+        me.score = 0;
+        me.correct = 0;
+      }
+    }
+    m1Score = 0; m1CorrectCount = 0; m1Streak = 0; m1Attempts = 0; m1PlaylistIndex = 0; m1Playlist = [];
+    m2Score = 0; m2CorrectCount = 0; m2Streak = 0; m2RoundsPlayed = 0; m2UnplayedQueue = [];
+    m3Score = 0; m3CorrectCount = 0; m3Streak = 0; m3RoundsPlayed = 0; m3UnplayedQueue = [];
   }
   updateGlobalKPIs();
 }
